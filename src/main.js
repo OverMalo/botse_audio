@@ -16,7 +16,7 @@ function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        await navigator.serviceWorker.register("/sw.js");
+        await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`);
         console.log("Service worker registrado");
       } catch (error) {
         console.error("Error registrando service worker:", error);

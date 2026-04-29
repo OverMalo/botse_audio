@@ -1,14 +1,11 @@
 const CACHE_NAME = "ahlcg-narraciones-v1";
+const BASE = "/botse_audio";
 
 const APP_ASSETS = [
-  "/",
-  "/manifest.webmanifest",
-  "/src/main.js",
-  "/src/styles.css",
-  "/src/data.json",
-  "/audios/cap2_hermanos_de_las_cenizas_intro.mp3",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  `${BASE}/`,
+  `${BASE}/manifest.webmanifest`,
+  `${BASE}/icons/icon-192.png`,
+  `${BASE}/icons/icon-512.png`,
 ];
 
 self.addEventListener("install", (event) => {
@@ -50,7 +47,7 @@ self.addEventListener("fetch", (event) => {
         })
         .catch(() => {
           if (event.request.mode === "navigate") {
-            return caches.match("/");
+            return caches.match(`${BASE}/`);
           }
         });
     })

@@ -1,4 +1,4 @@
-const CACHE_NAME = "ahlcg-narraciones-v1";
+const CACHE_NAME = "ahlcg-narraciones-v2";
 const BASE = "/botse_audio";
 
 const APP_ASSETS = [

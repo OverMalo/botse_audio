@@ -153,6 +153,11 @@ body {
   border-color: rgba(157, 29, 29, 0.7);
 }
 
+.option-card--black {
+  background: linear-gradient(180deg, #444 0%, #222 60%, #000 100%);
+  border-color: #222;
+}
+
 .option-card strong {
   display: block;
   font-size: 1rem;

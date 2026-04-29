@@ -1,0 +1,23 @@
+{
+  "id": "/ahlcg_audio/",
+  "name": "Arkham Horror LCG: Narraciones",
+  "short_name": "AHLCG Audio",
+  "description": "Campañas narradas de Arkham Horror LCG",
+  "start_url": "/ahlcg_audio/",
+  "scope": "/ahlcg_audio/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/ahlcg_audio/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/ahlcg_audio/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

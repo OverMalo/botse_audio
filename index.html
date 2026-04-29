@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z52E094P6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3Z52E094P6');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Over.</title>
+
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="Textos narrados de The Elders Scrolls" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="title-wrap">
+          <h1>VoiceOver</h1>
+        </div>
+
+        <div class="actions">
+          <button id="backBtn" class="btn btn-secondary">Atrás</button>
+          <button id="homeBtn" class="btn btn-secondary">Inicio</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="screen-card" id="screen"></section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

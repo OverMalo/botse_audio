@@ -1,0 +1,137 @@
+{
+  "start": {
+    "title": "The Elders Scroll: La traición de la segunda era",
+    "description": "",
+    "options": [
+      {
+        "label": "Ciénaga Negra",
+        "description": "Occidental",
+        "next": "cienaga_negra"
+      }
+    ]
+  },
+  "cienaga_negra": {
+    "title": "CIÉNAGA NEGRA",
+    "description": "",
+    "options": [
+      {
+        "label": "Ciudades",
+        "description": "",
+        "next": "cn_ciudades"
+      },
+      {
+        "label": "Encuentros",
+        "description": "",
+        "next": "cn_encuentros"
+      },
+      {
+        "label": "Misiones de gremio",
+        "description": "",
+        "next": "cn_misiones_gremio"
+      }
+    ]
+  },
+  "cn_encuentros": {
+    "title": "CIÉNAGA NEGRA: ENCUENTROS",
+    "description": "",
+    "options": [
+      {
+        "label": "CN-01",
+        "description": "Rehenes de la Casa Telvanni",
+        "next": "encuentro_cn_01_audio"
+      },
+      {
+        "label": "CN-02",
+        "description": "Comunión corrupta",
+        "next": "encuentro_cn_02_audio"
+      },
+      {
+        "label": "GE-01",
+        "description": "El ataque del Wabbajack",
+        "next": "encuentro_ge_01"
+      },
+      {
+        "label": "GE-02",
+        "description": "Mina abandonada",
+        "next": "encuentro_ge_02_audio"
+      }
+    ]
+  },
+  
+  "encuentro_ge_02_audio": {
+    "title": "MINA ABANDONADA",
+    "description": "A juzgar por el montón de escombros y restos oxidados que hay fuera de esta cueva, te has topado con una explotación minera abandonada hace ya mucho tiempo. En los tiempos que corren, es difícil identificar la causa. ¿Dejó de ser rentable o la guerra se acercó demasiado? Tal vez hubiera un derrumbe. Lo que está claro es que, desde fuera, va a ser imposible saberlo. Estás dividido; coger un pico y adentrarse en la cueva puede conducir a riquezas inesperadas, pero buscar en la pila de escombros parece bastante más seguro.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_02_m.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_01_audio" : {
+    "title": "REHENES DE LA CASA TELVANNI",
+    "description": "Algunos elfos oscuros rebeldes han ignorado el acuerdo de paz del Pacto de Corazón de Ébano y han continuado sus crueles incursiones en Ciénaga Negra. El mero hecho de navegar por los pantanos y las vías fluviales ha requerido toda tu atención, por lo que una de esas partidas de asaltantes ha conseguido pillarte desprevenido. No sabes si estás más enfadado por sus fechorías o por haber caído en su trampa. En cualquier caso, el líder de la banda no parece moco de pavo, así que tendrás que derrotarlo para poder escapar.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_01_m.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_02_audio" : {
+    "title": "COMUNIÓN CORRUPTA",
+    "description": "Ves a un grupo actuando de una manera muy extraña más adelante en el camino. Corren rumores de argonianos que actúan con hostilidad tras consumir la savia de un Hist enloquecido llamado Tsono-Xuhil. Aunque los forasteros podrían cuestionarse si un árbol puede volverse loco, ningún saxhleel dudaría de la posibilidad. Sea cual sea la causa de la aflicción de estos enemigos, sus ojos anaranjados llenos de odio brillan con más intensidad a medida que se acercan con las armas desenvainadas. Supones que la opción más ética sería aturdir a estos viajeros y esperar a que un sanador argoniano se encuentre con ellos.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_02_m.mp3",
+      "title": ""
+    }
+  },
+  "cn_ciudades": {
+    "title": "CIÉNAGA NEGRA: CIUDADES",
+    "description": "",
+    "options": [
+      {
+        "label": "Alten Corimont",
+        "description": "",
+        "next": "ciudad_cn_alten_audio"
+      }
+    ]
+  },
+  "ciudad_cn_alten_audio": {
+    "title": "",
+    "description": "Alten Corimont es una ciudad portuaria situada en las vías fluviales interiores de Ciénaga Negra, conocida por su monumento distintivo: un velero varado que desempeña diversas funciones sociales y comerciales para los residentes de la ciudad. Esta ciudad está dirigida por la capitana Ojo Único, una pirata argoniana en busca de su próximo pago.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/alten_corimont_intro_m.mp3",
+      "title": ""
+    }
+  },
+  "cn_misiones_gremio": {
+    "title": "CIÉNAGA NEGRA: MISIONES DE GREMIO",
+    "description": "",
+    "options": [
+      {
+        "label": "A01",
+        "description": "Selección antinatural - Gremio de magos",
+        "next": "mision_gremio_cn_a01"
+      },
+      {
+        "label": "A05",
+        "description": "El ladrón encarcelado - Gremio de ladrones",
+        "next": "mision_gremio_cn_a05"
+      }
+    ]
+  },
+  "mision_gremio_cn_a01": {
+    "title": "A01 - Selección antinatural - Gremio de magos",
+    "description": "El Gremio de magos busca aventureros fuertes y valerosos para recorrer Ciénaga Negra y acabar con unas peligrosas bestias. Te ofreces y te dan más información; resulta que, en las últimas semanas, han avistado en distintos puntos de la región animales extraños, de ojos brillantes, con espuma en la boca e incluso con extremidades adicionales. Incluso animales que por lo general son dóciles han estado atacando a la población sin provocación previa. El Gremio de magos sospecha que estas criaturas anómalas han sido modificadas por alguna clase de magia. Por tanto, solicitan que rastrees algunas de ellas y les entregues suficientes muestras para realizar un análisis detallado. Los informes indican que las bestias parecen calmarse ante una combinación de elementos vegetales poco comunes de Ciénaga Negra. Tal vez conseguir un ungüento utilizando estos reactivos podría simplificar la recogida de muestras.",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/a01_m.mp3",
+      "title": ""
+    }
+  },
+  "mision_gremio_cn_a05": {
+    "title": "A05 - El ladrón encarcelado - Gremio de ladrones",
+    "description": "Siguiendo la carta con instrucciones de tu gremio, llegas a las afueras de Leyawiin. Mientras buscas a tu contacto, un argoniano bien armado sale de detrás de unas rocas y tira de ti.\n\n«¿Te envía el Gremio de ladrones?», te pregunta, a la vez que te arranca la carta de las manos y la lee a toda prisa.\n\nSuspira, aliviado, antes de presentarse como «Busca Las Tinieblas», miembro del Gremio de ladrones.\n\n«Uno de los nuestros, Zirik, ha sido capturado durante un trabajo y está ahora retenido en una antigua prisión imperial. Una ruina de sitio, la verdad. Ya no es una prisión de verdad, solo un lugar controlado por una banda, la Guardia Negra, a los que están pagando para tener a Zirik encerrado. Es un amigo, y necesito que alguien lo saque. Sin embargo, es cierto que corren rumores de que hay algún tipo de conspiración detrás de la encarcelación de Zirik. Mi contacto está en Alten Corimont, así que allí es donde iremos primero».",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/a05_m.mp3",
+      "title": ""
+    }
+  }
+  
+}

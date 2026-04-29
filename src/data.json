@@ -31,6 +31,7 @@
       }
     ]
   },
+
   "cn_encuentros": {
     "title": "CIÉNAGA NEGRA: ENCUENTROS",
     "description": "",
@@ -48,21 +49,41 @@
       {
         "label": "GE-01",
         "description": "El ataque del Wabbajack",
-        "next": "encuentro_ge_01"
+        "next": "encuentro_ge_01_audio"
       },
       {
         "label": "GE-02",
         "description": "Mina abandonada",
         "next": "encuentro_ge_02_audio"
+      },
+      {
+        "label": "GE-03",
+        "description": "La inaudita caja de las maravillas",
+        "next": "encuentro_ge_03_audio"
       }
     ]
   },
-  
+  "encuentro_ge_01_audio": {
+    "title": "EL ATAQUE DEL WABBAJACK",
+    "description": "Mientras bajas un camino poco transitado, un grupo de figuras con túnicas te rodean. Su líder, un khajiita, alza un bastón con una cabeza con la boca muy abierta en su extremo.\n «¡El Gato del Skooma exige diversión!», exclama el peludo sectario.\n«¿Morderán tus dientes o agarrarán nuestras zarpas? ¡El Wabbajack proveerá y Sheggorath decidirá!».\nApunta con el bastón a uno de sus subordinados, que se transforma ante tus ojos en una cuña de queso. Si valoras tu integridad física, deberías pensar rápido qué hacer.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_01_m.mp3",
+      "title": ""
+    }
+  },
   "encuentro_ge_02_audio": {
     "title": "MINA ABANDONADA",
     "description": "A juzgar por el montón de escombros y restos oxidados que hay fuera de esta cueva, te has topado con una explotación minera abandonada hace ya mucho tiempo. En los tiempos que corren, es difícil identificar la causa. ¿Dejó de ser rentable o la guerra se acercó demasiado? Tal vez hubiera un derrumbe. Lo que está claro es que, desde fuera, va a ser imposible saberlo. Estás dividido; coger un pico y adentrarse en la cueva puede conducir a riquezas inesperadas, pero buscar en la pila de escombros parece bastante más seguro.",
     "audio": {
       "src": "audios/encuentros/general/ge_02_m.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_03_audio": {
+    "title": "LA INAUDITA CAJA DE LAS MARAVILLAS",
+    "description": "Un sombrío grupo de bandidos te acorrala. Uno de ellos revela una caja enigmática, con símbolos y grabados.\n\n «Tenemos muchas cosas que enseñarte...», te susurra el bandido mientras sus dedos acarician la caja, que parece cambiar de forma continuamente. No eres un experto en curiosidades de Apocrypha, pero sospechas que estás ante un artefacto de Hermaeus Mora, el príncipe daédrico del conocimiento prohibido. Lo que es seguro es que nada bueno puede salir de liberar el contenido de dicho artefacto, aunque interrumpir al bandido tampoco estará exento de peligros.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_03_m.mp3",
       "title": ""
     }
   },
@@ -82,6 +103,7 @@
       "title": ""
     }
   },
+
   "cn_ciudades": {
     "title": "CIÉNAGA NEGRA: CIUDADES",
     "description": "",
@@ -101,6 +123,7 @@
       "title": ""
     }
   },
+
   "cn_misiones_gremio": {
     "title": "CIÉNAGA NEGRA: MISIONES DE GREMIO",
     "description": "",

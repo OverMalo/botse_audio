@@ -5,9 +5,22 @@ const screenEl = document.getElementById("screen");
 const backBtn = document.getElementById("backBtn");
 const homeBtn = document.getElementById("homeBtn");
 
-let currentScreenId = "start";
-let historyStack = [];
-let pathLabels = [];
+function loadState() {
+  try {
+    const saved = sessionStorage.getItem("navState");
+    if (saved) return JSON.parse(saved);
+  } catch {}
+  return { currentScreenId: "start", historyStack: [], pathLabels: [] };
+}
+
+function saveState() {
+  sessionStorage.setItem("navState", JSON.stringify({ currentScreenId, historyStack, pathLabels }));
+}
+
+const state = loadState();
+let currentScreenId = state.currentScreenId;
+let historyStack = state.historyStack;
+let pathLabels = state.pathLabels;
 
 registerServiceWorker();
 render();
@@ -78,6 +91,7 @@ function renderOptions(node) {
       historyStack.push(currentScreenId);
       pathLabels.push(button.dataset.label || "");
       currentScreenId = button.dataset.next;
+      saveState();
       render();
     });
   });
@@ -141,6 +155,7 @@ function goBack() {
   if (!historyStack.length) return;
   currentScreenId = historyStack.pop();
   pathLabels.pop();
+  saveState();
   render();
 }
 
@@ -148,6 +163,7 @@ function goHome() {
   currentScreenId = "start";
   historyStack = [];
   pathLabels = [];
+  saveState();
   render();
 }
 

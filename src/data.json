@@ -82,6 +82,11 @@
         "label": "GE-07",
         "description": "Estanque inmaculado",
         "next": "encuentro_ge_07_audio"
+      },
+      {
+        "label": "GE-08",
+        "description": "Huesos rotos",
+        "next": "encuentro_ge_08_audio"
       }
     ]
   },
@@ -155,6 +160,14 @@
     "description": "Al subir una pequeña colina, encuentras una imagen de lo más curiosa. Todo tipo de animales, incluso enemigos naturales, bebiendo en armonía de un estanque de agua cristalina. El agua está tan limpia que puedes ver su fondo rocoso. Es una escena pintoresca que podrías arruinar con un simple movimiento. Cazar a alguna de estas criaturas podría otorgarte no solo un buen trofeo, sino una buena recompensa. Aunque, por otro lado, debe haber algo especial en ese agua para que los animales se comporten así. Puede que valga más la pena ir a probarla.",
     "audio": {
       "src": "audios/encuentros/general/ge_07.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_08_audio": {
+    "title": "HUESOS ROTOS",
+    "description": "Una voz espeluznante surge de las profundidades de la cueva en la que acabas de entrar.\n\n «¡Soy un temido nigromante de gran renombre! ¿Osas adentrarte en mis dominios? ¡Estos huesos me pertenecen a mí y solo a mí! Muchos son los que han tratado de vencer a mi ejército de esqueletos, ¡pero han sido demasiados huesos para todos ellos!».\n\n Las palabras se detienen para darte tiempo a pensar, pero algo te dice que, por muy invencible que se crea, es posible derrotarlo. Darte la vuelta ahora sería traicionar tu potencial.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_08.mp3",
       "title": ""
     }
   },

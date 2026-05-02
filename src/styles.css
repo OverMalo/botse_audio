@@ -158,6 +158,16 @@ body {
   border-color: #222;
 }
 
+.option-card--blue {
+  background: linear-gradient(180deg, #3a6ea5 0%, #1e3c72 60%, #0b1a33 100%);
+  border-color: #1e3c72;
+}
+
+.option-card--blueviolet {
+  background: linear-gradient(180deg, #6a6f8a 0%, #4c4f70 60%, #323553 100%);
+  border-color: #5a5d7a;
+}
+
 .option-card strong {
   display: block;
   font-size: 1rem;

@@ -4,49 +4,122 @@
     "description": "",
     "options": [
       {
-        "label": "Ciénaga Negra",
-        "description": "Occidental",
-        "next": "cienaga_negra"
-      }
-    ]
-  },
-  "cienaga_negra": {
-    "title": "CIÉNAGA NEGRA",
-    "description": "",
-    "options": [
-      {
         "label": "Ciudades",
         "description": "",
-        "next": "cn_ciudades"
+        "next": "ciudades"
       },
       {
         "label": "Encuentros",
         "description": "",
-        "next": "cn_encuentros"
+        "next": "encuentros"
       },
       {
-        "label": "Misiones de gremio",
+        "label": "Misiones",
         "description": "",
-        "next": "cn_misiones_gremio"
+        "next": "misiones"
       }
     ]
   },
 
-  "cn_encuentros": {
-    "title": "CIÉNAGA NEGRA: ENCUENTROS",
+  "encuentros": {
+    "title": "ENCUENTROS",
     "description": "",
     "options": [
       {
         "label": "CN-01",
         "description": "Rehenes de la Casa Telvanni",
-        "color" : "black",
-        "next": "encuentro_cn_01_audio"
+        "next": "encuentro_cn_01_audio",
+        "color": "black"
       },
       {
         "label": "CN-02",
         "description": "Comunión corrupta",
-        "color" : "black",
-        "next": "encuentro_cn_02_audio"
+        "next": "encuentro_cn_02_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-03",
+        "description": "Acuerdo o combate",
+        "next": "encuentro_cn_03_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-04",
+        "description": "Xanmeer inexplorado",
+        "next": "encuentro_cn_04_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-05",
+        "description": "Lo que queda de los ayleid",
+        "next": "encuentro_cn_05_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-06",
+        "description": "El origen de las especies",
+        "next": "encuentro_cn_06_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-07",
+        "description": "Caravana de esclavos",
+        "next": "encuentro_cn_07_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-08",
+        "description": "El botín de un pirata muerto",
+        "next": "encuentro_cn_08_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-09",
+        "description": "Lluvia misteriosa",
+        "next": "encuentro_cn_09_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-10",
+        "description": "Fiebre del pantano",
+        "next": "encuentro_cn_10_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-11",
+        "description": "Empantanado",
+        "next": "encuentro_cn_11_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-12",
+        "description": "Estafa de Hist",
+        "next": "encuentro_cn_12_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-13",
+        "description": "Ladrón en la noche",
+        "next": "encuentro_cn_13_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-14",
+        "description": "Un favor ovoide",
+        "next": "encuentro_cn_14_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-15",
+        "description": "Reparación de vallas",
+        "next": "encuentro_cn_15_audio",
+        "color": "black"
+      },
+      {
+        "label": "CN-16",
+        "description": "Capacidad tribal",
+        "next": "encuentro_cn_16_audio",
+        "color": "black"
       },
       {
         "label": "GE-01",
@@ -87,10 +160,296 @@
         "label": "GE-08",
         "description": "Huesos rotos",
         "next": "encuentro_ge_08_audio"
+      },
+      {
+        "label": "GE-09",
+        "description": "La economía del mercado negro",
+        "next": "encuentro_ge_09_audio"
+      },
+      {
+        "label": "GE-10",
+        "description": "¡Fuera de aquí!",
+        "next": "encuentro_ge_10_audio"
+      },
+      {
+        "label": "GE-11",
+        "description": "¿Los Ocho proveen?",
+        "next": "encuentro_ge_11_audio"
+      },
+      {
+        "label": "GE-12",
+        "description": "Un encargo inesperado",
+        "next": "encuentro_ge_12_audio"
+      },
+      {
+        "label": "GE-13",
+        "description": "Aires de grandeza",
+        "next": "encuentro_ge_13_audio"
+      },
+      {
+        "label": "GE-14",
+        "description": "Paz y sosiego",
+        "next": "encuentro_ge_14_audio"
+      },
+      {
+        "label": "GE-15",
+        "description": "Futuro imperfecto",
+        "next": "encuentro_ge_15_audio"
+      },
+      {
+        "label": "GE-16",
+        "description": "Lazos por doquier",
+        "next": "encuentro_ge_16_audio"
+      },
+      {
+        "label": "GE-17",
+        "description": "Proezas de fuerza",
+        "next": "encuentro_ge_17_audio"
+      },
+      {
+        "label": "GE-18",
+        "description": "Quienes se benefician de los peajes",
+        "next": "encuentro_ge_18_audio"
+      },
+      {
+        "label": "GE-19",
+        "description": "Cazar o recolectar",
+        "next": "encuentro_ge_19_audio"
+      },
+      {
+        "label": "GE-20",
+        "description": "Parte del velo",
+        "next": "encuentro_ge_20_audio"
+      },
+      {
+        "label": "SK-01",
+        "description": "Incomodidad fría",
+        "next": "encuentro_sk_01_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-02",
+        "description": "Los Puño de Tormenta",
+        "next": "encuentro_sk_02_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-03",
+        "description": "Mi reino por un cangrejo",
+        "next": "encuentro_sk_03_audio",
+        "color": "blueviolet"
+        
+      },
+      {
+        "label": "SK-04",
+        "description": "Falanges del destino",
+        "next": "encuentro_sk_04_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-05",
+        "description": "Resguardándose de una tormenta segadora",
+        "next": "encuentro_sk_05_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-06",
+        "description": "Dificultades a diestro y siniestro",
+        "next": "encuentro_sk_06_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-07",
+        "description": "Monolito maníaco",
+        "next": "encuentro_sk_07_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-08",
+        "description": "Los buenos precios son difíciles de defender",
+        "next": "encuentro_sk_08_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-09",
+        "description": "EEnredaderas hostiles",
+        "next": "encuentro_sk_09_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-10",
+        "description": "Sanadora exiliada",
+        "next": "encuentro_sk_10_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-11",
+        "description": "El aullido del Jarl",
+        "next": "encuentro_sk_11_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-12",
+        "description": "«Soledaridad»",
+        "next": "encuentro_sk_12_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-13",
+        "description": "Iniquidades por las antigüedades",
+        "next": "encuentro_sk_13_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-14",
+        "description": "Remedios caseros",
+        "next": "encuentro_sk_14_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-15",
+        "description": "El hacha marca el lugar",
+        "next": "encuentro_sk_15_audio",
+        "color": "blueviolet"
+      },
+      {
+        "label": "SK-16",
+        "description": "Bruja cuervo herida",
+        "next": "encuentro_sk_16_audio",
+        "color": "blueviolet"
       }
     ]
   },
   
+  "encuentro_sk_01_audio" : {
+    "title": "INCOMODIDAD FRÍA",
+    "description": "Hace frío, mucho frío, y tu tiempo de reacción se resiente. Llevas una eternidad de pie, el sol roza el horizonte y sólo piensas en dormir. Skyrim embota tus sentidos de una forma muy particular. Por supuesto, es en este momento cuando un grupo de bandidos asciende por la colina nevada que tienes delante. Te sacudes el frío de los huesos e intentas defenderte.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_01.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_02_audio" : {
+    "title": "LOS PUÑO DE TORMENTA",
+    "description": "«¡Alto!».\nEsperas inquieto mientras varios hombres y mujeres vestidos con pieles de lobo se acercan a ti, con las manos en sus armas. Su líder se adelanta y te habla.\n«Los de la brigada Puño de Tormenta somos los protectores de Skyrim, y exigimos un tributo».\nPor supuesto. Antes conocidos como el clan Puño de Tormenta, la brigada es leal al hermano y rival al trono del rey escaldo Jorunn: Fildgor Orcthane. Sin rumbo desde la derrota de Fildgor, han seguido causando problemas en Skyrim. No tienes interés alguno en proporcionar «tributo», pero ellos tampoco tienen interés alguno en dejarte libre.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_02.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_03_audio" : {
+    "title": "MI REINO POR UN CANGREJO",
+    "description": "La supervivencia en los páramos de Skyrim no está garantizada, y eso es especialmente cierto en esta época con invasores de Límite Sombrío. Tal vez harías bien en observar el ciclo vital del humilde cangrejo del barro, que prolifera incluso en climas inhóspitos como éste. O al menos, eso es lo que pensaste al capturar a este cangrejo para observarlo. En poco tiempo, se convirtió en una mascota, y luego, en un preciado compañero. Ahora, cuando tu viaje se ve interrumpido por un ataque de salteadores de caminos, sólo piensas en poner a Barrito a salvo lo antes posible.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_03.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_04_audio" : {
+    "title": "FALANGES DEL DESTINO",
+    "description": "Hasta hace poco, la mayoría de los habitantes de Tamriel nunca habían oído hablar de los falmer, los habitantes de Skyrim pensaban que no eran más que cuentos de hadas. Sin embargo, desde que la población del Límite Sombrío ha empezado a asaltar las ciudades y asentamientos de Skyrim, muchos han tenido terribles encuentros con ellos. Hay un falmer en particular que se ha convertido rápidamente en legendario por su aterrador aspecto y su destreza en estos asedios a ciudades. Se le conoce como Dedos pálidos, y los rumores sobre su presencia han hecho que las expediciones a las cuevas sean aún más aterradoras. Con algo de suerte, no estará en la cueva que has elegido para acampar esta noche.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_04.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_05_audio" : {
+    "title": "RESGUARDÁNDOSE DE UNA TORMENTA SEGADORA",
+    "description": "El cielo se tiñe de rojo y se te hiela la sangre. Conoces bien lo que se cuenta de las tormentas segadoras de Skyrim: fenómenos meteorológicos mágicos que matan a los desafortunados que se ven atrapados en ellas o, lo que es peor, los convierten en bestias segadas descerebrados. Recientemente, los vampiros de Límite Sombrío han estado invocando las tormentas como parte de su plan para hacerse con el control de Skyrim. Piensas rápido y corres hacia la cueva más cercana que encuentras. No estás preparado para adentrarte en la gélida caverna, pero tus opciones se limitan a desafiar el frío o enfrentarte a la tormenta.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_05.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_06_audio" : {
+    "title": "DIFICULTADES A DIESTRO Y SINIESTRO",
+    "description": "Skyrim siempre ha sido un lugar cruel e inhóspito en el que vivir, pero su actual situación política obliga a los viajeros a elegir entre dos opciones poco atractivas. Por un lado, Skyrim Occidental, un páramo anárquico, donde los tiempos son duros y sus gentes aún más, donde abundan los cuencanos y los vampiros, el hielo y las ventiscas. Por otro lado, Skyrim Oriental, con algo más de estabilidad gracias al Pacto de Corazón de Ébano, pero donde abundan las luchas de poder y el espionaje político. Por supuesto, estas diferencias solo preocupan a los filósofos, o, como mucho, a los aventureros cuando están descansando, pero al enfrentar a unos asaltantes en una mañana azotada por el viento, como tú ahora mismo, lo único en lo que puede uno pensar es en no perder el equilibrio y en vencer a los oponentes.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_06.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_07_audio" : {
+    "title": "MONOLITO MANÍACO",
+    "description": "Ves una estampa muy curiosa. En un claro frente a ti se yergue un monolito bastante grande, a kilómetros de distancia de donde se podría haber extraído tal piedra. Se alza imponente ante ti y, conforme te acercas, escuchas un sonido grave y vibrante que emana de él. Tu estómago comienza a contraerse y, nada más ver a otro grupo de aventureros en la cima de una colina, te embarga un sentimiento de ira. ¿Qué está pasando? Skyrim alberga una variedad de usuarios mágicos, desde devotos de Hircine, príncipe daédrico de la caza, hasta los Monjes de la Trinidad, adoradores de los Tres Dioses Antiguos. No tienes claro quién es responsable de este monolito, pero han producido en ti el deseo de combatir.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_07.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_08_audio" : {
+    "title": "LOS BUENOS PRECIOS SON DIFÍCILES DE DEFENDER",
+    "description": "Al bordear una colina escarchada, ves un conjunto de estructuras que parece formar una aldea, aunque en tu mapa no aparece ningún asentamiento. Un vistazo más de cerca revela una especie de mercado improvisado. Los edificios no son más que tiendas de campaña fortificadas contra las inclemencias del tiempo, y los animales de carga deambulan por las afueras, esperando a que se les llame para llevar a los mercaderes a otro lugar. Piensas si echar un vistazo a las mercancías que se ofrecen hasta que algo capta tu atención: a lo lejos, un grupo de guerreros de aspecto fuerte se acerca corriendo al campamento. Por sus caras, no parece que vengan a regatear.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_08.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_09_audio" : {
+    "title": "ENREDADERAS HOSTILES",
+    "description": "Oyes un extraño sonido que raspa la nieve. Al mirar a tu alrededor en busca de la fuente del ruido, descubres unas enredaderas puntiagudas que se abren camino hacia ti a toda velocidad. Has oído rumores de las Espinas Sangrientas de los cuencanos: son plantas sobre las que se usa magia para usarlas en ritos religiosos en la Cuenca. Se dice que están ocurriendo brotes de crecimiento descontrolado de estas enredaderas por todo Skyrim, y tu testimonio parece confirmarlo. Cuando una enredadera de Espina Sangrienta atrapa a un ser vivo, puede alterar su mente, así que te apresuras a encontrar una vía de escape.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_09.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_10_audio" : {
+    "title": "SANADORA EXILIADA",
+    "description": "Te encuentras con una curandera orca que te dice que procede de Wrothgar. Está claro que ha vivido tiempos mejores, pero insiste en que sus servicios no tienen parangón en todo Skyrim.\n«Deja que te lo demuestre. Todo lo que necesito es algo de dinero y algo de tiempo, y te sentirás bien como la lluvia. O como la nieve, si lo prefieres. Esto es Skyrim, después de todo».\nEs evidente que esta curandera necesita un empujoncito con su reputación, y espera que tu palabra pueda servirle en el futuro. No estás seguro de querer quedarte aquí, pero algo en los ojos de la orca sugiere que podrías arrepentirte de rechazarla.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_10.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_11_audio" : {
+    "title": "EL AULLIDO DEL JARL",
+    "description": "Sigue el sonido de un grito hasta una carreta de bueyes que ha volcado, probablemente por culpa de una inesperada placa de hielo en el camino. Debajo de la carreta hay una nórdica rubia que dice ser una jarl local de considerable reputación.\n«¡Ayudadme a quitarme esto de encima y llevadme a un sanador! Tendrás una buena recompensa».\nSopesas tus opciones. Lo caritativo, y lo prudente, también, si esta mujer es realmente jarl, sería ayudar. Por otra parte, tienes prisa, y la mercancía en el carro es bastante tentadora.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_11.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_12_audio" : {
+    "title": "«SOLEDARIDAD»",
+    "description": "Según tu mapa, te estás acercando a un puente. Sin embargo, ves que el camino está bloqueado por una gran multitud. Abriéndote paso entre los muchos curiosos, ves qué atrae la atención de la muchedumbre: un pequeño grupo de nórdicos que se han tumbado en el puente, bloqueando el paso a cualquier posible viajero. Su líder grita que están protestando por los bajos salarios en la maderera de Soledad, donde se compró la madera para construir este puente. Normalmente, buscarías otra forma de paso para evitar este obstáculo, pero las aguas del río bajo este puente están heladas y son muy traicioneras.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_12.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_13_audio" : {
+    "title": "INIQUIDADES POR LAS ANTIGÜEDADES",
+    "description": "Te despiertas con varias espadas apuntándote a la cara. Estos bandidos te tienen a su merced, pero lo que quieren no es ni tu dinero ni tus objetos. Lo que quieren es... ¿trabajo? La elfa del bosque que lidera el grupo te explica mientras se disculpa que están tratando de ganarse el favor del Círculo de Anticuarios, la sociedad histórica de Soledad para los artefactos perdidos.\n«Nos gustan mucho las antigüedades», te dice entre lágrimas.\n«Si pudiéramos encontrar algunas para el Círculo, tendrían que dejarnos entrar. Estamos buscando cualquier pista o encargo que nos ayude. ¿Puedes ayudarnos?».\nEs una petición tan extraña que casi te sientes obligado a ayudar a tus captores.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_13.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_14_audio" : {
+    "title": "REMEDIOS CASEROS",
+    "description": "Un elfo oscuro de aspecto descuidado se arrastra bajo la señal de un cruce, observando a los transeúntes con atención. Cuando te acercas, se levanta y saca un pequeño frasco de su túnica.\n«Si estás planeando vagar por los caminos de Skyrim, debes llevar contigo el \"Brebaleja\" de Ulon. Gracias a una mezcla especial de hongos en polvo de la Hondonada Lóbrega, este brebaje te protegerá, alejando de ti todos los efectos de las tormentas segadoras y cualquier tipo de dolencia vampírica».\n Abres el frasco y miras en su interior. El líquido es viscoso y ceniciento, pero los vampiros son un peligro real en Skyrim. ¿Qué es lo peor que podría pasar?",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_14.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_15_audio" : {
+    "title": "EL HACHA MARCA EL LUGAR",
+    "description": "¡Ventalia, la capital de Skyrim Oriental, está de celebración! Celebran el Festival Konunleikar, que conmemora el décimo aniversario de la coronación de Jorunn, el rey escaldo. Esta alegre ocasión incluye concursos muy variados por todo Skyrim, concursos que ponen a prueba la fuerza, la constitución y la agilidad de los participantes. Uno de ellos es el concurso de lanzamiento de hacha, y has oído que hay una gran recompensa para los que queden en una buena posición. Te encuentras con una de esas pruebas de lanzamiento de hachas y decides probar suerte.",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_15.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_sk_16_audio" : {
+    "title": "BRUJA CUERVO HERIDA",
+    "description": "Investigas un espeluznante siseo y descubres a una bruja cuervo herida escondida tras una pila de escombros, con las piernas impedidas por la congelación. Gruñe al verte, exigiendo que le perdones la vida.\n«¡Mátame y recibirás la ira de Nocturnal, Reina de la Penumbra, Hija del Crepúsculo...! Déjame en paz... y te daré una gran recompensa».",
+    "audio": {
+      "src": "audios/encuentros/skyrim/sk_16.mp3",
+      "title": ""
+    }
+  },
+
   "encuentro_cn_01_audio" : {
     "title": "REHENES DE LA CASA TELVANNI",
     "description": "Algunos elfos oscuros rebeldes han ignorado el acuerdo de paz del Pacto de Corazón de Ébano y han continuado sus crueles incursiones en Ciénaga Negra. El mero hecho de navegar por los pantanos y las vías fluviales ha requerido toda tu atención, por lo que una de esas partidas de asaltantes ha conseguido pillarte desprevenido. No sabes si estás más enfadado por sus fechorías o por haber caído en su trampa. En cualquier caso, el líder de la banda no parece moco de pavo, así que tendrás que derrotarlo para poder escapar.",
@@ -107,6 +466,119 @@
       "title": ""
     }
   },
+  "encuentro_cn_03_audio" : {
+    "title": "ACUERDO O COMBATE",
+    "description": "Un grupo de cazatesoros se te acerca haciéndote señas. Se les ve bien equipados y con no pocos tesoros en su poder. Sin embargo, están visiblemente desanimados. Uno de ellos da un paso adelante, un nórdico que parece agotado. Al parecer, llevan ya tiempo buscando a alguien dispuesto a comerciar con ellos con algún artefacto poco común de Ciénaga Negra, pero hasta ahora no han tenido ningún éxito. Abatidos tras tantos esfuerzos infructíferos, están interesados en cualquier tipo de trato, pagando generosamente si tuvieras algo de sobra.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_03.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_04_audio" : {
+    "title": "XANMEER INEXPLORADO",
+    "description": "La civilización argoniana prosperó en Ciénaga Negra en tiempos de los que apenas quedan registros. Hace muchas generaciones, los ancestros de los saxhleel de la actualidad construyeron los misteriosos xanmeer, pirámides escalonadas de gran tamaño que se alzan entre los pantanos. Hay muchos xanmeer medio hundidos que no han sido descubiertos y, casualmente, acabas de toparte con uno. La zona parece tranquila, y sientes que esta es una oportunidad irrepetible. Un plano fidedigno de un xanmeer intacto podría alcanzar un precio altísimo... si el cartógrafo logra encontrar luego la salida entre las sinuosas salas sumergidas del templo.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_04.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_05_audio" : {
+    "title": "LO QUE QUEDA DE LOS AYLEID",
+    "description": "Las ruinas ayleid son hallazgos poco frecuentes, sobre todo en los pantanos de Ciénaga Negra. Sin embargo, resulta que has logrado encontrar una de estas ruinas, con la puerta bloqueada con escombros y una nota sobre ellos:\n«Que sirva de advertencia a quien piense entrar: perturbar las ruinas olvidadas de Ciénaga Negra puede liberar peligros innombrables. Firmado: Quien mira debajo de las piedras».",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_05.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_06_audio" : {
+    "title": "EL ORIGEN DE LAS ESPECIES",
+    "description": "Oyes un gruñido rompiendo el silencio. Te parece un poco familiar... Es de origen animal, eso es seguro, pero, ¿de qué clase de animal? Tras rodear una pequeña arboleda, ves la fuente del sonido y entiendes el porqué de tu confusión. Lo que tienes delante se parece a algo que ya habías visto, pero es distinto. Parece una nueva raza de animal, puede que sea un híbrido impío. Y es grande, muy grande. ¡Estudiarlo en profundidad podría ayudar a comprender mejor la naturaleza de Ciénaga Negra! Desgraciadamente, no eres el primero en descubrir a la bestia. Está rodeada por un harapiento grupo de mercenarios que seguramente pretenden cazarla por una buena recompensa.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_06.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_07_audio" : {
+    "title": "CARAVANA DE ESCLAVOS",
+    "description": "El crepitar del fuego delata un campamento oculto en la pantanosa jungla. Al acercarte, ves una caravana de elfos oscuros preparándose para pasar la noche. Sin embargo, tras fijarte con más atención, te das cuenta de que hay miembros de otras razas: khajiitas, argonianos y más, todos encadenados y vigilados por un elfo oscuro que hace guardia. Está claro que no todos los elfos oscuros se toman en serio la prohibición del Pacto de Corazón de Ébano sobre el comercio de esclavos, algo que vas a corregir de inmediato.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_07.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_08_audio" : {
+    "title": "EL BOTÍN DE UN PIRATA MUERTO",
+    "description": "La existencia de Alten Corimont siempre ha garantizado gran afluencia de piratas y contrabandistas en Ciénaga Negra, pero la mayoría de sus historias legendarias sobre tesoros escondidos por la región no son más que habladurías típicas de una noche en una taberna. Este mapa, en cambio, parece algo más real. Lo has encontrado arrugado en la mano de un esqueleto orco casi descompuesto. Un vistazo rápido a los alrededores demuestra que todos los elementos del paisaje aparecen en el mapa justo donde deberían. Con él, llegas a la entrada de una caverna escondida. Es muy probable que haya un valioso botín en su interior, pero también lo es que aparezcan muchos saqueadores si se corre la voz.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_08.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_09_audio" : {
+    "title": "LLUVIA MISTERIOSA",
+    "description": "Al partir, sientes un viento a tus espaldas, dándote la bienvenida, pero, después, el cielo se oscurece, y te percatas de que no es un mero cambio en la brisa. En poco tiempo, del cielo, aún más oscuro, surgen cientos de relámpagos, llenando el ambiente del rugido de los truenos. Finalmente, empieza a caer una lluvia caliente, apestosa y de un color turbio entre amarillo y marrón que te empapa en un instante. Cuando por fin amaina, te ves rodeado de una densa niebla que reduce la visión a unos pocos metros. Continuar tu camino en estas condiciones es desafío más que suficiente para el día de hoy.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_09.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_10_audio" : {
+    "title": "FIEBRE DEL PANTANO",
+    "description": "El fétido ambiente de la Ciénaga Negra tiene fama de ser caldo de cultivo de múltiples enfermedades, y con razón. Después de tratar con la inmundicia de algún pantano desconocido hace un tiempo, aún no has conseguido secarte del todo. Sientes una profunda fatiga y tu visión se nubla, debes tener algún tipo de infección. Cada momento que pasa te queda más claro que ignorar tu estado de salud es jugarse la vida. Necesitas descansar, pero eso podría llevarte un tiempo del que simplemente no dispones.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_10.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_11_audio" : {
+    "title": "EMPANTANADO",
+    "description": "En los pantanos más recónditos de Ciénaga Negra es fácil perderse por seguir un supuesto rastro que no tarda en desaparecer. Este pantano en particular es especialmente fétido y, antes de que te des cuenta, un par de giros erróneos te han llevado a pisar un suelo muy inestable, acabando cubierto de aguas venenosas hasta las axilas. Más adelante parece haber algo de tierra firme donde tal vez podrías orientarte, pero llegar hasta allí no va a resultar nada fácil.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_11.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_12_audio" : {
+    "title": "ESTAFA DE HIST",
+    "description": "Mientras te preparas para descansar por hoy, se te acerca una alta elfa excepcionalmente pálida, con un ojo blanquecino. Trae en sus manos una pequeña botella con un líquido ambaroso en su interior y cerrada con un gran corcho. Te la acerca, ofreciéndotela.\n\n«¿Quieres una buena moneda de cambio en estos oscuros pantanos? Te ofrezco savia de Hist a un precio reducido. Mi proveedor me consigue muestras con un sustancioso descuento con el que me gusta beneficiar a aventureros como tú».\n\nNo eres tan ingenuo como para creer en la autenticidad de esa savia, es más falsa que un mapa que indique la localización del Ojo de Argonia. Sin embargo, incluso una falsificación podría resultar útil...",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_12.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_13_audio" : {
+    "title": "LADRÓN EN LA NOCHE",
+    "description": "El olor a carne cocinándose que flota en el aire te guía hasta un campamento argoniano. Te acercas, buscando tomarte un respiro, pero rápidamente notas que te miran con recelo. Miras a tu alrededor y, al borde del campamento, fuera del campo de visión de los argonianos, ves a un elfo oscuro vestido con harapos toqueteando un cofre cerrado. El elfo alza la cabeza y te mira, preocupado por tu próxima acción.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_13.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_14_audio" : {
+    "title": "UN FAVOR OVOIDE",
+    "description": "Una argoniana muy agitada se te acerca buscando ayuda. Es la guardiana de un centro de incubación cercano en el que cuidan algunos huevos de argoniano. Te pide que la sustituyas mientras ella viaja a Helstrom para atender unos asuntos familiares importantes. A cambio, te promete una sustanciosa recompensa, ya que estarás haciéndole un favor a su tribu que no olvidarán.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_14.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_15_audio" : {
+    "title": "REPARACIÓN DE VALLAS",
+    "description": "Al pasar junto a una pequeña granja de arroz de sal, ves a un argoniano de mediana edad descamisetado, tirando con fuerza de un poste roto de sus vallas que está medio hundido en el barro. Cuando te ve, te hace señas para llamarte, desatendiendo su tarea y molestándose al ver que el poste se hunde cada vez más.\n\n «¡Esos elfos oscuros...! ¡Se piensan que, ahora que se ha firmado el Pacto, todo queda perdonado! Pero controlan el mercado del arroz de sal y no respetan la tierra que trabajan si no es el hogar de un mer. Ahora intento arreglármelas solo, pero cada vez me sobra menos tras alimentar a los kwama. ¿Te importaría pasar una tarde ayudándome?».",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_15.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_cn_16_audio" : {
+    "title": "CAPACIDAD TRIBAL",
+    "description": "Con toda naturalidad, un argoniano varón sale de un matorral.\n\n«Mi tribu ha estado siguiéndote. Respetas la tierra y viajas con... cierta habilidad, aunque se nota que no eres uno con el pantano. Nosotros hemos vivido toda nuestra vida en las profundidades de estas aguas. Comercia con nosotros y te enseñaremos a moverte por el pantano».\n\nTu misión sigue siendo necesaria, pero rechazar una oferta como esta parece insolente e imprudente por tu parte.",
+    "audio": {
+      "src": "audios/encuentros/cienaga_negra/cn_16.mp3",
+      "title": ""
+    }
+  },
+
   "encuentro_ge_01_audio": {
     "title": "EL ATAQUE DEL WABBAJACK",
     "description": "Mientras bajas un camino poco transitado, un grupo de figuras con túnicas te rodean. Su líder, un khajiita, alza un bastón con una cabeza con la boca muy abierta en su extremo.\n «¡El Gato del Skooma exige diversión!», exclama el peludo sectario.\n«¿Morderán tus dientes o agarrarán nuestras zarpas? ¡El Wabbajack proveerá y Sheggorath decidirá!».\nApunta con el bastón a uno de sus subordinados, que se transforma ante tus ojos en una cuña de queso. Si valoras tu integridad física, deberías pensar rápido qué hacer.",
@@ -171,9 +643,105 @@
       "title": ""
     }
   },
+  "encuentro_ge_09_audio": {
+    "title": "LA ECONOMÍA DEL MERCADO NEGRO",
+    "description": "Aunque sus operaciones son un fastidio para los que aman la ley y el orden, el Gremio de ladrones se ha ganado un lugar como una institución más en Tamriel. La mayoría de autoridades toleran su presencia a cambio de que el gremio mantenga sus actividades delictivas e ilícitas a un nivel «aceptable». Una de las tradiciones más famosas del gremio es que sus miembros dejen aquellos objetos robados que no necesiten en «tesoros de ladrones» repartidos por el campo. Hoy, sin embargo, te has encontrado con un justiciero un poco despistado que ha reunido varios de estos tesoros con el fin de destruir esta valiosa (aunque delictiva) red de ayuda. Sin duda alguna, tú prefieres que los tesoros sigan en circulación...",
+    "audio": {
+      "src": "audios/encuentros/general/ge_09.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_10_audio": {
+    "title": "¡FUERA DE AQUÍ!",
+    "description": "Hoy hay demasiada gente en el camino principal, así que decides buscar una ruta alternativa cruzando valles y colinas remotos. Conforme te alejas del camino, notas unas piedras con formas extrañas tapadas por la maleza. Con curiosidad, comienzas a excavar, y pronto te das cuenta de que has dado con unas ruinas ayleid desconocidas. Mientras las exploras, oyes a unos bandidos conversar. Parece que han encontrado tu descubrimiento. Ojeas el interior de las ruinas y ves varios armeros antiguos. No tienes ni idea de si las armas en ellos aún serán útiles, pero es seguro que esos rufianes querrán descubrirlo.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_10.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_11_audio": {
+    "title": "¿LOS OCHO PROVEEN?",
+    "description": "Un alto elfo algo desaliñado se cruza en tu camino, llevando sus pertenencias empaquetadas y atadas al extremo de su bastón de restauración.\n\n«Dime, amigo, ¿donarías algo a un mago trabajador? Cuando se muestra generosidad, ¡los Ocho recompensan!».\n\nPor su aspecto, no parece que este alto elfo dedique mucho tiempo a estar en comunión con los Ocho, pero... que un mago te deba una siempre es algo bueno, ¿no? Compruebas tu bolsa para ver si hay algo de lo que no te importaría desprenderte.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_11.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_12_audio": {
+    "title": "UN ENCARGO INESPERADO",
+    "description": "Ves un viajero algo más adelante en el camino que se tuerce el tobillo y cae al suelo, así que te acercas para ayudarle. Cuando se gira a mirarte, das un paso atrás, sorprendido por sus ojos grises y su pálida piel. El maormer, o elfo del mar, solo dice «gracias» mientras lo ayudas a ponerse en pie.\n\n«Como ves, estoy herido», dice el elfo mientras se recoloca su armadura de cuero y comprueba sus afiladas dagas.\n«Pero estoy en medio de un trabajo y, si no puedo completarlo... Bueno, yo siempre cumplo. Pareces hábil. Si me ayudas con mi encargo, me aseguraré de que recibas una buena compensación».",
+    "audio": {
+      "src": "audios/encuentros/general/ge_12.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_13_audio": {
+    "title": "AIRES DE GRANDEZA",
+    "description": "«Oye, tú...».\n\nMiras por todos lados hasta que ves a una khajiita escondida, moviendo la mano para captar tu atención. En su otra mano tiene una pequeña bolsita. Se acerca y te la coloca en la mano mientras sus orejas se mueven, en alerta. \n\n«Nueva azúcar lunar para mentes abiertas. Da fuerza, da poder. Tómala y habla a otros de khajiita y su mercancía».\n\nDando un paso atrás, evalúas a tu nueva conocida. Está claro que te acaba de dar una muestra de su producto, pero un aumento de fuerza en combate puede resultar muy útil, siempre y cuando los efectos secundarios no sean demasiado fuertes...",
+    "audio": {
+      "src": "audios/encuentros/general/ge_13.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_14_audio": {
+    "title": "PAZ Y SOSIEGO",
+    "description": "A veces, es fácil no darse cuenta, por estar centrado en las misiones o en los peligros a tu alrededor, de que el mundo que te rodea es precioso. Tamriel es un lugar hostil, cierto, pero también es un lugar lleno de bondad, un deleite para los sentidos y está lleno de vistas sobrecogedoras. Es importante tomarse un respiro y disfrutar de la fortuna de seguir vivo un día más.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_14.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_15_audio": {
+    "title": "FUTURO IMPERFECTO",
+    "description": "Ves un puesto en medio del camino del que sale un olor rancio. En él, un imperial de avanzada edad, con barba desaliñada y ojos enrojecidos, te mira y te hace señas con las manos.\n\n«¡Te aguardan grandes sucesos! Por una moneda a un anciano, sabrás lo que el futuro te tiene preparado».\n\nTu primer impulso es rechazarlo con educación, pero te das cuenta de que, escondido entre sus pies, tiene un saco lleno de oro. Está claro que los lugareños depositan mucha confianza en este supuesto adivino, y quizás tú deberías hacer lo mismo.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_15.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_16_audio": {
+    "title": "LAZOS POR DOQUIER",
+    "description": "Oyes un grito y ves a una bretona agachada en el camino, colocando una especie de lazo.\n\n«Ten cuidado con ese camino, viajero. Hay bandidos en la zona y he decidido poner a prueba unas trampas que he diseñado yo misma».\n\nTe mira con detenimiento.\n\n«¿Sabes?Tal vez podrías ayudarme a colocarlas. Después de todo, cuanto más efectivas sean mis trampas, ¡más fácil te resultará tu viaje!».",
+    "audio": {
+      "src": "audios/encuentros/general/ge_16.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_17_audio": {
+    "title": "PROEZAS DE FUERZA",
+    "description": "Te detienes ante el paso del pregonero de una feria ambulante, un orco desdentado cuyo aspecto estropeado no logra anular su inexplicable encanto. Antes de que te des cuenta, te encuentras haciendo cola en una caseta de aún peor aspecto que el orco, desenfundando tus armas y preparándote para poner a prueba tu fuerza en un juego de «habilidad», posiblemente amañado.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_17.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_18_audio": {
+    "title": "QUIENES SE BENEFICIAN DE LOS PEAJES",
+    "description": "Te han advertido de que el camino se vuelve casi intransitable a partir de este punto. Al parecer, esta zona está llena de animales venenosos y el terreno es irregular. Un grupo de listillos ha aprovechado la situación para crear una improvisada estación de peajes en el camino más accesible de la zona. No te apetece darles el dinero que tanto te ha costado conseguir, así que tienes un par de opciones disponibles. Puedes intentar colarte sin ser visto o puedes aventurarte a cruzar el entorno natural.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_18.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_19_audio": {
+    "title": "CAZAR O RECOLECTAR",
+    "description": "Te encuentras con una caravana destrozada. Hay contenedores saqueados y varios cadáveres. Ya es demasiado tarde para ayudar a estas personas, pero te das cuenta de que puedes sacar beneficio de esta desgracia. Es probable que quede algo rescatable entre los restos, si rebuscas el tiempo necesario. Por otra parte, un estudio cuidadoso de las huellas que se alejan de la escena podría proporcionar información valiosa sobre los enemigos que acechan en el camino.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_19.mp3",
+      "title": ""
+    }
+  },
+  "encuentro_ge_20_audio": {
+    "title": "PARTE DEL VELO",
+    "description": "«Adelante, pase».\n\n Una anciana dunmeri te hace señas para que entres en su andrajosa tienda y te indica que te sientes en el suelo cubierto de polvo frente a ella. Antes de que puedas negarte, te ves arrastrado al interior. Con sus manos te hace un claro gesto con el que exige monedas a cambio de «servicios místicos». Estás a punto de negarte, pero entonces empieza a decirte detalles personales tuyos y sus ojos te miran amenazantes. Debes hacer algo con esta chantajista sobrenatural, ya sea ceder a sus exigencias o asegurarte de que sepa que no debe amenazarte.",
+    "audio": {
+      "src": "audios/encuentros/general/ge_20.mp3",
+      "title": ""
+    }
+  },
 
-  "cn_ciudades": {
-    "title": "CIÉNAGA NEGRA: CIUDADES",
+  "ciudades": {
+    "title": "CIUDADES",
     "description": "",
     "options": [
       {
@@ -192,8 +760,8 @@
     }
   },
 
-  "cn_misiones_gremio": {
-    "title": "CIÉNAGA NEGRA: MISIONES DE GREMIO",
+  "misiones": {
+    "title": "MISIONES",
     "description": "",
     "options": [
       {

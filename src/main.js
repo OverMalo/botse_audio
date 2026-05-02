@@ -62,6 +62,8 @@ let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? s
 const contentTree = buildTreeFromStart();
 const accordionIndex = buildAccordionIndex(contentTree);
 
+let swRegistration = null;
+
 registerServiceWorker();
 render();
 
@@ -96,7 +98,15 @@ function registerServiceWorker() {
           window.location.reload();
         });
 
+        swRegistration = registration;
         registration.update();
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible" && swRegistration) {
+            swRegistration.update().catch(() => {});
+          }
+        });
+
         console.log("Service worker registrado");
       } catch (error) {
         console.error("Error registrando service worker:", error);
@@ -205,6 +215,8 @@ function bindPanelEvents() {
 function togglePanel(panelId) {
   if (!panelId) return;
 
+  let isOpening = false;
+
   if (expandedPanels.has(panelId)) {
     collapseBranch(panelId);
   } else {
@@ -218,10 +230,17 @@ function togglePanel(panelId) {
     });
 
     expandedPanels.add(panelId);
+    isOpening = true;
   }
 
   saveState();
   render();
+
+  if (isOpening) {
+    const contentEl = document.getElementById(`${panelId}-content`);
+    const audioEl = contentEl?.querySelector("audio");
+    if (audioEl) audioEl.play().catch(() => {});
+  }
 }
 
 function collapseBranch(panelId) {

@@ -29,7 +29,34 @@ function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
-        await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`);
+        const registration = await navigator.serviceWorker.register(
+          `${import.meta.env.BASE_URL}sw.js`,
+          { updateViaCache: "none" }
+        );
+
+        if (registration.waiting) {
+          registration.waiting.postMessage({ type: "SKIP_WAITING" });
+        }
+
+        registration.addEventListener("updatefound", () => {
+          const newWorker = registration.installing;
+          if (!newWorker) return;
+
+          newWorker.addEventListener("statechange", () => {
+            if (
+              newWorker.state === "installed" &&
+              navigator.serviceWorker.controller
+            ) {
+              newWorker.postMessage({ type: "SKIP_WAITING" });
+            }
+          });
+        });
+
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          window.location.reload();
+        });
+
+        registration.update();
         console.log("Service worker registrado");
       } catch (error) {
         console.error("Error registrando service worker:", error);

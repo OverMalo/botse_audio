@@ -237,9 +237,12 @@ function togglePanel(panelId) {
   render();
 
   if (isOpening) {
-    const contentEl = document.getElementById(`${panelId}-content`);
-    const audioEl = contentEl?.querySelector("audio");
-    if (audioEl) audioEl.play().catch(() => {});
+    const node = findNodeById(contentTree, panelId);
+    if (node?.type === "leaf") {
+      const contentEl = document.getElementById(`${panelId}-content`);
+      const audioEl = contentEl?.querySelector("audio");
+      if (audioEl) audioEl.play().catch(() => {});
+    }
   }
 }
 

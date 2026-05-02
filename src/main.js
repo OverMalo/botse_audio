@@ -226,6 +226,7 @@ function togglePanel(panelId) {
 
 function collapseBranch(panelId) {
   expandedPanels.delete(panelId);
+  revealedDescriptions.delete(panelId);
   const children = accordionIndex.childrenByParent.get(panelId) || [];
   children.forEach((childId) => collapseBranch(childId));
 }
@@ -294,75 +295,70 @@ function renderPanel(node, level) {
 }
 
 function renderLeafContent(node) {
-  const tags = [];
-  if (node.tags.provincia && PROVINCIA_LABELS[node.tags.provincia]) {
-    tags.push(PROVINCIA_LABELS[node.tags.provincia]);
-  }
-
-  if (node.tags.gremio && GREMIO_LABELS[node.tags.gremio]) {
-    tags.push(GREMIO_LABELS[node.tags.gremio]);
-  }
-
-  const tagsHtml = tags.length
-    ? `<div class="tag-row">${tags.map((tag) => `<span class="tag-chip">${escapeHtml(tag)}</span>`).join("")}</div>`
-    : "";
+  const tagsHtml = "";
 
   const audioSrc = node.audioSrc
     ? `${import.meta.env.BASE_URL}${node.audioSrc.replace(/^\/+/, "")}`
     : "";
 
-  const hasDescription = Boolean(node.description);
-  const isDescriptionRevealed = revealedDescriptions.has(node.id);
-
-  const descriptionHtml = hasDescription
-    ? isDescriptionRevealed
-      ? `
-        <button
-          type="button"
-          class="spoiler-toggle"
-          data-reveal-description="${escapeAttribute(node.id)}"
-          aria-expanded="true"
-        >
-          Ocultar texto
-        </button>
-        <p class="description leaf-description">${escapeHtml(node.description)}</p>
-      `
-      : `
-        <button
-          type="button"
-          class="spoiler-preview"
-          data-reveal-description="${escapeAttribute(node.id)}"
-          aria-expanded="false"
-        >
-          <span class="spoiler-lines" aria-hidden="true">
-            <span class="spoiler-line"></span>
-            <span class="spoiler-line"></span>
-            <span class="spoiler-line"></span>
-          </span>
-        </button>
-      `
-    : "";
+  const descriptionHtml = renderLeafDescription(node);
 
   return `
     <article class="leaf-content">
       ${audioSrc
         ? `<audio controls preload="none" src="${escapeAttribute(audioSrc)}"></audio>`
         : '<p class="empty">Falta definir la ruta del audio.</p>'}
-      ${descriptionHtml}
+      <div class="leaf-description-block">
+        ${descriptionHtml}
+      </div>
       ${tagsHtml}
     </article>
   `;
 }
 
+function renderLeafDescription(node) {
+  const hasDescription = Boolean(node.description);
+  const isDescriptionRevealed = revealedDescriptions.has(node.id);
+
+  if (!hasDescription) {
+    return "";
+  }
+
+  if (isDescriptionRevealed) {
+    return `<p class="description leaf-description">${escapeHtml(node.description)}</p>`;
+  }
+
+  return `
+    <button
+      type="button"
+      class="spoiler-preview"
+      data-reveal-description="${escapeAttribute(node.id)}"
+      aria-expanded="false"
+    >
+      <span class="spoiler-lines" aria-hidden="true">
+        <span class="spoiler-line"></span>
+        <span class="spoiler-line"></span>
+        <span class="spoiler-line"></span>
+      </span>
+    </button>
+  `;
+}
+
 function bindDescriptionRevealEvents() {
   screenEl.querySelectorAll("[data-reveal-description]").forEach((button) => {
-    button.addEventListener("click", () => {
+    if (button.dataset.bound === "true") return;
+    button.dataset.bound = "true";
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       toggleDescription(button.dataset.revealDescription || "");
     });
 
     button.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
+      event.stopPropagation();
       toggleDescription(button.dataset.revealDescription || "");
     });
   });
@@ -378,7 +374,33 @@ function toggleDescription(panelId) {
   }
 
   saveState();
-  render();
+  updateDescriptionDisplay(panelId);
+}
+
+function updateDescriptionDisplay(panelId) {
+  const contentEl = document.getElementById(`${panelId}-content`);
+  if (!contentEl) return;
+
+  const descriptionBlockEl = contentEl.querySelector(".leaf-description-block");
+  if (!descriptionBlockEl) return;
+
+  const node = findNodeById(contentTree, panelId);
+  if (!node || node.type !== "leaf") return;
+
+  descriptionBlockEl.innerHTML = renderLeafDescription(node);
+  bindDescriptionRevealEvents();
+}
+
+function findNodeById(nodes, id) {
+  for (const node of nodes) {
+    if (node.id === id) return node;
+    if (!node.children.length) continue;
+
+    const found = findNodeById(node.children, id);
+    if (found) return found;
+  }
+
+  return null;
 }
 
 function filterTree(node) {

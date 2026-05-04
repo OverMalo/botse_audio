@@ -1006,29 +1006,6 @@
         "gremioTag": "all"
       },
       {
-        "label": "CY-13",
-        "description": "Oír al pasado",
-        "provinciaTag": "cyrodiil",
-        "leafDescription": "Hay residentes de Cyrodiil que ven la guerra como una distracción de una tarea superior y que solo tratan con las cambiantes alianzas de la región cuando es necesario. Uno de estos ciudadanos, una mujer imperial de mediana edad que ha dedicado su vida a comunicarse con los espíritus ayleid, se dirige a ti.\n«Los elfos salvajes gobernaron esta tierra durante siglos antes de que llegáramos», explica mientras organiza varios talismanes de invocación en el suelo roto de una de las muchas ruinas ayleid de Cyrodiil.\n«Pueden proporcionarnos información sobre sus antiguas costumbres, si estamos dispuestos a buscarlos, claro».",
-        "audio": {
-          "src": "audios/encuentros/cyrodiil/cy_13.mp3",
-          "title": ""
-        },
-        "gremioTag": "all"
-      },
-      {
-        "label": "CY-13",
-        "description": "Oír al pasado",
-        "provinciaTag": "cyrodiil",
-        "leafDescription": "Hay residentes de Cyrodiil que ven la guerra como una distracción de una tarea superior y que solo tratan con las cambiantes alianzas de la región cuando es necesario. Uno de estos ciudadanos, una mujer imperial de mediana edad que ha dedicado su vida a comunicarse con los espíritus ayleid, se dirige a ti.\n«Los elfos salvajes gobernaron esta tierra durante siglos antes de que llegáramos», explica mientras organiza varios talismanes de invocación en el suelo roto de una de las muchas ruinas ayleid de Cyrodiil.\n«Pueden proporcionarnos información sobre sus antiguas costumbres, si estamos dispuestos a buscarlos, claro».",
-        "audio": {
-          "src": "audios/encuentros/cyrodiil/cy_13.mp3",
-          "title": ""
-        },
-        "gremioTag": "all"
-      },
-
-      {
         "label": "SK-01",
         "description": "Incomodidad fría",
         "provinciaTag": "skyrim",

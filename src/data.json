@@ -658,7 +658,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Desde la formación del Pacto de Corazón de Ébano, hay muchas menos bandas de rufianes capturando a los viajeros en Morrowind. Sin embargo, aún existen algunos de esos grupos, y sus prácticas se han recrudecido tras la creación del Pacto. Un grupo de dichos forajidos te ha emboscado al amparo de la oscuridad cuando pasabas cerca de su cuartel general, una mina de huevos. Gracias a dicha oscuridad, has podido zafarte de alguna de tus cadenas sin que te vean, pero más te vale terminar con el resto antes de que tus captores se den cuenta",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_01.mp3",
+          "src": "audios/encuentros/morrowind/mw_01.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -669,7 +669,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Una de las imponentes setas de Morrowind ha caído desde la cima de una colina, rodando hasta llegar a la base. Te acercas con curiosidad; los tallos gigantes suelen ser bastante resistentes, y es extraño ver uno abatido por los elementos. Sin embargo, cuando te acercas, un orco bajito y corpulento salta de detrás de la cabeza de la seta caída, con los ojos enrojecidos por la furia.\n«¡Esta es NUESTRA seta! ¡No puedes cogerla!». Mientras te grita, saltan trozos de seta de su boca. Antes de que puedas protestar, el orco se abalanza sobre ti.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_02.mp3",
+          "src": "audios/encuentros/morrowind/mw_02.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -680,7 +680,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Mientras pasas por una mina de huevos, un minero te hace una oferta de trabajo. El capataz, un sombrío elfo oscuro con muchas cicatrices en brazos y piernas, te explica la situación.\n«Hemos tenido muchos problemas con merodeadores que nos arrebatan los huevos en incursiones nocturnas. Les hemos dado cuanto hemos podido, pero mis hombres no pueden más, y tenemos razones para creer que los bandidos volverán esta noche. Si pudiéramos contar con tu ayuda en combate, creo que podremos ahuyentarlos para siempre».\nTe ofrece pagarte una prima en función de la cantidad de mercancía que logres proteger.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_03.mp3",
+          "src": "audios/encuentros/morrowind/mw_03.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -691,7 +691,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Te detienes al grito de «¡Buenas, aventurero!». Tras unas rocas ves asomarse a un grupo de harapientos buscadores de tesoros, cargados de picos, cepillos e incluso armas. El líder del grupo, un alto elfo con una gran cicatriz en la cara, toma la palabra.\n«¡Es tu día de suerte! Hemos encontrado una de las ruinas dwemeri en mejor estado hasta la fecha y queremos compartir nuestra fortuna. A cambio, solo necesitaríamos un poco de mano de obra. ¡Descubramos juntos sus secretos!».\nUna oportunidad tan repentina suena poco creíble, pero es cierto que Morrowind está repleto de ruinas dwemeri. Tal vez haya algo de verdad en todo esto.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_04.mp3",
+          "src": "audios/encuentros/morrowind/mw_04.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -702,7 +702,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Los dwemer dejaron su huella a lo largo y ancho de Tamriel, pero quizá en ningún lugar tanto como en Morrowind. La región está plagada de viejas ruinas enanas, recuerdos constantes de una antigua civilización. Te encuentras de frente con varias cajas de sus artefactos recién colocadas en unas ruinas por las que pasas, y tu primer instinto es salir corriendo de allí y esperar que quienquiera que esté usando estos objetos no los use contigo. Sin embargo, antes de que puedas hacerlo, te abordan los propietarios de dichos artefactos, y está claro que preferirían que no quedaran testigos.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_05.mp3",
+          "src": "audios/encuentros/morrowind/mw_05.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -713,7 +713,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "En Morrowind hay tesoros por todas partes. Si escarbas, tal vez encuentres un vestigio de los dwemer que puedas vender por un buen pico. Pasea por unas ruinas o un campo de batalla y es probable que te tropieces con una reliquia de una de las casas de los elfos oscuros esperando a ser encontrada. Y, por supuesto, innumerables objetos de valor de otras culturas han llegado a la región debido a las numerosas conquistas de los elfos oscuros. Las riquezas pueden ser tuyas si tan solo las encuentras, y la propiedad es algo que hay que mantener constantemente. Al menos, así te justificas a ti mismo mientras te acercas a un tentador cofre rodeado de unos fornidos guardias.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_06.mp3",
+          "src": "audios/encuentros/morrowind/mw_06.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -724,7 +724,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Entras en una cueva buscando refugio, pero oyes unos ruidos en su interior que te invitan a investigar. En las sombras, te parece ver una elfa organizando lo que da la impresión de ser una excavación. Por su aspecto fuerte y actitud severa deduces que no le haría ninguna gracia ser interrumpida, así que te alejas con cautela. Sin embargo, accidentalmente pisas un scrib, que suelta un lastimero grito ahogado. El sonido de rápidas pisadas acercándose que oyes te hace dudar de que puedas salir de aquí con una simple disculpa.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_07.mp3",
+          "src": "audios/encuentros/morrowind/mw_07.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -735,7 +735,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Las mentes más brillantes de la Segunda Era siguen aprendiendo cosas nuevas sobre las construcciones de los dwemer. Los miembros de la raza enana eran portentos técnicos, y en ningún lugar queda tan claro como en las ruinas de sus hogares subterráneos en Morrowind. Te has topado con una de esas ruinas y, a juzgar por los ruidos que se escuchan, en el interior de la cueva sigue funcionando algún proceso automatizado. Esto tal vez haga que la exploración sea más peligrosa, pero también que encuentres cosas en mejor estado y, por tanto, de mayor valor.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_08.mp3",
+          "src": "audios/encuentros/morrowind/mw_08.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -746,7 +746,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Tus contactos clandestinos han dado sus frutos y te han informado de la próxima ubicación de una de las misteriosas excavaciones que se están llevando a cabo por todo Morrowind. Se dice que el arquitecto del plan se va a hacer con un hacha de guerra enana encantada, así que interceptar dicho artefacto sería un duro golpe para el plan de este arqueólogo. Sin embargo, lo normal en los bajos fondos es que, si tú sabes algo, otras 20 personas también lo saben. Por eso, antes de que puedas ponerte en marcha, te aborda un desaliñado elfo oscuro ofreciéndote dinero por la información. De una forma u otra, los excavadores perderían el hacha.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_09.mp3",
+          "src": "audios/encuentros/morrowind/mw_09.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -757,7 +757,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Este santuario junto al camino dedicado al Tribunal tiene una sorprendente cantidad de ofrendas para algo ser tan rudimentario. Acampas en las cercanías y observas que varios elfos oscuros se detienen ante el santuario para rendir homenaje, cada uno de ellos implorando la bendición de uno de los dioses trinos. Uno de los aspectos más atrayentes del Tribunal es que Vivec, Almalexia y Sotha Sil se encuentran entre las deidades más tangibles que conoce Nirn. Se pueden visitar sus templos para suplicarles, y sus obras son claras y manifiestas. Está claro que los lugareños creen en el poder del santuario, así que quizá deberías hacer tu propia ofrenda... ¿pero a quién?",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_10.mp3",
+          "src": "audios/encuentros/morrowind/mw_10.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -768,7 +768,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Pasas una curva en el camino y te encuentras con dos elfos oscuros a punto de llegar a las manos. Te apresuras a interrumpir la pelea.\n«¡No permitiré que ningún cenicio acampe en mis tierras!», grita el elfo mayor. «Servimos lealmente a la Casa Redoran. No toleraremos a aquellos que falten al respeto al Tribunal».\n «¡Su “Tribunal” es una mancha negra para nuestro pueblo!», grita el más joven. «¡Todos los que lo siguen faltan el respeto al sacrificio de Lord Nerevar!».\n Está claro que estallará la violencia entre estos dos a menos que intervengas. Deseas evitar el derramamiento de sangre, pero ¿cuál de los dos tiene mejores argumentos?",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_11.mp3",
+          "src": "audios/encuentros/morrowind/mw_11.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -779,7 +779,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "La lluvia cae a cántaros mientras atraviesas un estrecho desfiladero. Por si estar empapado no era suficiente, ves un grupo de elfos oscuros bloqueando el camino. A juzgar por sus movimientos erráticos y la proliferación de llagas, deben tener algún tipo de enfermedad, tal vez una cepa de la plaga de Llodos. Aún no se han convertido en cáscaras, pero aun así representan un gran peligro.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_12.mp3",
+          "src": "audios/encuentros/morrowind/mw_12.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -790,7 +790,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Llegas a un río desbordado cuyas aguas fluyen con gran velocidad. Un viejo elfo oscuro se te acerca, masticando distraídamente un pequeño tallo de seta mientras habla.\n«El arroyo está muy revuelto en esta época del año. Tengo un zancudo del cieno que puedes alquilar, siempre y cuando te veas capaz de dirigirlo a través de las agitadas aguas. Intenta ser amable cuando te acerques a él. Se asusta con mucha facilidad».",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_13.mp3",
+          "src": "audios/encuentros/morrowind/mw_13.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -801,7 +801,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Te topas con un hallazgo extremadamente raro en el camino: una argoniana que quiere hacer una ofrenda a Sotha Sil.\n«Los elfos oscuros no han sido amables con mi pueblo, pero no tengo nada en contra del Tribunal. El espíritu de la invención me impulsa, y espero que un tributo al dios mecánico pueda encaminarme por la senda correcta. Pero, ¿qué se puede hacer para el dios que puede fabricar cualquier cosa?».\nTe muestra unos planos a medio terminar de una innovadora criatura mecánica y te pregunta si puedes aportar alguna idea.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_14.mp3",
+          "src": "audios/encuentros/morrowind/mw_14.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -812,7 +812,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Un elfo oscuro vestido con ropas muy llamativas te aborda, preguntándote si has experimentado la plenitud de la comunión con Vivec.\n«Aprendemos de cada acción que realizamos. Fracaso o éxito, cada resultado nos enseña algo, al menos en el sentido más amplio. Medita conmigo las lecciones del poeta guerrero y adquiere sabiduría y poder».\nSe está haciendo tarde. Podrías seguir tu camino o darle una oportunidad para ver si puedes sacar algo de provecho.",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_15.mp3",
+          "src": "audios/encuentros/morrowind/mw_15.mp3",
           "title": ""
         },
         "gremioTag": "all"
@@ -823,7 +823,7 @@
         "provinciaTag": "morrowind",
         "leafDescription": "Una multitud se ha reunido a la sombra de una seta cercana, donde una Mano de Almalexia fuera de servicio está deleitando a los reunidos con historias de su servicio a la dama de la piedad.\n«Todos los miembros del Tribunal son de vital importancia para Morrowind, por supuesto, pero Almalexia es la que se ocupa más íntimamente de nuestros asuntos», explica la Mano, una joven y elegante elfa oscura.\n«Ella nos ofrece guía y protección, y todo lo que debemos hacer a cambio es aceptarla con buena disposición».",
         "audio": {
-          "src": "audios/encuentros/morrowing/mw_16.mp3",
+          "src": "audios/encuentros/morrowind/mw_16.mp3",
           "title": ""
         },
         "gremioTag": "all"

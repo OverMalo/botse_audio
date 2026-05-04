@@ -58,13 +58,167 @@
         }
       },
       {
-        "label": "A05",
-        "description": "El ladrón encarcelado - Gremio de ladrones",
+        "label": "B02",
+        "description": "Selección antinatural - Gremio de magos",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "magos",
+        "leafDescription": "Un representante del gremio aparece al poco de que hayas despachado a tu primer grupo de bestias. El alto elfo toca a los animales muertos con cierta fascinación.\n«¡Increíble!... La corrupción va mucho más allá que una alteración mental. ¡Su entera musculatura se ha visto afectada!».\nUn líquido negro, viscoso y no identificado, empieza a rezumar del animal. El mago frunce el ceño.\n«Tendré que llevarme esto a uno de nuestros salones para estudiarlo a fondo. Mientras tanto, necesitaremos que te hagas con más muestras para que podamos compararlas».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b02.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C03",
+        "description": "Selección antinatural - Gremio de magos",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "magos",
+        "leafDescription": "Poco después de que hayas terminado de recoger muestras de la segunda manada de bestias, llega a tu campamento una misiva del gremio.\n«Continúa con tu tarea con precaución. Creemos que a estos animales se les ha alimentado o inyectado algún tipo de sustancia vegetal alterada mágicamente, lo que los hace erráticos y agresivos. No estamos seguros aún del origen de dicha sustancia, ¿tal vez los árboles de Ciénaga Negra? En cualquier caso, es posible que el culpable de la condición actual de estas criaturas esté intentando ser capaz de controlarlos. Sin embargo, como has visto, los ataques han sido hasta ahora cualquier cosa menos organizados. Te rogamos que vayas al sur para hacerte con más muestras. Hemos oído que unas bestias particularmente agresivas están causando el caos cerca de la Aldea de Susurra Raíces, y existe la posibilidad de que el origen de esta actividad oscura se encuentre allí».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c03.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E04",
+        "description": "Selección antinatural - Gremio de magos",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "magos",
+        "leafDescription": "Tras acabar con el último de los animales, un consorcio de magos es enviado a tu localización. Les escoltas mientras intentan rastrear la sustancia vegetal corrupta hasta su origen. Tras un par de días, los adivinos del gremio localizan un laboratorio oculto bajo un imponente árbol que emite un débil resplandor. El rudimentario lugar de trabajo ha sido recientemente despojado de sus cosas de valor, pero en la apresurada huida quedó lo suficiente como para identificarlo como propiedad de un grupo llamado los Soldados del Vacío. Aunque este experimento con la alteración de la esencia vital de la naturaleza de Ciénaga Negra parece haber fracasado, ¿quién puede saber si la mente tras este proyecto ha aprendido de sus errores?",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e04.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A05 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "ladrones",
         "leafDescription": "Siguiendo la carta con instrucciones de tu gremio, llegas a las afueras de Leyawiin. Mientras buscas a tu contacto, un argoniano bien armado sale de detrás de unas rocas y tira de ti.\n\n«¿Te envía el Gremio de ladrones?», te pregunta, a la vez que te arranca la carta de las manos y la lee a toda prisa.\n\nSuspira, aliviado, antes de presentarse como «Busca Las Tinieblas», miembro del Gremio de ladrones.\n\n«Uno de los nuestros, Zirik, ha sido capturado durante un trabajo y está ahora retenido en una antigua prisión imperial. Una ruina de sitio, la verdad. Ya no es una prisión de verdad, solo un lugar controlado por una banda, la Guardia Negra, a los que están pagando para tener a Zirik encerrado. Es un amigo, y necesito que alguien lo saque. Sin embargo, es cierto que corren rumores de que hay algún tipo de conspiración detrás de la encarcelación de Zirik. Mi contacto está en Alten Corimont, así que allí es donde iremos primero».",
         "audio": {
           "src": "audios/misiones/cienaga_negra/a05.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B06 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "Busca Las Tinieblas se reúne contigo en el punto de encuentro, tras Reactivos El Digno Mortero, visiblemente molesto.\n«Vengo de El Bretón Reventado, uno de los barcos que está siempre atracado en el muelle. Mis temores se confirman, algún desgraciado se ha enterado de nuestro intento de infiltración y ahora hay un grupo de mercenarios del Gremio de luchadores en camino para servir de refuerzos a la Guardia Negra. Por lo visto, Zirik es considerado un “peligro público”, y quien quiera que esté detrás de esto no quiere que salga de allí». El argoniano suspira y sonríe.\n «Por favor, un poco de robo honesto no hace daño a nadie...».Después, desenrolla un pequeño mapa y te hace un gesto para que lo mires de cerca.\n «El pelotón salió hace poco, así que deberías poder tenderles una emboscada si consigues alcanzarlos. Si son capaces de llegar, reforzarán la seguridad de la prisión. Eso dificultaría mucho tu tarea».\n Dicho esto, asiente y guarda el mapa. «Seguiremos en contacto, yo seguiré otras pistas. ¡En marcha!».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b06.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C07 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "Cuando alcanzas a ver al grupo, está claro que Busca Las Tinieblas tenía razón. El Gremio de ladrones podría haber hecho la vista gorda si unos pocos de la Guardia Negra no llegaban a mañana, pero estos guerreros viajan portando el estandarte del Gremio de luchadores, y el Gremio de ladrones no ve bien el derramamiento de sangre indiscriminado. Crees que si pudieras quitarles el informe de que se ha planeado una fuga sin matar a ninguno, tal vez los luchadores no se sentirían obligados a ayudar a la Guardia Negra y volverían por donde vinieron. Sin embargo, si no logras evitar el conflicto, es casi seguro que habrá represalias.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c07.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D08 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "Colarse en el patio de la Prisión de Rosa Negra ha sido sencillo, pero, al observar los alrededores, sientes un extraño escalofrío... parece que el mundo se estuviera preparando para algo maligno. Hay guardias apostados cerca de muchas de las ruinosas celdas, que albergan a diversas personas que probablemente están siendo retenidas para pedir un rescate. Te alegra saber que hay personas que, si reciben tu ayuda, de seguro estarían dispuestas a ayudarte, pero no logras zafarte de esa desagradable sensación de que algo no va bien. ¿Está la Guardia Negra alerta y en tensión solo por el intento de fuga o hay preocupación por algo más?",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/d08.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A12 - Brigada de la Prisión de Rosa Negra",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "luchadores",
+        "leafDescription": "«La Prisión de Rosa Negra…», se lamenta Hogfinn.\n «En otro día cualquiera, tal vez se nos mandaría allí para acabar con los criminales que la han convertido en su fortaleza...».\nEl nórdico se detiene para elegir bien sus palabras, pues actúa como representante oficial del Gremio de luchadores en Fuerte de la Tormenta.\n«Hoy, sin embargo, hay una amenaza aún mayor, cautiva en sus celdas, y hay razones para creer que se realizará un intento de rescate. Si bien la Guardia Negra, que dirige la vieja prisión, no es aliada ni del gremio  ni de ningún residente respetable de Ciénaga Negra, nuestro contacto nos ha informado de que las cosas se pondrán muy feas si el tal Zirik llegara a escapar. Un enviado te espera en Alten Corimont. Él podrá contarte más detalles».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a12.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B13 - Brigada de la Prisión de Rosa Negra",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "luchadores",
+        "leafDescription": "Llegas a la posada La Bodega del Barco y ves un naga (subraza de argoniano) en una esquina, disfrutando de una bebida. Cuando te ve, te hace señas para que te acerques.\n«¿Esto es todo lo que el gremio puede ofrecer? Me parece a mí que tu gente no ha entendido el calibre de esto». Decides ignorar su comentario negativo y preguntas por Zirik, lo que hace que empiece a moverse en el sitio, incómodo.\n«Se ha visto envuelto en algo relacionado con la magia de corazón de espino en Skyrim, enfadó a un jarl y este lo ha mandado a la Rosa a “descansar y relajarse”». Se detiene y se ríe un poco. «Claro que tener a la Guardia Negra echándole un ojo le habrá costado una fortuna. Ahora, el problema es este, Zirik parece haber llamado la atención de... alguien más. Es probable que te sigan, así que asegúrate de llegar a la prisión antes de que te embosquen.»\nTe señala un baúl que aparenta estar lleno de tesoros. Viendo tu reacción ante el baúl, chasquea los dedos.\n«No es para ti. Necesitarás reunir más personal para que te ayude, así que ve a la Arboleda Pétrea, a las afueras de Baldío de Piedra. Allí encontrarás unos mercenarios dispuestos a ayudarte si les pagas»\nUna vez el contacto se marcha, te quedas mirando el cofre, que parece estar llamándote, seduciéndote... Tampoco puede causar tanto revuelo que cojas algo para ti, ¿no?",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b13.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C14 - Brigada de la Prisión de Rosa Negra",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "luchadores",
+        "leafDescription": "Al llegar a la puerta de la Prisión de Rosa Negra, oyes un combate ya en marcha. No has llegado demasiado tarde, pero es evidente que los liberadores de Zirik han comenzado su asalto. Al llegar al antiguo patio de la prisión, ves que la mayoría de las fuerzas iniciales de la Guardia Negra han caído ante los invasores, pero las celdas aún siguen intactas. Es probable que la prioridad de los intrusos sea abrir todas las celdas para conseguir aliados y reforzar sus filas, pero no puedes permitir que Zirik escape en medio del caos.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c14.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E15 - Brigada de la Prisión de Rosa Negra",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "luchadores",
+        "leafDescription": "Por dulce que sea la victoria, no puedes quitarte el amargo sabor de haber ayudado a la Guardia Negra a mantener el control sobre estas instalaciones. Tal vez algún día alguien libre a este lugar de su presencia. Pero te consuelas pensando que, por ahora, lo único que importa es que Zirik siga capturado. Has reunido a los asaltantes supervivientes y los has enviado al Gremio de luchadores para interrogarlos. Parece ser que algunos se han identificado como miembros de un grupo llamado Soldados del Vacío. De acuerdo con los interrogatorios, este grupo, cuyo centro de operaciones debería estar cerca, estaba detrás del intento de recuperar a Zirik. Te asegurarás de que el gremio se entere de esto y te preguntas si esta cuestión merece una investigación aparte.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c14.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A16 - Hijos de una Escama Sombría",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "A través de un canal secreto, has recibido una carta personal de Akisha, una Escama Sombría con reputación de seguir métodos poco convencionales.\n«He estado criando sola a un grupo de niños nacidos bajo el signo de la Sombra, pero me han informado de que alguien pretende robármelos. Tiene usted una buena reputación en nuestra orden y, humildemente, solicito su ayuda para llevar a estos niños a un lugar seguro. Tengo un refugio cerca de Hissmir donde podemos discutir los detalles. Le agradecería que la Hermandad no supiera de esta petición».\nDudas de que esto sea una buena idea, pero, por otro lado, todo lo que has oído sobre Akisha la señala como una persona con principios (sin olvidar que pertenece a una orden de asesinos, eso sí). ¿Qué habría de malo en escucharla?",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a16.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B17 - Hijos de una Escama Sombría",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Al llegar, ves el escondite de Akisha bajo asedio. Parece que sus sospechas eran fundadas. Tras luchar por entrar, consigues encontrarla. Un grupo de niños argonianos se apiñan a sus pies.\n«¡Justo a tiempo! ¡Ayúdame a sacar a estos!».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b17.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C18 - Hijos de una Escama Sombría",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Después de ponerte a salvo, te retiras con Akisha y sus pupilos a una cueva aislada en Hissmir, donde coméis unos pinchos de rana del pantano comprados a Alimentos de pantano de Melil Beleth.\n«Melil es un buen tipo», dice Akisha entre bocado y bocado. «Siempre le digo que se salvará cuando llegue la guerra».\nLevanta una ceja. «No hablo de la Guerra de los Tres Estandartes. A decir verdad, por eso he estado criando a estos jóvenes. El Pacto de Corazón de Ébano dejó escapar demasiado fácilmente a esos tontos de Morrowind. Hay demasiados elfos oscuros que esclavizaron a mi gente y nunca fueron castigados por ello. ¡Ninguna compensación, nada! Íbamos a formar nuestro propio equipo de asalto para aceptar, de entre los trabajos oficiales de la Hermandad, a los más culpables. Creo que Sithis estaría encantado».\nLe das vueltas a su idea mientras ella termina de comer. Entonces, te mira intensamente.\n«Eso tendrá que esperar. Como has visto ahí atrás, alguien se ha enterado de mi pequeña familia y desea utilizarla para un propósito mucho menos justo. Tengo un contacto en Elsweyr que puede acogerlos, pero primero tengo que llevarlos a un puerto seguro. Te he visto luchar; eres tan bueno como se dice. ¿Podrías quedarte conmigo un poco más?».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c18.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E20 - Hijos de una Escama Sombría",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Akisha permanece de pie en la orilla, despidiéndose de los niños, mientras tú te deshaces de los cuerpos de los enemigos. Una vez el barco desaparece en el horizonte, ella se te acerca, con lágrimas en los ojos.\n«Por ahora, esto es lo mejor para ellos. Algún día volveré a reunirme con ellos. Te estoy muy agradecida por tu ayuda».\nNo sabes muy bien qué pensar de Akisha, incluso después de lo que acabáis de pasar juntos. La vida de un Escama Sombría es difícil de explicar a los que no lo son, lo que incluye a los otros miembros de la Hermandad Oscura. Intuyes que el signo de la Sombra permanecerá sobre ella el resto de su vida, sea larga o corta.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e20.mp3",
           "title": ""
         }
       }

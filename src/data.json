@@ -855,7 +855,7 @@
         "label": "CY-03",
         "description": "El campeón de los oprimidos",
         "provinciaTag": "cyrodiil",
-        "leafDescription": "En tiempos de guerra, es bien sabido que los soldados angustiados reviven los horrores del combate en transeúntes indefensos. Estás a punto de presenciar una de esas tragedias, ya que un grupo amotinado de una de las alianzas está a punto de saquear una pequeña aldea de las llanuras de Cyrodilic. Nunca llegarán a tiempo refuerzos más civilizados, así que tú eres el único baluarte entre estos pacíficos habitantes y la destrucción gratuita. Sin embargo, vista la determinación que hay en los ojos de estos soldados, dudas de tener la destreza marcial suficiente para detener esta injusticia.",
+        "leafDescription": "En tiempos de guerra, es bien sabido que los soldados angustiados reviven los horrores del combate en transeúntes indefensos. Estás a punto de presenciar una de esas tragedias, ya que un grupo amotinado de una de las alianzas está a punto de saquear una pequeña aldea de las llanuras de Cyrodiil. Nunca llegarán a tiempo refuerzos más civilizados, así que tú eres el único baluarte entre estos pacíficos habitantes y la destrucción gratuita. Sin embargo, vista la determinación que hay en los ojos de estos soldados, dudas de tener la destreza marcial suficiente para detener esta injusticia.",
         "audio": {
           "src": "audios/encuentros/cyrodiil/cy_03.mp3",
           "title": ""

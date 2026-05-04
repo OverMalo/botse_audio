@@ -303,7 +303,6 @@
       {
         "label": "CN-01",
         "description": "Rehenes de la Casa Telvanni",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Algunos elfos oscuros rebeldes han ignorado el acuerdo de paz del Pacto de Corazón de Ébano y han continuado sus crueles incursiones en Ciénaga Negra. El mero hecho de navegar por los pantanos y las vías fluviales ha requerido toda tu atención, por lo que una de esas partidas de asaltantes ha conseguido pillarte desprevenido. No sabes si estás más enfadado por sus fechorías o por haber caído en su trampa. En cualquier caso, el líder de la banda no parece moco de pavo, así que tendrás que derrotarlo para poder escapar.",
         "audio": {
@@ -315,7 +314,6 @@
       {
         "label": "CN-02",
         "description": "Comunión corrupta",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Ves a un grupo actuando de una manera muy extraña más adelante en el camino. Corren rumores de argonianos que actúan con hostilidad tras consumir la savia de un Hist enloquecido llamado Tsono-Xuhil. Aunque los forasteros podrían cuestionarse si un árbol puede volverse loco, ningún saxhleel dudaría de la posibilidad. Sea cual sea la causa de la aflicción de estos enemigos, sus ojos anaranjados llenos de odio brillan con más intensidad a medida que se acercan con las armas desenvainadas. Supones que la opción más ética sería aturdir a estos viajeros y esperar a que un sanador argoniano se encuentre con ellos.",
         "audio": {
@@ -327,7 +325,6 @@
       {
         "label": "CN-03",
         "description": "Acuerdo o combate",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Un grupo de cazatesoros se te acerca haciéndote señas. Se les ve bien equipados y con no pocos tesoros en su poder. Sin embargo, están visiblemente desanimados. Uno de ellos da un paso adelante, un nórdico que parece agotado. Al parecer, llevan ya tiempo buscando a alguien dispuesto a comerciar con ellos con algún artefacto poco común de Ciénaga Negra, pero hasta ahora no han tenido ningún éxito. Abatidos tras tantos esfuerzos infructíferos, están interesados en cualquier tipo de trato, pagando generosamente si tuvieras algo de sobra.",
         "audio": {
@@ -339,7 +336,6 @@
       {
         "label": "CN-04",
         "description": "Xanmeer inexplorado",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "La civilización argoniana prosperó en Ciénaga Negra en tiempos de los que apenas quedan registros. Hace muchas generaciones, los ancestros de los saxhleel de la actualidad construyeron los misteriosos xanmeer, pirámides escalonadas de gran tamaño que se alzan entre los pantanos. Hay muchos xanmeer medio hundidos que no han sido descubiertos y, casualmente, acabas de toparte con uno. La zona parece tranquila, y sientes que esta es una oportunidad irrepetible. Un plano fidedigno de un xanmeer intacto podría alcanzar un precio altísimo... si el cartógrafo logra encontrar luego la salida entre las sinuosas salas sumergidas del templo.",
         "audio": {
@@ -351,7 +347,6 @@
       {
         "label": "CN-05",
         "description": "Lo que queda de los ayleid",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Las ruinas ayleid son hallazgos poco frecuentes, sobre todo en los pantanos de Ciénaga Negra. Sin embargo, resulta que has logrado encontrar una de estas ruinas, con la puerta bloqueada con escombros y una nota sobre ellos:\n«Que sirva de advertencia a quien piense entrar: perturbar las ruinas olvidadas de Ciénaga Negra puede liberar peligros innombrables. Firmado: Quien mira debajo de las piedras».",
         "audio": {
@@ -363,7 +358,6 @@
       {
         "label": "CN-06",
         "description": "El origen de las especies",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Oyes un gruñido rompiendo el silencio. Te parece un poco familiar... Es de origen animal, eso es seguro, pero, ¿de qué clase de animal? Tras rodear una pequeña arboleda, ves la fuente del sonido y entiendes el porqué de tu confusión. Lo que tienes delante se parece a algo que ya habías visto, pero es distinto. Parece una nueva raza de animal, puede que sea un híbrido impío. Y es grande, muy grande. ¡Estudiarlo en profundidad podría ayudar a comprender mejor la naturaleza de Ciénaga Negra! Desgraciadamente, no eres el primero en descubrir a la bestia. Está rodeada por un harapiento grupo de mercenarios que seguramente pretenden cazarla por una buena recompensa.",
         "audio": {
@@ -375,7 +369,6 @@
       {
         "label": "CN-07",
         "description": "Caravana de esclavos",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "El crepitar del fuego delata un campamento oculto en la pantanosa jungla. Al acercarte, ves una caravana de elfos oscuros preparándose para pasar la noche. Sin embargo, tras fijarte con más atención, te das cuenta de que hay miembros de otras razas: khajiitas, argonianos y más, todos encadenados y vigilados por un elfo oscuro que hace guardia. Está claro que no todos los elfos oscuros se toman en serio la prohibición del Pacto de Corazón de Ébano sobre el comercio de esclavos, algo que vas a corregir de inmediato.",
         "audio": {
@@ -387,7 +380,6 @@
       {
         "label": "CN-08",
         "description": "El botín de un pirata muerto",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "La existencia de Alten Corimont siempre ha garantizado gran afluencia de piratas y contrabandistas en Ciénaga Negra, pero la mayoría de sus historias legendarias sobre tesoros escondidos por la región no son más que habladurías típicas de una noche en una taberna. Este mapa, en cambio, parece algo más real. Lo has encontrado arrugado en la mano de un esqueleto orco casi descompuesto. Un vistazo rápido a los alrededores demuestra que todos los elementos del paisaje aparecen en el mapa justo donde deberían. Con él, llegas a la entrada de una caverna escondida. Es muy probable que haya un valioso botín en su interior, pero también lo es que aparezcan muchos saqueadores si se corre la voz.",
         "audio": {
@@ -399,7 +391,6 @@
       {
         "label": "CN-09",
         "description": "Lluvia misteriosa",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Al partir, sientes un viento a tus espaldas, dándote la bienvenida, pero, después, el cielo se oscurece, y te percatas de que no es un mero cambio en la brisa. En poco tiempo, del cielo, aún más oscuro, surgen cientos de relámpagos, llenando el ambiente del rugido de los truenos. Finalmente, empieza a caer una lluvia caliente, apestosa y de un color turbio entre amarillo y marrón que te empapa en un instante. Cuando por fin amaina, te ves rodeado de una densa niebla que reduce la visión a unos pocos metros. Continuar tu camino en estas condiciones es desafío más que suficiente para el día de hoy.",
         "audio": {
@@ -411,7 +402,6 @@
       {
         "label": "CN-10",
         "description": "Fiebre del pantano",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "El fétido ambiente de la Ciénaga Negra tiene fama de ser caldo de cultivo de múltiples enfermedades, y con razón. Después de tratar con la inmundicia de algún pantano desconocido hace un tiempo, aún no has conseguido secarte del todo. Sientes una profunda fatiga y tu visión se nubla, debes tener algún tipo de infección. Cada momento que pasa te queda más claro que ignorar tu estado de salud es jugarse la vida. Necesitas descansar, pero eso podría llevarte un tiempo del que simplemente no dispones.",
         "audio": {
@@ -423,7 +413,6 @@
       {
         "label": "CN-11",
         "description": "Empantanado",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "En los pantanos más recónditos de Ciénaga Negra es fácil perderse por seguir un supuesto rastro que no tarda en desaparecer. Este pantano en particular es especialmente fétido y, antes de que te des cuenta, un par de giros erróneos te han llevado a pisar un suelo muy inestable, acabando cubierto de aguas venenosas hasta las axilas. Más adelante parece haber algo de tierra firme donde tal vez podrías orientarte, pero llegar hasta allí no va a resultar nada fácil.",
         "audio": {
@@ -435,7 +424,6 @@
       {
         "label": "CN-12",
         "description": "Estafa de Hist",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Mientras te preparas para descansar por hoy, se te acerca una alta elfa excepcionalmente pálida, con un ojo blanquecino. Trae en sus manos una pequeña botella con un líquido ambaroso en su interior y cerrada con un gran corcho. Te la acerca, ofreciéndotela.\n\n«¿Quieres una buena moneda de cambio en estos oscuros pantanos? Te ofrezco savia de Hist a un precio reducido. Mi proveedor me consigue muestras con un sustancioso descuento con el que me gusta beneficiar a aventureros como tú».\n\nNo eres tan ingenuo como para creer en la autenticidad de esa savia, es más falsa que un mapa que indique la localización del Ojo de Argonia. Sin embargo, incluso una falsificación podría resultar útil...",
         "audio": {
@@ -447,7 +435,6 @@
       {
         "label": "CN-13",
         "description": "Ladrón en la noche",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "El olor a carne cocinándose que flota en el aire te guía hasta un campamento argoniano. Te acercas, buscando tomarte un respiro, pero rápidamente notas que te miran con recelo. Miras a tu alrededor y, al borde del campamento, fuera del campo de visión de los argonianos, ves a un elfo oscuro vestido con harapos toqueteando un cofre cerrado. El elfo alza la cabeza y te mira, preocupado por tu próxima acción.",
         "audio": {
@@ -459,7 +446,6 @@
       {
         "label": "CN-14",
         "description": "Un favor ovoide",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Una argoniana muy agitada se te acerca buscando ayuda. Es la guardiana de un centro de incubación cercano en el que cuidan algunos huevos de argoniano. Te pide que la sustituyas mientras ella viaja a Helstrom para atender unos asuntos familiares importantes. A cambio, te promete una sustanciosa recompensa, ya que estarás haciéndole un favor a su tribu que no olvidarán.",
         "audio": {
@@ -471,7 +457,6 @@
       {
         "label": "CN-15",
         "description": "Reparación de vallas",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Al pasar junto a una pequeña granja de arroz de sal, ves a un argoniano de mediana edad descamisetado, tirando con fuerza de un poste roto de sus vallas que está medio hundido en el barro. Cuando te ve, te hace señas para llamarte, desatendiendo su tarea y molestándose al ver que el poste se hunde cada vez más.\n\n «¡Esos elfos oscuros...! ¡Se piensan que, ahora que se ha firmado el Pacto, todo queda perdonado! Pero controlan el mercado del arroz de sal y no respetan la tierra que trabajan si no es el hogar de un mer. Ahora intento arreglármelas solo, pero cada vez me sobra menos tras alimentar a los kwama. ¿Te importaría pasar una tarde ayudándome?».",
         "audio": {
@@ -483,7 +468,6 @@
       {
         "label": "CN-16",
         "description": "Capacidad tribal",
-        "color": "black",
         "provinciaTag": "cienaga_negra",
         "leafDescription": "Con toda naturalidad, un argoniano varón sale de un matorral.\n\n«Mi tribu ha estado siguiéndote. Respetas la tierra y viajas con... cierta habilidad, aunque se nota que no eres uno con el pantano. Nosotros hemos vivido toda nuestra vida en las profundidades de estas aguas. Comercia con nosotros y te enseñaremos a moverte por el pantano».\n\nTu misión sigue siendo necesaria, pero rechazar una oferta como esta parece insolente e imprudente por tu parte.",
         "audio": {
@@ -495,19 +479,558 @@
       {
         "label": "RA-01",
         "description": "Ensueño superno",
-        "color": "brown",
         "provinciaTag": "roca_alta",
-        "leafDescription": "Panel fusionado sin fuente de audio enlazada en el dataset actual.",
+        "leafDescription": "Despiertas de un profundo sueño, con la visión borrosa. Ves ante ti a un hombre con una túnica y una capa. Estás rodeado por una extraña penumbra en la que el hombre parece brillar, como si todo fuera una ilusión. Mientras vas aclarando tu mente, recuerdas haber recibido una advertencia en la última ciudad que visitaste. Una secta llamada los Soñadores Supernos opera en Roca Alta atrapando transeúntes en una especie de vívida pesadilla que aprovechan para usar sus cuerpos en complejos sacrificios daédricos. ¿Serás capaz de salir del sueño?",
         "audio": {
-          "src": "",
+          "src": "audios/encuentros/roca_alta/ra_01.mp3",
           "title": ""
         },
         "gremioTag": "all"
       },
       {
+        "label": "RA-02",
+        "description": "Combate fronterizo",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "La tensión se puede cortar con un cuchillo en Roca Alta últimamente, en especial por el brutal juego de poder del barón Montclair y ese asunto de Orsinium. Por tanto, y a pesar de la laxa afiliación a la Alianza de Salto de la Daga, las esferas de influencia de la frontera de Roca Alta están amenazadas, plagadas de partidarios deseosos de ganarse el favor de su señor local. A veces, estas tensiones fronterizas provocan conflictos de violencia abierta y, por desgracia para ti, los combatientes con los que te has topado no saben distinguirte de sus enemigos.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_02.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-03",
+        "description": "Una parada en el foso",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Mientras bajas por un camino con indicios de mucho tránsito, oyes el ruido de muchas voces jaleando. Buscando la fuente de tales sonidos llegas a donde una multitud se ha reunido para animar y apostar alrededor de un foso improvisado. Un rudimentario cartel se yergue a su lado con el siguiente texto: «¡Vence a los campeones de Wrothgar en el foso de combate!».\nEn el momento en el que te acercas, la multitud ruge con aprobación. En el foso, una guerrera orca golpea a su oponente bretón en la cabeza con la parte plana de su hacha, haciéndolo caer como un saco de arroz de sal. La multitud intercambia ganancias y tú evalúas la competición... Quizás merezca la pena probar suerte.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_03.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-04",
+        "description": "Grajos contra la Medianoche",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Te detienes para contemplar el paisaje: un viejo fuerte de piedra que se ha derrumbado de una forma muy pintoresca. Sin embargo, tu descanso se ve interrumpido por el súbito silbido de una flecha. Te lanzas cuerpo a tierra, pero escuchas algunos gritos que te hacen entender que no eras el objetivo. Alzas la vista y ves malhechores vestidos de cuero por toda la zona, atacándose unos a otros. Reconoces los bandos enfrentados, son los Grajos Rojos contra el Sindicato de la Medianoche, dos de los grupos de forajidos más peligrosos de Roca Alta. La lucha es demasiado encarnizada como para escapar sin más, pero tal vez puedas terminar con el conflicto inclinando la balanza hacia uno de los bandos.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_04.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-05",
+        "description": "Exploración no muerta",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Por todo Tamriel se pueden encontrar interesados en la necromancia, pero debido a la fama del gran cementerio de Cath Bedraud y los Páramos de Glenumbra, los viajeros de Roca Alta deben estar particularmente atentos para evitar a los no muertos. Tal vez sea ese cuidado especial el que te permite darte cuenta de la presencia de zombis en esta cueva aparentemente inexplorada. O tal vez fue el bretón que viste deambulando, con la mirada perdida, la piel putrefacta y vomitando por doquier. Lo más sabio seguramente sería buscar otra cueva cuya exploración fuera menos peligrosa, pero la presencia de zombis hace posible que encuentres algo mágico en el interior de esta.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_05.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-06",
+        "description": "Cueva en conflicto",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Los orcos se están esforzando por fortalecer Orsinium, lo que ha provocado, como es natural, conflictos entre los habitantes de Wrothgar y los bretones, que durante mucho tiempo han ostentado el control del poder político de Roca Alta. Uno de esos conflictos está ocurriendo en esta cueva, que algunos bretones reclaman para usarla como mina. Un grupo de orcos se enfrenta a ellos, argumentando que la insistencia de los bretones para «minar» esta cueva esconde la intención de conseguir un valioso artefacto orco de la Casa de las Glorias Orsimer. A juzgar por lo arbitrario de la decisión de los bretones, este argumento tal vez no sea tan descabellado.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_06.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-07",
+        "description": "Maleantes agitados",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "La agitación en Roca Alta ha envalentonado a todo tipo de maleantes. Hay bandas, asesinos y sectarios campando a sus anchas, adquiriendo bienes y territorios. Cuanto mayor es la violencia, más impulsados se sienten a aprovecharse de los ciudadanos de a pie. No eres capaz de identificar la afiliación del grupo sediento de sangre que tienes ante ti, pero está claro que buscan pelea. Se enfrentan a ti sobre los restos de una aldea medio quemada. Sospechas que podrías usar el entorno a tu favor, pero también que, si lo haces, causarás aún más daño a los pobres aldeanos y sus hogares, ya bastante afectados.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_07.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-08",
+        "description": "Correveidile",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "En los tiempos difíciles, los rumores crecen más rápido que la mala hierba, y con poca o ninguna base real surgen mitos y leyendas. Aunque este genera miedo y desconfianza, puede ser muy útil para los viajeros que deseen que se les deje en paz. Entre tantos ataques de bandidos en Roca Alta, ha surgido un rumor que ha captado tu atención: «La Plaga de Wrothgar». Resulta que hablan de una figura cuya descripción se parece mucho a ti. Si decides identificarte como La Plaga, pasarás a ser una figura intimidante para cualquiera que se plantee enfrentarse a ti, pero también es posible que siembres pavor por donde pases.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_08.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-09",
+        "description": "Dialéctica sectaria",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "La fusión de planos ha desestabilizado todo Tamriel, pero Roca Alta ha pagado un precio especialmente alto. Han aparecido organizaciones criminales y multitud de sectas por toda la región, aprovechándose de la agitación. Más adelante, en el camino, ves un grupo de encapuchados con antorchas. Claramente, se dirigen a la ciudad más cercana a crear el caos. Se ve que son sectarios de la Espina Sangrienta, pero no se les ve muy determinados y se mueven como si no supieran qué hacer. Está claro que son nuevos en esto. Tal vez unas palabras apropiadas los convencerían de que convertir a esas personas en zombis no hará que sus vidas sean mejores.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_09.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-10",
+        "description": "Vida tras la muerte",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Una hechicera nórdica de aspecto desaliñado te saluda con una mano temblorosa desde lo alto de una colina cercana. Te acercas con cautela, pero ella te asegura que pretende bendecirte con «conocimiento de la vida tras la muerte», que dice haber adquirido estudiando bajo la tutela de Angof el Cantor de Tumbas. Los beneficios de dicho conocimiento son cuestionables; la vida como zombi no suena muy atrayente. Sin embargo, ella insiste en haber purificado los métodos necrománticos, lo que permite simplemente evitar «la noche eterna», sin necesidad de vagar en descomposición.\n«Los efectos secundarios son... prácticamente nulos», concluye.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_10.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-11",
+        "description": "Banda de mercenarios",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Las colinas y los valles parecen especialmente peligrosos hoy, y se rumorea que la secta de los Soñadores Supernos deambulan cerca. Se te acerca un khajiita con pelaje parcheado, señalando a un grupo de brutos que os miran expectantes.\n«Este khajiita conoce a fondo la tierra. Si pagas, su grupo te protegerá bien. Estos caminos son traicioneros con los que no los conocen».\nNormalmente rechazarías la oferta sin pensártelo mucho, sabes defenderte, pero sería agradable no tener que preocuparte de que unos sectarios te metan en algún sueño daédrico.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_11.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-12",
+        "description": "Saliendo de la Cuenca",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "A lo lejos, ves algo inesperado: un cuencano merodeando por las colinas con discreción, como si planeara causar estragos. Es raro ver un cuencano tan al oeste, pero es de suponer que, si hay uno, hay más cerca. Tal vez lo más prudente sea alertar a las autoridades para que puedan sofocar cualquier incursión antes de que se les vaya de las manos, pero también puede ser que convenga mantener la boca cerrada. La gente puede volverse más desconfiada si se esparce el rumor de la presencia de cuencanos cerca.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_12.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-13",
+        "description": "¿León o lobo?",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Ves un carro volcado en el camino, con toda su carga desparramada: una gran variedad de armas y comida. Una inquieta soldado bretona con el estandarte de la Guardia del León observa la escena con las manos en la cadera.\n«Estaba más empinada de lo que parecía...», dice, agitando la cabeza.\n«No me puedo permitir este retraso, la Guardia necesita reabastecerse para mantener el orden tras el incidente con los hombres lobo en Camlorn...».\nDespués de unas palabras de consuelo por tu parte, te da las gracias y se te queda mirando, evaluándote.\n«¿Podrías ayudarme a entregar esto a mis compañeros?, estarías prestando un gran servicio y una gran ayuda a Roca Alta».",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_13.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-14",
+        "description": "Ayuda comunitaria",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Este valle está salpicado con los restos de un pueblo: algunas chozas y cabañas en diversos estados de ruina. Ves un rudimentario cartel pegado a un pozo en el que puedes leer lo siguiente: «Zona saqueada por bandidos de la Mano Amarga». Al lado, ves otro. «Se buscan voluntarios con conocimientos mágicos u otros oficios útiles para ayudar en las reparaciones. Los interesados pueden preguntar en la taberna las tareas y recompensas». Desde luego, el lugar necesita bastantes reparaciones, está hecho una ruina. Un buen día de trabajo podría evitar que desaparezca por completo. Tal vez valga la pena ver qué recompensas ofrecen.",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_14.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-15",
+        "description": "Avalancha a los Grajos",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "Oyes una gran conmoción más adelante, por lo que trepas con sigilo un terraplén cercano y te asomas. Una familia de bretones está siendo atacada por unos bandidos de los Grajos Rojos, que les apuntan con sus espadas. El padre de la familia está tirado en el suelo, apoyándose en un brazo, mientras con el otro se agarra con fuerza una herida en el hombro. Los Grajos Rojos le exigen un cuantioso rescate por las vidas de los demás mientras te dan la espalda; aún no te han visto. Tal vez algunas de las rocas del risco puedan soltarse con un poco de ayuda...",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_15.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "RA-16",
+        "description": "Brujas y sectarios",
+        "provinciaTag": "roca_alta",
+        "leafDescription": "¡Menuda sorpresa! Una miembro del Wyrd de Beldama te ha invitado a entrar en comunión con el místico aquelarre y experimentar el poder de Jephre. Es todo un honor, pero has oído que las brujas están enemistadas con la Secta Espina Sangrienta, grupo cuya ira no te gustaría atraer. Mientras sopesas si aceptas la invitación, un sectario de la Espina Sangrienta se acerca a tu campamento y solicita una reunión. Parece que la invitación del Wyrd ha llegado a los oídos de la Secta y quieren ofrecerte su propia alianza a cambio de que rechaces la de sus enemigas. La magia de la Secta Espina Sangrienta es poderosa, pero su apoyo no vendrá sin consecuencias...",
+        "audio": {
+          "src": "audios/encuentros/roca_alta/ra_16.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-01",
+        "description": "Al lado incorrecto de la ley",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Desde la formación del Pacto de Corazón de Ébano, hay muchas menos bandas de rufianes capturando a los viajeros en Morrowind. Sin embargo, aún existen algunos de esos grupos, y sus prácticas se han recrudecido tras la creación del Pacto. Un grupo de dichos forajidos te ha emboscado al amparo de la oscuridad cuando pasabas cerca de su cuartel general, una mina de huevos. Gracias a dicha oscuridad, has podido zafarte de alguna de tus cadenas sin que te vean, pero más te vale terminar con el resto antes de que tus captores se den cuenta",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_01.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-02",
+        "description": "Setas más altas han caído",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Una de las imponentes setas de Morrowind ha caído desde la cima de una colina, rodando hasta llegar a la base. Te acercas con curiosidad; los tallos gigantes suelen ser bastante resistentes, y es extraño ver uno abatido por los elementos. Sin embargo, cuando te acercas, un orco bajito y corpulento salta de detrás de la cabeza de la seta caída, con los ojos enrojecidos por la furia.\n«¡Esta es NUESTRA seta! ¡No puedes cogerla!». Mientras te grita, saltan trozos de seta de su boca. Antes de que puedas protestar, el orco se abalanza sobre ti.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_02.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-03",
+        "description": "La defensa de los huevos",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Mientras pasas por una mina de huevos, un minero te hace una oferta de trabajo. El capataz, un sombrío elfo oscuro con muchas cicatrices en brazos y piernas, te explica la situación.\n«Hemos tenido muchos problemas con merodeadores que nos arrebatan los huevos en incursiones nocturnas. Les hemos dado cuanto hemos podido, pero mis hombres no pueden más, y tenemos razones para creer que los bandidos volverán esta noche. Si pudiéramos contar con tu ayuda en combate, creo que podremos ahuyentarlos para siempre».\nTe ofrece pagarte una prima en función de la cantidad de mercancía que logres proteger.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_03.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-04",
+        "description": "Acuerdos dwemeri",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Te detienes al grito de «¡Buenas, aventurero!». Tras unas rocas ves asomarse a un grupo de harapientos buscadores de tesoros, cargados de picos, cepillos e incluso armas. El líder del grupo, un alto elfo con una gran cicatriz en la cara, toma la palabra.\n«¡Es tu día de suerte! Hemos encontrado una de las ruinas dwemeri en mejor estado hasta la fecha y queremos compartir nuestra fortuna. A cambio, solo necesitaríamos un poco de mano de obra. ¡Descubramos juntos sus secretos!».\nUna oportunidad tan repentina suena poco creíble, pero es cierto que Morrowind está repleto de ruinas dwemeri. Tal vez haya algo de verdad en todo esto.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_04.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-05",
+        "description": "Armas aumentadas",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Los dwemer dejaron su huella a lo largo y ancho de Tamriel, pero quizá en ningún lugar tanto como en Morrowind. La región está plagada de viejas ruinas enanas, recuerdos constantes de una antigua civilización. Te encuentras de frente con varias cajas de sus artefactos recién colocadas en unas ruinas por las que pasas, y tu primer instinto es salir corriendo de allí y esperar que quienquiera que esté usando estos objetos no los use contigo. Sin embargo, antes de que puedas hacerlo, te abordan los propietarios de dichos artefactos, y está claro que preferirían que no quedaran testigos.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_05.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-06",
+        "description": "A tu entera disposición",
+        "provinciaTag": "morrowind",
+        "leafDescription": "En Morrowind hay tesoros por todas partes. Si escarbas, tal vez encuentres un vestigio de los dwemer que puedas vender por un buen pico. Pasea por unas ruinas o un campo de batalla y es probable que te tropieces con una reliquia de una de las casas de los elfos oscuros esperando a ser encontrada. Y, por supuesto, innumerables objetos de valor de otras culturas han llegado a la región debido a las numerosas conquistas de los elfos oscuros. Las riquezas pueden ser tuyas si tan solo las encuentras, y la propiedad es algo que hay que mantener constantemente. Al menos, así te justificas a ti mismo mientras te acercas a un tentador cofre rodeado de unos fornidos guardias.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_06.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-07",
+        "description": "Prohibido el paso",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Entras en una cueva buscando refugio, pero oyes unos ruidos en su interior que te invitan a investigar. En las sombras, te parece ver una elfa organizando lo que da la impresión de ser una excavación. Por su aspecto fuerte y actitud severa deduces que no le haría ninguna gracia ser interrumpida, así que te alejas con cautela. Sin embargo, accidentalmente pisas un scrib, que suelta un lastimero grito ahogado. El sonido de rápidas pisadas acercándose que oyes te hace dudar de que puedas salir de aquí con una simple disculpa.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_07.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-08",
+        "description": "Misterios debajo de Morrowind",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Las mentes más brillantes de la Segunda Era siguen aprendiendo cosas nuevas sobre las construcciones de los dwemer. Los miembros de la raza enana eran portentos técnicos, y en ningún lugar queda tan claro como en las ruinas de sus hogares subterráneos en Morrowind. Te has topado con una de esas ruinas y, a juzgar por los ruidos que se escuchan, en el interior de la cueva sigue funcionando algún proceso automatizado. Esto tal vez haga que la exploración sea más peligrosa, pero también que encuentres cosas en mejor estado y, por tanto, de mayor valor.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_08.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-09",
+        "description": "¿Hay trato o no?",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Tus contactos clandestinos han dado sus frutos y te han informado de la próxima ubicación de una de las misteriosas excavaciones que se están llevando a cabo por todo Morrowind. Se dice que el arquitecto del plan se va a hacer con un hacha de guerra enana encantada, así que interceptar dicho artefacto sería un duro golpe para el plan de este arqueólogo. Sin embargo, lo normal en los bajos fondos es que, si tú sabes algo, otras 20 personas también lo saben. Por eso, antes de que puedas ponerte en marcha, te aborda un desaliñado elfo oscuro ofreciéndote dinero por la información. De una forma u otra, los excavadores perderían el hacha.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_09.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-10",
+        "description": "La tríada del Tribunal",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Este santuario junto al camino dedicado al Tribunal tiene una sorprendente cantidad de ofrendas para algo ser tan rudimentario. Acampas en las cercanías y observas que varios elfos oscuros se detienen ante el santuario para rendir homenaje, cada uno de ellos implorando la bendición de uno de los dioses trinos. Uno de los aspectos más atrayentes del Tribunal es que Vivec, Almalexia y Sotha Sil se encuentran entre las deidades más tangibles que conoce Nirn. Se pueden visitar sus templos para suplicarles, y sus obras son claras y manifiestas. Está claro que los lugareños creen en el poder del santuario, así que quizá deberías hacer tu propia ofrenda... ¿pero a quién?",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_10.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-11",
+        "description": "División de opiniones",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Pasas una curva en el camino y te encuentras con dos elfos oscuros a punto de llegar a las manos. Te apresuras a interrumpir la pelea.\n«¡No permitiré que ningún cenicio acampe en mis tierras!», grita el elfo mayor. «Servimos lealmente a la Casa Redoran. No toleraremos a aquellos que falten al respeto al Tribunal».\n «¡Su “Tribunal” es una mancha negra para nuestro pueblo!», grita el más joven. «¡Todos los que lo siguen faltan el respeto al sacrificio de Lord Nerevar!».\n Está claro que estallará la violencia entre estos dos a menos que intervengas. Deseas evitar el derramamiento de sangre, pero ¿cuál de los dos tiene mejores argumentos?",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_11.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-12",
+        "description": "Control epidémico",
+        "provinciaTag": "morrowind",
+        "leafDescription": "La lluvia cae a cántaros mientras atraviesas un estrecho desfiladero. Por si estar empapado no era suficiente, ves un grupo de elfos oscuros bloqueando el camino. A juzgar por sus movimientos erráticos y la proliferación de llagas, deben tener algún tipo de enfermedad, tal vez una cepa de la plaga de Llodos. Aún no se han convertido en cáscaras, pero aun así representan un gran peligro.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_12.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-13",
+        "description": "Zancadas de zancudo",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Llegas a un río desbordado cuyas aguas fluyen con gran velocidad. Un viejo elfo oscuro se te acerca, masticando distraídamente un pequeño tallo de seta mientras habla.\n«El arroyo está muy revuelto en esta época del año. Tengo un zancudo del cieno que puedes alquilar, siempre y cuando te veas capaz de dirigirlo a través de las agitadas aguas. Intenta ser amable cuando te acerques a él. Se asusta con mucha facilidad».",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_13.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-14",
+        "description": "Contacto mecánico",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Te topas con un hallazgo extremadamente raro en el camino: una argoniana que quiere hacer una ofrenda a Sotha Sil.\n«Los elfos oscuros no han sido amables con mi pueblo, pero no tengo nada en contra del Tribunal. El espíritu de la invención me impulsa, y espero que un tributo al dios mecánico pueda encaminarme por la senda correcta. Pero, ¿qué se puede hacer para el dios que puede fabricar cualquier cosa?».\nTe muestra unos planos a medio terminar de una innovadora criatura mecánica y te pregunta si puedes aportar alguna idea.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_14.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-15",
+        "description": "El poeta guerrero interior",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Un elfo oscuro vestido con ropas muy llamativas te aborda, preguntándote si has experimentado la plenitud de la comunión con Vivec.\n«Aprendemos de cada acción que realizamos. Fracaso o éxito, cada resultado nos enseña algo, al menos en el sentido más amplio. Medita conmigo las lecciones del poeta guerrero y adquiere sabiduría y poder».\nSe está haciendo tarde. Podrías seguir tu camino o darle una oportunidad para ver si puedes sacar algo de provecho.",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_15.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "MW-16",
+        "description": "El amor de Madre Morrowind",
+        "provinciaTag": "morrowind",
+        "leafDescription": "Una multitud se ha reunido a la sombra de una seta cercana, donde una Mano de Almalexia fuera de servicio está deleitando a los reunidos con historias de su servicio a la dama de la piedad.\n«Todos los miembros del Tribunal son de vital importancia para Morrowind, por supuesto, pero Almalexia es la que se ocupa más íntimamente de nuestros asuntos», explica la Mano, una joven y elegante elfa oscura.\n«Ella nos ofrece guía y protección, y todo lo que debemos hacer a cambio es aceptarla con buena disposición».",
+        "audio": {
+          "src": "audios/encuentros/morrowing/mw_16.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+
+      {
+        "label": "CY-01",
+        "description": "Lucrarse con la guerra",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "En todo ejército hay oportunistas dispuestos a ser manipulados por aquellos que esperan beneficiarse de una guerra. Esa no es ni mucho menos tu intención con la Guerra de los Tres Estandartes, pero tus servicios son requeridos en Cyrodiil, y el estado actual de las líneas de batalla dificulta tu viaje. Afortunadamente, has encontrado un alijo intacto de artefactos, probablemente sacados de Ciudad Imperial antes de que cayera en manos de la Orden del Gusano Negro. Tal vez puedas utilizar parte de este botín como sobornos para hacer que tu misión dependa un poco del azar.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_01.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-02",
+        "description": "Héroes a sueldo",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "No tienes una lealtad decidida en la Guerra de los Tres Estandartes, pero, cuando la lucha es desesperada, se sabe que las alianzas contratan mercenarios para fortalecer sus filas. Los rumores sobre tus proezas han estado circulando y tus servicios están muy solicitados; incluso recibes una invitación muy lucrativa para ayudar a un grupo de bandidos ambulantes que se aprovechan de líneas de suministro poco vigiladas.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_02.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-03",
+        "description": "El campeón de los oprimidos",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "En tiempos de guerra, es bien sabido que los soldados angustiados reviven los horrores del combate en transeúntes indefensos. Estás a punto de presenciar una de esas tragedias, ya que un grupo amotinado de una de las alianzas está a punto de saquear una pequeña aldea de las llanuras de Cyrodilic. Nunca llegarán a tiempo refuerzos más civilizados, así que tú eres el único baluarte entre estos pacíficos habitantes y la destrucción gratuita. Sin embargo, vista la determinación que hay en los ojos de estos soldados, dudas de tener la destreza marcial suficiente para detener esta injusticia.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_03.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-04",
+        "description": "La hermandad de los sitios oscuro",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "La Hermandad Oscura prospera en los lugares sin ley, lo que ha convertido a Cyrodiil en un imán para las actividades de los asesinos. Por desgracia, has girado donde no debías en una cueva que antes creías abandonada, y ahora te encuentras cara a cara con varios matones armados con dagas y vestidos de negro. Los santuarios de la Hermandad Oscura son secretos cuidadosamente guardados, y puesto que has dado con este por accidente, prevés que intentarán degollarte cuanto antes a menos que logres escapar luchando",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_04.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-05",
+        "description": "¡Échalo a suertes!",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "La anarquía de Cyrodiil se ha hecho evidente hoy, ya que has sido asaltado por una banda de bandidos a plena vista de una patrulla local. No te has atrevido a decantarte por ninguno de los combatientes de la Guerra de los Tres Estandartes, pero tu reticencia ha generado desconfianza en los que podrían ser tus salvadores.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_05.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-06",
+        "description": "Diplomacia predictiva",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Mantenerte en el lado correcto de la espada en Cyrodiil a menudo depende de saber quién está a punto de tomar el control de la zona, y no quién está técnicamente al mando ahora mismo. Unas palabras amables hacia un soldado prometedor del ejército aventajado puede ayudarte mucho a ser bienvenido cuando la ciudad cambie de manos. Este pensamiento te ronda por la cabeza cuando te encuentras con una batalla entre dos fuerzas opuestas que luchan por mantener el control de una fortificación. Miras a los combatientes con mucha atención, tratando de determinar quién lleva la delantera.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_06.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-07",
+        "description": "Comerciantes por la causa",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Debido a su estado permanente en guerra, Cyrodiil se ha convertido en un lugar de peregrinación para comerciantes de armas. Las distintas facciones preferirían tener el monopolio de las mercancías que venden estos comerciantes ambulantes, pero la demanda es alta y nadie puede permitirse caerle mal a un comerciante. Bueno, nadie salvo, tal vez, tú. Con esa idea en mente, observas un campamento de comerciantes de armas desde una colina cercana. Si te preguntan a ti, hay demasiadas armas en Cyrodiil, y quien controle el flujo de armas controlará también el curso de la guerra.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_07.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-08",
+        "description": "¡Anclas fuera!",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Una silueta cónica en el horizonte, rodeada de nubes de tormenta... No puede ser otra cosa que un áncora oscura, una de las muchas que hay, enviadas desde Puerto Gélido para llevar a cabo la fusión de planos con Nirn. Desde la distancia, ves varios sectarios del Gusano, recién llegados de Ciudad Imperial, pululando alrededor de la estructura mientras preparan algún tipo de ritual de invocación. No hay muchos haciendo guardia, por lo que crees poder interrumpir el ritual y obstaculizar la labor del áncora sin mucho esfuerzo. Sin embargo, debes andarte con ojo: las áncoras oscuras tienen una energía oscura con la que es mejor no jugar.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_08.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-09",
+        "description": "Una nación al borde del colapso",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "La Guerra de los Tres Estandartes ha minado la moral de los civiles en todo Tamriel, pero en ningún lugar tanto como en Cyrodiil. Los residentes de esta zona están muy resentidos con sus diversos ocupantes y se rumorea que pretenden intentar el autogobierno, al menos si pudieran reunirse para expulsar a los soldados. Sientes como si un polvorín estuviera esperando una chispa, y el toque de clarín de la libertad (o quizá sólo de la anarquía) está en tu corazón. ¿Cómo debe dirigirse a quienes están dispuestos a arriesgarse al caos por una promesa de posible estabilidad?",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_09.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-10",
+        "description": "Trampas abandonadas",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Las cambiantes mareas de la Guerra de los Tres Estandartes han dejado en Cyrodiil un paisaje lleno de lugares peligrosos. A medida que el control de las ciudades, fortalezas y regiones ha ido cambiando, cada facción ha colocado su propio arsenal de trampas y defensas, que abandonan cuando son expulsados por el siguiente ejército. Te has convertido en víctima de una de estas viejas trampas, quedando atrapado en un cepo que ya se está oxidando por la exposición a los elementos. Necesitarás mucha suerte o una mano hábil para salir ileso.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_10.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-11",
+        "description": "Historias de todos los colores",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Esta taberna dista mucho de ser acogedora, y su clientela deja bastante que desear, pero es bien conocida por ser un punto de casi tregua donde cualquiera puede tomarse una copa independientemente de la afiliación de su ejército, aunque con cierta incomodidad. Tomando una dudosa decisión, te unes a una mesa con bastante mala pinta en la que apuestan en una partida de Historias de homenaje.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_11.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-12",
+        "description": "Tránsito a toda velocidad",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Tienes prisa y decides por impulso utilizar una capilla de tránsito en una ciudad cercana para atravesar rápidamente el campo. Las tres alianzas suelen utilizar estos medios de transporte mágicos para transportar tropas a los distintos frentes de la guerra, pero este centro no está vigilado, así que decides arriesgarte. Por un momento, te ves inundado por la energía mística de la red, hasta que emerges en un lugar inesperado. No es aquí donde querías acabar. Algo ha debido de salir mal. Sea cual sea la razón, será mejor que averigües exactamente dónde has saltado, y cuanto antes.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_12.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-13",
+        "description": "Oír al pasado",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Hay residentes de Cyrodiil que ven la guerra como una distracción de una tarea superior y que solo tratan con las cambiantes alianzas de la región cuando es necesario. Uno de estos ciudadanos, una mujer imperial de mediana edad que ha dedicado su vida a comunicarse con los espíritus ayleid, se dirige a ti.\n«Los elfos salvajes gobernaron esta tierra durante siglos antes de que llegáramos», explica mientras organiza varios talismanes de invocación en el suelo roto de una de las muchas ruinas ayleid de Cyrodiil.\n«Pueden proporcionarnos información sobre sus antiguas costumbres, si estamos dispuestos a buscarlos, claro».",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_13.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-14",
+        "description": "Es hora de escoger un bando",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Una pequeña turba se ha reunido en torno a un fornido hombre imperial con una armadura bastante gastada. La líder de facto del grupo parece ser una joven argoniana que está apuntando con el dedo a la cara del imperial.\n«¡Son los tuyos, tu estúpida legión imperial, los que han sumido esta tierra en la desesperación!».\nLa multitud ruge. El soldado echa mano de su espada. Si nadie interviene, no hay manera en que esto no acabe mal.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_14.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-15",
+        "description": "Control fronterizo",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "La lluvia ha azotado Cyrodiil en los últimos días, y es posible que te hayas desorientado un poco. Te acercas a un puesto de control armado y te das cuenta de que no sabes exactamente qué alianza controla este trozo de tierra en concreto. Normalmente, los estandartes y los uniformes de los guardias te lo dirían con bastante facilidad, pero con este tiempo frío y tormentoso, todo el mundo está abrigado hasta resultar irreconocible. Sigues mirando a todos lados en busca de algo que te permita reconocer su bando cuando el líder te pide que te identifiques.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_15.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-16",
+        "description": "Buscando refugio",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Mientras descansas las piernas en una taberna a mitad del camino, ves por el rabillo del ojo a unos viajeros encapuchados sentados a una mesa en un rincón poco iluminado. A juzgar por sus rasgos sombríos y sus miradas sospechosas, intuyes que estos clientes son los objetivos buscados por robar suministros de la guarnición local cuya recompensa acaba de anunciarse. Sientes mucha simpatía por aquellos que se ven obligados a recurrir al robo para superar los tiempos de escasez en el corazón de la Guerra de los Tres Estandartes, pero tú también estás pasando por necesidad, y la recompensa por su captura es considerable.",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_16.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-13",
+        "description": "Oír al pasado",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Hay residentes de Cyrodiil que ven la guerra como una distracción de una tarea superior y que solo tratan con las cambiantes alianzas de la región cuando es necesario. Uno de estos ciudadanos, una mujer imperial de mediana edad que ha dedicado su vida a comunicarse con los espíritus ayleid, se dirige a ti.\n«Los elfos salvajes gobernaron esta tierra durante siglos antes de que llegáramos», explica mientras organiza varios talismanes de invocación en el suelo roto de una de las muchas ruinas ayleid de Cyrodiil.\n«Pueden proporcionarnos información sobre sus antiguas costumbres, si estamos dispuestos a buscarlos, claro».",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_13.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+      {
+        "label": "CY-13",
+        "description": "Oír al pasado",
+        "provinciaTag": "cyrodiil",
+        "leafDescription": "Hay residentes de Cyrodiil que ven la guerra como una distracción de una tarea superior y que solo tratan con las cambiantes alianzas de la región cuando es necesario. Uno de estos ciudadanos, una mujer imperial de mediana edad que ha dedicado su vida a comunicarse con los espíritus ayleid, se dirige a ti.\n«Los elfos salvajes gobernaron esta tierra durante siglos antes de que llegáramos», explica mientras organiza varios talismanes de invocación en el suelo roto de una de las muchas ruinas ayleid de Cyrodiil.\n«Pueden proporcionarnos información sobre sus antiguas costumbres, si estamos dispuestos a buscarlos, claro».",
+        "audio": {
+          "src": "audios/encuentros/cyrodiil/cy_13.mp3",
+          "title": ""
+        },
+        "gremioTag": "all"
+      },
+
+      {
         "label": "SK-01",
         "description": "Incomodidad fría",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Hace frío, mucho frío, y tu tiempo de reacción se resiente. Llevas una eternidad de pie, el sol roza el horizonte y sólo piensas en dormir. Skyrim embota tus sentidos de una forma muy particular. Por supuesto, es en este momento cuando un grupo de bandidos asciende por la colina nevada que tienes delante. Te sacudes el frío de los huesos e intentas defenderte.",
         "audio": {
@@ -519,7 +1042,6 @@
       {
         "label": "SK-02",
         "description": "Los Puño de Tormenta",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "«¡Alto!».\nEsperas inquieto mientras varios hombres y mujeres vestidos con pieles de lobo se acercan a ti, con las manos en sus armas. Su líder se adelanta y te habla.\n«Los de la brigada Puño de Tormenta somos los protectores de Skyrim, y exigimos un tributo».\nPor supuesto. Antes conocidos como el clan Puño de Tormenta, la brigada es leal al hermano y rival al trono del rey escaldo Jorunn: Fildgor Orcthane. Sin rumbo desde la derrota de Fildgor, han seguido causando problemas en Skyrim. No tienes interés alguno en proporcionar «tributo», pero ellos tampoco tienen interés alguno en dejarte libre.",
         "audio": {
@@ -531,7 +1053,6 @@
       {
         "label": "SK-03",
         "description": "Mi reino por un cangrejo",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "La supervivencia en los páramos de Skyrim no está garantizada, y eso es especialmente cierto en esta época con invasores de Límite Sombrío. Tal vez harías bien en observar el ciclo vital del humilde cangrejo del barro, que prolifera incluso en climas inhóspitos como éste. O al menos, eso es lo que pensaste al capturar a este cangrejo para observarlo. En poco tiempo, se convirtió en una mascota, y luego, en un preciado compañero. Ahora, cuando tu viaje se ve interrumpido por un ataque de salteadores de caminos, sólo piensas en poner a Barrito a salvo lo antes posible.",
         "audio": {
@@ -543,7 +1064,6 @@
       {
         "label": "SK-04",
         "description": "Falanges del destino",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Hasta hace poco, la mayoría de los habitantes de Tamriel nunca habían oído hablar de los falmer, los habitantes de Skyrim pensaban que no eran más que cuentos de hadas. Sin embargo, desde que la población del Límite Sombrío ha empezado a asaltar las ciudades y asentamientos de Skyrim, muchos han tenido terribles encuentros con ellos. Hay un falmer en particular que se ha convertido rápidamente en legendario por su aterrador aspecto y su destreza en estos asedios a ciudades. Se le conoce como Dedos pálidos, y los rumores sobre su presencia han hecho que las expediciones a las cuevas sean aún más aterradoras. Con algo de suerte, no estará en la cueva que has elegido para acampar esta noche.",
         "audio": {
@@ -555,7 +1075,6 @@
       {
         "label": "SK-05",
         "description": "Resguardándose de una tormenta segadora",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "El cielo se tiñe de rojo y se te hiela la sangre. Conoces bien lo que se cuenta de las tormentas segadoras de Skyrim: fenómenos meteorológicos mágicos que matan a los desafortunados que se ven atrapados en ellas o, lo que es peor, los convierten en bestias segadas descerebrados. Recientemente, los vampiros de Límite Sombrío han estado invocando las tormentas como parte de su plan para hacerse con el control de Skyrim. Piensas rápido y corres hacia la cueva más cercana que encuentras. No estás preparado para adentrarte en la gélida caverna, pero tus opciones se limitan a desafiar el frío o enfrentarte a la tormenta.",
         "audio": {
@@ -567,7 +1086,6 @@
       {
         "label": "SK-06",
         "description": "Dificultades a diestro y siniestro",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Skyrim siempre ha sido un lugar cruel e inhóspito en el que vivir, pero su actual situación política obliga a los viajeros a elegir entre dos opciones poco atractivas. Por un lado, Skyrim Occidental, un páramo anárquico, donde los tiempos son duros y sus gentes aún más, donde abundan los cuencanos y los vampiros, el hielo y las ventiscas. Por otro lado, Skyrim Oriental, con algo más de estabilidad gracias al Pacto de Corazón de Ébano, pero donde abundan las luchas de poder y el espionaje político. Por supuesto, estas diferencias solo preocupan a los filósofos, o, como mucho, a los aventureros cuando están descansando, pero al enfrentar a unos asaltantes en una mañana azotada por el viento, como tú ahora mismo, lo único en lo que puede uno pensar es en no perder el equilibrio y en vencer a los oponentes.",
         "audio": {
@@ -579,7 +1097,6 @@
       {
         "label": "SK-07",
         "description": "Monolito maníaco",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Ves una estampa muy curiosa. En un claro frente a ti se yergue un monolito bastante grande, a kilómetros de distancia de donde se podría haber extraído tal piedra. Se alza imponente ante ti y, conforme te acercas, escuchas un sonido grave y vibrante que emana de él. Tu estómago comienza a contraerse y, nada más ver a otro grupo de aventureros en la cima de una colina, te embarga un sentimiento de ira. ¿Qué está pasando? Skyrim alberga una variedad de usuarios mágicos, desde devotos de Hircine, príncipe daédrico de la caza, hasta los Monjes de la Trinidad, adoradores de los Tres Dioses Antiguos. No tienes claro quién es responsable de este monolito, pero han producido en ti el deseo de combatir.",
         "audio": {
@@ -591,7 +1108,6 @@
       {
         "label": "SK-08",
         "description": "Los buenos precios son difíciles de defender",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Al bordear una colina escarchada, ves un conjunto de estructuras que parece formar una aldea, aunque en tu mapa no aparece ningún asentamiento. Un vistazo más de cerca revela una especie de mercado improvisado. Los edificios no son más que tiendas de campaña fortificadas contra las inclemencias del tiempo, y los animales de carga deambulan por las afueras, esperando a que se les llame para llevar a los mercaderes a otro lugar. Piensas si echar un vistazo a las mercancías que se ofrecen hasta que algo capta tu atención: a lo lejos, un grupo de guerreros de aspecto fuerte se acerca corriendo al campamento. Por sus caras, no parece que vengan a regatear.",
         "audio": {
@@ -603,7 +1119,6 @@
       {
         "label": "SK-09",
         "description": "Enredaderas hostiles",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Oyes un extraño sonido que raspa la nieve. Al mirar a tu alrededor en busca de la fuente del ruido, descubres unas enredaderas puntiagudas que se abren camino hacia ti a toda velocidad. Has oído rumores de las Espinas Sangrientas de los cuencanos: son plantas sobre las que se usa magia para usarlas en ritos religiosos en la Cuenca. Se dice que están ocurriendo brotes de crecimiento descontrolado de estas enredaderas por todo Skyrim, y tu testimonio parece confirmarlo. Cuando una enredadera de Espina Sangrienta atrapa a un ser vivo, puede alterar su mente, así que te apresuras a encontrar una vía de escape.",
         "audio": {
@@ -615,7 +1130,6 @@
       {
         "label": "SK-10",
         "description": "Sanadora exiliada",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Te encuentras con una curandera orca que te dice que procede de Wrothgar. Está claro que ha vivido tiempos mejores, pero insiste en que sus servicios no tienen parangón en todo Skyrim.\n«Deja que te lo demuestre. Todo lo que necesito es algo de dinero y algo de tiempo, y te sentirás bien como la lluvia. O como la nieve, si lo prefieres. Esto es Skyrim, después de todo».\nEs evidente que esta curandera necesita un empujoncito con su reputación, y espera que tu palabra pueda servirle en el futuro. No estás seguro de querer quedarte aquí, pero algo en los ojos de la orca sugiere que podrías arrepentirte de rechazarla.",
         "audio": {
@@ -627,7 +1141,6 @@
       {
         "label": "SK-11",
         "description": "El aullido del Jarl",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Sigue el sonido de un grito hasta una carreta de bueyes que ha volcado, probablemente por culpa de una inesperada placa de hielo en el camino. Debajo de la carreta hay una nórdica rubia que dice ser una jarl local de considerable reputación.\n«¡Ayudadme a quitarme esto de encima y llevadme a un sanador! Tendrás una buena recompensa».\nSopesas tus opciones. Lo caritativo, y lo prudente, también, si esta mujer es realmente jarl, sería ayudar. Por otra parte, tienes prisa, y la mercancía en el carro es bastante tentadora.",
         "audio": {
@@ -639,7 +1152,6 @@
       {
         "label": "SK-12",
         "description": "«Soledaridad»",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Según tu mapa, te estás acercando a un puente. Sin embargo, ves que el camino está bloqueado por una gran multitud. Abriéndote paso entre los muchos curiosos, ves qué atrae la atención de la muchedumbre: un pequeño grupo de nórdicos que se han tumbado en el puente, bloqueando el paso a cualquier posible viajero. Su líder grita que están protestando por los bajos salarios en la maderera de Soledad, donde se compró la madera para construir este puente. Normalmente, buscarías otra forma de paso para evitar este obstáculo, pero las aguas del río bajo este puente están heladas y son muy traicioneras.",
         "audio": {
@@ -651,7 +1163,6 @@
       {
         "label": "SK-13",
         "description": "Iniquidades por las antigüedades",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Te despiertas con varias espadas apuntándote a la cara. Estos bandidos te tienen a su merced, pero lo que quieren no es ni tu dinero ni tus objetos. Lo que quieren es... ¿trabajo? La elfa del bosque que lidera el grupo te explica mientras se disculpa que están tratando de ganarse el favor del Círculo de Anticuarios, la sociedad histórica de Soledad para los artefactos perdidos.\n«Nos gustan mucho las antigüedades», te dice entre lágrimas.\n«Si pudiéramos encontrar algunas para el Círculo, tendrían que dejarnos entrar. Estamos buscando cualquier pista o encargo que nos ayude. ¿Puedes ayudarnos?».\nEs una petición tan extraña que casi te sientes obligado a ayudar a tus captores.",
         "audio": {
@@ -663,7 +1174,6 @@
       {
         "label": "SK-14",
         "description": "Remedios caseros",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Un elfo oscuro de aspecto descuidado se arrastra bajo la señal de un cruce, observando a los transeúntes con atención. Cuando te acercas, se levanta y saca un pequeño frasco de su túnica.\n«Si estás planeando vagar por los caminos de Skyrim, debes llevar contigo el \"Brebaleja\" de Ulon. Gracias a una mezcla especial de hongos en polvo de la Hondonada Lóbrega, este brebaje te protegerá, alejando de ti todos los efectos de las tormentas segadoras y cualquier tipo de dolencia vampírica».\n Abres el frasco y miras en su interior. El líquido es viscoso y ceniciento, pero los vampiros son un peligro real en Skyrim. ¿Qué es lo peor que podría pasar?",
         "audio": {
@@ -675,7 +1185,6 @@
       {
         "label": "SK-15",
         "description": "El hacha marca el lugar",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "¡Ventalia, la capital de Skyrim Oriental, está de celebración! Celebran el Festival Konunleikar, que conmemora el décimo aniversario de la coronación de Jorunn, el rey escaldo. Esta alegre ocasión incluye concursos muy variados por todo Skyrim, concursos que ponen a prueba la fuerza, la constitución y la agilidad de los participantes. Uno de ellos es el concurso de lanzamiento de hacha, y has oído que hay una gran recompensa para los que queden en una buena posición. Te encuentras con una de esas pruebas de lanzamiento de hachas y decides probar suerte.",
         "audio": {
@@ -687,7 +1196,6 @@
       {
         "label": "SK-16",
         "description": "Bruja cuervo herida",
-        "color": "blueviolet",
         "provinciaTag": "skyrim",
         "leafDescription": "Investigas un espeluznante siseo y descubres a una bruja cuervo herida escondida tras una pila de escombros, con las piernas impedidas por la congelación. Gruñe al verte, exigiendo que le perdones la vida.\n«¡Mátame y recibirás la ira de Nocturnal, Reina de la Penumbra, Hija del Crepúsculo...! Déjame en paz... y te daré una gran recompensa».",
         "audio": {

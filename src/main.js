@@ -40,7 +40,9 @@ function loadState() {
   return {
     selectedProvincia: "",
     selectedGremio: "",
-    revealedDescriptions: []
+    revealedDescriptions: [],
+    autoPlay: true,
+    playbackRate: 1
   };
 }
 
@@ -51,7 +53,9 @@ function saveState() {
       selectedProvincia,
       selectedGremio,
       expandedPanels: [...expandedPanels],
-      revealedDescriptions: [...revealedDescriptions]
+      revealedDescriptions: [...revealedDescriptions],
+      autoPlay,
+      playbackRate
     })
   );
 }
@@ -61,6 +65,8 @@ let selectedProvincia = typeof state.selectedProvincia === "string" ? state.sele
 let selectedGremio = typeof state.selectedGremio === "string" ? state.selectedGremio : "";
 let expandedPanels = new Set(Array.isArray(state.expandedPanels) ? state.expandedPanels : []);
 let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? state.revealedDescriptions : []);
+let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
+let playbackRate = [1, 1.25, 1.5, 1.75].includes(state.playbackRate) ? state.playbackRate : 1;
 
 const contentTree = buildTreeFromStart();
 const accordionIndex = buildAccordionIndex(contentTree);
@@ -144,6 +150,7 @@ function render() {
   `;
 
   bindFilterEvents();
+  bindConfigEvents();
   bindPanelEvents();
   bindDescriptionRevealEvents();
 }
@@ -161,6 +168,34 @@ function renderFilters() {
         <p class="filter-group-title">Gremio seleccionado</p>
         <div class="filter-options">
           ${FILTER_OPTIONS.gremios.map((item) => renderCheckable("gremio", item.id, item.label, selectedGremio === item.id)).join("")}
+        </div>
+      </div>
+    </div>
+    <div class="config-panel">
+      <div class="filter-group config-group" role="group" aria-label="Configuración de reproducción">
+        <p class="filter-group-title">Reproducción</p>
+        <div class="config-group-body">
+          <label class="autoplay-label">
+            <input
+              type="checkbox"
+              id="autoplay-checkbox"
+              class="autoplay-checkbox"
+              ${autoPlay ? "checked" : ""}
+            />
+            <span>Auto-play</span>
+          </label>
+          <div class="filter-options">
+            ${[1, 1.25, 1.5, 1.75].map((rate) => {
+              const active = playbackRate === rate;
+              const label = rate === 1 ? "1x" : `${rate.toFixed(2)}x`;
+              return `<button
+                type="button"
+                class="checkable-chip${active ? " checkable-chip--active" : ""}"
+                data-config-rate="${rate}"
+                aria-pressed="${active ? "true" : "false"}"
+              ><span class="checkable-chip-mark" aria-hidden="true">${active ? "●" : "○"}</span><span>${label}</span></button>`;
+            }).join("")}
+          </div>
         </div>
       </div>
     </div>
@@ -183,6 +218,36 @@ function renderCheckable(type, value, label, checked) {
       <span>${escapeHtml(label)}</span>
     </button>
   `;
+}
+
+function bindConfigEvents() {
+  const checkbox = screenEl.querySelector("#autoplay-checkbox");
+  if (checkbox) {
+    checkbox.addEventListener("change", () => {
+      autoPlay = checkbox.checked;
+      saveState();
+    });
+  }
+
+  screenEl.querySelectorAll("[data-config-rate]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const rate = parseFloat(button.dataset.configRate);
+      playbackRate = rate;
+      saveState();
+
+      screenEl.querySelectorAll("audio").forEach((audioEl) => {
+        if (!audioEl.paused) audioEl.playbackRate = rate;
+      });
+
+      screenEl.querySelectorAll("[data-config-rate]").forEach((btn) => {
+        const btnRate = parseFloat(btn.dataset.configRate);
+        const active = playbackRate === btnRate;
+        btn.classList.toggle("checkable-chip--active", active);
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+        btn.querySelector(".checkable-chip-mark").textContent = active ? "●" : "○";
+      });
+    });
+  });
 }
 
 function bindFilterEvents() {
@@ -249,7 +314,10 @@ function togglePanel(panelId) {
     if (node?.type === "leaf") {
       const contentEl = document.getElementById(`${panelId}-content`);
       const audioEl = contentEl?.querySelector("audio");
-      if (audioEl) audioEl.play().catch(() => {});
+      if (audioEl) {
+        audioEl.playbackRate = playbackRate ?? 1;
+        if (autoPlay) audioEl.play().catch(() => {});
+      }
     }
   }
 }

@@ -12,12 +12,15 @@ const FILTER_OPTIONS = {
     { id: "cyrodiil", label: "Cyrodiil" }
   ],
   gremios: [
+    { id: "circulo_campeones", label: "Círculo de Campeones" },
     { id: "ladrones", label: "Gremio de ladrones" },
-    { id: "magos", label: "Gremio de magos" },
     { id: "luchadores", label: "Gremio de luchadores" },
+    { id: "magos", label: "Gremio de magos" },
+    { id: "guardia_exterior", label: "Guardia exterior" },
     { id: "hermandad_oscura", label: "Hermandad Oscura" },
     { id: "intrepidos", label: "Intrépidos" },
-    { id: "guardia_exterior", label: "Guardia exterior" }
+    { id: "ojos_reina", label: "Ojos de la Reina" },
+    { id: "orden_psijic", label: "Orden Psijic" }
   ]
 };
 
@@ -116,13 +119,18 @@ function registerServiceWorker() {
 }
 
 function render() {
-  const filteredRoots = contentTree
-    .map(filterTree)
-    .filter(Boolean);
+  let bodyHtml;
+  if (!selectedProvincia) {
+    bodyHtml = '<div class="empty-screen">Selecciona una provincia para ver el contenido.</div>';
+  } else {
+    const filteredRoots = contentTree
+      .map(filterTree)
+      .filter(Boolean);
 
-  const bodyHtml = filteredRoots.length
-    ? filteredRoots.map((node) => renderPanel(node, 0)).join("")
-    : '<div class="empty-screen">No hay paneles que coincidan con los filtros seleccionados.</div>';
+    bodyHtml = filteredRoots.length
+      ? filteredRoots.map((node) => renderPanel(node, 0)).join("")
+      : '<div class="empty-screen">No hay paneles que coincidan con los filtros seleccionados.</div>';
+  }
 
   screenEl.innerHTML = `
     <div class="single-screen-head">
@@ -584,7 +592,10 @@ function normalizeGremioTag(value) {
     v === "luchadores" ||
     v === "hermandad_oscura" ||
     v === "intrepidos" ||
-    v === "guardia_exterior"
+    v === "guardia_exterior" ||
+    v === "ojos_reina" ||
+    v === "orden_psijic" || 
+    v === "circulo_campeones"
   ) {
     return v;
   }

@@ -22,6 +22,11 @@
         "label": "Misiones",
         "description": "",
         "next": "misiones"
+      },
+      {
+        "label": "Sesión final",
+        "description": "",
+        "next": "sesion_final"
       }
     ]
   },
@@ -47,8 +52,8 @@
     "description": "",
     "options": [
       {
-        "label": "A01",
-        "description": "Selección antinatural - Gremio de magos",
+        "label": "A01 - Selección antinatural",
+        "description": "Gremio de magos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "magos",
         "leafDescription": "El Gremio de magos busca aventureros fuertes y valerosos para recorrer Ciénaga Negra y acabar con unas peligrosas bestias. Te ofreces y te dan más información; resulta que, en las últimas semanas, han avistado en distintos puntos de la región animales extraños, de ojos brillantes, con espuma en la boca e incluso con extremidades adicionales. Incluso animales que por lo general son dóciles han estado atacando a la población sin provocación previa. El Gremio de magos sospecha que estas criaturas anómalas han sido modificadas por alguna clase de magia. Por tanto, solicitan que rastrees algunas de ellas y les entregues suficientes muestras para realizar un análisis detallado. Los informes indican que las bestias parecen calmarse ante una combinación de elementos vegetales poco comunes de Ciénaga Negra. Tal vez conseguir un ungüento utilizando estos reactivos podría simplificar la recogida de muestras.",
@@ -58,8 +63,8 @@
         }
       },
       {
-        "label": "B02",
-        "description": "Selección antinatural - Gremio de magos",
+        "label": "B02 - Selección antinatural",
+        "description": "Gremio de magos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "magos",
         "leafDescription": "Un representante del gremio aparece al poco de que hayas despachado a tu primer grupo de bestias. El alto elfo toca a los animales muertos con cierta fascinación.\n«¡Increíble!... La corrupción va mucho más allá que una alteración mental. ¡Su entera musculatura se ha visto afectada!».\nUn líquido negro, viscoso y no identificado, empieza a rezumar del animal. El mago frunce el ceño.\n«Tendré que llevarme esto a uno de nuestros salones para estudiarlo a fondo. Mientras tanto, necesitaremos que te hagas con más muestras para que podamos compararlas».",
@@ -69,8 +74,8 @@
         }
       },
       {
-        "label": "C03",
-        "description": "Selección antinatural - Gremio de magos",
+        "label": "C03 - Selección antinatural",
+        "description": "Gremio de magos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "magos",
         "leafDescription": "Poco después de que hayas terminado de recoger muestras de la segunda manada de bestias, llega a tu campamento una misiva del gremio.\n«Continúa con tu tarea con precaución. Creemos que a estos animales se les ha alimentado o inyectado algún tipo de sustancia vegetal alterada mágicamente, lo que los hace erráticos y agresivos. No estamos seguros aún del origen de dicha sustancia, ¿tal vez los árboles de Ciénaga Negra? En cualquier caso, es posible que el culpable de la condición actual de estas criaturas esté intentando ser capaz de controlarlos. Sin embargo, como has visto, los ataques han sido hasta ahora cualquier cosa menos organizados. Te rogamos que vayas al sur para hacerte con más muestras. Hemos oído que unas bestias particularmente agresivas están causando el caos cerca de la Aldea de Susurra Raíces, y existe la posibilidad de que el origen de esta actividad oscura se encuentre allí».",
@@ -80,8 +85,8 @@
         }
       },
       {
-        "label": "E04",
-        "description": "Selección antinatural - Gremio de magos",
+        "label": "E04 - Selección antinatural",
+        "description": "Gremio de magos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "magos",
         "leafDescription": "Tras acabar con el último de los animales, un consorcio de magos es enviado a tu localización. Les escoltas mientras intentan rastrear la sustancia vegetal corrupta hasta su origen. Tras un par de días, los adivinos del gremio localizan un laboratorio oculto bajo un imponente árbol que emite un débil resplandor. El rudimentario lugar de trabajo ha sido recientemente despojado de sus cosas de valor, pero en la apresurada huida quedó lo suficiente como para identificarlo como propiedad de un grupo llamado los Soldados del Vacío. Aunque este experimento con la alteración de la esencia vital de la naturaleza de Ciénaga Negra parece haber fracasado, ¿quién puede saber si la mente tras este proyecto ha aprendido de sus errores?",
@@ -131,6 +136,39 @@
         "leafDescription": "Colarse en el patio de la Prisión de Rosa Negra ha sido sencillo, pero, al observar los alrededores, sientes un extraño escalofrío... parece que el mundo se estuviera preparando para algo maligno. Hay guardias apostados cerca de muchas de las ruinosas celdas, que albergan a diversas personas que probablemente están siendo retenidas para pedir un rescate. Te alegra saber que hay personas que, si reciben tu ayuda, de seguro estarían dispuestas a ayudarte, pero no logras zafarte de esa desagradable sensación de que algo no va bien. ¿Está la Guardia Negra alerta y en tensión solo por el intento de fuga o hay preocupación por algo más?",
         "audio": {
           "src": "audios/misiones/cienaga_negra/d08.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D09 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "¡Hay más intrusos en la parte delantera del patio!», grita un guardia. Te giras para ver si Busca Las Tinieblas ha llegado, pero lo que ves es una imponente elfa del bosque haciendo picadillo a todos los que se cruzan en su camino. Entre tanto caos, oyes a Zirik hablar en voz baja. «Supongo que la estrategia ya no es ser sigiloso...».\nAntes de que puedas reaccionar, la elfa le lanza a Zirik un bote de cristal lleno de un líquido viscoso y marrón. Él bebe su contenido y, tras unos instantes, un destello mágico irradia de su cuerpo. Carga contra ti con un cuchillo en la mano que debe haberle robado a un guardia. Consigues detener el ataque, pero caes al suelo y, cuando te levantas, te das cuenta de que la elfa del bosque ya ha desaparecido y Zirik corre hacia la salida, atacando a todos los que se le acercan. Empiezas a plantearte que, tal vez, sí fuera lo mejor que estuviera cautivo. A medida que la Guardia Negra se cierne sobre ti, se te presenta una dicotomía: podrías simplemente huir y reclamar la recompensa por un trabajo bien hecho, ya que has liberado a Zirik, o podrías ir a por Zirik y evitar que un peligroso ladrón mágicamente alterado ande suelto.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/d09.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E10 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "Estás ensangrentado, golpeado y con las manos vacías, pero has cumplido con tu trabajo. Informas al Gremio de ladrones de tu éxito, y ellos te hacen saber que nadie del gremio conoce a esa elfa del bosque que viste, y que ninguno había oído jamás que Zirik tuviera ninguna habilidad sobrenatural. Debe haber estado haciendo cosas al margen del gremio. Te sientes en cierto modo responsable de los estragos que vaya a causar en Tamriel, pero al menos has hecho un buen trabajo, y eso demuestra ampliamente tu competencia.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e10.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E11 - El ladrón encarcelado",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ladrones",
+        "leafDescription": "Habiéndote dado cuenta de que quien estuviera pagando por mantener a Zirik cautivo tenía una buena razón para ello, acabas con él antes de que huya de la Prisión de Rosa Negra, tras lo que sales corriendo de allí. Por lo general, ignorar los términos del contrato estaría mal visto, pero el Gremio de ladrones lo pasa por alto cuando les demuestras que había un tercero manipulando los eventos sin que el gremio lo supiera (de hecho, Busca Las Tinieblas lleva sospechosamente desaparecido varios días). En cualquier caso, aunque en realidad no hayas sacado a Zirik de la prisión, has demostrado que eras capaz de hacerlo, lo que te ha otorgado mucho prestigio dentro del gremio. En cuanto a la identidad de la misteriosa elfa del bosque, no tienes ni idea. El gremio se ha hecho con el cuerpo de Zirik para analizarlo, y encontró trazas de lo que parece alguna especie de la flora de Ciénaga Negra alterada mágicamente.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e11.mp3",
           "title": ""
         }
       },
@@ -219,6 +257,237 @@
         "leafDescription": "Akisha permanece de pie en la orilla, despidiéndose de los niños, mientras tú te deshaces de los cuerpos de los enemigos. Una vez el barco desaparece en el horizonte, ella se te acerca, con lágrimas en los ojos.\n«Por ahora, esto es lo mejor para ellos. Algún día volveré a reunirme con ellos. Te estoy muy agradecida por tu ayuda».\nNo sabes muy bien qué pensar de Akisha, incluso después de lo que acabáis de pasar juntos. La vida de un Escama Sombría es difícil de explicar a los que no lo son, lo que incluye a los otros miembros de la Hermandad Oscura. Intuyes que el signo de la Sombra permanecerá sobre ella el resto de su vida, sea larga o corta.",
         "audio": {
           "src": "audios/misiones/cienaga_negra/e20.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A21 - Conservadores del caos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Has aceptado un contrato con el Anticuario Cyrodílico, una sociedad de historiadores que pretende abrir un museo de artefactos argonianos en Ciénaga Negra. La sociedad está tras la pista de una reliquia especialmente difícil de conseguir, y es por eso que han contratado los servicios de los Intrépidos para encontrarla. Cualquier otra cosa que encontréis en el proceso, por supuesto, es vuestra. La reliquia en cuestión es un antiguo tomo argoniano que, según se dice, contiene secretos sobre cómo aprovechar un raro recurso natural nativo de Ciénaga Negra. El Anticuario Cyrodílico ha averiguado que el libro se encuentra en un complejo sistema de cuevas bajo la ciudad de Fuerte de la Tormenta. La organización no sabe mucho más, pero hay algunos historiadores repartidos por la región que tal vez podrían ayudar.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a21.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B22 - Conservadores del caos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "intrepidos",
+        "leafDescription": "En lugar de invertir tiempo en investigar más, decides aventurarte en los túneles acompañado solo con tus agallas y tu considerable equipamiento. Tu vista se adapta a la oscuridad y ves una maraña de pasadizos ante ti. Conforme avanzas, ves algunos extraños cristales azules que reflejan la luz de tu antorcha. También oyes una voz enfadada proveniente de uno de los túneles cercanos. Parece que alguien busca también el tomo, y no da la impresión de que le alegre tener compañía.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b22.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C23 - Conservadores del caos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Consigues encontrar a una anciana argoniana que podría tener información. Ella se alegra de tener tu compañía.\n«No hay mucha gente interesada en las historias del pasado en estos días que corren... Ni siquiera se preocupan del futuro, que el pasado les ayudaría a predecir e interpretar. Solo les importa el ahora».\nTe explica que el tomo es un libro que recoge los usos posibles de unos minerales conocidos coloquialemente como Cristales de Fuerte de la Tormenta. Son raros y volátiles, y pueden encontrarse en el subsuelo de la región del Pantano de las Sombras, especialmente en el área cerca de Fuerte de la Tormenta, de ahí su nombre.\n«Algunos creen que estos cristales albergan el mismísimo poder del mal. Cualquiera que posea ese libro deberá tener mucho cuidado con los secretos que contiene».\nAntes de irte, te da algunos fragmentos de mapas antiguos que te ayudarán a moverte por los laberínticos túneles de la zona. Además, te hace una advertencia. «Hace algunos días, unas personas con túnicas grises vinieron preguntando por el códice... No les dije mucho, parecían malas personas, pero, si quieres ese libro, tendrás que estar dispuesto a luchar».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c23.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D24 - Conservadores del caos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Confiado por tus fragmentos de mapa y tus recién adquiridos conocimientos, entras en la cueva bajo Fuerte de la Tormenta sabiendo el camino y consciente de la presencia de enemigos. Incluso consigues acercarte sigilosamente y espiar a algunos de ellos mientras discuten sobre qué camino seguir.\n«Más vale que valgan la pena», se queja un imperial a su compañero, un orco muy bajito que mira dubitativo una bifurcación más adelante.\n «De hecho, aún no lo entiendo, ¿para qué quiere esos cristales?».\n El orco lo mira, encogiéndose de hombros.\n«Yo tampoco lo sé, pero dijo algo de que pueden... ¿“contener corrupción”? Y que, por tanto, podrían... No recuerdo bien. Me suena algo como: “absorber los peores efectos de separar el mundo de Oblivion hasta”... ¡Ay, yo qué sé! ¡Yo solo hago lo que se me ordena!».\n Finalmente, se decantan por una ruta y se alejan. Tras oir sus palabras, encontrar el códice parece más importante que simplemente para obtener una buena recompensa por él.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/d24.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E25 - Conservadores del caos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Ha sido un trabajo difícil, pero te has hecho con el tomo y has salido con vida de las cavernas. Una vez has vuelto a Lilmoth, entregas el códice a Famia Mercius, una mujer imperial cofundadora del Anticuario Cyrodílico. Su rostro, que mostraba gran entusiasmo, se ensombrece conforme hojea el libro.\n «Sin duda, se trata de un importante artefacto argoniano, y te damos las gracias por ello... Sin embargo, teniendo en cuenta lo que has visto en tu travesía y lo que contiene, tal vez no sea lo más prudente mostrar este libro al público. Dicho esto, no hay palabras para agradecer tu servicio por nuestro grupo y por el pueblo argoniano. Incluso si este volumen nunca llega a formar parte de nuestra colección pública, servirá como un recurso inestimable para los investigadores de antigüedades argonianas».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e25.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A26 - La cuna de las aberraciones",
+        "description": "Guardia exterior",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Esta misión de la Guardia exterior viene directamente del consejo de líderes. La sede local del grupo ha sido informada de un nuevo laboratorio subterráneo operado por los agentes de una exmiembra de la Guardia exterior, Deslandra, en algún lugar de Ciénaga Negra. La Guardia necesita a alguien sobre el terreno que recabe información y pueda localizar el laboratorio. Ciénaga Negra alberga muchos secretos del mundo natural, y es mejor para todos que el dominio de Deslandra de lo antinatural no siga creciendo. Tus primeras investigaciones revelan que este laboratorio parece diseñado para procesar y analizar diversos fluidos y savia extraídos de plantas de toda Ciénaga Negra. Corren rumores de que estos experimentos giran en gran medida en torno a la exposición de estos extractos a diversos elementos daédricos y de Oblivion para ver cómo reaccionan, prestando especial atención a las combinaciones que conservan su estabilidad cuando se someten a una agitación extrema. Has estado intentando rastrear varias transacciones clandestinas hasta su origen, pero probablemente tendrás que hacer algunos favores a cambio de la última información que necesitas.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a26.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E27 - La cuna de las aberraciones",
+        "description": "Guardia exterior",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "La batalla fue dura, pero localizaste el laboratorio y destruiste su contenido, reduciendo significativamente la población de sectarios de Ciénaga Negra en el proceso. Sin embargo, al buscar entre los restos, te sorprende ver que la mayoría de los experimentos no se centran en la capacidad de los extractos para actuar como agentes estables en Oblivion. En cambio, parece que la materia vegetal está siendo sometida a pruebas para comprobar su capacidad de impedir que agentes extraños y magia penetren su barrera externa. Esto sugiere que los objetivos de Deslandra pueden no estar relacionados con el uso de la vida vegetal de Ciénaga Negra como reactivo, sino más bien como una barrera mágica. Dada la cantidad de material almacenado en este lugar, parece que se trata de un proyecto a gran escala.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e27.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A28 - Savia ancestral",
+        "description": "Orden Psijic",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "La división local de la Orden Psijic está interesada en estudiar una extraña muestra de savia procedente de un árbol de la ciudad argoniana en ruinas de Mazzatun. La savia contiene elementos de origen daédrico, lo que sugiere que hubo una mezcla entre los antiguos árboles de Ciénaga Negra y Oblivion. ¿Podría deberse a los efectos de la fusión de planos o se trata de un fenómeno independiente a punto de ser descubierto? La Orden quiere averiguarlo, y se te ha encomendado llevarles la savia para que la investiguen más a fondo. La Orden Psijic ha asegurado la muestra con un comerciante de la Aldea Agua Muerta, pero una maga anciana te lleva aparte para advertirte de que es posible que un grupo competidor intente recuperar la savia antes de que puedas ponerle las manos encima. Las motivaciones de este otro grupo no están claras, pero se rumorea que todos, hasta el último de sus miembros, no son más que rufianes de la peor calaña. Lo más seguro sería evitar la confrontación directa.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a28.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B29 - Savia ancestral",
+        "description": "Orden Psijic",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "¡Los mercenarios consiguieron llegar a la Aldea Agua Muerta antes que tú, llevándose la savia con ellos! Tu contacto, un khajiita anciano, confiesa que si sobrevivió fue porque se hizo el muerto tras el primer golpe y dejó que saquearan la tienda.\n «Este no sabe quién les ha enviado, pero oyó a uno de los ladrones decir que “la señora” estaría contenta. A este le parecieron palabras... oscuras. Preferiría no seguir involucrado».\nPrometes al khajiita que su parte en esto está hecha y sales corriendo tras el rastro de los malhechores.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b29.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C30 - Savia ancestral",
+        "description": "Orden Psijic",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Aunque has obtenido la savia, sabes que tu misión dista mucho de haberse completado. Los mercenarios que la buscan han estado pagando muy bien por conocer tu paradero... parece que el dinero no es un problema para ellos. Y por la brutalidad con la que tratan a quienes se cruzan en su camino, parece que la legalidad tampoco les importa mucho. A veces, cuando tienes un momento a solas en el camino, levantas el frasco de savia a la luz y observas la oscuridad cristalina que se arremolina dentro de la savia. ¿Qué puede ser este contaminante y por qué lo querrán tanto esos despiadados malhechores?",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c30.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E31 - Savia ancestral",
+        "description": "Orden Psijic",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Ha sido un camino difícil, pero has llegado de una pieza y con la savia al punto de encuentro, en Leyawiin. Tu contacto es la misma maga anciana que te advirtió de los enemigos que terminaste encontrando. Aunque se muestra dubitativa sobre si compartir o no las intenciones de la Orden para la savia, sí que deja ver claramente que está aliviada de que no haya caído en las manos equivocadas. «La savia de los árboles anómalos está ganando popularidad en el mercado negro... Técnicamente hablando, esto no es savia de árbol, sino una sustancia relacionada llamada plasma de ámbar, que tiene propiedades que ni siquiera nosotros, los argonianos, comprendemos del todo; propiedades que lo relacionan con la fuente de Nirn y tal vez incluso con otros mundos. He oído hablar de esa «señora» de la que hablaba tu amigo khajiita, una elfa del bosque que ha estado metiendo las narices en los asuntos arcanos de Ciénaga Negra. Si alguien así desvelara esos secretos, no sé qué tipo de caos podría estallar, ya fuera en este plano o en otro».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e31.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A32 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Tras haber perdido el punto de suministro para el Dominio de Aldmer en Ciénaga Negra, en Alten Corimont, los Ojos de la Reina quisieran recuperar el negocio cuanto antes. Se te ha encargado la tarea de restablecer la línea de comercio clandestina, solo que, esta vez, abastecerá directamente a los Ojos, y solo usará a lugareños para no levantar sospechas del Pacto de Corazón de Ébano. Un contratista privado ha ofrecido sus servicios para establecer la nueva red de contrabando, pero antes debes someter al grupo conocido como Renrijra Maor, que estuvo a cargo de la anterior operación de contrabando. La banda de piratas no está contenta con que los Ojos los hayan sacado de participar en un negocio tan lucrativo, así que sus líderes amenazan con causaros problemas a ti y al contratista anónimo. Renrijra Maor tiene su base secreta de operaciones en Aldea Agua Muerta. Si puedes neutralizar a esta banda rival, podrás despejarle el camino al benefactor secreto de los Ojos.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a32.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B33 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Una vez sometidos los piratas de Renrijra Maor, el contratista privado se ha puesto en contacto con los Ojos para comenzar a preparar el nuevo centro de comercio ilícito. Para asegurarse de que está tratando con el verdadero representante de los Ojos en Ciénaga Negra, el contratista pide que le entreguen un bastón único cuando se reúnan. Dado que te has desenvuelto bien hasta ahora, has sido seleccionado para obtener el bastón, que se rumorea que se encuentra en la trastienda de una tienda de artículos raros en Fuerte de la Tormenta. El báculo se llama Espina de la noche; se dice que se formó hace eones, cuando un rayo arrancó a la perfección el arma de un gran árbol en el corazón de Helstrom. Encuentra el báculo rápido, pero mantén la boca cerrada. Lo mejor sería que no quedara constancia oficial de su adquisición.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b33.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C34 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Cuando te dispones a abandonar la ciudad para hacer tu entrega en Alten Corimont, se te acerca un khajiita harapiento. Se identifica como miembro de Renrijra Maor, lo que te hace sacar tu arma, pero él levanta sus manos, vacías, y afirma que solo viene a transmitir un mensaje.\n«Los Renrijra Maor son ladrones, pero ladrones honrados. Los Maor hicieron el trabajo para la reina Ayrenn tal y como se acordó, y harían lo mismo por ti. Tu nueva benefactora no tiene escrúpulos; sólo quiere el bastón. El bastón, y causar problemas, eso es lo que le conviene. Los Renrijra Maor están dispuestos a dejar atrás las diferencias si los Ojos desean cooperar».\n Retrocediendo, el khajiita se funde entre la multitud. ¿Decía la verdad el bandido o simplemente intentaba sembrar la discordia con el nuevo socio comercial de los Ojos? Decides reunirte con el contratista cara a cara para tratar de dilucidar mejor sus motivaciones.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c34.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D36 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Tampoco es como si pudieras confiar en la palabra de un pirata que acabas de someter, ¿no? No parece la fuente de información más fiable, así que decides completar la misión como se había planeado desde el principio. Sin embargo, al entregar el bastón te das cuenta de que, tal vez, había algo de verdad en las palabras del khajiita. La pálida elfa del bosque que acabas de conocer agarra el bastón y lo levanta, examinándolo. Al alzar la cabeza, su capucha cae hacia atrás, dejando ver sus rasgos y, lo que es algo espeluznante, una especie de rayo en sus pupilas.\n«Fascinante... Este fragmento de árbol de Helstrom ha sido capaz de retener su poder a pesar de haber sido separado de su origen. ¡Debo retirarme a estudiar sus propiedades de inmediato!».\nNervioso, le preguntas por el trato con los Ojos. A lo que responde riéndose.\n«Ah, sí. Sobre eso... puedes dar el acuerdo por terminado». Dicho esto, te apunta con el bastón.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/d36.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D37 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Puede que seas nuevo en los Ojos de la Reina, pero sabes que la organización valora la rapidez mental casi tanto como la lealtad. Mientras discutes los pormenores de la operación de contrabando con la encapuchada elfa del bosque, te das cuenta de que no está muy segura de los detalles importantes de la organización y parece preferir un final rápido de las negociaciones para poder conseguir la Espina de la noche. Pensándolo mejor, decides negarte a entregarle el bastón hasta que te proporcione pruebas más concretas de que va a cooperar. Tu condición es recibida con una mueca de desprecio y la elfa se te acerca, amenazante.\n«Los piratas de aquí tienen su propio código. No ven con buenos ojos a los que incumplen un trato».\nMiras a tu alrededor y ves a algunos lugareños de Corimont cercándote. Esperemos que tus principios puedan resistir una paliza.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/d37.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E38 - Un nuevo y oscuro trato",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Al verse superada, la contratista, cuyo nombre descubres que es Deslandra, huye de la escena con algunos secuaces, dejando la Espina de la noche atrás. Mientras te recuperas en Bazofias Varias, se te acerca la capitana Ojo Único, que se disculpa por permitir que una sectaria llegase a su centro de contrabando.\n«Resulta que no sabíamos de ella tanto como pensábamos. La gente de su calaña no es buena para los negocios. Te doy las gracias por desenmascararla». Se acerca algo más y te guiña el ojo. «Si, alguna vez, los Ojos quisieran volver a abrir sus operaciones por aquí, dile a Razum-dar que lo hable directamente conmigo. Estoy dispuesta a mancharme las manos a cambio de un trozo del pastel».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e38.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A39 - Ciénaga atormentada",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Cuando te dan la bienvenida a la división de Ciénaga Negra del Círculo de Campeones, la maestra de batalla te saca de la multitud.\n«He oído que sabes ser discreto... Hemos oído que varios de los luchadores más fuertes del Círculo de Campeones están siendo contratados para tareas de transporte “no registradas”. Si bien en el Círculo no tenemos reglas en contra de que alguien acepte otros trabajos, tenemos razones para creer que estos luchadores están usando sus viajes a eventos del Círculo como tapadera para transportar artículos ilícitos como parte de algún tipo de actividad ilegal. Necesitamos que alguien les eche un ojo mientras viaja por la región. ¿Te parece que podrías hacerlo?».\nCuando aceptas, ella sonríe y pasa a darte una advertencia a la vez que te pone la mano sobre el hombro.\n«Eso sí, ten cuidado. ¡Cuando se sepa que estás tras esto, es probable que te pinten una diana en la espalda!».",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/a39.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B40 - Ciénaga atormentada",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Tras un duro combate, se te acerca en la taberna local un argoniano que se identifica como «Negocia Nuevas Amistades».\n«Tu actuación me ha impresionado», te dice, a la vez que le hace un gesto al camarero para que te sirva otra ronda.\n«¿Te gustaría ganar un extra por un simple viajecito?».\nTal vez es un buen momento para tomarte un descanso en la investigación, así que lo escuchas con atención. Te propone participar en un «servicio de entrega» en el que actúas de mensajero y también como protector de la mercancía enviada entre particulares. Antes de aceptar, dudas un poco, y decides presionarlo un poco para entender qué transportas y para quién, ante lo que el argoniano frunce el ceño y retrocede.\n «Había oído que estabas preguntando a qué nos dedicamos, pero si es porque estés interesado, ¡buscaré a otro! Y que esto sirva de advertencia: ¡a mis jefes no les gustan los fisgones!».\nSe marcha, dejando que pagues las bebidas de ambos. Más te vale estar alerta en los siguientes combates.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/b40.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C41 - Ciénaga atormentada",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Lo complicado de estar atento a las amenazas contra tu vida mientras participas en un deporte sangriento legalmente sancionado es que tu vida ya está siendo amenazada por personas que, de otro modo, no te desearían el mal. Aun así, tras esquivar unos cuantos ataques que parecían señalarte a ti en particular durante tu último combate, te enfrentas a uno de los agresores en un callejón aislado después del evento. El orgulloso guardia rojo se defiende bien, pero, tras un interrogatorio agresivo, acaba cantando mientras se cubre el magullado rostro con sus manos.\n«¡Vale, vale! Sí, estamos traficando con algo... No es la savia de árbol que los argonianos veneran, pero se le parece. P-plasta... ¡No! Plasma de ámbar, creo que se llama. De alguna forma, se saca de los árboles pero viene de Oblivion. Todo va a un mismo comprador, ¡alguien que experimenta con ello o algo así, no sé más!».\n Tras seguir presionándole un poco, suelta quién es el líder de la operación dentro del Círculo de Campeones. Resulta ser uno de los luchadores más fieros de su división, división a la que te enfrentarás en el próximo combate. A pesar de que tal vez no sea lo mejor, dejas marchar al guardia rojo. Sabes que es probable que cuente lo que te ha dicho y que el Círculo no tomará medidas a menos que tengas pruebas concretas. Lo más seguro es que tu siguiente combate sea aún más hostil de lo normal.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/c41.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E42 - Ciénaga atormentada",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Dado que el cabecilla de la operación de contrabando de plasma de ámbar ha muerto legalmente en combate, el Círculo puede revisar sus efectos personales. Al hacerlo, los investigadores encontraron pruebas que relacionaban al guerrero fallecido con otros grandes nombres del circuito local de lucha del Círculo, así como algunas comunicaciones crípticas con el misterioso comprador del plasma. Las cartas no van firmadas con ningún nombre, pero sí con el sello de un grupo que te han dicho que se llama los Soldados del Vacío. Parece que este comprador intentaba saber cómo y por qué el plasma entraba en Tamriel desde Oblivion, buscando comprobar ese vínculo por sí mismo. Aunque los dirigentes del Círculo no saben su identidad, están satisfechos con que hayas erradicado la corrupción de sus filas, al menos en Ciénaga Negra.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/e42.mp3",
           "title": ""
         }
       }
@@ -1334,6 +1603,56 @@
           "title": ""
         },
         "gremioTag": "all"
+      }
+    ]
+  },
+  "sesion_final": {
+    "title": "SESIÓN FINAL",
+    "description": "",
+    "options": [
+      {
+        "label": "Muerto de raíz - Día 1",
+        "description": "",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "all",
+        "leafDescription": "Investigar los extraños experimentos que se están realizando con la flora y la fauna local te ha llevado a una arboleda situada cerca del corazón de Ciénaga Negra. Conforme te acercas, notas que el paisaje empeora. Aunque a menudo peligrosas, la flora y la fauna de la provincia siempre te han parecido robustas, coloridas y llamativas... Aquí, todo se ve distinto, más oscuro, más... corrompido. Oyes lo que parece el sonido de una batalla, por lo que corres para ver quién ha podido llegar antes que tú. Te sorprende ver a Bodean, uno de los líderes de la Guardia exterior, que te pide ayuda en su lucha contra algunas temibles criaturas. Durante el combate, ves cómo intenta apartar la maleza y las piedras que cubren un sospechoso hueco en la base del tronco de un enorme árbol. Te prometes que, si sobrevives, le preguntarás cómo es que ambos habéis acabado llegando al mismo lugar.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/sf01.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "Muerto de raíz - Día 2",
+        "description": "",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "all",
+        "leafDescription": "Os apresuráis a entrar en la recién descubierta caverna, en la que de inmediato quedáis envueltos en oscuridad. Por suerte o por desgracia, la entrada se derrumba detrás de vosotros, por lo que Bodean enciende una antorcha para iluminar los alrededores. Bodean empieza a explicarte cosas sobre la situación actual mientras la luz de la antorcha te permite ver en detalle las cicatrices de su rostro.\n«Muchos de los árboles más místicos de Ciénaga Negra tienen sus raíces convergiendo en este área. Hay mucho que no sabemos sobre la conexión entre estas raíces y las fuerzas de otros planos, pero una exmiembra de la Guardia exterior, Deslandra, planea corromperlas con la intención de debilitar la conexión entre Nirn y los reinos mágicos. ¡Ayúdame a encontrarla y a librar estas tierras de esta peligrosa lacra!».\nAl mirar a tu alrededor, te das cuenta de que las lianas y enredaderas que has ido cortando palpitan con una extraña energía mágica. Si almacenas unas cuantas, podrías ayudar a los sanadores de la provincia a contrarrestar lo que sea que Deslandra planea, pero quizás también podrías usarlas para conseguir cierta ventaja en la confrontación final. Te giras y miras a Bodean, que respira con dificultad. Es difícil ver en la oscuridad la gravedad de sus heridas del combate anterior, pero tal vez no pueda continuar.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/sf02.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "Muerto de raíz - Día 3",
+        "description": "",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "all",
+        "leafDescription": "Conforme avanzas por el barro y la oscuridad, oyes una voz al final del túnel en el que estás. Cuando giras en la última curva, ves a una elfa del bosque, Deslandra, en un gran claro subterráneo.\n«¡Encontrad las raíces más grandes para que pueda echarles mi solución! Si de verdad queremos librar a Tamriel de la magia, debemos cortar todos los lazos que existan. ¡Si corrompemos estas raíces, lo demás caerá por su propio peso!».\nDas un paso y resbalas en un charco. Deslandra se gira hacia ti con una extraña energía de color ámbar en su rostro. Entonces te das cuenta de que ha probado su sustancia sobre sí misma. ¡Y es ella misma la que corremperá las raíces!\n«Llegas tarde, aventurero iluso. Una vez que la magia de Ciénaga Negra caiga, el vínculo entre planos se debilitará y Nirn será libre de las cadenas de la magia. Puedes acabar conmigo, pero mis soldados ya están en sus puestos».\nHabla confiada, pero has oído sus órdenes: las raíces aún no han sido localizadas.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/sf03.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "Muerto de raíz - Epílogo",
+        "description": "",
+        "provinciaTag": "cienaga_negra",
+        "gremioTag": "all",
+        "leafDescription": "Has impedido que la corrupción se extienda por las raíces de los grandes árboles y has extinguido para siempre la espeluznante luz de los ojos de Deslandra. Buscas en sus bolsillos y encuentras un vial intacto de su solución. Lo levantas ante la luz de la antorcha y te quedas observando su enfermiza luz de color ámbar. ¿Qué habría ocurrido si se le hubiera permitido a la elfa continuar con su plan? Los árboles de Ciénaga Negra se cuentan entre los seres vivos más antiguos de Nirn. Es probable que sobrevivan mucho más que los hombres y los mer. Incluso si el plan de Deslandra no hubiera funcionado como ella esperaba, el ecosistema de la provincia habría sufrido un daño enorme. Viertes el contenido del vial y te lo guardas. Será mejor que nadie tenga una muestra que estudiar.",
+        "audio": {
+          "src": "audios/misiones/cienaga_negra/sf_epilogo.mp3",
+          "title": ""
+        }
       }
     ]
   }

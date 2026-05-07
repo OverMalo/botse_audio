@@ -591,6 +591,39 @@
           "src": "audios/misiones/skyrim/a09.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "B10 - Un asunto espinoso",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "skyrim",
+        "gremioTag": "luchadores",
+        "leafDescription": "Tras la distracción con fuegos artificiales, conoces a Psyna, con alguna quemadura pero habiendo tenido éxito. Te parece que arruga la nariz ante tu ahumado olor, pero no dice nada por educación. Le preguntas por la poderosa maga orca que te atacó durante la distracción.\n«En primer lugar, buen trabajo. Por lo que sabemos de nuestros compañeros de Roca Alta, es una maga solitaria llamada Kharzug gra-Magul. Tiene mucho potencial mágico en bruto, pero una secta de Roca Alta, los Soñadores Supernos, que buscan controlar y atormentar a la gente en sus sueños, fue a por ella. Nuestros compañeros de Wrothgar creen que fue esclavizada por ellos, pero no tenemos ni la menor idea de qué hace ahora en Skyrim».\n Psyna te dice que la siguiente parada es Morthal, donde espera que las semillas recién adquiridas por el gremio sean analizadas por un herborista amistoso.\n «Seguiré necesitando de tu escolta. Es posible que esa tal Kharzug nos pise los talones».",
+        "audio": {
+          "src": "audios/misiones/skyrim/b10.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C11 - Un asunto espinoso",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "skyrim",
+        "gremioTag": "luchadores",
+        "leafDescription": "Psyna consiguió que las muestras de Espina Sangrienta se analizaran, pero por poco. La ciudad fue atacada mientras ella realizaba las pruebas y, por quienes componían las fuerzas atacantes, es difícil determinar si eran aliados de Kharzug, invasores de Límite Sombrío o una combinación de ambas cosas. Psyna trae malas noticias.\n«Hemos encontrado una conexión entre la corrupción de estas enredaderas de Espina Sangrienta y un crecimiento anormal alrededor del Bastión de Páramo Gris, un enorme castillo infestado de vampiros en las entrañas de Límite Sombrío. Es de suma importancia que el Gremio de magos vaya al Bastión de Páramo Gris de inmediato para acabar con esas singulares plantas alteradas, por lo que tu protección sigue siendo necesaria».",
+        "audio": {
+          "src": "audios/misiones/skyrim/c11.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E12 - Un asunto espinoso",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "skyrim",
+        "gremioTag": "luchadores",
+        "leafDescription": "Nunca has estado tan contento de no ser un miembro del Gremio de magos. Enfrentarte a enemigos sintientes es duro, aunque comprensible, pero ver a tus compañeros luchar con malévolas plantas mágicas solo te da ganas de volver a casa. Afortunadamente, tu protección ha sido útil, y el Bastión de Páramo Gris está libre de Espinas Sangrientas. En el combate, viste a Kharzug de nuevo, confirmando la sospecha de Psyna de que la orca ha sido enviada para frustrar vuestros planes de alguna forma. Esto sugiere un vínculo entre los Soñadores Supernos, la Espina Sangrienta y los ataques de Límite Sombrío a las poblaciones de Skyrim. De vuelta a Soledad solo puedes pensar en tu siguiente paso.",
+        "audio": {
+          "src": "audios/misiones/skyrim/e12.mp3",
+          "title": ""
+        }
       }
     ]
   },

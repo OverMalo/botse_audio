@@ -50,7 +50,9 @@ function loadState() {
     revealedDescriptions: [],
     autoPlay: true,
     playbackRate: 1,
-    ambientEnabled: true
+    ambientEnabled: true,
+    provinciaCollapsed: false,
+    gremioCollapsed: false
   };
 }
 
@@ -64,7 +66,9 @@ function saveState() {
       revealedDescriptions: [...revealedDescriptions],
       autoPlay,
       playbackRate,
-      ambientEnabled
+      ambientEnabled,
+      provinciaCollapsed,
+      gremioCollapsed
     })
   );
 }
@@ -77,6 +81,8 @@ let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? s
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
 let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
 let ambientEnabled = typeof state.ambientEnabled === "boolean" ? state.ambientEnabled : true;
+let provinciaCollapsed = typeof state.provinciaCollapsed === "boolean" ? state.provinciaCollapsed : false;
+let gremioCollapsed = typeof state.gremioCollapsed === "boolean" ? state.gremioCollapsed : false;
 
 /** @type {null | { rafId: number, panelEl: HTMLAudioElement, ambientEl: HTMLAudioElement|null, hasAmbient: boolean, totalDuration: number, playerEl: HTMLElement, isSeeking: boolean }} */
 let activePlayer = null;
@@ -187,18 +193,51 @@ function render() {
 }
 
 function renderFilters() {
+  const provinciaLabel = selectedProvincia
+    ? PROVINCIA_LABELS[selectedProvincia]
+    : null;
+  const gremioLabel = selectedGremio
+    ? GREMIO_LABELS[selectedGremio]
+    : null;
+
   return `
     <div class="filters-panel">
-      <div class="filter-group" role="group" aria-label="Provincia seleccionada">
-        <p class="filter-group-title">Provincia seleccionada</p>
-        <div class="filter-options">
-          ${FILTER_OPTIONS.provincias.map((item) => renderCheckable("provincia", item.id, item.label, selectedProvincia === item.id)).join("")}
+      <div class="filter-group filter-group--collapsible${provinciaCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="">
+        <button
+          type="button"
+          class="filter-group-toggle"
+          data-filter-collapse="provincia"
+          aria-expanded="${provinciaCollapsed ? "false" : "true"}"
+        >
+          <span class="filter-group-main">
+            <span class="filter-group-selected">${provinciaLabel ? escapeHtml(provinciaLabel) : "Selecciona una provincia"}</span>
+            ${provinciaLabel ? "<span class=\"filter-group-label\"></span>" : ""}
+          </span>
+          <span class="panel-icon" aria-hidden="true">${provinciaCollapsed ? "+" : "−"}</span>
+        </button>
+        <div class="filter-group-body${provinciaCollapsed ? " is-hidden" : ""}">
+          <div class="filter-options">
+            ${FILTER_OPTIONS.provincias.map((item) => renderCheckable("provincia", item.id, item.label, selectedProvincia === item.id)).join("")}
+          </div>
         </div>
       </div>
-      <div class="filter-group" role="group" aria-label="Gremio seleccionado">
-        <p class="filter-group-title">Gremio seleccionado</p>
-        <div class="filter-options">
-          ${FILTER_OPTIONS.gremios.map((item) => renderCheckable("gremio", item.id, item.label, selectedGremio === item.id)).join("")}
+      <div class="filter-group filter-group--collapsible${gremioCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="">
+        <button
+          type="button"
+          class="filter-group-toggle"
+          data-filter-collapse="gremio"
+          aria-expanded="${gremioCollapsed ? "false" : "true"}"
+        >
+          <span class="filter-group-main">
+            <span class="filter-group-selected">${gremioLabel ? escapeHtml(gremioLabel) : "Selecciona un gremio"}</span>
+            ${gremioLabel ? "<span class=\"filter-group-label\"></span>" : ""}
+          </span>
+          <span class="panel-icon" aria-hidden="true">${gremioCollapsed ? "+" : "−"}</span>
+        </button>
+        <div class="filter-group-body${gremioCollapsed ? " is-hidden" : ""}">
+          <div class="filter-options">
+            ${FILTER_OPTIONS.gremios.map((item) => renderCheckable("gremio", item.id, item.label, selectedGremio === item.id)).join("")}
+          </div>
         </div>
       </div>
     </div>
@@ -305,6 +344,16 @@ function bindConfigEvents() {
 }
 
 function bindFilterEvents() {
+  screenEl.querySelectorAll("[data-filter-collapse]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.filterCollapse;
+      if (target === "provincia") provinciaCollapsed = !provinciaCollapsed;
+      if (target === "gremio") gremioCollapsed = !gremioCollapsed;
+      saveState();
+      render();
+    });
+  });
+
   screenEl.querySelectorAll("[data-filter-type]").forEach((button) => {
     button.addEventListener("click", () => {
       const type = button.dataset.filterType;

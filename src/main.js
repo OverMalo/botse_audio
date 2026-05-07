@@ -89,6 +89,24 @@ let swRegistration = null;
 registerServiceWorker();
 render();
 
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    if (activePlayer?.playing) {
+      activePlayer.pausedByVisibility = true;
+      pauseActivePlayerInternal();
+    }
+  } else if (document.visibilityState === "visible") {
+    if (activePlayer?.pausedByVisibility) {
+      activePlayer.pausedByVisibility = false;
+      resumeActivePlayerInternal();
+    }
+  }
+});
+
+window.addEventListener("pagehide", () => {
+  if (activePlayer?.playing) pauseActivePlayerInternal();
+});
+
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
@@ -368,8 +386,13 @@ function stopActivePlayer() {
   if (!activePlayer) return;
   cancelAnimationFrame(activePlayer.rafId);
   activePlayer.rafId = 0;
+  activePlayer.playing = false;
   activePlayer.panelEl.pause();
   if (activePlayer.ambientEl) activePlayer.ambientEl.pause();
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = null;
+    navigator.mediaSession.playbackState = "none";
+  }
   activePlayer = null;
 }
 
@@ -409,6 +432,8 @@ function playerRaf() {
         if (p.ambientEl) { p.ambientEl.volume = 0; p.ambientEl.pause(); }
         updatePlayerUI(p, vt);
         setPlayerBtnState(p.playerEl, false);
+        p.playing = false;
+        updateMediaSession(false);
         cancelAnimationFrame(p.rafId);
         p.rafId = 0;
         p.phase = "ended";
@@ -424,6 +449,8 @@ function playerRaf() {
       vt = p.totalDuration;
       updatePlayerUI(p, vt);
       setPlayerBtnState(p.playerEl, false);
+      p.playing = false;
+      updateMediaSession(false);
       cancelAnimationFrame(p.rafId);
       p.rafId = 0;
       p.phase = "ended";
@@ -507,6 +534,60 @@ function seekPlayer(vt) {
   }
 }
 
+function updateMediaSession(playing) {
+  if (!("mediaSession" in navigator)) return;
+  navigator.mediaSession.playbackState = playing ? "playing" : "paused";
+}
+
+function pauseActivePlayerInternal() {
+  if (!activePlayer) return;
+  const p = activePlayer;
+  cancelAnimationFrame(p.rafId);
+  p.rafId = 0;
+  if (p.hasAmbient) {
+    if (p.phase === "pre-roll") {
+      const elapsed = (performance.now() - p.phaseStartMs) / 1000 / p.panelEl.playbackRate;
+      p.preRollPosAtStart = Math.min(1, p.preRollPosAtStart + elapsed);
+      p.phaseStartMs = null;
+    } else if (p.phase === "fade-out") {
+      const elapsed = (performance.now() - p.phaseStartMs) / 1000 / (p.ambientEl?.playbackRate || 1);
+      p.fadeOutPosAtStart = Math.min(1, p.fadeOutPosAtStart + elapsed);
+      p.phaseStartMs = null;
+    }
+    p.ambientEl?.pause();
+  }
+  p.playing = false;
+  p.panelEl.pause();
+  setPlayerBtnState(p.playerEl, false);
+  updateMediaSession(false);
+}
+
+function resumeActivePlayerInternal() {
+  if (!activePlayer) return;
+  const p = activePlayer;
+  if (p.hasAmbient) {
+    if (p.phase === "pre-roll") {
+      p.phaseStartMs = performance.now();
+      p.ambientEl?.play().catch(() => {});
+    } else if (p.phase === "playing") {
+      p.ambientEl?.play().catch(() => {});
+      p.panelEl.play().catch(() => {});
+    } else if (p.phase === "fade-out") {
+      p.phaseStartMs = performance.now();
+      if (p.ambientEl) {
+        p.ambientEl.volume = Math.max(0, 0.25 * (1 - p.fadeOutPosAtStart));
+        p.ambientEl.play().catch(() => {});
+      }
+    }
+  } else {
+    if (!p.panelEl.ended) p.panelEl.play().catch(() => {});
+  }
+  p.playing = true;
+  p.rafId = requestAnimationFrame(playerRaf);
+  setPlayerBtnState(p.playerEl, true);
+  updateMediaSession(true);
+}
+
 function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration) {
   const playerEl = contentEl.querySelector(".custom-player");
   if (!playerEl) return;
@@ -526,6 +607,8 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
     preRollPosAtStart: 0,    // accumulated pre-roll seconds (0..1) at last pause
     fadeOutPosAtStart: 0,    // accumulated fade-out seconds (0..1) at last pause
     isSeeking: false,
+    playing: false,
+    pausedByVisibility: false,
   };
 
   // Set up audio volumes and rates
@@ -557,6 +640,23 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
     });
   }
 
+  // Recover from unexpected OS-level pause (volume buttons, audio focus loss, Bluetooth, etc.)
+  panelEl.addEventListener("pause", () => {
+    if (!activePlayer || activePlayer.panelEl !== panelEl) return;
+    if (!activePlayer.playing || panelEl.ended) return;
+    if (document.visibilityState !== "visible") return;
+    panelEl.play().catch(() => {});
+  });
+
+  // Register MediaSession metadata and action handlers for OS media controls
+  if ("mediaSession" in navigator) {
+    const title = contentEl.closest(".panel")?.querySelector(".panel-title")?.textContent?.trim() || "BOTSE Audio";
+    navigator.mediaSession.metadata = new MediaMetadata({ title, artist: "BOTSE" });
+    navigator.mediaSession.setActionHandler("play", () => playerEl.querySelector("[data-player-play]")?.click());
+    navigator.mediaSession.setActionHandler("pause", () => playerEl.querySelector("[data-player-play]")?.click());
+    navigator.mediaSession.setActionHandler("stop", () => stopActivePlayer());
+  }
+
   // Play/pause button
   playerEl.querySelector("[data-player-play]")?.addEventListener("click", () => {
     if (!activePlayer) return;
@@ -574,6 +674,8 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.ambientEl?.play().catch(() => {});
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
+        p.playing = true;
+        updateMediaSession(true);
         return;
       }
 
@@ -592,9 +694,11 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
           p.fadeOutPosAtStart = Math.min(1, p.fadeOutPosAtStart + elapsed);
           p.phaseStartMs = null;
         }
+        p.playing = false;
         p.ambientEl?.pause();
         p.panelEl.pause();
         setPlayerBtnState(playerEl, false);
+        updateMediaSession(false);
       } else {
         // Resume — phaseStartMs restarts from accumulated pos
         if (p.phase === "pre-roll") {
@@ -612,6 +716,8 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         }
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
+        p.playing = true;
+        updateMediaSession(true);
       }
     } else {
       // ── Modo B ──
@@ -621,17 +727,23 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.panelEl.play().catch(() => {});
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
+        p.playing = true;
+        updateMediaSession(true);
         return;
       }
       if (p.panelEl.paused) {
         p.panelEl.play().catch(() => {});
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
+        p.playing = true;
+        updateMediaSession(true);
       } else {
+        p.playing = false;
         p.panelEl.pause();
         cancelAnimationFrame(p.rafId);
         p.rafId = 0;
         setPlayerBtnState(playerEl, false);
+        updateMediaSession(false);
       }
     }
   });
@@ -702,6 +814,8 @@ function togglePanel(panelId) {
             }
             p.rafId = requestAnimationFrame(playerRaf);
             setPlayerBtnState(p.playerEl, true);
+            p.playing = true;
+            updateMediaSession(true);
           }
         };
 

@@ -492,6 +492,50 @@
           "src": "audios/misiones/cienaga_negra/e42.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A01 - Mal enraizado",
+        "description": "Gremio de magos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "magos",
+        "leafDescription": "Algunos líderes de los casi aislacionistas cuencanos han solicitado en secreto la ayuda del Gremio de magos. La Cuenca está sufriendo incidentes de enredaderas de Espina Sangrienta que crecen rápida y descontroladamente. El Gremio de magos ha aceptado el encargo en colaboración con el Gremio de luchadores, que proveerá protección si las cosas se ponen feas. Las enredaderas de Espina Sangrienta suelen ser cultivadas por los cuencanos para usarlas en varios rituales, como símbolo o sacrificio. Sin embargo, algunos cuencanos retorcidos les dan usos más oscuros, como levantar a los muertos. Si bien es cierto que los cuencanos suelen tener mano con esta planta, ha habido muchos informes de enredaderas que crecen sin control y atacan a los vivos. Para entender mejor la naturaleza de esta anomalía mágica, el Gremio de magos necesitará varias muestras de Espina Sangrienta. Afortunadamente, hay una anciana cuencana llamada Anjaela que tiene semillas de varias subespecies de Espina Sangrienta en una vieja bodega en el interior de una caverna que hay bajo Markarth. El problema es que es muy poco probable que esté dispuesta a entregar sus semillas, por lo que los cuencanos que han contactado con el gremio sugieren que os hagáis con ellas al amparo de la oscuridad. Tus escoltas del Gremio de luchadores han planeado una distracción que debería dejar el alijo de semillas desprotegido, siempre y cuando que no hagas mucho ruido. Mientras te preparas para partir, se te acerca una joven orca que se identifica como Kharzug gra-Magul y te solicita unirse a tu misión.\n«Estuve a punto de... perderme por culpa de algunas personas peligrosas en Wrothgar. El Gremio de magos me ayudó a controlar mi poder y usarlo para el bien, así que quiero ayudar en lo que pueda, aunque aún sea un poco... ¿Cómo dice el Gran Mago Shozami? “Un poco volátil”».",
+        "audio": {
+          "src": "audios/misiones/skyrim/a01.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B02 - Mal enraizado",
+        "description": "Gremio de magos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "magos",
+        "leafDescription": "Gracias a la distracción generada por tus acompañantes del Gremio de luchadores, fuiste capaz de acceder a las semillas de Anjaela y recolectar las muestras que necesitabas.\n«Sé de una herborista Espina Sangrienta en Morthal que nos dejaría usar sus instrumentos para estudiar las semillas, si le pagamos lo suficiente, claro».\nEl consejo de Kharzug resulta muy oportuno, aunque Morthal está peligrosamente cerca de uno de los elevadores de Límite Sombrío más usados por las fuerzas subterráneas para invadir los asentamientos de Skyrim. Quizás, con algo de suerte, la ciudad no ha llamado la atención de ningún vampiro codicioso ni de ningún falmer.",
+        "audio": {
+          "src": "audios/misiones/skyrim/b02.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C03 - Mal enraizado",
+        "description": "Gremio de magos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "magos",
+        "leafDescription": "Al analizar las muestras de Espina Sangrienta, ocurren varios sucesos extraños. Ante tus ojos, de las semillas surgen enredaderas que se lanzan hacia el suelo, buscando alguna grieta o abertura. Le pides ayuda a la herborista,, una argoniana llamada Amahiedras, que poda las plantas a tu lado mientras las observa con perplejidad.\n«Esto encaja con el crecimiento descontrolado que me habías dicho... En mi experiencia, muchos magos hábiles usan Espina Sangrienta especialmente cultivada para controlar el crecimiento y el movimiento de otras plantas. Esto les es útil en algunos rituales, donde necesitan mover enredaderas u otras plantas después de que ya hayan sido... usadas».\n Se detiene un momento. Tú sabes lo suficiente sobre la Espina Sangrienta como para entender lo que quiere decir: algunos cuencanos pueden querer reutilizar las plantas después de que el zombi que han reanimado deje de ser útil. Todo lo que has descubierto hasta ahora te hace pensar que estos incidentes solo pueden tener un origen... Teniendo en cuenta que las enredaderas parecían querer entrar en el subsuelo, y que los ataques ocurridos en Skyrim provienen de Límite Sombrío, es muy probable que la fuente del problema esté allí mismo. Kharzug te dice que el Bastión de Páramo Gris, un punto de nexo con Límite Sombrío, no está demasiado lejos de aquí.\n«A mi no me importaría reventar unos cuantos vampiros», dice con una amplia sonrisa.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c03.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E04 - Mal enraizado",
+        "description": "Gremio de magos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "magos",
+        "leafDescription": "Te va a costar mucho deshacerte del olor a Espina Sangrienta. Cuando llegaste al Bastión de Páramo Gris, lo encontraste enterrado en enredaderas de Espina Sangrienta que emitían una oscura energía que hacía que las semillas que llevabas reaccionaran y se agitaran. Sin embargo, cuando empezaste a destruir las plantas, los habitantes del Bastión te atacaron, por lo que entiendes que estaban siendo cultivadas intencionadamente y había un plan para ellas. Aun así, conseguiste acabar con la infestación y escapar vivo. Más tarde, el Gremio de magos recibe una carta en la que algunos líderes cuencanos os agradecen a ti y a Kharzug vuestra ayuda, aunque os sugieren que os mantengáis alejados de Markarth por un tiempo. Parece que Anjaela aún está enfurecida porque alguien le robó algunas semillas.",
+        "audio": {
+          "src": "audios/misiones/skyrim/e04.mp3",
+          "title": ""
+        }
       }
     ]
   },

@@ -536,6 +536,61 @@
           "src": "audios/misiones/skyrim/e04.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A05 - El corazón del asunto",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ladrones",
+        "leafDescription": "El Gremio de ladrones ha sido contratado para dar un golpe extremadamente delicado; tanto es así, que el cliente requiere de una demostración de la habilidad del ladrón asignado antes de que proceda con el contrato. Con esto en mente, se te envia a Ventalia para robar artefactos de la cripta bajo el Palacio de los Reyes. La residencia del rey Jorunn está ahora mismo en obras, lo que facilita que un ladrón habilidoso puede acceder a la cripta, que se dice desde hace mucho que está encantada. Si bien estás convencido de poder llevar a cabo el encargo si te esmeras, no puedes evitar preguntarte que, si esta tarea tan atrevida es solo la prueba, ¿cuán difícil será el trabajo de verdad?",
+        "audio": {
+          "src": "audios/misiones/skyrim/a05.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B06 - El corazón del asunto",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ladrones",
+        "leafDescription": "Completada la tarea inicial, se te informa de un punto de encuentro en Ventalia y te reúnes con Zirik, un experimentado ladrón dunmeri de cierto renombre. Zirik explica que formará equipo contigo en esta misión y procede a darte detalles.\n«Se nos ha contratado para robar el corazón de un corazón de espino». Rápidamente recuerdas lo que sabes de estos guerreros, cuencanos que reemplazan su corazón con semillas de árbol de corazón de espino para ser guardianes mágicos de La Cuenca.\n«No te preocupes, no es asesinato. El corazón de espino fue capturado en Paraje de Ivar y algún nórdico cruel le sacó el corazón y lo preserva mágicamente para estudiarlo. Al parecer, ese corazón de espino acabó con varios nórdicos cerca de la frontera de La Grieta, y el rey Jorunn está nervioso por si esto pudiera considerarse una violación al Pacto de Corazón de Ébano. En cualquier caso, nuestro “coleccionista” parece creer que es el momento perfecto para usar el corazón de un corazón de espino, ya sea para estudiarlo, exhibirlo o qué sé yo. La caravana que lleva el corazón se reunirá con las fuerzas de Jorunn en el Fuerte Yelmo, a lo que tendremos que adelantarnos».\n En tu rostro, Zirik ve algo de duda ante la idea de robar un corazón vivo, aunque no esté en el pecho de nadie.\n«El trabajo se hará contigo o sin ti. Yo me puedo encargar del asunto sangriento... bueno, será savia... Tú encárgate de la seguridad».",
+        "audio": {
+          "src": "audios/misiones/skyrim/b06.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C07 - El corazón del asunto",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ladrones",
+        "leafDescription": "La situación se ha complicado rápidamente; todo iba bien al robar el corazón del corazón de espino. Sin embargo, cuando Zirik y tú ya os habíais alejado lo suficiente, un aluvión de flechas empezó a llover en vuestra dirección. Un grupo de asaltantes salió de la nada y ahora trata de arrebataros el corazón. ¡Los asaltantes originales ahora se ven asaltados! O, al menos, a ti te parece que han salido de la nada. Zirik parece excepcionalmente calmado dada la situación, y no evidencia el mismo sentido de urgencia por huir que tú. Tal vez lo mejor sea dejarlo atrás y entregar el corazón tú solo.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c07.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E08 - El corazón del asunto",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ladrones",
+        "leafDescription": "Logras huir, llevando la semilla robada al Refugio de forajidos más cercano. Zirik no tuvo tanta suerte... Mientras escapabas, viste cómo lo derribaban algunos de los guardias restantes que escoltaban el corazón. Cuando haces la entrega, informas de que te daba la impresión de que Zirik tenía alguna información sobre el ataque a la caravana y de que, tal vez, estaba trabajando para otro postor que también quería la semilla. Tu contacto, un nórdico llamado Hjolbel, le quita hierro al asunto explicándote que Zirik tiene un gran historial como criminal fiable. Tú, sin embargo, no lo tienes tan claro. ¡Pero si estáis todos en el Gremio de ladrones! ¿Cuán fiables podéis ser?",
+        "audio": {
+          "src": "audios/misiones/skyrim/e08.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A09 - Un asunto espinoso",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "skyrim",
+        "gremioTag": "luchadores",
+        "leafDescription": "Muz-Gel, una argoniana miembra del Gremio de luchadores, se deja caer en una silla a tu lado, murmurando.\n«Tengo un trabajito para ti. Intenté hacerlo yo misma para salir de esta maldita ciudad, pero los jefes dicen que eres perfecto para el encargo. Supongo que me desahogaré con una taza de aguamiel». Al terminar la frase, se levanta con la intención de irse, pero a medio camino se da cuenta de que no te ha contado de qué va el trabajo y vuelve.\n«Ah, claro. Pues mira, el caso es que el Gremio de magos está de viaje a Markarth para comprobar unos incidentes relacionados con una planta mágica. Creo que se llama... ¿Espina Sangrienta? Bueno, en cualquier caso... Han solicitado escolta. Corren tiempos peligrosos con tantos invasores de Límite Sombrío y demás criaturas... Ojalá invadieran Soledad, al menos eso animaría las cosas».\n Das golpecitos en la mesa con tus dedos, mostrando tu impaciencia ante sus constantes divagaciones.\n«Ay, sí, disculpa. Tu primera tarea es causar una distracción en Markarth para que los magos consigan unas semillas de Espina Sangrienta. Una alta elfa llamada Psyna lidera la expedición. Ha escondido unos fuegos artificiales en unas cajas en una de las calles principales de Markarth. Solo tienes que encenderlos para atraer a los guardias... ¡y no meterte en problemas!».",
+        "audio": {
+          "src": "audios/misiones/skyrim/a09.mp3",
+          "title": ""
+        }
       }
     ]
   },

@@ -953,12 +953,14 @@ function renderPanel(node, level) {
 
 function renderLeafContent(node) {
   const tagsHtml = "";
+  const isOpen = expandedPanels.has(node.id);
 
   const panelSrc = node.audioSrc
     ? `${import.meta.env.BASE_URL}${node.audioSrc.replace(/^\/+/, "")}`
     : "";
 
-  const rawAmbientSrc = ambientEnabled ? resolveAmbientSrc(node.id) : null;
+  // Only resolve ambient when open — avoids creating WebMediaPlayers for closed panels.
+  const rawAmbientSrc = (isOpen && ambientEnabled) ? resolveAmbientSrc(node.id) : null;
   const ambientSrc = rawAmbientSrc
     ? `${import.meta.env.BASE_URL}${rawAmbientSrc.replace(/^\/+/, "")}`
     : null;
@@ -969,10 +971,14 @@ function renderLeafContent(node) {
   if (!panelSrc) {
     audioHtml = '<p class="empty">Falta definir la ruta del audio.</p>';
   } else {
-    const hiddenAudios = ambientSrc
-      ? `<audio preload="metadata" src="${escapeAttribute(ambientSrc)}" data-role="ambient" loop hidden></audio>
+    // Only inject <audio> elements when open to stay within the browser's
+    // WebMediaPlayer limit (crbug.com/1144736).
+    const hiddenAudios = isOpen
+      ? (ambientSrc
+          ? `<audio preload="metadata" src="${escapeAttribute(ambientSrc)}" data-role="ambient" loop hidden></audio>
          <audio preload="metadata" src="${escapeAttribute(panelSrc)}" data-role="panel" hidden></audio>`
-      : `<audio preload="metadata" src="${escapeAttribute(panelSrc)}" data-role="panel" hidden></audio>`;
+          : `<audio preload="metadata" src="${escapeAttribute(panelSrc)}" data-role="panel" hidden></audio>`)
+      : "";
 
     audioHtml = `
       <div class="custom-player" data-player-id="${escapeAttribute(node.id)}">

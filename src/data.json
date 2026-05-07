@@ -33,6 +33,7 @@
   "ciudades": {
     "title": "CIUDADES",
     "description": "",
+    "ambient": "",
     "options": [
       {
         "label": "Alten Corimont",
@@ -50,6 +51,7 @@
   "misiones": {
     "title": "MISIONES",
     "description": "",
+    "ambient": "",
     "options": [
       {
         "label": "A01 - Selección antinatural",
@@ -496,6 +498,7 @@
   "encuentros_generales": {
     "title": "ENCUENTROS GENERALES",
     "description": "",
+    "ambient": "",
     "options": [
       {
         "label": "GE-01",
@@ -722,6 +725,7 @@
   "encuentros_provinciales": {
     "title": "ENCUENTROS PROVINCIALES",
     "description": "",
+    "ambient": "",
     "options": [
       {
         "label": "CN-01",
@@ -1609,6 +1613,7 @@
   "sesion_final": {
     "title": "SESIÓN FINAL",
     "description": "",
+    "ambient": "",
     "options": [
       {
         "label": "Muerto de raíz - Día 1",
@@ -1655,5 +1660,15 @@
         }
       }
     ]
+  },
+  "ambientConfig": {
+    "general": "audios/ambient/general.mp3",
+    "provincias": {
+      "cienaga_negra": "",
+      "skyrim": "",
+      "roca_alta": "",
+      "morrowind": "",
+      "cyrodiil": ""
+    }
   }
 }

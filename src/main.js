@@ -42,7 +42,8 @@ function loadState() {
     selectedGremio: "",
     revealedDescriptions: [],
     autoPlay: true,
-    playbackRate: 1
+    playbackRate: 1,
+    ambientEnabled: true
   };
 }
 
@@ -55,7 +56,8 @@ function saveState() {
       expandedPanels: [...expandedPanels],
       revealedDescriptions: [...revealedDescriptions],
       autoPlay,
-      playbackRate
+      playbackRate,
+      ambientEnabled
     })
   );
 }
@@ -66,7 +68,11 @@ let selectedGremio = typeof state.selectedGremio === "string" ? state.selectedGr
 let expandedPanels = new Set(Array.isArray(state.expandedPanels) ? state.expandedPanels : []);
 let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? state.revealedDescriptions : []);
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
-let playbackRate = [1, 1.25, 1.5, 1.75].includes(state.playbackRate) ? state.playbackRate : 1;
+let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
+let ambientEnabled = typeof state.ambientEnabled === "boolean" ? state.ambientEnabled : true;
+
+/** @type {null | { rafId: number, panelEl: HTMLAudioElement, ambientEl: HTMLAudioElement|null, hasAmbient: boolean, totalDuration: number, playerEl: HTMLElement, isSeeking: boolean }} */
+let activePlayer = null;
 
 const contentTree = buildTreeFromStart();
 const accordionIndex = buildAccordionIndex(contentTree);
@@ -184,8 +190,17 @@ function renderFilters() {
             />
             <span>Auto-play</span>
           </label>
+          <label class="autoplay-label">
+            <input
+              type="checkbox"
+              id="ambient-checkbox"
+              class="autoplay-checkbox"
+              ${ambientEnabled ? "checked" : ""}
+            />
+            <span>Audio ambiente</span>
+          </label>
           <div class="filter-options">
-            ${[1, 1.25, 1.5, 1.75].map((rate) => {
+            ${[1, 1.15, 1.25, 1.5].map((rate) => {
               const active = playbackRate === rate;
               const label = rate === 1 ? "1x" : `${rate.toFixed(2)}x`;
               return `<button
@@ -229,6 +244,16 @@ function bindConfigEvents() {
     });
   }
 
+  const ambientCheckbox = screenEl.querySelector("#ambient-checkbox");
+  if (ambientCheckbox) {
+    ambientCheckbox.addEventListener("change", () => {
+      ambientEnabled = ambientCheckbox.checked;
+      stopActivePlayer();
+      saveState();
+      render();
+    });
+  }
+
   screenEl.querySelectorAll("[data-config-rate]").forEach((button) => {
     button.addEventListener("click", () => {
       const rate = parseFloat(button.dataset.configRate);
@@ -236,8 +261,12 @@ function bindConfigEvents() {
       saveState();
 
       screenEl.querySelectorAll("audio").forEach((audioEl) => {
-        if (!audioEl.paused) audioEl.playbackRate = rate;
+        audioEl.playbackRate = rate;
       });
+      if (activePlayer) {
+        activePlayer.panelEl.playbackRate = rate;
+        if (activePlayer.ambientEl) activePlayer.ambientEl.playbackRate = rate;
+      }
 
       screenEl.querySelectorAll("[data-config-rate]").forEach((btn) => {
         const btnRate = parseFloat(btn.dataset.configRate);
@@ -285,6 +314,339 @@ function bindPanelEvents() {
   });
 }
 
+function resolveAmbientSrc(nodeId) {
+  let id = nodeId;
+  let parentId = accordionIndex.parentById.get(id);
+  while (parentId && parentId !== accordionIndex.rootId) {
+    id = parentId;
+    parentId = accordionIndex.parentById.get(id);
+  }
+  // id is now the root group node id, e.g. "group-ciudades"
+  const categoryKey = id.replace(/^group-/, "");
+  const planAmbient = appData[categoryKey]?.ambient;
+  if (planAmbient) return planAmbient;
+
+  const provinciaAmbient = appData.ambientConfig?.provincias?.[selectedProvincia];
+  if (provinciaAmbient) return provinciaAmbient;
+
+  const generalAmbient = appData.ambientConfig?.general;
+  if (generalAmbient) return generalAmbient;
+
+  return null;
+}
+
+
+function fadeOutAmbient(audioEl, duration = 1000) {
+  if (!audioEl) return;
+  const step = 50 / duration;
+  const interval = setInterval(() => {
+    if (audioEl.volume <= step) {
+      audioEl.volume = 0;
+      audioEl.pause();
+      clearInterval(interval);
+    } else {
+      audioEl.volume -= step;
+    }
+  }, 50);
+}
+
+function formatTime(secs) {
+  if (!isFinite(secs) || secs < 0) return "0:00";
+  const m = Math.floor(secs / 60);
+  const s = Math.floor(secs % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function stopActivePlayer() {
+  if (!activePlayer) return;
+  cancelAnimationFrame(activePlayer.rafId);
+  activePlayer.rafId = 0;
+  activePlayer.panelEl.pause();
+  if (activePlayer.ambientEl) activePlayer.ambientEl.pause();
+  activePlayer = null;
+}
+
+function playerRaf() {
+  if (!activePlayer) return;
+  const p = activePlayer;
+
+  let vt;
+  if (p.hasAmbient) {
+    if (p.phase === "pre-roll") {
+      const elapsed = (performance.now() - p.phaseStartMs) / 1000 / p.panelEl.playbackRate;
+      const pos = p.preRollPosAtStart + elapsed;
+      vt = Math.min(1, pos);
+      if (pos >= 1) {
+        p.phase = "playing";
+        p.preRollPosAtStart = 0;
+        p.phaseStartMs = null;
+        p.panelEl.play().catch(() => {});
+      }
+    } else if (p.phase === "playing") {
+      vt = p.panelEl.currentTime + 1;
+      // Guard: panel ended before event fired
+      if (p.panelEl.ended) {
+        p.phase = "fade-out";
+        p.fadeOutPosAtStart = 0;
+        p.phaseStartMs = performance.now();
+        if (p.ambientEl) p.ambientEl.volume = 0.5;
+      }
+    } else if (p.phase === "fade-out") {
+      const elapsed = (performance.now() - p.phaseStartMs) / 1000 / (p.ambientEl?.playbackRate || 1);
+      const pos = p.fadeOutPosAtStart + elapsed;
+      vt = p.panelDuration + 1 + pos;
+      // Fade ambient volume: 0.5 → 0 over 1 second
+      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.5 * (1 - pos));
+      if (pos >= 1) {
+        vt = p.totalDuration;
+        if (p.ambientEl) { p.ambientEl.volume = 0; p.ambientEl.pause(); }
+        updatePlayerUI(p, vt);
+        setPlayerBtnState(p.playerEl, false);
+        cancelAnimationFrame(p.rafId);
+        p.rafId = 0;
+        p.phase = "ended";
+        return;
+      }
+    } else {
+      // ended — rAF should not be running
+      return;
+    }
+  } else {
+    vt = p.panelEl.currentTime;
+    if (p.panelEl.ended) {
+      vt = p.totalDuration;
+      updatePlayerUI(p, vt);
+      setPlayerBtnState(p.playerEl, false);
+      cancelAnimationFrame(p.rafId);
+      p.rafId = 0;
+      p.phase = "ended";
+      return;
+    }
+  }
+
+  updatePlayerUI(p, vt);
+  p.rafId = requestAnimationFrame(playerRaf);
+}
+
+function updatePlayerUI(p, vt) {
+  const seekbar = p.playerEl.querySelector("[data-player-seek]");
+  const currentEl = p.playerEl.querySelector("[data-player-current]");
+  if (!p.isSeeking && seekbar) {
+    seekbar.value = p.totalDuration > 0 ? Math.round((vt / p.totalDuration) * 1000) : 0;
+  }
+  if (currentEl) currentEl.textContent = formatTime(vt);
+}
+
+function setPlayerBtnState(playerEl, isPlaying) {
+  const btn = playerEl.querySelector("[data-player-play]");
+  if (!btn) return;
+  btn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+  btn.classList.toggle("player-btn--playing", isPlaying);
+  btn.setAttribute("aria-label", isPlaying ? "Pausar" : "Reproducir");
+}
+
+function seekPlayer(vt) {
+  if (!activePlayer) return;
+  const p = activePlayer;
+  const clamped = Math.max(0, Math.min(vt, p.totalDuration));
+
+  cancelAnimationFrame(p.rafId);
+  p.rafId = 0;
+
+  const wasPlaying = p.hasAmbient
+    ? !(p.ambientEl?.paused ?? true)
+    : !p.panelEl.paused;
+
+  if (p.hasAmbient) {
+    if (clamped < 1) {
+      // pre-roll zone
+      p.panelEl.pause();
+      p.panelEl.currentTime = 0;
+      if (p.ambientEl) p.ambientEl.volume = 0.5;
+      p.phase = "pre-roll";
+      p.preRollPosAtStart = clamped;
+      p.phaseStartMs = wasPlaying ? performance.now() : null;
+      if (wasPlaying && p.ambientEl?.paused) p.ambientEl.play().catch(() => {});
+    } else if (clamped <= p.panelDuration + 1) {
+      // playing zone
+      p.panelEl.currentTime = clamped - 1;
+      if (p.ambientEl) p.ambientEl.volume = 0.5;
+      p.phase = "playing";
+      p.phaseStartMs = null;
+      if (wasPlaying) {
+        if (p.ambientEl?.paused) p.ambientEl.play().catch(() => {});
+        if (p.panelEl.paused) p.panelEl.play().catch(() => {});
+      }
+    } else {
+      // fade-out zone
+      const fadeOutPos = clamped - (p.panelDuration + 1);
+      p.panelEl.pause();
+      p.phase = "fade-out";
+      p.fadeOutPosAtStart = fadeOutPos;
+      p.phaseStartMs = wasPlaying ? performance.now() : null;
+      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.5 * (1 - fadeOutPos));
+      if (wasPlaying && p.ambientEl?.paused) p.ambientEl.play().catch(() => {});
+    }
+  } else {
+    p.panelEl.currentTime = clamped;
+    p.phase = clamped < p.totalDuration ? "playing" : "ended";
+    if (wasPlaying && p.panelEl.paused) p.panelEl.play().catch(() => {});
+  }
+
+  if (wasPlaying) {
+    p.rafId = requestAnimationFrame(playerRaf);
+  } else {
+    updatePlayerUI(p, clamped);
+  }
+}
+
+function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration) {
+  const playerEl = contentEl.querySelector(".custom-player");
+  if (!playerEl) return;
+
+  const hasAmbient = !!ambientEl;
+
+  activePlayer = {
+    rafId: 0,
+    playerEl,
+    panelEl,
+    ambientEl: ambientEl || null,
+    hasAmbient,
+    totalDuration,
+    panelDuration,
+    phase: hasAmbient ? "pre-roll" : "playing",
+    phaseStartMs: null,      // null = not yet started / paused
+    preRollPosAtStart: 0,    // accumulated pre-roll seconds (0..1) at last pause
+    fadeOutPosAtStart: 0,    // accumulated fade-out seconds (0..1) at last pause
+    isSeeking: false,
+  };
+
+  // Set up audio volumes and rates
+  panelEl.volume = 1;
+  panelEl.playbackRate = playbackRate;
+  if (ambientEl) {
+    ambientEl.volume = 0.5;
+    ambientEl.playbackRate = playbackRate;
+  }
+
+  // Update total time display
+  const totalEl = playerEl.querySelector("[data-player-total]");
+  if (totalEl) totalEl.textContent = formatTime(totalDuration);
+
+  // Enable seekbar
+  const seekbar = playerEl.querySelector("[data-player-seek]");
+  if (seekbar) seekbar.removeAttribute("disabled");
+
+  // Panel ended → enter fade-out phase (Modo A). No { once } so replays also trigger it.
+  if (hasAmbient) {
+    panelEl.addEventListener("ended", () => {
+      if (!activePlayer || activePlayer.panelEl !== panelEl) return;
+      if (activePlayer.phase !== "playing") return;
+      activePlayer.phase = "fade-out";
+      activePlayer.fadeOutPosAtStart = 0;
+      activePlayer.phaseStartMs = performance.now();
+      if (activePlayer.ambientEl) activePlayer.ambientEl.volume = 0.5;
+      if (!activePlayer.rafId) activePlayer.rafId = requestAnimationFrame(playerRaf);
+    });
+  }
+
+  // Play/pause button
+  playerEl.querySelector("[data-player-play]")?.addEventListener("click", () => {
+    if (!activePlayer) return;
+    const p = activePlayer;
+
+    if (p.hasAmbient) {
+      // ── Restart after end ──
+      if (p.phase === "ended") {
+        if (p.ambientEl) { p.ambientEl.volume = 0.5; p.ambientEl.currentTime = 0; }
+        p.panelEl.currentTime = 0;
+        p.phase = "pre-roll";
+        p.preRollPosAtStart = 0;
+        p.fadeOutPosAtStart = 0;
+        p.phaseStartMs = performance.now();
+        p.ambientEl?.play().catch(() => {});
+        p.rafId = requestAnimationFrame(playerRaf);
+        setPlayerBtnState(playerEl, true);
+        return;
+      }
+
+      const isPlaying = !(p.ambientEl?.paused ?? true);
+
+      if (isPlaying) {
+        // Pause — accumulate progress in current phase
+        cancelAnimationFrame(p.rafId);
+        p.rafId = 0;
+        if (p.phase === "pre-roll") {
+          const elapsed = (performance.now() - p.phaseStartMs) / 1000 / p.panelEl.playbackRate;
+          p.preRollPosAtStart = Math.min(1, p.preRollPosAtStart + elapsed);
+          p.phaseStartMs = null;
+        } else if (p.phase === "fade-out") {
+          const elapsed = (performance.now() - p.phaseStartMs) / 1000 / (p.ambientEl?.playbackRate || 1);
+          p.fadeOutPosAtStart = Math.min(1, p.fadeOutPosAtStart + elapsed);
+          p.phaseStartMs = null;
+        }
+        p.ambientEl?.pause();
+        p.panelEl.pause();
+        setPlayerBtnState(playerEl, false);
+      } else {
+        // Resume — phaseStartMs restarts from accumulated pos
+        if (p.phase === "pre-roll") {
+          p.phaseStartMs = performance.now();
+          p.ambientEl?.play().catch(() => {});
+        } else if (p.phase === "playing") {
+          p.ambientEl?.play().catch(() => {});
+          p.panelEl.play().catch(() => {});
+        } else if (p.phase === "fade-out") {
+          p.phaseStartMs = performance.now();
+          if (p.ambientEl) {
+            p.ambientEl.volume = Math.max(0, 0.5 * (1 - p.fadeOutPosAtStart));
+            p.ambientEl.play().catch(() => {});
+          }
+        }
+        p.rafId = requestAnimationFrame(playerRaf);
+        setPlayerBtnState(playerEl, true);
+      }
+    } else {
+      // ── Modo B ──
+      if (p.phase === "ended" || p.panelEl.ended) {
+        p.panelEl.currentTime = 0;
+        p.phase = "playing";
+        p.panelEl.play().catch(() => {});
+        p.rafId = requestAnimationFrame(playerRaf);
+        setPlayerBtnState(playerEl, true);
+        return;
+      }
+      if (p.panelEl.paused) {
+        p.panelEl.play().catch(() => {});
+        p.rafId = requestAnimationFrame(playerRaf);
+        setPlayerBtnState(playerEl, true);
+      } else {
+        p.panelEl.pause();
+        cancelAnimationFrame(p.rafId);
+        p.rafId = 0;
+        setPlayerBtnState(playerEl, false);
+      }
+    }
+  });
+
+  // Seekbar interaction
+  if (seekbar) {
+    seekbar.addEventListener("mousedown", () => { if (activePlayer) activePlayer.isSeeking = true; });
+    seekbar.addEventListener("touchstart", () => { if (activePlayer) activePlayer.isSeeking = true; }, { passive: true });
+    seekbar.addEventListener("input", () => {
+      if (!activePlayer) return;
+      const vt = (parseInt(seekbar.value, 10) / 1000) * activePlayer.totalDuration;
+      updatePlayerUI(activePlayer, vt);
+    });
+    seekbar.addEventListener("change", () => {
+      if (!activePlayer) return;
+      activePlayer.isSeeking = false;
+      const vt = (parseInt(seekbar.value, 10) / 1000) * activePlayer.totalDuration;
+      seekPlayer(vt);
+    });
+  }
+}
+
 function togglePanel(panelId) {
   if (!panelId) return;
 
@@ -313,16 +675,43 @@ function togglePanel(panelId) {
     const node = findNodeById(contentTree, panelId);
     if (node?.type === "leaf") {
       const contentEl = document.getElementById(`${panelId}-content`);
-      const audioEl = contentEl?.querySelector("audio");
-      if (audioEl) {
-        audioEl.playbackRate = playbackRate ?? 1;
-        if (autoPlay) audioEl.play().catch(() => {});
+      if (contentEl) {
+        const panelEl = contentEl.querySelector('audio[data-role="panel"]');
+        const ambientEl = contentEl.querySelector('audio[data-role="ambient"]');
+        if (!panelEl) return;
+
+        const setupAndStart = () => {
+          const panelDuration = panelEl.duration;
+          const totalDuration = ambientEl ? panelDuration + 2 : panelDuration;
+          initPlayer(contentEl, panelEl, ambientEl || null, totalDuration, panelDuration);
+          if (autoPlay) {
+            const p = activePlayer;
+            if (!p) return;
+            if (p.hasAmbient) {
+              p.phaseStartMs = performance.now();
+              ambientEl.play().catch(() => {});
+            } else {
+              panelEl.play().catch(() => {});
+            }
+            p.rafId = requestAnimationFrame(playerRaf);
+            setPlayerBtnState(p.playerEl, true);
+          }
+        };
+
+        if (isFinite(panelEl.duration) && panelEl.duration > 0) {
+          setupAndStart();
+        } else {
+          panelEl.addEventListener("loadedmetadata", setupAndStart, { once: true });
+        }
       }
     }
   }
 }
 
 function collapseBranch(panelId) {
+  stopActivePlayer();
+  const contentEl = document.getElementById(`${panelId}-content`);
+  contentEl?.querySelectorAll("audio").forEach((a) => a.pause());
   expandedPanels.delete(panelId);
   revealedDescriptions.delete(panelId);
   const children = accordionIndex.childrenByParent.get(panelId) || [];
@@ -395,17 +784,44 @@ function renderPanel(node, level) {
 function renderLeafContent(node) {
   const tagsHtml = "";
 
-  const audioSrc = node.audioSrc
+  const panelSrc = node.audioSrc
     ? `${import.meta.env.BASE_URL}${node.audioSrc.replace(/^\/+/, "")}`
     : "";
 
+  const rawAmbientSrc = ambientEnabled ? resolveAmbientSrc(node.id) : null;
+  const ambientSrc = rawAmbientSrc
+    ? `${import.meta.env.BASE_URL}${rawAmbientSrc.replace(/^\/+/, "")}`
+    : null;
+
   const descriptionHtml = renderLeafDescription(node);
+
+  let audioHtml;
+  if (!panelSrc) {
+    audioHtml = '<p class="empty">Falta definir la ruta del audio.</p>';
+  } else {
+    const hiddenAudios = ambientSrc
+      ? `<audio preload="metadata" src="${escapeAttribute(ambientSrc)}" data-role="ambient" loop hidden></audio>
+         <audio preload="metadata" src="${escapeAttribute(panelSrc)}" data-role="panel" hidden></audio>`
+      : `<audio preload="metadata" src="${escapeAttribute(panelSrc)}" data-role="panel" hidden></audio>`;
+
+    audioHtml = `
+      <div class="custom-player" data-player-id="${escapeAttribute(node.id)}">
+        <button type="button" class="player-btn" data-player-play aria-label="Reproducir">&#9654;</button>
+        <div class="player-track">
+          <input type="range" class="player-seekbar" data-player-seek min="0" max="1000" value="0" step="1" disabled>
+          <div class="player-time">
+            <span data-player-current>0:00</span>
+            <span data-player-total>-:--</span>
+          </div>
+        </div>
+      </div>
+      ${hiddenAudios}
+    `;
+  }
 
   return `
     <article class="leaf-content">
-      ${audioSrc
-        ? `<audio controls preload="none" src="${escapeAttribute(audioSrc)}"></audio>`
-        : '<p class="empty">Falta definir la ruta del audio.</p>'}
+      ${audioHtml}
       <div class="leaf-description-block">
         ${descriptionHtml}
       </div>

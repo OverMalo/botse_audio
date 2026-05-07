@@ -34,7 +34,14 @@ const GREMIO_LABELS = Object.fromEntries(
 
 function loadState() {
   try {
-    const saved = sessionStorage.getItem("navState");
+    // One-time migration: move existing sessionStorage data to localStorage
+    const legacy = sessionStorage.getItem("navState");
+    if (legacy && !localStorage.getItem("navState")) {
+      localStorage.setItem("navState", legacy);
+    }
+    if (legacy) sessionStorage.removeItem("navState");
+
+    const saved = localStorage.getItem("navState");
     if (saved) return JSON.parse(saved);
   } catch {}
   return {
@@ -48,7 +55,7 @@ function loadState() {
 }
 
 function saveState() {
-  sessionStorage.setItem(
+  localStorage.setItem(
     "navState",
     JSON.stringify({
       selectedProvincia,

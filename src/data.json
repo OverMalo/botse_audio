@@ -624,6 +624,50 @@
           "src": "audios/misiones/skyrim/e12.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A13 - El día en que el jarl murió",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "skyrim",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Tu más reciente encargo tiene una condición inusual. Se te ha encomendado eliminar a un nórdico llamado Fenreld Kjenarik, que se autoproclama «jarl de la tundra», cueste lo que cueste. Sin embargo, el contrato insiste en que el trabajo debe realizarse de manera que parezca obra de un cuencano. Supones que debe haber algún plan detrás. Como siempre dicen: «no quieren saber cómo lo haces pero te dicen todo lo que no quieren que hagas». Da igual, sin importar cuál sea la razón tras el Sacramento Negro, Sithis queda saciado. Dudas de poder convencer a un cuencano para que se una a ti en tu misión, así que lo más fácil será disfrazarse de uno. Solo hace falta encontrar a uno que esté dispuesto a dejarte su ropa... Aunque si no está dispuesto, te las apañarás.",
+        "audio": {
+          "src": "audios/misiones/skyrim/a13.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B14 - El día en que el jarl murió",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "skyrim",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Una vez que has obtenido tu disfraz, llega el momento de localizar al jarl Fenreld Kjenarik. Lo último que se sabe de él es que estaba acampando en un altozano cerca de la Playa de Ysmgar, un rudimentario asentamiento gigante en la costa noroeste de Skyrim. El autoproclamado jarl tiene muchos seguidores fieles debido a su hábito de tomar bajo su cuidado a los viajeros que deambulan por los helados páramos de la región, por lo que es muy probable que debas combatirlos cuando llegues. Lo más difícil será asegurarte de que, a pesar de todo, se considere que el culpable es un cuencano. Al fin y al cabo, cuando llega la hora de luchar, es un verdadero desafío mantener una identidad falsa.",
+        "audio": {
+          "src": "audios/misiones/skyrim/b14.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C15 - El día en que el jarl murió",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "skyrim",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Avisas a la Hermandad de que el trabajo está hecho y ellos te confirman que el cliente ha pagado por él, a la vez que te avisan de que te alejes del lugar del asesinato tanto como puedas. Te gustaría celebrar el éxito de un trabajo bien hecho, pero te sientes observado. Lo difícil de ganarse la vida silenciando a la gente es que a menudo te consideran un cabo suelto que también debe ser silenciado. Además, el tiempo en la región está cada vez peor, por lo que te encuentras viajando por colinas y valles estando pendiente de que no caiga una avalancha, natural o provocada, sobre ti.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c15.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E16 - El día en que el jarl murió",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "skyrim",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Sales de lo que habría sido tu gélida tumba, helado pero intacto. Tras registrar los cuerpos de los enemigos que has derrotado, encuentras una carta con el nombre «Soldados del Vacío» en la que se dan instrucciones para acabar contigo y dejar pruebas que te relacionen con el asesinato que has cometido. Es extraño, ¿no? Alguien te contrata para matar a una persona y hacer que otro se lleve la culpa y, por otro lado, otra persona busca desviar la culpa una vez más. No sabes de qué va esto, pero no te gusta ser un peón en el juego de otra persona, así que decides informar a la Hermandad. En cualquier caso, no es probable que esos «Soldados» vuelvan a subestimarte, te has ganado una buena reputación.",
+        "audio": {
+          "src": "audios/misiones/skyrim/e16.mp3",
+          "title": ""
+        }
       }
     ]
   },

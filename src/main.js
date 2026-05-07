@@ -396,14 +396,14 @@ function playerRaf() {
         p.phase = "fade-out";
         p.fadeOutPosAtStart = 0;
         p.phaseStartMs = performance.now();
-        if (p.ambientEl) p.ambientEl.volume = 0.5;
+        if (p.ambientEl) p.ambientEl.volume = 0.25;
       }
     } else if (p.phase === "fade-out") {
       const elapsed = (performance.now() - p.phaseStartMs) / 1000 / (p.ambientEl?.playbackRate || 1);
       const pos = p.fadeOutPosAtStart + elapsed;
       vt = p.panelDuration + 1 + pos;
-      // Fade ambient volume: 0.5 → 0 over 1 second
-      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.5 * (1 - pos));
+      // Fade ambient volume: 0.3 → 0 over 1 second
+      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.25 * (1 - pos));
       if (pos >= 1) {
         vt = p.totalDuration;
         if (p.ambientEl) { p.ambientEl.volume = 0; p.ambientEl.pause(); }
@@ -469,7 +469,7 @@ function seekPlayer(vt) {
       // pre-roll zone
       p.panelEl.pause();
       p.panelEl.currentTime = 0;
-      if (p.ambientEl) p.ambientEl.volume = 0.5;
+      if (p.ambientEl) p.ambientEl.volume = 0.25;
       p.phase = "pre-roll";
       p.preRollPosAtStart = clamped;
       p.phaseStartMs = wasPlaying ? performance.now() : null;
@@ -477,7 +477,7 @@ function seekPlayer(vt) {
     } else if (clamped <= p.panelDuration + 1) {
       // playing zone
       p.panelEl.currentTime = clamped - 1;
-      if (p.ambientEl) p.ambientEl.volume = 0.5;
+      if (p.ambientEl) p.ambientEl.volume = 0.25;
       p.phase = "playing";
       p.phaseStartMs = null;
       if (wasPlaying) {
@@ -491,7 +491,7 @@ function seekPlayer(vt) {
       p.phase = "fade-out";
       p.fadeOutPosAtStart = fadeOutPos;
       p.phaseStartMs = wasPlaying ? performance.now() : null;
-      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.5 * (1 - fadeOutPos));
+      if (p.ambientEl) p.ambientEl.volume = Math.max(0, 0.25 * (1 - fadeOutPos));
       if (wasPlaying && p.ambientEl?.paused) p.ambientEl.play().catch(() => {});
     }
   } else {
@@ -532,7 +532,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
   panelEl.volume = 1;
   panelEl.playbackRate = playbackRate;
   if (ambientEl) {
-    ambientEl.volume = 0.5;
+    ambientEl.volume = 0.25;
     ambientEl.playbackRate = playbackRate;
   }
 
@@ -552,7 +552,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
       activePlayer.phase = "fade-out";
       activePlayer.fadeOutPosAtStart = 0;
       activePlayer.phaseStartMs = performance.now();
-      if (activePlayer.ambientEl) activePlayer.ambientEl.volume = 0.5;
+      if (activePlayer.ambientEl) activePlayer.ambientEl.volume = 0.25;
       if (!activePlayer.rafId) activePlayer.rafId = requestAnimationFrame(playerRaf);
     });
   }
@@ -565,7 +565,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
     if (p.hasAmbient) {
       // ── Restart after end ──
       if (p.phase === "ended") {
-        if (p.ambientEl) { p.ambientEl.volume = 0.5; p.ambientEl.currentTime = 0; }
+        if (p.ambientEl) { p.ambientEl.volume = 0.25; p.ambientEl.currentTime = 0; }
         p.panelEl.currentTime = 0;
         p.phase = "pre-roll";
         p.preRollPosAtStart = 0;
@@ -606,7 +606,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         } else if (p.phase === "fade-out") {
           p.phaseStartMs = performance.now();
           if (p.ambientEl) {
-            p.ambientEl.volume = Math.max(0, 0.5 * (1 - p.fadeOutPosAtStart));
+            p.ambientEl.volume = Math.max(0, 0.25 * (1 - p.fadeOutPosAtStart));
             p.ambientEl.play().catch(() => {});
           }
         }

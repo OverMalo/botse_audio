@@ -264,7 +264,7 @@
       },
       {
         "label": "A21 - Conservadores del caos",
-        "description": "Intrepidos",
+        "description": "Intrépidos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "intrepidos",
         "leafDescription": "Has aceptado un contrato con el Anticuario Cyrodílico, una sociedad de historiadores que pretende abrir un museo de artefactos argonianos en Ciénaga Negra. La sociedad está tras la pista de una reliquia especialmente difícil de conseguir, y es por eso que han contratado los servicios de los Intrépidos para encontrarla. Cualquier otra cosa que encontréis en el proceso, por supuesto, es vuestra. La reliquia en cuestión es un antiguo tomo argoniano que, según se dice, contiene secretos sobre cómo aprovechar un raro recurso natural nativo de Ciénaga Negra. El Anticuario Cyrodílico ha averiguado que el libro se encuentra en un complejo sistema de cuevas bajo la ciudad de Fuerte de la Tormenta. La organización no sabe mucho más, pero hay algunos historiadores repartidos por la región que tal vez podrían ayudar.",
@@ -275,7 +275,7 @@
       },
       {
         "label": "B22 - Conservadores del caos",
-        "description": "Intrepidos",
+        "description": "Intrépidos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "intrepidos",
         "leafDescription": "En lugar de invertir tiempo en investigar más, decides aventurarte en los túneles acompañado solo con tus agallas y tu considerable equipamiento. Tu vista se adapta a la oscuridad y ves una maraña de pasadizos ante ti. Conforme avanzas, ves algunos extraños cristales azules que reflejan la luz de tu antorcha. También oyes una voz enfadada proveniente de uno de los túneles cercanos. Parece que alguien busca también el tomo, y no da la impresión de que le alegre tener compañía.",
@@ -286,7 +286,7 @@
       },
       {
         "label": "C23 - Conservadores del caos",
-        "description": "Intrepidos",
+        "description": "Intrépidos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "intrepidos",
         "leafDescription": "Consigues encontrar a una anciana argoniana que podría tener información. Ella se alegra de tener tu compañía.\n«No hay mucha gente interesada en las historias del pasado en estos días que corren... Ni siquiera se preocupan del futuro, que el pasado les ayudaría a predecir e interpretar. Solo les importa el ahora».\nTe explica que el tomo es un libro que recoge los usos posibles de unos minerales conocidos coloquialemente como Cristales de Fuerte de la Tormenta. Son raros y volátiles, y pueden encontrarse en el subsuelo de la región del Pantano de las Sombras, especialmente en el área cerca de Fuerte de la Tormenta, de ahí su nombre.\n«Algunos creen que estos cristales albergan el mismísimo poder del mal. Cualquiera que posea ese libro deberá tener mucho cuidado con los secretos que contiene».\nAntes de irte, te da algunos fragmentos de mapas antiguos que te ayudarán a moverte por los laberínticos túneles de la zona. Además, te hace una advertencia. «Hace algunos días, unas personas con túnicas grises vinieron preguntando por el códice... No les dije mucho, parecían malas personas, pero, si quieres ese libro, tendrás que estar dispuesto a luchar».",
@@ -297,7 +297,7 @@
       },
       {
         "label": "D24 - Conservadores del caos",
-        "description": "Intrepidos",
+        "description": "Intrépidos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "intrepidos",
         "leafDescription": "Confiado por tus fragmentos de mapa y tus recién adquiridos conocimientos, entras en la cueva bajo Fuerte de la Tormenta sabiendo el camino y consciente de la presencia de enemigos. Incluso consigues acercarte sigilosamente y espiar a algunos de ellos mientras discuten sobre qué camino seguir.\n«Más vale que valgan la pena», se queja un imperial a su compañero, un orco muy bajito que mira dubitativo una bifurcación más adelante.\n «De hecho, aún no lo entiendo, ¿para qué quiere esos cristales?».\n El orco lo mira, encogiéndose de hombros.\n«Yo tampoco lo sé, pero dijo algo de que pueden... ¿“contener corrupción”? Y que, por tanto, podrían... No recuerdo bien. Me suena algo como: “absorber los peores efectos de separar el mundo de Oblivion hasta”... ¡Ay, yo qué sé! ¡Yo solo hago lo que se me ordena!».\n Finalmente, se decantan por una ruta y se alejan. Tras oir sus palabras, encontrar el códice parece más importante que simplemente para obtener una buena recompensa por él.",
@@ -308,7 +308,7 @@
       },
       {
         "label": "E25 - Conservadores del caos",
-        "description": "Intrepidos",
+        "description": "Intrépidos",
         "provinciaTag": "cienaga_negra",
         "gremioTag": "intrepidos",
         "leafDescription": "Ha sido un trabajo difícil, pero te has hecho con el tomo y has salido con vida de las cavernas. Una vez has vuelto a Lilmoth, entregas el códice a Famia Mercius, una mujer imperial cofundadora del Anticuario Cyrodílico. Su rostro, que mostraba gran entusiasmo, se ensombrece conforme hojea el libro.\n «Sin duda, se trata de un importante artefacto argoniano, y te damos las gracias por ello... Sin embargo, teniendo en cuenta lo que has visto en tu travesía y lo que contiene, tal vez no sea lo más prudente mostrar este libro al público. Dicho esto, no hay palabras para agradecer tu servicio por nuestro grupo y por el pueblo argoniano. Incluso si este volumen nunca llega a formar parte de nuestra colección pública, servirá como un recurso inestimable para los investigadores de antigüedades argonianas».",
@@ -666,6 +666,204 @@
         "leafDescription": "Sales de lo que habría sido tu gélida tumba, helado pero intacto. Tras registrar los cuerpos de los enemigos que has derrotado, encuentras una carta con el nombre «Soldados del Vacío» en la que se dan instrucciones para acabar contigo y dejar pruebas que te relacionen con el asesinato que has cometido. Es extraño, ¿no? Alguien te contrata para matar a una persona y hacer que otro se lleve la culpa y, por otro lado, otra persona busca desviar la culpa una vez más. No sabes de qué va esto, pero no te gusta ser un peón en el juego de otra persona, así que decides informar a la Hermandad. En cualquier caso, no es probable que esos «Soldados» vuelvan a subestimarte, te has ganado una buena reputación.",
         "audio": {
           "src": "audios/misiones/skyrim/e16.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A17 - Lo que se fragua en Límite Sombrío",
+        "description": "Intrépidos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Límite Sombrío es uno de los lugares más peligrosos de todo Tamriel, pero sus cavernas subterráneas son uno de los destinos preferidos de los cazatesoros que son capaces de enfrentarse a sus riesgos. Llegas a Riften según lo indicado por Maj al-Ragath, la guardia roja maestra de compromisos de los Intrépidos, quien te ha encargado crear una ventaja para los miembros de los Intrépidos que deseen adentrarse en Límite Sombrío para hacerse con sus tesoros. Tu trabajo consiste en entrar en Límite Sombrío por un pasadizo secreto bajo una antigua posada llamada El Horker Sonriente. Después, colocarás unas balizas a intervalos regulares, llegando tan profundo como te sea posible. La intención es que estas balizas puedan ser activadas por los exploradores que lleven un sello encantado de los Intrépidos para conseguir luz y guía de vuelta a la superficie. Colocar las balizas no debería ser muy difícil, pero la fama de Límite Sombrío es más que merecida, por lo que no haces más que preguntarte qué encontrarás ahí abajo.",
+        "audio": {
+          "src": "audios/misiones/skyrim/a17.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B18 - Lo que se fragua en Límite Sombrío",
+        "description": "Intrépidos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Has colocado tantas balizas como has podido, pero la inusual cantidad de habitantes de Límite Sombrío te ha bloqueado el camino antes de que pudieras completar el trabajo. Las balizas parecían enfurecer a tus atacantes, como si tuvieran un interés especial en evitar que su hogar fuera explorado. Te parece que tu única opción es prepararte para el combate y volver mejor equipado para acabar con la misión. Has oído que, en algunos asentamientos de Skyrim Oriental, hay algunos encantadores de armas de gran habilidad, pero no tienes tiempo de visitarlos a todos. Los herreros especializados de Reducto de Jorunn pueden hacer que un arma restaure tu fuerza vital. Los mineros de Peñón de Shor saben cómo hacer que las armas hagan más daño a las criaturas de las profundidades. Por último, los bardos de Retiro del Escaldo han desarrollado técnicas para aumentar mágicamente la durabilidad de las armas. ¿Cuál de estas mejoras podría resultar más útil?",
+        "audio": {
+          "src": "audios/misiones/skyrim/b18.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C19 - Lo que se fragua en Límite Sombrío",
+        "description": "Intrépidos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Una vez potenciadas tus armas, pones en marcha el viaje de regreso a El Horker Sonriente. En los últimos días se ha extendido el rumor de que, de las profundidades de Límite Sombrío, se oye ahora de vez en cuando un poderosísimo rugido. ¿Quizás los monstruos a los que te enfrentaste estaban ocultando alguna abominación hasta que llegara el momento adecuado? Si es posible, te gustaría no tener que encontrar la respuesta a esa pregunta.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c19.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E20 - Lo que se fragua en Límite Sombrío",
+        "description": "Intrépidos",
+        "provinciaTag": "skyrim",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Muchas de las balizas restantes fueron destruidas durante el combate, por lo que los Intrépidos tendrán que enfrentar las profundidades de Límite Sombrío con las mismas dificultades que todos los demás. Sin embargo, logras salir llevando un premio digno de tu gremio: el corazón de la extraña bestia que te atacó allí abajo. El animal parecía haber sido alterado con una combinación de magia de Espina Sangrienta y magia vampírica. De sus comisuras crecían hongos de aspecto tóxico, y su piel tenía partes moteadas que te recuerdan a las historias que se cuentan de los supuestos «Falmer», de los que además se dice que han sido vistos en varios asaltos repartidos por la provincia. Parece que alguien con malas intenciones ha estado trasteando con una mezcla de todas las magias que pueden encontrarse en Límite Sombrío... ¡Y tú has conseguido entrometerte en sus planes a la vez que te ganabas el favor de tu gremio! Nada mal para el trabajo de unos pocos días.",
+        "audio": {
+          "src": "audios/misiones/skyrim/e20.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A21 - Ningún fantasma es como los de las nieves",
+        "description": "Guardia exterior",
+        "provinciaTag": "skyrim",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Bodean, el líder de operaciones de la Guardia exterior, explica la dura situación que vive la gente de Skyrim Oriental.\n«Se ha informado de asaltos falmeri en varias ciudades. Sospechamos que nuestra antigua compañera, Deslandra, está detrás de ellos de alguna forma, tal vez perturbando su hogar tradicional, Límite Sombrío. Tenemos a algunos investigando esta relación con los llamados “fantasmas de las nieves”, pero la Guardia se siente responsable por sus acciones, así que haremos lo que mejor se nos da: ayudar a los necesitados».\nEntonces, Bodean te explica que serás el representante de la Guardia exterior en la región y, en su nombre, prestarás ayuda allí donde veas necesario.\n«La gente necesita provisiones, protección y, tal vez lo más importante, volver a disponer de sus casas y negocios sin verse amenzados por una incursión falmeri. Haz lo que puedas allá donde puedas, pero con cuidado, Deslandra no tardará en ir a por ti».",
+        "audio": {
+          "src": "audios/misiones/skyrim/a21.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E22 - Ningún fantasma es como los de las nieves",
+        "description": "Guardia exterior",
+        "provinciaTag": "skyrim",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "«¡Buen trabajo!», te felicita Bodean.\n «Tus esfuerzos no solo han ayudado a los necesitados, sino que también han distraido a Deslandra mientras nosotros investigábamos sus actividades subterráneas. Lo que has descubierto del último grupo de asaltantes también ha arrojado algo de luz al respecto. Al parecer, Deslandra se ha aliado con los Falmer y demás habitantes de Límite Sombrío a cambio de su magia, de la que sabemos muy poco. Queda por ver lo que pretende conseguir con dicha magia...».",
+        "audio": {
+          "src": "audios/misiones/skyrim/e22.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A23 - Estudiando los asedios",
+        "description": "Orden Psijic",
+        "provinciaTag": "skyrim",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "En las últimas semanas, han ocurrido incidentes anómalos por todo Skyrim, y la Orden Psijic pretende saber por qué. De Límite Sombrío ha salido un casi constante flujo de criaturas normalmente subterráneas que han asediado y saqueado asentamientos desprevenidos en un instante para luego marcharse igual de rápido. Entre sus filas se encuentran muchas criaturas que antes se creían que solo existían en las leyendas, como los deformes «falmer», elfos blancos con una insaciable sed de sangre. La Orden Psijic quiere saber la razón tras estos ataques. Han recibido informes de que los cuerpos de los invasores abatidos parecen alterados de alguna forma, ya sea con magia de Límite Sombrío, sangre de draugr u alguna otra cosa. Sin embargo, la Orden prefiere enviar un emisario oficial a investigar en lugar de confiar en el testimonio de los lugareños.",
+        "audio": {
+          "src": "audios/misiones/skyrim/a23.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B24 - Estudiando los asedios",
+        "description": "Orden Psijic",
+        "provinciaTag": "skyrim",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Tu investigación ha sido fructífera, aunque algo peligrosa. Al analizar la sangre de algunas criaturas derrotadas, has descubierto un potente cóctel de sustancias alteradas. Los reagentes cuencanos que esperabas encontrar, savia de corazón de espino y raíz de Espina Sangrienta, están presentes, pero lo que te llama la atención es la presencia de trazas de sangre vampírica. Da la impresión de que las otras sustancias sirven de agentes estabilizadores para aprovechar la sangre. Lo que es peor, la sangre de vampiro sugiere que estas criaturas están colaborando de alguna forma con los vampiros que habitan en Límite Sombrío. La mayoría de ellos se concentra en el castillo subterráneo conocido como Bastión de Páramo Gris. Conoces una entrada secreta a Límite Sombrío a través del sótano de una posada abandonada. Tal vez la mejor forma de llegar al fondo de todo esto es internarte tú mismo en las profundidades del subsuelo y preguntarle a un vampiro directamente. Sin embargo, y aunque sea una lástima, por lo general no reciben bien a los visitantes.",
+        "audio": {
+          "src": "audios/misiones/skyrim/b24.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E25 - Estudiando los asedios",
+        "description": "Orden Psijic",
+        "provinciaTag": "skyrim",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "No se debe subestimar a un investigador motivado. Consigues reducir e interrogar a una vampira que ha participado en varios de los asedios, y lo que te cuenta bien merece un informe inmediato al cuartel general de la Orden. Esta vampira arrogante, que solía ser una nórdica llamada Ellina Torbeld, dice que, puesto que la has capturado, no tiene por qué serle leal a «esa elfa» que ha estado coordinando los ataques.\n«Está probando su suero, dice que a cambio le dará a Límite Sombrío una parte del mundo, pero tengo mis dudas».\nLa miras entrecerrando los ojos, sin entender bien a qué se refiere. Ella suspira.\n«Puede que el vampirismo viniera hace mucho de Molag Bal, pero para la mayoría de nosotros no es, en todo el sentido de la palabra, mágico. Los estrechos de miras lo denominan enfermedad o se inventan otros nombres, como “hemofilia porfírica” o “sanguivoria noxifílica”. Yo lo llamo “libertad de las vanas preocupaciones del mundo natural”. Sea cual sea el nombre, es una condición natural. Esa elfa del bosque quiere beneficiarse de nuestros poderes sin tener la sed de sangre; lo cual para mí es una tontería, le quita toda la diversión. Supongo que para los más ingenuos de entre los nuestros, estos ataques sirven para mostrar nuestro poder... Para ella, sin embargo, son solo un experimento».",
+        "audio": {
+          "src": "audios/misiones/skyrim/e25.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A26 - La culpa de la sangre",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Razum-dar, el líder de los Ojos de la Reina, se reúne contigo cerca de la ermita local. Aunque trata de mantener su típico carácter imperturbable, puedes ver que el trabajo que tiene para ti lo tiene algo alterado, debe ser importante.\n«A los Ojos se les ha presentado una oportunidad para matar dos hackwings de un tiro. Hay un nórdico que vaga por Skyrim Occidental y se hace llamar el “jarl de la tundra”. Dice que cuida y ayuda a los viajeros y a los olvidados que atraviesan los páramos helados de esta tierra asolada». Raz hace un gesto, como si no le gustara hablar de él.\n«Diga lo que diga, tenemos pruebas de que este supuesto jarl honrado, Fenreld Kjenarik, ha estado dando suministros a las criaturas subterráneas que han estado atacando las ciudades de Skyrim. Malo para nuestras operaciones y malo para todos. Está a punto de ser... eliminado, permanentemente, pero eso no te concierne. Hay un canalla, un cuencano que lleva tiempo operando en Skyrim Occidental, llamado Braig el Sanguinario. Hemos sabido que ha estado capturando soldados de la Guerra de los Tres Estandartes en Cyrodiil para convertirlos en corazones de espino. Este ritual, que consiste en reemplazar el corazón de una persona con una semilla del árbol de corazón de espino, suele usarse para dar poder a los cuencanos para poder proteger sus clanes. Sin embargo, puede usarse para someter a alguien en contra de su voluntad, incluso a aquellos que no son cuencanos. El tal Braig tiene predilección por realizar dicho procedimiento en... khajiitas no dispuestos. Un amigo de Raz que estaba en el frente ha sido víctima de este crimen».\nVes que se estremece y ya no quedan dudas del porqué de su actitud. Este asunto toma un cariz personal para él.\n«Para cubrir cualquier rastro de aquellos que están encargándose del jarl Fenreld Kjenarik, nos gustaría culpar de su muerte a Braig el Sanguinario. Involucrar a un cuencano en el asesinato de un nórdico relevante de seguro hará que la ley lo persiga. ¡Los nórdicos pensarán que acabar con él habrá sido idea suya! De esta manera, lograremos quitar del tablero a dos villanos de Skyrim Occidental. Lo primero que Raz necesita que hagas es encontrar alguna pista que podamos usar para relacionar a Braig con Kjenarik».",
+        "audio": {
+          "src": "audios/misiones/skyrim/a26.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B27 - La culpa de la sangre",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Tus conversaciones con los cuencanos de la zona te sirven para, finalmente, obtener parte de un antiguo tocado que supuestamente perteneció a Braig el Sanguinario. Con las suficientes pistas y tu «prueba» decisiva, solo falta ejecutar la siguiente parte del plan. Raz te ha dicho que el asesinato del jarl ocurrirá cerca de la Playa de Ysmgar, un pequeño asentamiento gigante cerca de la costa norte. Tendrás que colarte en el campamento justo después de que el asesinato haya tenido lugar para colocar el trozo del tocado de Braig cerca del cadáver de Kjenarik, vinculándolo así con el asesinato. Es probable que haya algunos llorando su muerte cerca del cuerpo, así que tendrás que hacer buen uso de las sombras si quieres evitar enredos desagradables.",
+        "audio": {
+          "src": "audios/misiones/skyrim/b27.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C28 - La culpa de la sangre",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "La prueba que colocaste da resultados inmediatos. Se corre la voz en Soledad de que Braig el Sanguinario es muy probablemente el autor del asesinato de Kjenarik. Siguiendo las instrucciones de Raz, te ofreces voluntario para reclamar la recompensa recién declarada por la cabeza del cuencano. Si es eliminado antes de que se le pueda interrogar, es muy probable que nadie cuestione su incriminación. Sin embargo, hay una duda rondándote la mente. Oíste algo en el campamento del difunto jarl. Según algunos guardas, Kjenarik no se dedicaba a ayudar a las criaturas de Límite Sombrío, sino a los habitantes de Pueblo Ocaso, la comunidad minera situada en Límite Sombrío, justo al sur del peligroso Bastión de Páramo Gris. La posibilidad de que esto sea cierto te inquieta, por lo que decides hablarlo con Raz... después de interrogar a los lugareños acerca de la ubicación de Braig, claro está. Independientemente de la verdadera naturaleza de las actividades del jarl, está claro que el cuencano al que le habéis tendido una trampa es un canalla.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c28.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D29 - La culpa de la sangre",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Has descubierto la ubicación del campamento de Braig pero, para tu desgracia, parece que las noticias de su implicación en la muerte de Kjenarik han hecho que aumente sus defensas. Además, se dice que hay un benefactor externo que ha proporcionado a Braig nuevos reclutas de todas partes de Skyrim, además de varios khajiitas cautivos que puede convertir en corazones de espino cuando vea oportuno. Vas a tener que acabar con él cuanto antes. Si sigue engrosando sus filas, se convertirá en poco tiempo en un problema que no vas a poder enfrentar tú solo.",
+        "audio": {
+          "src": "audios/misiones/skyrim/d29.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E30 - La culpa de la sangre",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "skyrim",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Braig el Sanguinario ha hecho honor a su nombre hasta el final. Ahora que has acabado con él, el cuencano yace bañado en sangre, mientras que todos los khajiitas cautivos restantes han sido liberados. Más tarde, te reúnes con Raz y compartes tus sospechas de que el jarl Fenreld Kjenarik puede haber sido realmente un hombre de bien. Él asiente, con una expresión pensativa y con algo de enfado.\n«Es posible que nuestra trampa haya sido por otra persona... Se ha descubierto que Braig ha tenido relación con muchas personas vinculadas a Límite Sombrío, y parece que él era el contacto de la superficie para muchos de los ataques, no el jarl. Claro está que nadie sabe que nosotros estamos involucrados, buen trabajo con eso, pero merece la pena que investiguemos la proveniencia de los refuerzos de Braig. Si encontramos su origen, tal vez también encontremos la fuente de toda la maldad que está emergiendo de las profundidades».",
+        "audio": {
+          "src": "audios/misiones/skyrim/e30.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A31 - Caridad de los Campeones",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Que no se diga que el Círculo de Campeones no hace nada por los demás. Hoy, el gremio te ha asignado un encargo que no implica darle una paliza a nadie... al menos, a nadie que no se lo merezca. Una de las arenas de combate más populares del Círculo en Tamriel puede encontrarse en la fortaleza orca de Mor Khazgur, en el extremo noroeste de Skyrim. Aparte de los ingresos por los eventos organizados por el Círculo de Campeones, la principal fuente de ingresos del asentamiento son sus operaciones mineras. Estas operaciones sufrieron un duro golpe hace algunos meses, cuando un experimento alquímico que salió mal provocó la erosión entre los límites entre la mina y el reino subterráneo de Límite Sombrío. Un aventurero que estaba de paso ayudó a sellar las minas de las cavernas infestadas de monstruos, pero unos malhechores se han hecho con algunas de las reservas minerales de la mina y con una gran parte de las pociones donadas para ayudar a los enfermos y heridos de la foraleza tras el desastre minero. Para agradecer a Mor Khazgur su importante papel en las operaciones del Círculo, el maestro de batalla Rivyn te ha encomendado que localices la mercancía y les des una buena paliza a los bandidos. Después, tendrás que llevar los suministros a Mor Khazgur y ayudar a reparar las minas.",
+        "audio": {
+          "src": "audios/misiones/skyrim/a31.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B32 - Caridad de los Campeones",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Consigues encontrar a los ladrones y darles un escarmiento, recuperando todos los bienes robados que puedes. Intentas interrogarlos, pero se niegan a hablar. Aun así, te parece deducir que se dirigían a los elevadores de Límite Sombrío que se encuentran al este de la fortaleza orca, y sabes que todo este lío empezó precisamente porque la mina del asentamiento se abrió paso accidentalmente hasta Límite Sombrío. El maestro de batalla Rivyn te ha pedido que vuelvas a Mor Khazgur para devolver las provisiones y ayudar con las reparaciones de la mina, así que decides aventurarte bajo tierra para buscar pistas sobre la identidad de quien quiera que haya contratado a los ladrones.",
+        "audio": {
+          "src": "audios/misiones/skyrim/b32.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C33 - Caridad de los Campeones",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Dedicas un día a ayudar con las reparaciones en Mor Khazgur, lo que te hace ganar el agradecimiento de los orcos. Mientras trabajabas, sin embargo, descubriste algo interesante. Falta una cantidad mucho mayor de minerales y suministros que la que tú has recuperado. Parece que alguien ha aprovechado el caos del incidente en las minas para sacar dicha mercancía de la zona sin que los residentes ni los mineros supieran nada. Entre los suministros faltantes se cuenta una gran cantidad de pociones de disolución de piedra, un peligroso ácido alquímico que fue responsable del desastre inicial. Informas a Urzikh, la jefa del clan Khazgur, y su rostro se ensombrece.\n«La poción que causó el incidente minero es una versión modificada de un arma diseñada para destruir las murallas de los castillos. Un extraño en posesión de un arma así podría traer la perdición a muchos inocentes... En especial si, como dices, tiene alguna conexión con Límite Sombrío». La orca te implora que te dirijas a los elevadores de Límite Sombrío de inmediato, con la esperanza de que puedas encontrar a estos contrabandistas y detenerlos antes de que más suministros de Mor Khazgur caigan en malas manos.",
+        "audio": {
+          "src": "audios/misiones/skyrim/c33.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E34 - Caridad de los Campeones",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "skyrim",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Gracias a tus indagaciones, consigues dar con los ladrones y detenerlos antes de que pudieran llegar a Límite Sombrío. Te sorprendió ver que, esta vez, algunos de ellos eran vampiros, falmer y demás criaturas de las profundidades. Está claro que quien esté detrás de estos robos está relacionado con los recientes asaltos a las ciudades de Skyrim. Reúnes a los supervivientes y los llevas contigo al regresar a Soledad para que las autoridades los interroguen. Además, recuperas la sustancia de disolución de piedra, que ha sido almacenada en recipientes encantados, y organizas su envío de vuelta a Mor Khazgur, junto con una carta a Urzikh en la que sugieres que la sustancia sea destruida. Había sido repartida cuidadosamente entre los bandidos, tal vez para ser usada en alguna clase de demostración. También encuentras notas muy detalladas que explican cómo probarla en distintas superficies y sugieren distintos reagentes con los que podría combinarse para incrementar su potencia. Tiemblas de pensar en lo que podría haberse hecho con estas fórmulas si no las hubieras interceptado.",
+        "audio": {
+          "src": "audios/misiones/skyrim/e34.mp3",
           "title": ""
         }
       }

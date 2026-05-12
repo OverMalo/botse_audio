@@ -866,6 +866,402 @@
           "src": "audios/misiones/skyrim/e34.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A01 - La plaga de Llodos se extiende",
+        "description": "Gremio de magos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "magos",
+        "leafDescription": "Una bretona preocupada se te acerca en el salón del Gremio de magos de la Ciudad de Vivec. Se identifica como Caydeire Dechery y te pregunta si podrías ayudarla con una tarea en la que, según explica, Morrowind no está de acuerdo con ella.\n«¡De verdad, estoy harta de los espeluznantes bichos gigantes y las setas del tamaño de edificios! No aguanto seguir en Morrowind. ¿Por qué es todo tan grande aquí? ¡Los insectos deben ser pequeños, por favor!».\nEsperas con paciencia a que termine de quejarse y, después, le preguntas por el trabajo.\n«Ah, sí. El gremio ha estado investigando la plaga de Llodos, la enfermedad que ha estado afectando a los elfos oscuros de la región. La cepa primaria parece estar relacionada con la secta de los Maltratados, pero han aparecido otras cepas resistentes al tratamiento normal. El gremio quiere saber si se están propagando a propósito de la misma manera que los Maltratados lo hicieron con la inicial. Hemos estado colaborando con los monjes de Muth Gnaar para saber más, pero nuestros representantes allí están ahora bajo asedio, así que necesitamos que les ayudes para que puedan seguir con la investigación». Tras una pausa, continúa con una advertencia.\n «La infección mata a casi todos los que afecta, y a los demás los deja convertidos en cascarones no muertos. Es muy peligrosa, así que ten cuidado. Morrowind ya da bastante miedo tal y como está».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a01.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B02 - La plaga de Llodos se extiende",
+        "description": "Gremio de magos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "magos",
+        "leafDescription": "Tras acabar con los asaltantes de Muth Gnaar, Dolril Belvayn, un monje dunmeri que ha estado liderando los esfuerzos para cuidar a los afectados por la plaga, se te acerca para darte las gracias.\n«Hemos estado analizando la nueva cepa y parece que ha sido alterada con magia de alguna forma. Los afectados que llegan a la cuarta fase, en la que se convierten en cascarones, parecen menos desorientados que los que sufren la versión original de la plaga de Llodos... casi como si estuvieran siendo dirigidos. Creemos que, si pudiéramos estudiar mejor sus movimientos y recolectar más muestras, podríamos localizar la fuente del encantamiento. Me da la impresión de que quien sea que está detrás de esta cepa pretende usarla para ejercer su influencia sobre los portadores. Y está claro que vamos por buen camino, como demuestra el hecho de que nos hayan atacado. ¿Podrías continuar con el trabajo mientras atendemos a los afectados?»",
+        "audio": {
+          "src": "audios/misiones/morrowind/b02.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C03 - La plaga de Llodos se extiende",
+        "description": "Gremio de magos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "magos",
+        "leafDescription": "Tal como Dolril predijo, el análisis de las muestras que has recogido proporciona indicios que apuntan al origen de la cepa modificada. Poco después de informar de tus hallazgos a un agente local del gremio, recibes una carta de Caydeire.\n«El gremio te ha autorizado a encontrar y eliminar la fuente de la plaga mejorada mágicamente. Date prisa. Estando en Morrowind, ¿quién sabe lo grandes que esas esporas pueden volverse si las dejas solas más tiempo?».",
+        "audio": {
+          "src": "audios/misiones/morrowind/c03.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E04 - La plaga de Llodos se extiende",
+        "description": "Gremio de magos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "magos",
+        "leafDescription": "Tras vaciar el laboratorio de muestras de la plaga y comprobar que no has estado expuesto demasiado tiempo, mandas un informe de tus hallazgos al Gremio de magos. Caydeire frunce el ceño al leerlo.\n«Pues... parece que Dolril tenía razón. Los movimientos de los afectados con la nueva cepa parecen responder a un patrón, y sus actividades, que incluyen explorar cuevas y tratar de robar el contenido de algunas cajas, parecen indicar alguna clase de proyecto coordinado. Tendremos que seguir el rastro de estos indicios hasta donde nos lleve».\nEn ese instante, su rostro se ilumina. «¡Incluso puede que me lleve a algún lugar fuera de Morrowind!».",
+        "audio": {
+          "src": "audios/misiones/morrowind/e04.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A05 - La mano escondida",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ladrones",
+        "leafDescription": "Una noche se te acerca un elfo oscuro que se identifica como Fevyn. Te dice que el Gremio de ladrones ha sido contactado por un estudiante de bajo nivel en el cantón del templo de la Ciudad de Vivec.\n«Este estudiante ha sido enviado a nosotros porque los sacerdotes del Tribunal no quieren que quede ningún registro oficial de lo que voy a decirte. Recientemente, un ladrón experto ha venido a vivir a Morrowind y ha comenzado una serie de robos cada vez más descarados de las reliquias del Tribunal. Los sacerdotes necesitan a alguien discreto que investigue los robos y recupere tantas reliquias como sea posible. Supongo que han razonado que solo un ladrón conoce a otro. Se rumorea que las reliquias están escondidas en varios enclaves apartados y repartidos por toda la provincia. Cada reliquia recuperada te granjeará una generosa recompensa».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a05.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B06 - La mano escondida",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ladrones",
+        "leafDescription": "Gracias a tu vasta red de contactos en los bajos fondos logras conocer la localización de varias de las reliquias, pero, curiosamente, ninguna de ellas ha entrado en el mercado negro. El ladrón, quienquiera que sea, debe estar trabajando para un comprador. Por suerte, has podido averiguar dónde se esconde este maestro del crimen y, tras confirmar que opera fuera de los parámetros del gremio, has recibido autorización confidencial del Tribunal para asaltar su base de operaciones.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b06.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E07 - La mano escondida",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ladrones",
+        "leafDescription": "La gran mente criminal, cuyo nombre has descubierto que es Zirik, no tarda en darse cuenta de que no es rival para tu destreza en combate, por lo que escapa del local durante el combate. Afortunadamente, sin embargo, dejó atrás el alijo completo de los bienes robados al Tribunal, totalmente intacto. Se te dijo que no debías curiosear entre los objetos robados, pero no puedes evitarlo y, al hacerlo, te sorprende ver una buena cantidad de armas y artefactos encantados. ¿Podría este misterioso comprador estar preparando algún tipo de ofensiva o insurrección mágica?",
+        "audio": {
+          "src": "audios/misiones/morrowind/e07.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A08 - Oscuros presagios",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "morrowind",
+        "gremioTag": "luchadores",
+        "leafDescription": "El Gremio de luchadores te ha enviado a Narsis, donde te reunirás con el noble Nilonii Girano de la Casa Hlaalu.\n«Iré directo al grano. Hace algún tiempo, un terrorista altmeri llamado Himandoril inició una campaña de incendios que causaron grandes daños a hogares y edificios administrativos de la Casa Hlaalu. Fue capturado y encerrado en Narsis. Sin embargo, el grupo al que pertenece, un grupo de anarquistas llamado el Ojo Pintado, lo ha liberado recientemente. Tememos que haya represalias, así que nos gustaría que lo encontraras antes de que reanudara sus actividades».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a08.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B09 - Oscuros presagios",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "morrowind",
+        "gremioTag": "luchadores",
+        "leafDescription": "Si bien los interrogatorios a los miembros del Ojo Pintado no han revelado la localización de Himandoril, consigues averiguar que un pequeño destacamento de sus fuerzas está escondido en las afueras de Sailenmora, en la península Telvanni, cerca de unas ruinas dwemeri donde el Ojo Pintado concluyó recientemente una campaña fallida. Tomas la decisión de conseguir información de aquellos allí reunidos, aunque sabes que los del Ojo Pintado son leales y no entregarán a su camarada sin oponer resistencia.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b09.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C10 - Oscuros presagios",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "morrowind",
+        "gremioTag": "luchadores",
+        "leafDescription": "No te ha sido nada fácil, pero por fin sabes la localización de Himandoril: unas ruinas dwemeri en la isla de Páramo de Vvarden. Algunos del Ojo Pintado tuvieron sospechas desde el principio acerca del intento de liberarlo, puesto que la cantidad de recursos que el grupo invirtió en el rescate sugerían una financiación externa. Poco después de la fuga, Himandoril, para sorpresa de todos, desapareció. Al parecer, la figura que movía los hilos detrás del Ojo Pintado no estaba tan interesada en que Himandoril fuera libre como al grupo se le hizo creer, sino que lo quería por su insólito dominio del fuego. Un miembro del Ojo Pintado visiblemente enfadado te cuenta su versión:\n«No estamos seguros de si fue secuestrado o si se marchó por propia voluntad. Nuestros recientes contratiempos no nos han dejado en condiciones de organizar un intento de rescate, pero que sepas que ese supuesto héroe libertador es en realidad un traidor a todos los habitantes de a pie de Tamriel. Estarías prestando un servicio al Ojo Pintado si frustras los planes de esa persona. Tanto es así que, a cambio, consideraríamos alterar nuestras actividades en la región para disminuir sus efectos sobre la Casa Hlaalu».",
+        "audio": {
+          "src": "audios/misiones/morrowind/c10.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E11 - Oscuros presagios",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "morrowind",
+        "gremioTag": "luchadores",
+        "leafDescription": "No logras encontrar a Himandoril entre los bidones y los cuerpos, por lo que no puedes estar seguro de si sigue libre en algún lugar o de si Deslandra, la elfa del bosque que dirigía la operación que has interrumpido y que ha huido durante el combate, se encargó de él. Sin embargo, pronto recibes una carta sin firmar del Ojo Pintado, que agradece tus esfuerzos y promete dejar, por lo menos de momento, a la Casa Hlaalu.\n ¿Y en qué consistía exactamente la operación?... Es difícil saberlo. El trabajo de Himandoril con materiales inflamables estaba siendo aplicado a cañones autónomos capaces de disparar grandes cantidades de materiales en llamas a largas distancias. Ahora bien, el objetivo de dichos experimentos es todavía incierto. Es posible que la respuesta a todo esto se encuentre dentro de Nchuleftingth. Tiene tantos caminos y recovecos que es posible que Deslandra simplemente haya desaparecido internándose aún más adentro.",
+        "audio": {
+          "src": "audios/misiones/morrowind/e11.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A12 - La protección de Mephala",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "morrowind",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Una argoniana de la Hermandad Oscura, llamada Esconde Cenizas, que está atendiendo cierto negocio especial de Ciénaga Negra, se pone en contacto contigo.\n«El Sacramento Negro nos ha dado un nuevo objetivo: un ladrón dunmeri llamado Zirik. Al parecer, ha estado causando problemas en Skyrim y Ciénaga Negra. Nos han dicho que ha huido a Morrowind para refugiarse con los del Morag Tong».\nAsientes mientras ella escupe tras mencionar a ese gremio rival. Ningún delincuente de poca monta podría atravesar medio Tamriel y acabar con el Morag Tong sin un patrocinador con mucha influencia. La Hermandad Oscura está muy interesada en privar al Morag Tong del prestigio y las riquezas que un pupilo de alto perfil puede otorgar.\n«Como puedes imaginar, el trabajo es simple: encuentra el lugar donde se esconde Zirik y elimínalo. Evita al Morag Tong, que te mataría para protegerlo. Confío en que sabrás conseguir el resto de detalles».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a12.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B13 - La protección de Mephala",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "morrowind",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Indagando en los bajos fondos consigues algunas buenas pistas, aunque nada definitivo sobre la localización de Zirik. Sin embargo, parece que los del Morag Tong están convencidos de que le pisas los talones, ya que has podido ver indicios de lo que podrían ser miembros del sindicato de asesinos de Morrowind: una sombra por aquí, un susurro por allá... Es probable que pronto traten de tomar acción directa contra ti. Por suerte, tal vez consigas aprovechar la situación. Después de todo, ¿quién mejor que el Morag Tong para decirte dónde tienen escondido a Zirik? Solo necesitarás un poco de interrogatorio por la fuerza... o registrar minuciosamente a tus perseguidores una vez acabes con ellos.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b13.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C14 - La protección de Mephala",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "morrowind",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Tras dejar unos pocos muertos del Morag Tong, ya sabes que el gremio se ha asociado con el Camonna Tong, la famosa organización criminal dunmeri. Informas a Esconde Cenizas y esta apoya la cabeza entre sus manos.\n«Esos vulgares matones son incluso más despreciables que el Morag Tong. Supremacistas dunmeri que justifican todas sus acciones con un único propósito: traer gloria a los elfos oscuros. Aunque es interesante que se hayan dignado a colaborar con el Morag Tong. Los asesinos tienen cierto respaldo legal en Morrowind, pero la presencia del Camonna Tong por lo general no es tolerada por las autoridades... Excepto, quizás, por aquellas que compartan sus objetivos».\nTras una intensa mirada a los ojos, Esconde Cenizas continúa. «Conozco uno de los escondites del Camonna Tong, y, por lo que me has dicho, es probable que Zirik esté allí. ¿Estás preparado para desatar la ira de Sithis?».",
+        "audio": {
+          "src": "audios/misiones/morrowind/c14.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E15 - La protección de Mephala",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "morrowind",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Al terminar el trabajo, limpias la sangre de tus armas y de tu armadura antes de informar a Esconde Cenizas. Ella te da la enhorabuena, pero se queda extrañada cuando mencionas que en el escondite había un arsenal de artefactos dwemeri.\n«Qué extraño... La Hermandad ha sido informada de varios casos similares en Morrowind en las últimas semanas. Quizás sea conveniente estudiar esta incógnita en mayor profundidad.»",
+        "audio": {
+          "src": "audios/misiones/morrowind/e15.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A16 - La alondra marca el lugar",
+        "description": "Intrépidos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Todos los miembros de los Intrépidos en Morrowind están alborotados por los últimos rumores que circulan sobre un tesoro. Al parecer, ha aparecido una pista creíble sobre el paradero del Ojo de Argonia, una joya perdida que, según la leyenda que creas, tiene el poder de abrir un portal a tierras inexploradas, o cualquiera de las más de diez versiones de sus supuestos poderes asombrosos. Cualquiera en Tamriel que haya soñado con vivir aventuras de pequeño conoce las historias. Sin embargo, hasta la fecha, nunca se ha probado que el Ojo exista siquiera. Has vivido lo suficiente para saber que, de vez en cuando, en Morrowind o en Ciénaga Negra surge una posibilidad de encontrar el artefacto y todos se vuelven locos, desapareciendo poco después el fervor cuando todos vuelven con las manos vacías. Esta vez, al parecer, las cosas podrían ser distintas. Se dice que la Alondra de Rosgard busca el Ojo. Un ladrón enmascarado con la fama de dar golpes atrevidos y vistosos. Es un hombre misterioso del que poco se sabe, pero desde luego no es conocido por perder su tiempo. Si está buscando el Ojo, puede que tenga algo de cierto. Decides inspeccionar los lugares que has oído que la Alondra ha visitado para ver si encuentras alguna pista.",
+        "audio": {
+          "src": "audios/misiones/morrowind/a16.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B17 - La alondra marca el lugar",
+        "description": "Intrépidos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Sientes un escalofrío familiar en la espalda: ¡la emoción de la caza de un tesoro! Tal vez la Alondra sí que tenga razón. Has encontrado varios murales que parecen auténticos en las ruinas subterráneas que has explorado y, por lo que has visto, hacen referencia a algo llamado la Órbita de Helstrom. Un cazatesoros sin la mente de un erudito y los ojos de un detective no habría llegado muy lejos, así que le das vueltas y vueltas a ese nombre, buscándole un significado mientras recorres la región. Cada mural te indica el camino hacia el siguiente, así que sospechas que conseguirás más pistas si continúas tu viaje.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b17.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C18 - La alondra marca el lugar",
+        "description": "Intrépidos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Conforme descubres más murales, averiguas más sobre la posible localización del Ojo. Al principio, por la referencia de proximidad al casi inaccesible Helstrom, pensaste que tal vez tendrías que redirigir tu búsqueda a las inóspitas selvas del centro de Ciénaga Negra. Sin embargo, debido a la cantidad de murales que ya has encontrado en Morrowind, decides que es mucho más probable que esté en esta provincia, especialmente teniendo en cuenta la histórica afición de las casas dunmeri por asaltar y saquear a sus vecinos sureños. Una noche, mientras analizas tus hallazgos, te das cuenta de lo cerca que estás. La «Órbita» de Helstrom no se refiere a rotar alrededor de la ciudad ni a su posición relativa en el cosmos. «Órbita» también puede ser, en el lenguaje de los sanadores y curanderos, lo que los demás llamarían una cuenca ocular. Es probable que se refiera al pedestal en el que el Ojo, robado de la tierra de Helstrom, descansa ahora. Repasando tus notas, las pistas de los murales parecen estar acercándote más y más hasta tu destino final. Sientes que la respuesta está a la vuelta de la esquina, ¡solo un poco más!",
+        "audio": {
+          "src": "audios/misiones/morrowind/c18.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D19 - La alondra marca el lugar",
+        "description": "Intrépidos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "intrepidos",
+        "leafDescription": "¡No puede ser cierto! La esquiva cueva está frente a ti, la que, según crees, alberga la Órbita de Helstrom y, sobre ella, el legendario Ojo de Argonia. Sin embargo, antes de entrar, un intrépido y amistoso hombre, con una máscara dorada de pájaro, te detiene. Por su atuendo y sus modales, no te cabe duda de que debe ser la Alondra de Rosgard, ¡y él mismo te lo confirma! A pesar de la emoción, sus palabras son una desanimadora sorpresa.\nm«¡Enhorabuena por llegar tan lejos! Permíteme serte franco. Como sería una broma para mi buen nombre, está claro que yo no he ido tras el Ojo de Argonia, y tú tampoco. Los murales que has encontrado son ingeniosas falsificaciones creadas por un servidor. Los ociosos ricachones de Morrowind están tan enfrascados en sus pasatiempos que pensé que tal vez podría distraerlos con esta treta el suficiente tiempo como para que yo me llevara algunos de sus objetos de valor y los llevara a hogares más agradecidos. No esperaba a un aventurero de tu calibre y agudeza que siguiera todo el rastro con tanta rapidez».\nTu decepción por la infructuosa caza del tesoro es tan grande que apenas llegas a oir sus cumplidos.\n«Que conste que no solo me he revelado ante ti para disculparme. No estás solo en esta veloz búsqueda del Ojo. Hay otra persona, una escandalosa elfa del bosque que ha mandado a sus secuaces a todos los rincones de Morrowind en búsqueda de lo que he llamado la Órbita de Helstrom. Habiendo visto sus métodos, me da que cree que el Ojo tiene algún poder que ella querría usar para oscuros propósitos. Respeto lo que has conseguido, y es por eso que ahora te pido tu ayuda. Hay un falso Ojo dentro de la cueva, fabricado por un viejo amigo llamado Rilasi. En lugar de dejar que la misteriosa elfa del bosque lo obtenga y se de cuenta de que debe modificar sus planes, propongo que nos lo llevemos y dejemos que siga pensando que el Ojo existe en algún lado y que puede obtenerlo, lo que estancará sus planes hasta que verdaderamente lo encuentre. ¿Te apuntas? Eso sí, debemos apresurarnos, me consta que sus socios están de camino hacia aquí mientras hablamos».",
+        "audio": {
+          "src": "audios/misiones/morrowind/d19.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E20 - La alondra marca el lugar",
+        "description": "Intrépidos",
+        "provinciaTag": "morrowind",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Habiendo huido y asegurado el Ojo, miras a la Alondra, expectante, mientras te hace una vistosa reverencia.\n«Te agradezco la ayuda. Puedes hacer con ese Ojo lo que quieras, aunque te sugiero que lo destruyas y no dejes rastro alguno de tu participación en todo este asunto. A menudo, los mayores logros son los que nos guardamos para nosotros mismos. No hace falta que el mundo conozca tus hazañas para que estas sean grandiosas».\nY, sin más dilación, se va, dejándote solo y aún algo molesto por toda la pantomima.",
+        "audio": {
+          "src": "audios/misiones/morrowind/e20.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A21 - Un lugar nunca visto",
+        "description": "Guardia exterior",
+        "provinciaTag": "morrowind",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Siguiendo las instrucciones de la Guardia exterior, te diriges a los muelles de Necrom, donde te encuentras con una agente del gremio llamada Urandile. La demacrada elfa oscura suele fingir ser una vagabunda mientras observa a los viandantes del puerto.\n«El subsuelo de Morrowind está plagado de artefactos poderosos y Deslandra los está buscando. De muchas de las cosas que está desenterrando se dice que albergan un gran poder, y su esfuerzo por amasar un gran arsenal de ellos sin duda tiene un propósito. La Guardia te solicita humildemente que visites los lugares en los que ha estado excavando para averiguar qué ha conseguido. Y si, aún mejor, logras descubrir dónde almacena los artefactos, ve y... desbarata su operación. Confío en tu discreción. Si haces algo, digamos, impropio de la Guardia, haz lo posible para que nadie sepa que eres de la Guardia».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a21.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E22 - Un lugar nunca visto",
+        "description": "Guardia exterior",
+        "provinciaTag": "morrowind",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Tras cumplir tu misión, regresas a los muelles de Necrom. Urandile escucha atentamente tu descripción de cómo los trabajadores de Deslandra contruían lo que parecían ser arneses y otras estructuras de metal. Crees que estaban elaborando mecanismos en los que colocar los artefactos para usarlos y controlarlos, tal vez permitiéndoles formar parte de una estructura aún mayor... al menos, hasta que destruiste todos esos aparatos. Urandile se acaricia la barbilla. «Buen trabajo, informaré a Bodean. Puedes esperar más instrucciones o, si lo prefieres, continuar investigando por tu cuenta. La Guarida siempre fomenta la autonomía de sus miembros».",
+        "audio": {
+          "src": "audios/misiones/morrowind/e22.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A23 - Apropiación divina",
+        "description": "Orden Psijic",
+        "provinciaTag": "morrowind",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "La Orden te ha enviado a El Duelo en un encargo de gran importancia. Almalexia, una de las tres deidades en la religión del Tribunal de los elfos oscuros, ha solicitado un emisario psijic para un asunto que requiere de máxima discreción. Te ofreciste voluntario para el trabajo, pero eso no quita que estés nervioso; vas a conocer a la dama de la misericordia en persona. Aun así, tus superiores saben de lo que eres capaz. Eso es a lo único que puedes aferrarte en el momento en el que se te concede una audiencia con un ser que algunos consideran un dios vivo.",
+        "audio": {
+          "src": "audios/misiones/morrowind/a23.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B24 - Apropiación divina",
+        "description": "Orden Psijic",
+        "provinciaTag": "morrowind",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Almalexia te saluda calmadamente y con elegancia. Si bien no es suficiente para calmarte por completo, percibes con claridad que ella desea que te sientas bienvenido. A continuación, pasa a explicarte por qué se ha solicitado la ayuda de la Orden.\n«Puede que ya sepas que un desconocido ha estado realizando una serie de excavaciones secretas por todo Morrowind. El Tribunal tiene pruebas de que el objetivo de las excavaciones es encontrar artefactos mágicos de gran poder, aunque aún no sabemos con qué fin. En principio, solo iba a solicitar ayuda para entender la naturaleza de dichos artefactos y saber qué podría hacer alguien con ellos. Sin embargo, gracias a las incansables investigaciones de los Ordenantes que sirven en la Ciudad de Vivec, he sido informada de que hay un nuevo participante en la historia. Mis asistentes te darán toda la información que tenemos sobre los robos. Después, viaja a la Ciudad de Vivec y habla con los Ordenantes, que podrán decirte aún más de esta nueva figura que ha surgido en nuestro asunto en común».\nTras una reverencia, te das la vuelta para irte, pero Almalexia te detiene. «Antes de que hables con mis asistentes, acepta mi bendición. Haz un buen trabajo, pero siendo misericordioso con tu prójimo, sea hombre, mer u hombre bestia».",
+        "audio": {
+          "src": "audios/misiones/morrowind/b24.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C25 - Apropiación divina",
+        "description": "Orden Psijic",
+        "provinciaTag": "morrowind",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Vívec no es cruel, pero sí cortante, y sus asistentes son igual de secos y severos. Cuando llegas al templo del poeta guerrero, eres recibido por un Ordenante de alto rango llamado Azaron. Te da indicaciones claras, breves y directas.\n«Un tercero, una argoniana, está colaborando con la excavación de los artefactos. Puede que ella sepa tan poco de quien la ha contratado como nosotros. Parece ser que tiene un largo historial de odio hacia las gentes de Morrowind por la esclavitud de los habitantes de Ciénaga Negra». Asientes a sus palabras, pensando que no se la puede culpar de eso último.\n«Tu rostro no esconde tus sentimientos como crees que lo hace. Independientemente de las acciones previas de los elfos oscuros, el Tribunal preferiría que la violencia del pasado no produjera sufrimiento en el futuro. La argoniana se esconde en la antigua ciudadela dwemeri llamada Nchuleftingth. Búscala, detenla y descubre para qué quieren los artefactos». Te dispones a irte, algo avergonzado, pero él levanta la mano.\n«Este trabajo es importante, aunque aún no es glorioso. La bendición de Vivec para ti es esta: toma decisiones en esta vida que sean dignas de ser contadas, ya sea que tus obras sean conocidas por los demás o no».",
+        "audio": {
+          "src": "audios/misiones/morrowind/c25.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D26 - Apropiación divina",
+        "description": "Orden Psijic",
+        "provinciaTag": "morrowind",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Cuando te dispones a entrar en las recónditas cavernas de Nchuleftingth, una encapuchada te detiene, identificándose como una emisaria de Sotha Sil, el dios mecánico y tercer miembro del Tribunal.\n«Has hecho bien. Derrota a esos perturbadores y su plan se hundirá con ellos. Hace ya mucho, el dios mecánico plagó este lugar con construcciones diseñadas por él mismo. Si llegas a ellas, podrán darte la fuerza de Sotha Sil».\nAsientes y te diriges al interior, pero antes de que puedas buscar ningún dispositivo de Sotha Sil, un grupo de guerreros armados surge de un montón de escombros y chatarra. Al frente ves a una argoniana, vestida con el atuendo característico de los asesinos Escama Sombría. Ves heridas recién hechas en sus brazos, con algunos trozos de metal curvado incrustados en ellas. ¿Es tal vez un tipo de mejora autoinfligida de magia dwemeri?\n«¡Este será el fin del Tribunal y de los elfos oscuros! ¡Morrowind pagará por sus crímenes contra mi pueblo!».",
+        "audio": {
+          "src": "audios/misiones/morrowind/d26.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E27 - Apropiación divina",
+        "description": "Orden Psijic",
+        "provinciaTag": "morrowind",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Tras un final mucho más violento de lo que a la Orden le hubiera gustado, el plan de Akisha de fusionar su cuerpo con un autómata creado a partir de restos rebuscados por todo Morrowind llega a su fin. No apruebas su plan, pero tenía sus razones. Los elfos oscuros se han aprovechado de los argonianos por siglos. La miras, ensangrentada y con la respiración entrecortada, y no puedes evitar pensar que, sin pretenderlo, te has convertido en un eslabón más de esa cadena de violencia. En cualquier caso, tienes un trabajo que cumplir. Informas al Tribunal de que los artefactos que estaban siendo recolectados tenían la intención de fortalecer la armadura del usuario. También entregas unos planos que encontraste que sugieren un intento de usar ese poder en proteger una estructura mucho mayor. El Tribunal te concede acceso a algunas de las reliquias para que la Orden pueda estudiar cómo han sido alteradas.",
+        "audio": {
+          "src": "audios/misiones/morrowind/e27.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A28 - Jugando a dos bandas",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Un emisario de los Ojos de la Reina se pone en contacto contigo, aunque el aspecto fornido del alto elfo es inusual para un espía. Sus brillantes ojos no paran de mirar por toda la habitación mientras te explica tu misión. Razum-dar, el jefe de operaciones de los Ojos, te ha confiado un encargo de alto secreto: fraguar un complot violento en Vigilia de Davon, un ciudad de gran valor para el Pacto de Corazón de Ébano que está acutalmente sitiada por la Alianza de Salto de la Daga. El elfo se identifica como Kelkemmemon «Raz no suele autorizar un espionaje tan... directo, por eso esta misión es tan secreta. Debemos asegurarnos de que siga así. El éxito de la misma perjudicará al Pacto y a la Alianza, lo que beneficiará a los intereses de Su Majestad en la provincia». Kelkemmemon despliega un mapa de la región frente a ti. «Dispones de cierta libertad operativa, pero lo primero será crear un trasfondo convincente para que esta “tragedia” sea creíble».",
+        "audio": {
+          "src": "audios/misiones/morrowind/a28.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B29 - Jugando a dos bandas",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Habiendo creado un trasfondo consistente, partes hacia Vigilia de Davon para poner toda la carne en el asador. La misión es sencilla: hacer que parezca que alguno de los dos bandos ha saboteado la reserva de alimentos de su enemigo. Tener éxito en esta tarea aumentará las tensiones entre el Pacto y la Alianza, lo que permitirá a los Ojos y al Dominio de Aldmer aumentar su influencia. Es probable que tengas que recurrir a la violencia para acceder a dicha reserva, pero las órdenes son órdenes, y Raz siempre tiene sus razones. Ahora solo te queda decidir a qué bando atacar.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b29.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C30 - Jugando a dos bandas",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Has hecho un buen (y sombrío) trabajo, pero, al día siguiente, mientras tienes los pies metidos en agua en un piso franco cercano, Razum-dar irrumpe en él abriendo la puerta de un golpe. Te pones en pie al instante. \n«Razum-dar está impresionado con tu trabajo... Tal vez demasiado. Tu amigo elfo, ese tal Kelke... Kelkemmemon, ¿no? Es difícil de decir. Raz supone que te daría todas las autorizaciones, palabras clave, etcétera. El problema es que es falso. Un Ojo de mentira, y tú has estado tan ciego como uno».\nAl principio, Raz te trata con frialdad y está alterado, con las fosas nasales de su hocico muy abiertas. Te preguntas si lo que le molesta es que no hayas sospechado de que la operación iba más allá de lo que es el ámbito habitual de acción de los Ojos. Sin embargo, poco a poco, Raz se empieza a calmar y te trata con paciencia y comprensión.\n«Razum-dar es consciente de que este Kelke-loquesea era muy convincente, y tu lealtad no está en duda. Puedes subsanar tu error ahora mismo. Hemos descubierto que el que contrató a este elfo solo estaba interesado en esta misión para desestabilizar al Pacto en beneficio de alguna clase de operación que está llevando a cabo en Skyrim, algo relacionado con todos esos ataques que están sucediendo en la provincia. Una trama verdaderamente complicada. Raz tiene una pista del paradero de estos alborotadores y, si informamos de ellos a alguna de las otras alianzas, sin mencionar que nos hemos visto involucrados, claro, tal vez podamos aliarnos con ellos para sacar a la luz a ese Ojo falso».",
+        "audio": {
+          "src": "audios/misiones/morrowind/c30.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E31 - Jugando a dos bandas",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "morrowind",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Si bien causaste un problema a los Ojos, lo has resuelto bien. Raz te escucha con atención. Le cuentas que perseguiste al cuencano que parecía uno de los líderes de la operación falsa y que, al hacerlo, descubriste un gran alijo de armas mágicas, preparado para ser enviado a algún lugar que desconoces. Raz suspira cuando dices que, a pesar de que lo heriste de gravedad, el cuencano logró escapar.\n«Por mucho que nos abramos, hay mucho que los Ojos aún no vemos. Tendremos muchos frentes abiertos donde mirar debido a estos sucesoss: el cuencano, el lugar de destino de las armas... o tal vez haga falta un cambio de aires».\nTras esa última afirmación se ríe y, luego, te mira a los ojos. «La próxima vez, Raz se asegurará de que estés tratando con un agente de fiar, ¡puede que con Raz mismo!».",
+        "audio": {
+          "src": "audios/misiones/morrowind/e31.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A32 - Desvío mortal",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Como ocurre en todos los conflictos armados, en la Guerra de los Tres Estandartes la moral de los soldados decae a medida que el conflicto se prolonga. Para ayudarles con algo de entretenimiento, algunos luchadores del Círculo de Campeones habéis sido seleccionados para realizar combates de exhibición por todo Morrowind. Los otros luchadores te son familiares, todos son formidables en combate y demuestran un comportamiento deportivo. El Pacto va a poder disfrutar de un grandioso espectáculo.",
+        "audio": {
+          "src": "audios/misiones/morrowind/a32.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B33 - Desvío mortal",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "¡La primera parte de tu gira ha sido un éxito rotundo! Tanto es así que un orco emocionado, con el pelo teñido y un jubón elegante, te felicita tras la celebración. Se identifica como Zulgroth, un proveedor de artículos de menaje de Vigilia de Davon.\n«¡Menudo combate! ¡El siguiente tiene que ser en Vigilia de Davon! Conozco al maestro de batalla Rivyn y creo que podría mover algunos hilos para hacer que vuestra arena fuera territorio neutral allí. El Pacto de Corazón de Ébano y la Alianza de Salto de la Daga se han estado peleando por el control de la ciudad, pero seguro que pondrían sus diferencias a un lado por un día para ver un combate deportivo en lugar de las duras inclemencias de la guerra. Y, bueno, ya sabes, seguro que también será bueno para el negocio. ¡Podría vender recuerdos y hasta dar algunos beneficios al Círculo!».\nLe prometes que vas a llevar su petición ante los organizadores del evento del Círculo.",
+        "audio": {
+          "src": "audios/misiones/morrowind/b33.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C34 - Desvío mortal",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "La multitud reunida en Vigilia de Davon está disfrutando muchísimo del combate pero, de repente, los vítores se convierten en gritos de espanto. Te detienes a observar tus alrededores en busca de la causa de los gritos. Entonces, te quedas de piedra al ver que no es algo entre la multitud, sino en el campo de batalla: ¡varios seres fantasmales os han rodeado y se están acercando! Miras a tus compañeros de combate y adoptas una posición defensiva con la esperanza de que todos juntos podáis echar a estas criaturas que han arruinado un día de diversión.",
+        "audio": {
+          "src": "audios/misiones/morrowind/c34.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D35 - Desvío mortal",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Desafortunadamente, el resto de la Gira Moral del Círculo de Campeones de Morrowind ha sido pospuesto indefinidamente. Aunque conseguiste salir intacto de tu refriega con esos seres etéreos, no todos tus compañeros (ni todos los espectadores) tuvieron la misma suerte. Mientras algunos sanadores tratan a los heridos, el maestro de batalla Rivyn te llama a su tienda.\n«Muchos de los muertos, como imaginarás, son elfos oscuros. Oficialmente, me gustaría que escoltaras a los elfos caídos a Necrom, donde se reunirán con sus ancestros según su tradición». Rivyn suspira, se inclina hacia ti y baja la voz.\n«Ahora bien... extraoficialmente, hemos recibido un soplo de un guardia rojo que dice que esas horribles criaturas han surgido de Necrom. Según nuestra fuente, esos fantasmas son resultado de unos experimentos llevados a cabo por una misteriosa elfa del bosque que ha estado haciéndose con poderosos artefactos mágicos en la región. Esta persona ha estado colaborando estrechamente con un nigromante conocido desde hace mucho entre la peor calaña como un saqueador de tumbas. El Círculo quisiera que se hiciera justicia por las vidas que se han perdido hoy, y la gente más respetuosa con la ley de Necrom seguramente también estará agradecida de que le llegue su final a ese mago que exhuma los cadáveres de sus parientes en busca de piezas de repuesto».",
+        "audio": {
+          "src": "audios/misiones/morrowind/d35.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E36 - Desvío mortal",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "morrowind",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Entregaste con éxito los cuerpos y te encargaste de la nigromante, pero aún no sabes nada de la colaboradora de esta última. Rivyn te agradece el duro trabajo y te deja a ti la decisión de seguir o no investigando estos extraños sucesos.\n«Este embrollo ha convertido algo destinado a subir la moral en... bueno, todo lo contrario. La verdad es que entendería perfectamente que decidieras pasar página cuanto antes».",
+        "audio": {
+          "src": "audios/misiones/morrowind/e36.mp3",
+          "title": ""
+        }
       }
     ]
   },

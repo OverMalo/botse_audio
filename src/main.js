@@ -109,6 +109,8 @@ registerServiceWorker();
 
 // ── Soundtrack ────────────────────────────────────────────
 
+const ST_CACHE_NAME = "botse-soundtrack-v1";
+
 /** @type {HTMLAudioElement | null} */
 let stAudio = null;
 let stCurrentTrack = 0;
@@ -116,6 +118,13 @@ let stVolume = 100;   // volumen elegido por el usuario (0-100)
 let stIsDucked = false;
 let stPollId = null;
 let stIsSeeking = false;
+let stIsDownloading = false;
+const stObjectUrls = {}; // index → objectURL (para revocar al cambiar pista)
+
+function stTrackUrl(index) {
+  const src = SOUNDTRACK[index]?.src ?? "";
+  return /^https?:\/\//.test(src) ? src : `${import.meta.env.BASE_URL}${src}`;
+}
 
 function setupSTPlayer() {
   if (stAudio) return;
@@ -123,20 +132,116 @@ function setupSTPlayer() {
   stAudio = new Audio();
   stAudio.preload = "metadata";
   stAudio.volume = stVolume / 100;
-  loadSTTrack(stCurrentTrack);
   stAudio.addEventListener("ended", () => {
     stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
-    loadSTTrack(stCurrentTrack);
-    stAudio.play().catch(() => {});
+    loadSTTrack(stCurrentTrack).then(() => {
+      stAudio.play().catch(() => {});
+    });
     updateSTUI();
     updateSTMediaSession(true);
   });
 }
 
-function loadSTTrack(index) {
+async function loadSTTrack(index) {
   if (!stAudio || !SOUNDTRACK[index]) return;
-  stAudio.src = `${import.meta.env.BASE_URL}${SOUNDTRACK[index].src}`;
+  const url = stTrackUrl(index);
+
+  // Revocar objectURL anterior de este slot
+  if (stObjectUrls[index]) {
+    URL.revokeObjectURL(stObjectUrls[index]);
+    delete stObjectUrls[index];
+  }
+
+  if (typeof caches !== "undefined") {
+    try {
+      const cache = await caches.open(ST_CACHE_NAME);
+      const cached = await cache.match(url);
+      if (cached) {
+        const blob = await cached.blob();
+        const objectUrl = URL.createObjectURL(blob);
+        stObjectUrls[index] = objectUrl;
+        stAudio.src = objectUrl;
+        stAudio.load();
+        return;
+      }
+    } catch (_) {}
+  }
+
+  stAudio.src = url;
   stAudio.load();
+}
+
+function updateSTDownloadUI(progress) {
+  const bar = document.getElementById("st-download-bar");
+  const text = document.getElementById("st-download-text");
+  const fill = document.getElementById("st-download-fill");
+  if (!bar) return;
+  if (progress < 0) {
+    bar.style.display = "none";
+    return;
+  }
+  bar.style.display = "";
+  const pct = Math.round(progress * 100);
+  if (text) text.textContent = pct < 100 ? `Descargando… ${pct}%` : "Descarga completada ✓";
+  if (fill) fill.style.width = `${pct}%`;
+}
+
+async function downloadSTIfNeeded() {
+  if (typeof caches === "undefined" || !SOUNDTRACK.length || stIsDownloading) return;
+  const cache = await caches.open(ST_CACHE_NAME);
+
+  const toDownload = [];
+  for (let i = 0; i < SOUNDTRACK.length; i++) {
+    const cached = await cache.match(stTrackUrl(i));
+    if (!cached) toDownload.push(i);
+  }
+  if (!toDownload.length) return;
+
+  stIsDownloading = true;
+  updateSTDownloadUI(0);
+
+  for (let di = 0; di < toDownload.length; di++) {
+    const trackIndex = toDownload[di];
+    const url = stTrackUrl(trackIndex);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const contentLength = parseInt(response.headers.get("Content-Length") || "0", 10);
+      const reader = response.body.getReader();
+      const chunks = [];
+      let received = 0;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value);
+        received += value.length;
+        const fileProgress = contentLength > 0 ? received / contentLength : 0;
+        updateSTDownloadUI((di + fileProgress) / toDownload.length);
+      }
+
+      const blob = new Blob(chunks, { type: "audio/mpeg" });
+      await cache.put(url, new Response(blob, {
+        headers: { "Content-Type": "audio/mpeg", "Content-Length": String(blob.size) }
+      }));
+
+      // Si era la pista en reproducción, recargarla desde caché sin interrumpir
+      if (trackIndex === stCurrentTrack && stAudio) {
+        const wasPlaying = !stAudio.paused;
+        const savedTime = stAudio.currentTime;
+        await loadSTTrack(trackIndex);
+        stAudio.currentTime = savedTime;
+        if (wasPlaying) stAudio.play().catch(() => {});
+      }
+    } catch (err) {
+      console.warn("Soundtrack download failed:", url, err);
+    }
+  }
+
+  stIsDownloading = false;
+  updateSTDownloadUI(1);
+  setTimeout(() => updateSTDownloadUI(-1), 2000);
 }
 
 function duckST() {
@@ -208,6 +313,10 @@ function renderSTMiniPlayer() {
         <input type="range" class="yt-seekbar" id="st-seekbar" min="0" max="1000" value="0" step="1">
         <span class="yt-time" id="st-total-time">-:--</span>
       </div>
+      <div id="st-download-bar" class="st-download-bar" style="display:none">
+        <span id="st-download-text"></span>
+        <div class="st-download-progress"><div class="st-download-progress-fill" id="st-download-fill" style="width:0%"></div></div>
+      </div>
       <div class="yt-volume-row">
         <span class="yt-vol-icon">🔊</span>
         <input type="range" class="yt-volume-slider" id="st-volume" min="0" max="100" value="${stVolume}" step="1">
@@ -241,23 +350,29 @@ function updateSTMediaSession(playing) {
     });
     navigator.mediaSession.setActionHandler("previoustrack", () => {
       if (!stAudio) return;
+      const wasPlaying = !stAudio.paused;
       if (stAudio.currentTime > 3) {
         stAudio.currentTime = 0;
+        updateSTUI();
+        updateSTMediaSession(true);
       } else {
         stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
-        loadSTTrack(stCurrentTrack);
-        stAudio.play().catch(() => {});
+        loadSTTrack(stCurrentTrack).then(() => {
+          if (wasPlaying) stAudio.play().catch(() => {});
+          updateSTUI();
+          updateSTMediaSession(true);
+        });
       }
-      updateSTUI();
-      updateSTMediaSession(true);
     });
     navigator.mediaSession.setActionHandler("nexttrack", () => {
       if (!stAudio) return;
+      const wasPlaying = !stAudio.paused;
       stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
-      loadSTTrack(stCurrentTrack);
-      stAudio.play().catch(() => {});
-      updateSTUI();
-      updateSTMediaSession(true);
+      loadSTTrack(stCurrentTrack).then(() => {
+        if (wasPlaying) stAudio.play().catch(() => {});
+        updateSTUI();
+        updateSTMediaSession(true);
+      });
     });
   }
   navigator.mediaSession.playbackState = playing ? "playing" : "paused";
@@ -265,7 +380,11 @@ function updateSTMediaSession(playing) {
 
 render();
 
-if (stEnabled) setupSTPlayer();
+if (stEnabled) {
+  setupSTPlayer();
+  loadSTTrack(stCurrentTrack);
+  downloadSTIfNeeded();
+}
 
 window.addEventListener("pagehide", (e) => {
   if (!e.persisted && activePlayer?.playing) pauseActivePlayerInternal();
@@ -524,8 +643,12 @@ function bindConfigEvents() {
       if (stEnabled) {
         ambientEnabled = false;
         setupSTPlayer();
-        stAudio?.play().catch(() => {});
-        updateSTMediaSession(true);
+        loadSTTrack(stCurrentTrack).then(() => {
+          stAudio?.play().catch(() => {});
+          updateSTMediaSession(true);
+          updateSTUI();
+        });
+        downloadSTIfNeeded();
       } else {
         stAudio?.pause();
         stopSTPoll();
@@ -544,23 +667,29 @@ function bindConfigEvents() {
 
   screenEl.querySelector("[data-st-prev]")?.addEventListener("click", () => {
     if (!stAudio || !SOUNDTRACK.length) return;
+    const wasPlaying = !stAudio.paused;
     if (stAudio.currentTime > 3) {
       stAudio.currentTime = 0;
+      updateSTUI();
+      if (wasPlaying) updateSTMediaSession(true);
     } else {
       stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
-      loadSTTrack(stCurrentTrack);
-      if (!stAudio.paused) stAudio.play().catch(() => {});
+      loadSTTrack(stCurrentTrack).then(() => {
+        if (wasPlaying) stAudio.play().catch(() => {});
+        updateSTUI();
+        if (wasPlaying) updateSTMediaSession(true);
+      });
     }
-    updateSTUI();
-    if (!stAudio.paused) updateSTMediaSession(true);
   });
   screenEl.querySelector("[data-st-next]")?.addEventListener("click", () => {
     if (!stAudio || !SOUNDTRACK.length) return;
+    const wasPlaying = !stAudio.paused;
     stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
-    loadSTTrack(stCurrentTrack);
-    if (!stAudio.paused) stAudio.play().catch(() => {});
-    updateSTUI();
-    if (!stAudio.paused) updateSTMediaSession(true);
+    loadSTTrack(stCurrentTrack).then(() => {
+      if (wasPlaying) stAudio.play().catch(() => {});
+      updateSTUI();
+      if (wasPlaying) updateSTMediaSession(true);
+    });
   });
   screenEl.querySelector("[data-st-playpause]")?.addEventListener("click", () => {
     if (!stAudio) return;

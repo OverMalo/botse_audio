@@ -32,6 +32,9 @@ const GREMIO_LABELS = Object.fromEntries(
   FILTER_OPTIONS.gremios.map((item) => [item.id, item.label])
 );
 
+// ID del playlist público de YouTube (parte después de ?list= en la URL)
+const YT_PLAYLIST_ID = "PLNCPGe2Ed0XvoRezATi1fUDG-p9x05cvQ";
+
 function loadState() {
   try {
     // One-time migration: move existing sessionStorage data to localStorage
@@ -51,8 +54,11 @@ function loadState() {
     autoPlay: true,
     playbackRate: 1,
     ambientEnabled: true,
+    ytEnabled: false,
     provinciaCollapsed: false,
-    gremioCollapsed: false
+    gremioCollapsed: false,
+    narrationsCollapsed: false,
+    bandaCollapsed: false
   };
 }
 
@@ -67,8 +73,11 @@ function saveState() {
       autoPlay,
       playbackRate,
       ambientEnabled,
+      ytEnabled,
       provinciaCollapsed,
-      gremioCollapsed
+      gremioCollapsed,
+      narrationsCollapsed,
+      bandaCollapsed
     })
   );
 }
@@ -81,8 +90,22 @@ let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? s
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
 let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
 let ambientEnabled = typeof state.ambientEnabled === "boolean" ? state.ambientEnabled : true;
+let ytEnabled = typeof state.ytEnabled === "boolean" ? state.ytEnabled : false;
+// Exclusión mutua: ambas no pueden estar activas a la vez
+if (ytEnabled && ambientEnabled) ambientEnabled = false;
+
+/** @type {YT.Player | null} */
+let ytPlayer = null;
+let ytReady = false;
+let ytVolume = 100;    // volumen elegido por el usuario (0-100)
+let ytIsDucked = false;
+let ytPollId = null;   // setInterval para actualizar seekbar/tiempo
+let ytIsSeeking = false;
+
 let provinciaCollapsed = typeof state.provinciaCollapsed === "boolean" ? state.provinciaCollapsed : false;
 let gremioCollapsed = typeof state.gremioCollapsed === "boolean" ? state.gremioCollapsed : false;
+let narrationsCollapsed = typeof state.narrationsCollapsed === "boolean" ? state.narrationsCollapsed : false;
+let bandaCollapsed = typeof state.bandaCollapsed === "boolean" ? state.bandaCollapsed : false;
 
 /** @type {null | { rafId: number, panelEl: HTMLAudioElement, ambientEl: HTMLAudioElement|null, hasAmbient: boolean, totalDuration: number, playerEl: HTMLElement, isSeeking: boolean }} */
 let activePlayer = null;
@@ -93,24 +116,157 @@ const accordionIndex = buildAccordionIndex(contentTree);
 let swRegistration = null;
 
 registerServiceWorker();
+
+// ── YouTube ────────────────────────────────────────────────
+
+function loadYouTubeAPI() {
+  if (document.getElementById("yt-api-script")) {
+    if (ytReady && !ytPlayer) createYTPlayer();
+    return;
+  }
+  const tag = document.createElement("script");
+  tag.id = "yt-api-script";
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+}
+
+window.onYouTubeIframeAPIReady = function () {
+  ytReady = true;
+  if (ytEnabled) createYTPlayer();
+};
+
+function createYTPlayer() {
+  if (ytPlayer) return;
+  ytPlayer = new window.YT.Player("yt-player-container", {
+    width: "1",
+    height: "1",
+    playerVars: {
+      listType: "playlist",
+      list: YT_PLAYLIST_ID,
+      autoplay: 1,
+      loop: 1,
+      controls: 0,
+      fs: 0,
+      iv_load_policy: 3,
+      modestbranding: 1,
+      rel: 0,
+    },
+    events: {
+      onReady: (e) => {
+        e.target.setVolume(100);
+        e.target.playVideo();
+        setTimeout(updateYTUI, 800);
+      },
+      onStateChange: (e) => {
+        setTimeout(updateYTUI, 200);
+        if (e.data === window.YT.PlayerState.PLAYING) startYTPoll();
+        else stopYTPoll();
+      },
+    },
+  });
+}
+
+function duckYT() {
+  if (ytEnabled && ytPlayer) {
+    ytIsDucked = true;
+    try { ytPlayer.setVolume(Math.min(ytVolume, 30)); } catch (_) {}
+  }
+}
+
+function restoreYT() {
+  if (ytEnabled && ytPlayer) {
+    ytIsDucked = false;
+    try { ytPlayer.setVolume(ytVolume); } catch (_) {}
+  }
+}
+
+function updateYTUI() {
+  const titleEl = document.getElementById("yt-track-title");
+  const playBtn = screenEl.querySelector("[data-yt-playpause]");
+  if (!ytPlayer || !ytReady) return;
+  try {
+    const data = ytPlayer.getVideoData();
+    if (titleEl && data?.title) titleEl.textContent = data.title;
+  } catch (_) {}
+  if (playBtn) {
+    try {
+      const isPlaying = ytPlayer.getPlayerState() === window.YT.PlayerState.PLAYING;
+      playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+      if (isPlaying) startYTPoll(); else stopYTPoll();
+    } catch (_) {}
+  }
+  try {
+    tickYTProgress();
+  } catch (_) {}
+}
+
+function startYTPoll() {
+  if (ytPollId) return;
+  ytPollId = setInterval(() => {
+    try {
+      const state = ytPlayer?.getPlayerState();
+      if (state !== window.YT.PlayerState.PLAYING) { stopYTPoll(); return; }
+      tickYTProgress();
+    } catch (_) { stopYTPoll(); }
+  }, 500);
+}
+
+function stopYTPoll() {
+  if (ytPollId) { clearInterval(ytPollId); ytPollId = null; }
+}
+
+function tickYTProgress() {
+  if (ytIsSeeking || !ytPlayer) return;
+  try {
+    const current = ytPlayer.getCurrentTime();
+    const duration = ytPlayer.getDuration();
+    const seekbar = document.getElementById("yt-seekbar");
+    const currentEl = document.getElementById("yt-current-time");
+    const totalEl = document.getElementById("yt-total-time");
+    if (seekbar && duration > 0) seekbar.value = Math.round((current / duration) * 1000);
+    if (currentEl) currentEl.textContent = formatTimeLong(current);
+    if (totalEl) totalEl.textContent = duration > 0 ? formatTimeLong(duration) : "-:--";
+  } catch (_) {}
+}
+
+function renderYTMiniPlayer() {
+  return `
+    <div class="yt-mini-player">
+      <div class="yt-top-row">
+        <div class="yt-controls">
+          <button type="button" class="yt-btn" data-yt-prev aria-label="Canción anterior">⏮</button>
+          <button type="button" class="yt-btn" data-yt-playpause aria-label="Reproducir/Pausar">&#9654;</button>
+          <button type="button" class="yt-btn" data-yt-next aria-label="Canción siguiente">⏭</button>
+        </div>
+        <span class="yt-title" id="yt-track-title">${ytReady ? "Cargando…" : "Iniciando…"}</span>
+      </div>
+      <div class="yt-progress-row">
+        <span class="yt-time" id="yt-current-time">0:00</span>
+        <input type="range" class="yt-seekbar" id="yt-seekbar" min="0" max="1000" value="0" step="1">
+        <span class="yt-time" id="yt-total-time">-:--</span>
+      </div>
+      <div class="yt-volume-row">
+        <span class="yt-vol-icon">🔊</span>
+        <input type="range" class="yt-volume-slider" id="yt-volume" min="0" max="100" value="${ytVolume}" step="1">
+      </div>
+    </div>
+  `;
+}
+
 render();
 
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "hidden") {
-    if (activePlayer?.playing) {
-      activePlayer.pausedByVisibility = true;
-      pauseActivePlayerInternal();
-    }
-  } else if (document.visibilityState === "visible") {
-    if (activePlayer?.pausedByVisibility) {
-      activePlayer.pausedByVisibility = false;
-      resumeActivePlayerInternal();
-    }
-  }
-});
+// Contenedor fijo para el iframe de YouTube — vive fuera de #screen para sobrevivir re-renders
+(function setupYTContainer() {
+  const el = document.createElement("div");
+  el.id = "yt-player-container";
+  el.style.cssText =
+    "position:fixed;width:1px;height:1px;top:-9999px;left:-9999px;overflow:hidden;pointer-events:none;";
+  document.body.appendChild(el);
+  if (ytEnabled) loadYouTubeAPI();
+}());
 
-window.addEventListener("pagehide", () => {
-  if (activePlayer?.playing) pauseActivePlayerInternal();
+window.addEventListener("pagehide", (e) => {
+  if (!e.persisted && activePlayer?.playing) pauseActivePlayerInternal();
 });
 
 function registerServiceWorker() {
@@ -242,9 +398,19 @@ function renderFilters() {
       </div>
     </div>
     <div class="config-panel">
-      <div class="filter-group config-group" role="group" aria-label="Configuración de reproducción">
-        <p class="filter-group-title">Reproducción</p>
-        <div class="config-group-body">
+      <div class="filter-group filter-group--collapsible${narrationsCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="Narraciones">
+        <button
+          type="button"
+          class="filter-group-toggle"
+          data-filter-collapse="narraciones"
+          aria-expanded="${narrationsCollapsed ? "false" : "true"}"
+        >
+          <span class="filter-group-main">
+            <span class="filter-group-selected">Narraciones</span>
+          </span>
+          <span class="panel-icon" aria-hidden="true">${narrationsCollapsed ? "+" : "−"}</span>
+        </button>
+        <div class="filter-group-body config-group-body${narrationsCollapsed ? " is-hidden" : ""}">
           <label class="autoplay-label">
             <input
               type="checkbox"
@@ -264,9 +430,9 @@ function renderFilters() {
             <span>Audio ambiente</span>
           </label>
           <div class="filter-options">
-            ${[1, 1.15, 1.25, 1.5].map((rate) => {
+            ${[1.00, 1.15, 1.25, 1.5].map((rate) => {
               const active = playbackRate === rate;
-              const label = rate === 1 ? "1x" : `${rate.toFixed(2)}x`;
+              const label = `${rate.toFixed(2)}x`;
               return `<button
                 type="button"
                 class="checkable-chip${active ? " checkable-chip--active" : ""}"
@@ -275,6 +441,31 @@ function renderFilters() {
               ><span class="checkable-chip-mark" aria-hidden="true">${active ? "●" : "○"}</span><span>${label}</span></button>`;
             }).join("")}
           </div>
+        </div>
+      </div>
+      <div class="filter-group filter-group--collapsible${bandaCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="Banda Sonora">
+        <button
+          type="button"
+          class="filter-group-toggle"
+          data-filter-collapse="banda"
+          aria-expanded="${bandaCollapsed ? "false" : "true"}"
+        >
+          <span class="filter-group-main">
+            <span class="filter-group-selected">Banda Sonora</span>
+          </span>
+          <span class="panel-icon" aria-hidden="true">${bandaCollapsed ? "+" : "−"}</span>
+        </button>
+        <div class="filter-group-body config-group-body${bandaCollapsed ? " is-hidden" : ""}">
+          <label class="autoplay-label">
+            <input
+              type="checkbox"
+              id="yt-checkbox"
+              class="autoplay-checkbox"
+              ${ytEnabled ? "checked" : ""}
+            />
+            <span>Soundtrack (YouTube)</span>
+          </label>
+          ${ytEnabled ? renderYTMiniPlayer() : ""}
         </div>
       </div>
     </div>
@@ -312,9 +503,82 @@ function bindConfigEvents() {
   if (ambientCheckbox) {
     ambientCheckbox.addEventListener("change", () => {
       ambientEnabled = ambientCheckbox.checked;
+      if (ambientEnabled && ytEnabled) {
+        ytEnabled = false;
+        try { ytPlayer?.pauseVideo(); } catch (_) {}
+      }
       stopActivePlayer();
       saveState();
       render();
+    });
+  }
+
+  const ytCheckbox = screenEl.querySelector("#yt-checkbox");
+  if (ytCheckbox) {
+    ytCheckbox.addEventListener("change", () => {
+      ytEnabled = ytCheckbox.checked;
+      if (ytEnabled) {
+        ambientEnabled = false;
+        loadYouTubeAPI();
+        if (ytReady && ytPlayer) {
+          try { ytPlayer.playVideo(); } catch (_) {}
+        }
+      } else {
+        try { ytPlayer?.pauseVideo(); } catch (_) {}
+        stopYTPoll();
+        restoreYT();
+      }
+      stopActivePlayer();
+      saveState();
+      render();
+      if (ytEnabled) setTimeout(updateYTUI, 600);
+    });
+  }
+
+  screenEl.querySelector("[data-yt-prev]")?.addEventListener("click", () => {
+    try { ytPlayer?.previousVideo(); } catch (_) {}
+    setTimeout(updateYTUI, 600);
+  });
+  screenEl.querySelector("[data-yt-next]")?.addEventListener("click", () => {
+    try { ytPlayer?.nextVideo(); } catch (_) {}
+    setTimeout(updateYTUI, 600);
+  });
+  screenEl.querySelector("[data-yt-playpause]")?.addEventListener("click", () => {
+    if (!ytPlayer) return;
+    try {
+      const s = ytPlayer.getPlayerState();
+      if (s === window.YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
+      else ytPlayer.playVideo();
+      setTimeout(updateYTUI, 150);
+    } catch (_) {}
+  });
+
+  const ytSeekbar = document.getElementById("yt-seekbar");
+  if (ytSeekbar) {
+    ytSeekbar.addEventListener("mousedown", () => { ytIsSeeking = true; });
+    ytSeekbar.addEventListener("touchstart", () => { ytIsSeeking = true; }, { passive: true });
+    ytSeekbar.addEventListener("change", () => {
+      ytIsSeeking = false;
+      if (!ytPlayer) return;
+      try {
+        const duration = ytPlayer.getDuration();
+        if (duration > 0) {
+          const t = (parseInt(ytSeekbar.value, 10) / 1000) * duration;
+          ytPlayer.seekTo(t, true);
+          tickYTProgress();
+        }
+      } catch (_) {}
+    });
+  }
+
+  const ytVolumeSlider = document.getElementById("yt-volume");
+  if (ytVolumeSlider) {
+    ytVolumeSlider.addEventListener("input", () => {
+      ytVolume = parseInt(ytVolumeSlider.value, 10);
+      if (!ytPlayer) return;
+      try {
+        ytPlayer.setVolume(ytIsDucked ? Math.min(ytVolume, 30) : ytVolume);
+      } catch (_) {}
     });
   }
 
@@ -341,6 +605,8 @@ function bindConfigEvents() {
       });
     });
   });
+
+  if (ytEnabled) updateYTUI();
 }
 
 function bindFilterEvents() {
@@ -349,6 +615,8 @@ function bindFilterEvents() {
       const target = button.dataset.filterCollapse;
       if (target === "provincia") provinciaCollapsed = !provinciaCollapsed;
       if (target === "gremio") gremioCollapsed = !gremioCollapsed;
+      if (target === "narraciones") narrationsCollapsed = !narrationsCollapsed;
+      if (target === "banda") bandaCollapsed = !bandaCollapsed;
       saveState();
       render();
     });
@@ -431,8 +699,22 @@ function formatTime(secs) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+function formatTimeLong(secs) {
+  if (!isFinite(secs) || secs < 0) return "0:00";
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  const s = Math.floor(secs % 60);
+  if (h > 0) return `${h}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
 function stopActivePlayer() {
   if (!activePlayer) return;
+  restoreYT();
+  if (activePlayer.ytDelayTimerId) {
+    clearTimeout(activePlayer.ytDelayTimerId);
+    activePlayer.ytDelayTimerId = null;
+  }
   cancelAnimationFrame(activePlayer.rafId);
   activePlayer.rafId = 0;
   activePlayer.playing = false;
@@ -483,6 +765,7 @@ function playerRaf() {
         setPlayerBtnState(p.playerEl, false);
         p.playing = false;
         updateMediaSession(false);
+        restoreYT();
         cancelAnimationFrame(p.rafId);
         p.rafId = 0;
         p.phase = "ended";
@@ -500,6 +783,7 @@ function playerRaf() {
       setPlayerBtnState(p.playerEl, false);
       p.playing = false;
       updateMediaSession(false);
+      restoreYT();
       cancelAnimationFrame(p.rafId);
       p.rafId = 0;
       p.phase = "ended";
@@ -605,10 +889,15 @@ function pauseActivePlayerInternal() {
     }
     p.ambientEl?.pause();
   }
+  if (p.ytDelayTimerId) {
+    clearTimeout(p.ytDelayTimerId);
+    p.ytDelayTimerId = null;
+  }
   p.playing = false;
   p.panelEl.pause();
   setPlayerBtnState(p.playerEl, false);
   updateMediaSession(false);
+  restoreYT();
 }
 
 function resumeActivePlayerInternal() {
@@ -629,12 +918,22 @@ function resumeActivePlayerInternal() {
       }
     }
   } else {
-    if (!p.panelEl.ended) p.panelEl.play().catch(() => {});
+    if (!p.panelEl.ended) {
+      if (ytEnabled) {
+        p.ytDelayTimerId = setTimeout(() => {
+          p.ytDelayTimerId = null;
+          if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
+        }, 300);
+      } else {
+        p.panelEl.play().catch(() => {});
+      }
+    }
   }
   p.playing = true;
   p.rafId = requestAnimationFrame(playerRaf);
   setPlayerBtnState(p.playerEl, true);
   updateMediaSession(true);
+  duckYT();
 }
 
 function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration) {
@@ -657,7 +956,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
     fadeOutPosAtStart: 0,    // accumulated fade-out seconds (0..1) at last pause
     isSeeking: false,
     playing: false,
-    pausedByVisibility: false,
+    ytDelayTimerId: null,
   };
 
   // Set up audio volumes and rates
@@ -693,7 +992,6 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
   panelEl.addEventListener("pause", () => {
     if (!activePlayer || activePlayer.panelEl !== panelEl) return;
     if (!activePlayer.playing || panelEl.ended) return;
-    if (document.visibilityState !== "visible") return;
     panelEl.play().catch(() => {});
   });
 
@@ -725,6 +1023,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
+        duckYT();
         return;
       }
 
@@ -748,6 +1047,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.panelEl.pause();
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
+        restoreYT();
       } else {
         // Resume — phaseStartMs restarts from accumulated pos
         if (p.phase === "pre-roll") {
@@ -767,25 +1067,42 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
+        duckYT();
       }
     } else {
       // ── Modo B ──
       if (p.phase === "ended" || p.panelEl.ended) {
         p.panelEl.currentTime = 0;
         p.phase = "playing";
-        p.panelEl.play().catch(() => {});
+        if (ytEnabled) {
+          p.ytDelayTimerId = setTimeout(() => {
+            p.ytDelayTimerId = null;
+            if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
+          }, 300);
+        } else {
+          p.panelEl.play().catch(() => {});
+        }
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
+        duckYT();
         return;
       }
       if (p.panelEl.paused) {
-        p.panelEl.play().catch(() => {});
+        if (ytEnabled) {
+          p.ytDelayTimerId = setTimeout(() => {
+            p.ytDelayTimerId = null;
+            if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
+          }, 300);
+        } else {
+          p.panelEl.play().catch(() => {});
+        }
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
+        duckYT();
       } else {
         p.playing = false;
         p.panelEl.pause();
@@ -793,6 +1110,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.rafId = 0;
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
+        restoreYT();
       }
     }
   });
@@ -858,6 +1176,11 @@ function togglePanel(panelId) {
             if (p.hasAmbient) {
               p.phaseStartMs = performance.now();
               ambientEl.play().catch(() => {});
+            } else if (ytEnabled) {
+              p.ytDelayTimerId = setTimeout(() => {
+                p.ytDelayTimerId = null;
+                if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
+              }, 300);
             } else {
               panelEl.play().catch(() => {});
             }
@@ -865,6 +1188,7 @@ function togglePanel(panelId) {
             setPlayerBtnState(p.playerEl, true);
             p.playing = true;
             updateMediaSession(true);
+            duckYT();
           }
         };
 
@@ -960,7 +1284,7 @@ function renderLeafContent(node) {
     : "";
 
   // Only resolve ambient when open — avoids creating WebMediaPlayers for closed panels.
-  const rawAmbientSrc = (isOpen && ambientEnabled) ? resolveAmbientSrc(node.id) : null;
+  const rawAmbientSrc = (isOpen && ambientEnabled && !ytEnabled) ? resolveAmbientSrc(node.id) : null;
   const ambientSrc = rawAmbientSrc
     ? `${import.meta.env.BASE_URL}${rawAmbientSrc.replace(/^\/+/, "")}`
     : null;

@@ -276,7 +276,7 @@ function duckSTFade(onDone) {
   }
   const startVol = stAudio.volume;
   const startTime = performance.now();
-  const FADE_MS = 1000;
+  const FADE_MS = 500;
   function step() {
     const t = Math.min((performance.now() - startTime) / FADE_MS, 1);
     stAudio.volume = startVol + (targetVol - startVol) * t;

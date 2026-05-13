@@ -262,6 +262,33 @@ function duckST() {
   }
 }
 
+function duckSTFade(onDone) {
+  const targetVol = Math.min(stVolume, 30) / 100;
+  if (!stEnabled || !stAudio || stAudio.paused) {
+    onDone();
+    return;
+  }
+  stIsDucked = true;
+  if (stAudio.volume <= targetVol) {
+    stAudio.volume = targetVol;
+    setTimeout(onDone, 300);
+    return;
+  }
+  const startVol = stAudio.volume;
+  const startTime = performance.now();
+  const FADE_MS = 1000;
+  function step() {
+    const t = Math.min((performance.now() - startTime) / FADE_MS, 1);
+    stAudio.volume = startVol + (targetVol - startVol) * t;
+    if (t < 1) {
+      requestAnimationFrame(step);
+    } else {
+      onDone();
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function restoreST() {
   if (stEnabled && stAudio) {
     stIsDucked = false;
@@ -1298,19 +1325,20 @@ function togglePanel(panelId) {
           const totalDuration = ambientEl ? panelDuration + 2 : panelDuration;
           initPlayer(contentEl, panelEl, ambientEl || null, totalDuration, panelDuration);
           if (autoPlay) {
-            const p = activePlayer;
-            if (!p) return;
-            if (p.hasAmbient) {
-              p.phaseStartMs = performance.now();
-              ambientEl.play().catch(() => {});
-            } else {
-              panelEl.play().catch(() => {});
-            }
-            p.rafId = requestAnimationFrame(playerRaf);
-            setPlayerBtnState(p.playerEl, true);
-            p.playing = true;
-            updateMediaSession(true);
-            duckST();
+            duckSTFade(() => {
+              const p = activePlayer;
+              if (!p) return;
+              if (p.hasAmbient) {
+                p.phaseStartMs = performance.now();
+                ambientEl.play().catch(() => {});
+              } else {
+                panelEl.play().catch(() => {});
+              }
+              p.rafId = requestAnimationFrame(playerRaf);
+              setPlayerBtnState(p.playerEl, true);
+              p.playing = true;
+              updateMediaSession(true);
+            });
           }
         };
 

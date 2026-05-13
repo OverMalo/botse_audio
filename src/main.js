@@ -191,12 +191,19 @@ function updateSTDownloadUI(progress) {
 async function downloadSTIfNeeded() {
   if (!SOUNDTRACK.length || stIsDownloading) return;
 
-  // Fast path: si todos los IDs ya están en el flag de localStorage, no tocar Cache API
-  const allCached = SOUNDTRACK.every((t) => stCachedIds.has(t.id));
-  if (allCached) return;
-
   if (typeof caches === "undefined") return;
   const cache = await caches.open(ST_CACHE_NAME);
+
+  // Fast path: si localStorage dice que todo está cacheado, verificar al menos que
+  // la primera pista existe en la Cache API real (detecta borrado externo de caché).
+  const allInLS = SOUNDTRACK.every((t) => stCachedIds.has(t.id));
+  if (allInLS) {
+    const firstCached = await cache.match(stTrackUrl(0));
+    if (firstCached) return; // caché real intacta
+    // Caché fue borrada externamente → limpiar localStorage y re-descargar todo
+    stCachedIds.clear();
+    localStorage.removeItem("stCachedIds");
+  }
 
   const toDownload = [];
   for (let i = 0; i < SOUNDTRACK.length; i++) {
@@ -207,6 +214,11 @@ async function downloadSTIfNeeded() {
 
   stIsDownloading = true;
   updateSTDownloadUI(0);
+
+  // Solicitar almacenamiento persistente para que el navegador no evicte la caché
+  if (navigator.storage?.persist) {
+    navigator.storage.persist().catch(() => {});
+  }
 
   for (let di = 0; di < toDownload.length; di++) {
     const trackIndex = toDownload[di];

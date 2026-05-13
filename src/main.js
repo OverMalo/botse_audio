@@ -1204,7 +1204,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
-        duckYT();
+        duckST();
       }
     } else {
       // ── Modo B ──

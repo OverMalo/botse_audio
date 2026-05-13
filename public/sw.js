@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v6";
+const CACHE_VERSION = "v7";
 const STATIC_CACHE = `ahlcg-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `ahlcg-runtime-${CACHE_VERSION}`;
 const SOUNDTRACK_CACHE = "botse-soundtrack-v1";

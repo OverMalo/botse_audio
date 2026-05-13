@@ -110,6 +110,8 @@ registerServiceWorker();
 // ── Soundtrack ────────────────────────────────────────────
 
 const ST_CACHE_NAME = "botse-soundtrack-v1";
+// IDs de pistas ya descargadas (persistido en localStorage para evitar cache.open en cada arranque)
+const stCachedIds = new Set(JSON.parse(localStorage.getItem("stCachedIds") || "[]"));
 
 /** @type {HTMLAudioElement | null} */
 let stAudio = null;
@@ -182,12 +184,18 @@ function updateSTDownloadUI(progress) {
   }
   bar.style.display = "";
   const pct = Math.round(progress * 100);
-  if (text) text.textContent = pct < 100 ? `Descargando… ${pct}%` : "Descarga completada ✓";
+  if (text) text.textContent = `Descargando… ${pct}%`;
   if (fill) fill.style.width = `${pct}%`;
 }
 
 async function downloadSTIfNeeded() {
-  if (typeof caches === "undefined" || !SOUNDTRACK.length || stIsDownloading) return;
+  if (!SOUNDTRACK.length || stIsDownloading) return;
+
+  // Fast path: si todos los IDs ya están en el flag de localStorage, no tocar Cache API
+  const allCached = SOUNDTRACK.every((t) => stCachedIds.has(t.id));
+  if (allCached) return;
+
+  if (typeof caches === "undefined") return;
   const cache = await caches.open(ST_CACHE_NAME);
 
   const toDownload = [];
@@ -226,6 +234,10 @@ async function downloadSTIfNeeded() {
         headers: { "Content-Type": "audio/mpeg", "Content-Length": String(blob.size) }
       }));
 
+      // Marcar como descargado en localStorage
+      stCachedIds.add(SOUNDTRACK[trackIndex].id);
+      localStorage.setItem("stCachedIds", JSON.stringify([...stCachedIds]));
+
       // Si era la pista en reproducción, recargarla desde caché sin interrumpir
       if (trackIndex === stCurrentTrack && stAudio) {
         const wasPlaying = !stAudio.paused;
@@ -240,8 +252,7 @@ async function downloadSTIfNeeded() {
   }
 
   stIsDownloading = false;
-  updateSTDownloadUI(1);
-  setTimeout(() => updateSTDownloadUI(-1), 2000);
+  updateSTDownloadUI(-1);
 }
 
 function duckST() {

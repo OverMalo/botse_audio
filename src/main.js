@@ -393,7 +393,11 @@ render();
 
 if (stEnabled) {
   setupSTPlayer();
-  loadSTTrack(stCurrentTrack);
+  loadSTTrack(stCurrentTrack).then(() => {
+    stAudio?.play().catch(() => {});
+    updateSTUI();
+    updateSTMediaSession(true);
+  });
   downloadSTIfNeeded();
 }
 

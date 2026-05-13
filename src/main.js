@@ -1,5 +1,6 @@
 import "./styles.css";
 import appData from "./data.json";
+import SOUNDTRACK from "./soundtrack.json";
 
 const screenEl = document.getElementById("screen");
 
@@ -32,9 +33,6 @@ const GREMIO_LABELS = Object.fromEntries(
   FILTER_OPTIONS.gremios.map((item) => [item.id, item.label])
 );
 
-// ID del playlist público de YouTube (parte después de ?list= en la URL)
-const YT_PLAYLIST_ID = "PLNCPGe2Ed0XvoRezATi1fUDG-p9x05cvQ";
-
 function loadState() {
   try {
     // One-time migration: move existing sessionStorage data to localStorage
@@ -54,7 +52,7 @@ function loadState() {
     autoPlay: true,
     playbackRate: 1,
     ambientEnabled: true,
-    ytEnabled: false,
+    stEnabled: false,
     provinciaCollapsed: false,
     gremioCollapsed: false,
     narrationsCollapsed: false,
@@ -73,7 +71,7 @@ function saveState() {
       autoPlay,
       playbackRate,
       ambientEnabled,
-      ytEnabled,
+      stEnabled,
       provinciaCollapsed,
       gremioCollapsed,
       narrationsCollapsed,
@@ -90,17 +88,9 @@ let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? s
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
 let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
 let ambientEnabled = typeof state.ambientEnabled === "boolean" ? state.ambientEnabled : true;
-let ytEnabled = typeof state.ytEnabled === "boolean" ? state.ytEnabled : false;
+let stEnabled = typeof (state.stEnabled ?? state.ytEnabled) === "boolean" ? (state.stEnabled ?? state.ytEnabled) : false;
 // Exclusión mutua: ambas no pueden estar activas a la vez
-if (ytEnabled && ambientEnabled) ambientEnabled = false;
-
-/** @type {YT.Player | null} */
-let ytPlayer = null;
-let ytReady = false;
-let ytVolume = 100;    // volumen elegido por el usuario (0-100)
-let ytIsDucked = false;
-let ytPollId = null;   // setInterval para actualizar seekbar/tiempo
-let ytIsSeeking = false;
+if (stEnabled && ambientEnabled) ambientEnabled = false;
 
 let provinciaCollapsed = typeof state.provinciaCollapsed === "boolean" ? state.provinciaCollapsed : false;
 let gremioCollapsed = typeof state.gremioCollapsed === "boolean" ? state.gremioCollapsed : false;
@@ -117,153 +107,165 @@ let swRegistration = null;
 
 registerServiceWorker();
 
-// ── YouTube ────────────────────────────────────────────────
+// ── Soundtrack ────────────────────────────────────────────
 
-function loadYouTubeAPI() {
-  if (document.getElementById("yt-api-script")) {
-    if (ytReady && !ytPlayer) createYTPlayer();
-    return;
-  }
-  const tag = document.createElement("script");
-  tag.id = "yt-api-script";
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.head.appendChild(tag);
-}
+/** @type {HTMLAudioElement | null} */
+let stAudio = null;
+let stCurrentTrack = 0;
+let stVolume = 100;   // volumen elegido por el usuario (0-100)
+let stIsDucked = false;
+let stPollId = null;
+let stIsSeeking = false;
 
-window.onYouTubeIframeAPIReady = function () {
-  ytReady = true;
-  if (ytEnabled) createYTPlayer();
-};
-
-function createYTPlayer() {
-  if (ytPlayer) return;
-  ytPlayer = new window.YT.Player("yt-player-container", {
-    width: "1",
-    height: "1",
-    playerVars: {
-      listType: "playlist",
-      list: YT_PLAYLIST_ID,
-      autoplay: 1,
-      loop: 1,
-      controls: 0,
-      fs: 0,
-      iv_load_policy: 3,
-      modestbranding: 1,
-      rel: 0,
-    },
-    events: {
-      onReady: (e) => {
-        e.target.setVolume(100);
-        e.target.playVideo();
-        setTimeout(updateYTUI, 800);
-      },
-      onStateChange: (e) => {
-        setTimeout(updateYTUI, 200);
-        if (e.data === window.YT.PlayerState.PLAYING) startYTPoll();
-        else stopYTPoll();
-      },
-    },
+function setupSTPlayer() {
+  if (stAudio) return;
+  if (!SOUNDTRACK.length) return;
+  stAudio = new Audio();
+  stAudio.preload = "metadata";
+  stAudio.volume = stVolume / 100;
+  loadSTTrack(stCurrentTrack);
+  stAudio.addEventListener("ended", () => {
+    stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
+    loadSTTrack(stCurrentTrack);
+    stAudio.play().catch(() => {});
+    updateSTUI();
+    updateSTMediaSession(true);
   });
 }
 
-function duckYT() {
-  if (ytEnabled && ytPlayer) {
-    ytIsDucked = true;
-    try { ytPlayer.setVolume(Math.min(ytVolume, 30)); } catch (_) {}
+function loadSTTrack(index) {
+  if (!stAudio || !SOUNDTRACK[index]) return;
+  stAudio.src = `${import.meta.env.BASE_URL}${SOUNDTRACK[index].src}`;
+  stAudio.load();
+}
+
+function duckST() {
+  if (stEnabled && stAudio) {
+    stIsDucked = true;
+    stAudio.volume = Math.min(stVolume, 30) / 100;
   }
 }
 
-function restoreYT() {
-  if (ytEnabled && ytPlayer) {
-    ytIsDucked = false;
-    try { ytPlayer.setVolume(ytVolume); } catch (_) {}
+function restoreST() {
+  if (stEnabled && stAudio) {
+    stIsDucked = false;
+    stAudio.volume = stVolume / 100;
+    if (!stAudio.paused) updateSTMediaSession(true);
   }
 }
 
-function updateYTUI() {
-  const titleEl = document.getElementById("yt-track-title");
-  const playBtn = screenEl.querySelector("[data-yt-playpause]");
-  if (!ytPlayer || !ytReady) return;
-  try {
-    const data = ytPlayer.getVideoData();
-    if (titleEl && data?.title) titleEl.textContent = data.title;
-  } catch (_) {}
+function updateSTUI() {
+  const titleEl = document.getElementById("st-track-title");
+  const playBtn = screenEl.querySelector("[data-st-playpause]");
+  if (titleEl) titleEl.textContent = SOUNDTRACK[stCurrentTrack]?.title ?? "";
   if (playBtn) {
-    try {
-      const isPlaying = ytPlayer.getPlayerState() === window.YT.PlayerState.PLAYING;
-      playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
-      if (isPlaying) startYTPoll(); else stopYTPoll();
-    } catch (_) {}
+    const isPlaying = stAudio ? !stAudio.paused : false;
+    playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
   }
-  try {
-    tickYTProgress();
-  } catch (_) {}
+  if (stAudio && !stAudio.paused) startSTPoll(); else stopSTPoll();
+  tickSTProgress();
 }
 
-function startYTPoll() {
-  if (ytPollId) return;
-  ytPollId = setInterval(() => {
-    try {
-      const state = ytPlayer?.getPlayerState();
-      if (state !== window.YT.PlayerState.PLAYING) { stopYTPoll(); return; }
-      tickYTProgress();
-    } catch (_) { stopYTPoll(); }
+function startSTPoll() {
+  if (stPollId) return;
+  stPollId = setInterval(() => {
+    if (!stAudio || stAudio.paused) { stopSTPoll(); return; }
+    tickSTProgress();
   }, 500);
 }
 
-function stopYTPoll() {
-  if (ytPollId) { clearInterval(ytPollId); ytPollId = null; }
+function stopSTPoll() {
+  if (stPollId) { clearInterval(stPollId); stPollId = null; }
 }
 
-function tickYTProgress() {
-  if (ytIsSeeking || !ytPlayer) return;
-  try {
-    const current = ytPlayer.getCurrentTime();
-    const duration = ytPlayer.getDuration();
-    const seekbar = document.getElementById("yt-seekbar");
-    const currentEl = document.getElementById("yt-current-time");
-    const totalEl = document.getElementById("yt-total-time");
-    if (seekbar && duration > 0) seekbar.value = Math.round((current / duration) * 1000);
-    if (currentEl) currentEl.textContent = formatTimeLong(current);
-    if (totalEl) totalEl.textContent = duration > 0 ? formatTimeLong(duration) : "-:--";
-  } catch (_) {}
+function tickSTProgress() {
+  if (stIsSeeking || !stAudio) return;
+  const current = stAudio.currentTime;
+  const duration = stAudio.duration;
+  const seekbar = document.getElementById("st-seekbar");
+  const currentEl = document.getElementById("st-current-time");
+  const totalEl = document.getElementById("st-total-time");
+  if (seekbar && isFinite(duration) && duration > 0) seekbar.value = Math.round((current / duration) * 1000);
+  if (currentEl) currentEl.textContent = formatTimeLong(current);
+  if (totalEl) totalEl.textContent = isFinite(duration) && duration > 0 ? formatTimeLong(duration) : "-:--";
 }
 
-function renderYTMiniPlayer() {
+function renderSTMiniPlayer() {
+  const title = SOUNDTRACK[stCurrentTrack]?.title ?? "Sin pistas";
+  const isPlaying = stAudio ? !stAudio.paused : false;
   return `
     <div class="yt-mini-player">
       <div class="yt-top-row">
         <div class="yt-controls">
-          <button type="button" class="yt-btn" data-yt-prev aria-label="Canción anterior">⏮</button>
-          <button type="button" class="yt-btn" data-yt-playpause aria-label="Reproducir/Pausar">&#9654;</button>
-          <button type="button" class="yt-btn" data-yt-next aria-label="Canción siguiente">⏭</button>
+          <button type="button" class="yt-btn" data-st-prev aria-label="Canción anterior">⏮</button>
+          <button type="button" class="yt-btn" data-st-playpause aria-label="Reproducir/Pausar">${isPlaying ? "&#9646;&#9646;" : "&#9654;"}</button>
+          <button type="button" class="yt-btn" data-st-next aria-label="Canción siguiente">⏭</button>
         </div>
-        <span class="yt-title" id="yt-track-title">${ytReady ? "Cargando…" : "Iniciando…"}</span>
+        <span class="yt-title" id="st-track-title">${escapeHtml(title)}</span>
       </div>
       <div class="yt-progress-row">
-        <span class="yt-time" id="yt-current-time">0:00</span>
-        <input type="range" class="yt-seekbar" id="yt-seekbar" min="0" max="1000" value="0" step="1">
-        <span class="yt-time" id="yt-total-time">-:--</span>
+        <span class="yt-time" id="st-current-time">0:00</span>
+        <input type="range" class="yt-seekbar" id="st-seekbar" min="0" max="1000" value="0" step="1">
+        <span class="yt-time" id="st-total-time">-:--</span>
       </div>
       <div class="yt-volume-row">
         <span class="yt-vol-icon">🔊</span>
-        <input type="range" class="yt-volume-slider" id="yt-volume" min="0" max="100" value="${ytVolume}" step="1">
+        <input type="range" class="yt-volume-slider" id="st-volume" min="0" max="100" value="${stVolume}" step="1">
       </div>
     </div>
   `;
 }
 
+function updateSTMediaSession(playing) {
+  if (!("mediaSession" in navigator) || !SOUNDTRACK.length) return;
+  const base = import.meta.env.BASE_URL;
+  if (playing) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: SOUNDTRACK[stCurrentTrack]?.title ?? "Soundtrack",
+      artist: "BOTSE",
+      artwork: [
+        { src: `${base}icons/icon-192.png`, sizes: "192x192", type: "image/png" },
+        { src: `${base}icons/icon-512.png`, sizes: "512x512", type: "image/png" },
+      ]
+    });
+    navigator.mediaSession.setActionHandler("play", () => {
+      stAudio?.play().catch(() => {});
+      updateSTUI();
+      updateSTMediaSession(true);
+    });
+    navigator.mediaSession.setActionHandler("pause", () => {
+      stAudio?.pause();
+      stopSTPoll();
+      updateSTUI();
+      navigator.mediaSession.playbackState = "paused";
+    });
+    navigator.mediaSession.setActionHandler("previoustrack", () => {
+      if (!stAudio) return;
+      if (stAudio.currentTime > 3) {
+        stAudio.currentTime = 0;
+      } else {
+        stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
+        loadSTTrack(stCurrentTrack);
+        stAudio.play().catch(() => {});
+      }
+      updateSTUI();
+      updateSTMediaSession(true);
+    });
+    navigator.mediaSession.setActionHandler("nexttrack", () => {
+      if (!stAudio) return;
+      stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
+      loadSTTrack(stCurrentTrack);
+      stAudio.play().catch(() => {});
+      updateSTUI();
+      updateSTMediaSession(true);
+    });
+  }
+  navigator.mediaSession.playbackState = playing ? "playing" : "paused";
+}
+
 render();
 
-// Contenedor fijo para el iframe de YouTube — vive fuera de #screen para sobrevivir re-renders
-(function setupYTContainer() {
-  const el = document.createElement("div");
-  el.id = "yt-player-container";
-  el.style.cssText =
-    "position:fixed;width:1px;height:1px;top:-9999px;left:-9999px;overflow:hidden;pointer-events:none;";
-  document.body.appendChild(el);
-  if (ytEnabled) loadYouTubeAPI();
-}());
+if (stEnabled) setupSTPlayer();
 
 window.addEventListener("pagehide", (e) => {
   if (!e.persisted && activePlayer?.playing) pauseActivePlayerInternal();
@@ -459,13 +461,13 @@ function renderFilters() {
           <label class="autoplay-label">
             <input
               type="checkbox"
-              id="yt-checkbox"
+              id="st-checkbox"
               class="autoplay-checkbox"
-              ${ytEnabled ? "checked" : ""}
+              ${stEnabled ? "checked" : ""}
             />
-            <span>Soundtrack (YouTube)</span>
+            <span>Soundtrack</span>
           </label>
-          ${ytEnabled ? renderYTMiniPlayer() : ""}
+          ${stEnabled ? renderSTMiniPlayer() : ""}
         </div>
       </div>
     </div>
@@ -503,9 +505,11 @@ function bindConfigEvents() {
   if (ambientCheckbox) {
     ambientCheckbox.addEventListener("change", () => {
       ambientEnabled = ambientCheckbox.checked;
-      if (ambientEnabled && ytEnabled) {
-        ytEnabled = false;
-        try { ytPlayer?.pauseVideo(); } catch (_) {}
+      if (ambientEnabled && stEnabled) {
+        stEnabled = false;
+        stAudio?.pause();
+        stopSTPoll();
+        restoreST();
       }
       stopActivePlayer();
       saveState();
@@ -513,72 +517,83 @@ function bindConfigEvents() {
     });
   }
 
-  const ytCheckbox = screenEl.querySelector("#yt-checkbox");
-  if (ytCheckbox) {
-    ytCheckbox.addEventListener("change", () => {
-      ytEnabled = ytCheckbox.checked;
-      if (ytEnabled) {
+  const stCheckbox = screenEl.querySelector("#st-checkbox");
+  if (stCheckbox) {
+    stCheckbox.addEventListener("change", () => {
+      stEnabled = stCheckbox.checked;
+      if (stEnabled) {
         ambientEnabled = false;
-        loadYouTubeAPI();
-        if (ytReady && ytPlayer) {
-          try { ytPlayer.playVideo(); } catch (_) {}
-        }
+        setupSTPlayer();
+        stAudio?.play().catch(() => {});
+        updateSTMediaSession(true);
       } else {
-        try { ytPlayer?.pauseVideo(); } catch (_) {}
-        stopYTPoll();
-        restoreYT();
+        stAudio?.pause();
+        stopSTPoll();
+        restoreST();
+        if ("mediaSession" in navigator) {
+          navigator.mediaSession.playbackState = "none";
+          navigator.mediaSession.metadata = null;
+        }
       }
       stopActivePlayer();
       saveState();
       render();
-      if (ytEnabled) setTimeout(updateYTUI, 600);
+      if (stEnabled) setTimeout(updateSTUI, 200);
     });
   }
 
-  screenEl.querySelector("[data-yt-prev]")?.addEventListener("click", () => {
-    try { ytPlayer?.previousVideo(); } catch (_) {}
-    setTimeout(updateYTUI, 600);
+  screenEl.querySelector("[data-st-prev]")?.addEventListener("click", () => {
+    if (!stAudio || !SOUNDTRACK.length) return;
+    if (stAudio.currentTime > 3) {
+      stAudio.currentTime = 0;
+    } else {
+      stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
+      loadSTTrack(stCurrentTrack);
+      if (!stAudio.paused) stAudio.play().catch(() => {});
+    }
+    updateSTUI();
+    if (!stAudio.paused) updateSTMediaSession(true);
   });
-  screenEl.querySelector("[data-yt-next]")?.addEventListener("click", () => {
-    try { ytPlayer?.nextVideo(); } catch (_) {}
-    setTimeout(updateYTUI, 600);
+  screenEl.querySelector("[data-st-next]")?.addEventListener("click", () => {
+    if (!stAudio || !SOUNDTRACK.length) return;
+    stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
+    loadSTTrack(stCurrentTrack);
+    if (!stAudio.paused) stAudio.play().catch(() => {});
+    updateSTUI();
+    if (!stAudio.paused) updateSTMediaSession(true);
   });
-  screenEl.querySelector("[data-yt-playpause]")?.addEventListener("click", () => {
-    if (!ytPlayer) return;
-    try {
-      const s = ytPlayer.getPlayerState();
-      if (s === window.YT.PlayerState.PLAYING) ytPlayer.pauseVideo();
-      else ytPlayer.playVideo();
-      setTimeout(updateYTUI, 150);
-    } catch (_) {}
+  screenEl.querySelector("[data-st-playpause]")?.addEventListener("click", () => {
+    if (!stAudio) return;
+    if (stAudio.paused) {
+      stAudio.play().catch(() => {});
+      updateSTMediaSession(true);
+    } else {
+      stAudio.pause();
+      updateSTMediaSession(false);
+    }
+    updateSTUI();
   });
 
-  const ytSeekbar = document.getElementById("yt-seekbar");
-  if (ytSeekbar) {
-    ytSeekbar.addEventListener("mousedown", () => { ytIsSeeking = true; });
-    ytSeekbar.addEventListener("touchstart", () => { ytIsSeeking = true; }, { passive: true });
-    ytSeekbar.addEventListener("change", () => {
-      ytIsSeeking = false;
-      if (!ytPlayer) return;
-      try {
-        const duration = ytPlayer.getDuration();
-        if (duration > 0) {
-          const t = (parseInt(ytSeekbar.value, 10) / 1000) * duration;
-          ytPlayer.seekTo(t, true);
-          tickYTProgress();
-        }
-      } catch (_) {}
+  const stSeekbar = document.getElementById("st-seekbar");
+  if (stSeekbar) {
+    stSeekbar.addEventListener("mousedown", () => { stIsSeeking = true; });
+    stSeekbar.addEventListener("touchstart", () => { stIsSeeking = true; }, { passive: true });
+    stSeekbar.addEventListener("change", () => {
+      stIsSeeking = false;
+      if (!stAudio) return;
+      const duration = stAudio.duration;
+      if (isFinite(duration) && duration > 0) {
+        stAudio.currentTime = (parseInt(stSeekbar.value, 10) / 1000) * duration;
+        tickSTProgress();
+      }
     });
   }
 
-  const ytVolumeSlider = document.getElementById("yt-volume");
-  if (ytVolumeSlider) {
-    ytVolumeSlider.addEventListener("input", () => {
-      ytVolume = parseInt(ytVolumeSlider.value, 10);
-      if (!ytPlayer) return;
-      try {
-        ytPlayer.setVolume(ytIsDucked ? Math.min(ytVolume, 30) : ytVolume);
-      } catch (_) {}
+  const stVolumeSlider = document.getElementById("st-volume");
+  if (stVolumeSlider) {
+    stVolumeSlider.addEventListener("input", () => {
+      stVolume = parseInt(stVolumeSlider.value, 10);
+      if (stAudio) stAudio.volume = (stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100;
     });
   }
 
@@ -606,7 +621,7 @@ function bindConfigEvents() {
     });
   });
 
-  if (ytEnabled) updateYTUI();
+  if (stEnabled) updateSTUI();
 }
 
 function bindFilterEvents() {
@@ -710,20 +725,16 @@ function formatTimeLong(secs) {
 
 function stopActivePlayer() {
   if (!activePlayer) return;
-  restoreYT();
-  if (activePlayer.ytDelayTimerId) {
-    clearTimeout(activePlayer.ytDelayTimerId);
-    activePlayer.ytDelayTimerId = null;
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.metadata = null;
+    navigator.mediaSession.playbackState = "none";
   }
+  restoreST();
   cancelAnimationFrame(activePlayer.rafId);
   activePlayer.rafId = 0;
   activePlayer.playing = false;
   activePlayer.panelEl.pause();
   if (activePlayer.ambientEl) activePlayer.ambientEl.pause();
-  if ("mediaSession" in navigator) {
-    navigator.mediaSession.metadata = null;
-    navigator.mediaSession.playbackState = "none";
-  }
   activePlayer = null;
 }
 
@@ -765,7 +776,7 @@ function playerRaf() {
         setPlayerBtnState(p.playerEl, false);
         p.playing = false;
         updateMediaSession(false);
-        restoreYT();
+        restoreST();
         cancelAnimationFrame(p.rafId);
         p.rafId = 0;
         p.phase = "ended";
@@ -783,7 +794,7 @@ function playerRaf() {
       setPlayerBtnState(p.playerEl, false);
       p.playing = false;
       updateMediaSession(false);
-      restoreYT();
+      restoreST();
       cancelAnimationFrame(p.rafId);
       p.rafId = 0;
       p.phase = "ended";
@@ -889,15 +900,11 @@ function pauseActivePlayerInternal() {
     }
     p.ambientEl?.pause();
   }
-  if (p.ytDelayTimerId) {
-    clearTimeout(p.ytDelayTimerId);
-    p.ytDelayTimerId = null;
-  }
   p.playing = false;
   p.panelEl.pause();
   setPlayerBtnState(p.playerEl, false);
   updateMediaSession(false);
-  restoreYT();
+  restoreST();
 }
 
 function resumeActivePlayerInternal() {
@@ -918,22 +925,13 @@ function resumeActivePlayerInternal() {
       }
     }
   } else {
-    if (!p.panelEl.ended) {
-      if (ytEnabled) {
-        p.ytDelayTimerId = setTimeout(() => {
-          p.ytDelayTimerId = null;
-          if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
-        }, 300);
-      } else {
-        p.panelEl.play().catch(() => {});
-      }
-    }
+    if (!p.panelEl.ended) p.panelEl.play().catch(() => {});
   }
   p.playing = true;
   p.rafId = requestAnimationFrame(playerRaf);
   setPlayerBtnState(p.playerEl, true);
   updateMediaSession(true);
-  duckYT();
+  duckST();
 }
 
 function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration) {
@@ -956,7 +954,6 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
     fadeOutPosAtStart: 0,    // accumulated fade-out seconds (0..1) at last pause
     isSeeking: false,
     playing: false,
-    ytDelayTimerId: null,
   };
 
   // Set up audio volumes and rates
@@ -1023,7 +1020,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
-        duckYT();
+        duckST();
         return;
       }
 
@@ -1047,7 +1044,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.panelEl.pause();
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
-        restoreYT();
+        restoreST();
       } else {
         // Resume — phaseStartMs restarts from accumulated pos
         if (p.phase === "pre-roll") {
@@ -1074,35 +1071,21 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
       if (p.phase === "ended" || p.panelEl.ended) {
         p.panelEl.currentTime = 0;
         p.phase = "playing";
-        if (ytEnabled) {
-          p.ytDelayTimerId = setTimeout(() => {
-            p.ytDelayTimerId = null;
-            if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
-          }, 300);
-        } else {
-          p.panelEl.play().catch(() => {});
-        }
+        p.panelEl.play().catch(() => {});
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
-        duckYT();
+        duckST();
         return;
       }
       if (p.panelEl.paused) {
-        if (ytEnabled) {
-          p.ytDelayTimerId = setTimeout(() => {
-            p.ytDelayTimerId = null;
-            if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
-          }, 300);
-        } else {
-          p.panelEl.play().catch(() => {});
-        }
+        p.panelEl.play().catch(() => {});
         p.rafId = requestAnimationFrame(playerRaf);
         setPlayerBtnState(playerEl, true);
         p.playing = true;
         updateMediaSession(true);
-        duckYT();
+        duckST();
       } else {
         p.playing = false;
         p.panelEl.pause();
@@ -1110,7 +1093,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.rafId = 0;
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
-        restoreYT();
+        restoreST();
       }
     }
   });
@@ -1176,11 +1159,6 @@ function togglePanel(panelId) {
             if (p.hasAmbient) {
               p.phaseStartMs = performance.now();
               ambientEl.play().catch(() => {});
-            } else if (ytEnabled) {
-              p.ytDelayTimerId = setTimeout(() => {
-                p.ytDelayTimerId = null;
-                if (activePlayer === p && p.playing) p.panelEl.play().catch(() => {});
-              }, 300);
             } else {
               panelEl.play().catch(() => {});
             }
@@ -1188,7 +1166,7 @@ function togglePanel(panelId) {
             setPlayerBtnState(p.playerEl, true);
             p.playing = true;
             updateMediaSession(true);
-            duckYT();
+            duckST();
           }
         };
 
@@ -1284,7 +1262,7 @@ function renderLeafContent(node) {
     : "";
 
   // Only resolve ambient when open — avoids creating WebMediaPlayers for closed panels.
-  const rawAmbientSrc = (isOpen && ambientEnabled && !ytEnabled) ? resolveAmbientSrc(node.id) : null;
+  const rawAmbientSrc = (isOpen && ambientEnabled && !stEnabled) ? resolveAmbientSrc(node.id) : null;
   const ambientSrc = rawAmbientSrc
     ? `${import.meta.env.BASE_URL}${rawAmbientSrc.replace(/^\/+/, "")}`
     : null;

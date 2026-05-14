@@ -270,12 +270,12 @@ async function downloadSTIfNeeded() {
 function duckST() {
   if (stEnabled && stAudio) {
     stIsDucked = true;
-    stAudio.volume = Math.min(stVolume, 30) / 100;
+    stAudio.volume = Math.min(stVolume, 20) / 100;
   }
 }
 
 function duckSTFade(onDone) {
-  const targetVol = Math.min(stVolume, 30) / 100;
+  const targetVol = Math.min(stVolume, 20) / 100;
   if (!stEnabled || !stAudio || stAudio.paused) {
     onDone();
     return;
@@ -307,6 +307,31 @@ function restoreST() {
     stAudio.volume = stVolume / 100;
     if (!stAudio.paused) updateSTMediaSession(true);
   }
+}
+
+function restoreSTFade() {
+  stIsDucked = false;
+  if (!stEnabled || !stAudio || stAudio.paused) return;
+  const targetVol = stVolume / 100;
+  if (stAudio.volume >= targetVol) {
+    stAudio.volume = targetVol;
+    updateSTMediaSession(true);
+    return;
+  }
+  const startVol = stAudio.volume;
+  const startTime = performance.now();
+  const FADE_MS = 800;
+  function step() {
+    const t = Math.min((performance.now() - startTime) / FADE_MS, 1);
+    stAudio.volume = startVol + (targetVol - startVol) * t;
+    if (t < 1) {
+      requestAnimationFrame(step);
+    } else {
+      stAudio.volume = targetVol;
+      if (!stAudio.paused) updateSTMediaSession(true);
+    }
+  }
+  requestAnimationFrame(step);
 }
 
 function updateSTUI() {
@@ -912,7 +937,7 @@ function stopActivePlayer() {
     navigator.mediaSession.metadata = null;
     navigator.mediaSession.playbackState = "none";
   }
-  restoreST();
+  restoreSTFade();
   cancelAnimationFrame(activePlayer.rafId);
   activePlayer.rafId = 0;
   activePlayer.playing = false;
@@ -959,7 +984,7 @@ function playerRaf() {
         setPlayerBtnState(p.playerEl, false);
         p.playing = false;
         updateMediaSession(false);
-        restoreST();
+        restoreSTFade();
         cancelAnimationFrame(p.rafId);
         p.rafId = 0;
         p.phase = "ended";
@@ -977,7 +1002,7 @@ function playerRaf() {
       setPlayerBtnState(p.playerEl, false);
       p.playing = false;
       updateMediaSession(false);
-      restoreST();
+      restoreSTFade();
       cancelAnimationFrame(p.rafId);
       p.rafId = 0;
       p.phase = "ended";
@@ -1087,7 +1112,7 @@ function pauseActivePlayerInternal() {
   p.panelEl.pause();
   setPlayerBtnState(p.playerEl, false);
   updateMediaSession(false);
-  restoreST();
+  restoreSTFade();
 }
 
 function resumeActivePlayerInternal() {
@@ -1227,7 +1252,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.panelEl.pause();
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
-        restoreST();
+        restoreSTFade();
       } else {
         // Resume — phaseStartMs restarts from accumulated pos
         if (p.phase === "pre-roll") {
@@ -1276,7 +1301,7 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
         p.rafId = 0;
         setPlayerBtnState(playerEl, false);
         updateMediaSession(false);
-        restoreST();
+        restoreSTFade();
       }
     }
   });

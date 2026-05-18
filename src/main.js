@@ -121,11 +121,21 @@ let stIsDucked = false;
 let stPollId = null;
 let stIsSeeking = false;
 let stIsDownloading = false;
+/** @type {Promise<void> | null} */
+let stDownloadPromise = null;
 const stObjectUrls = {}; // index → objectURL (para revocar al cambiar pista)
 
 function stTrackUrl(index) {
   const src = SOUNDTRACK[index]?.src ?? "";
-  return /^https?:\/\//.test(src) ? src : `${import.meta.env.BASE_URL}${src}`;
+  if (/^https?:\/\//.test(src)) {
+    // En desarrollo, redirigir a través del proxy de Vite para evitar CORS con R2
+    if (import.meta.env.DEV) {
+      const pathname = new URL(src).pathname;
+      return `/r2-dev${pathname}`;
+    }
+    return src;
+  }
+  return `${import.meta.env.BASE_URL}${src}`;
 }
 
 function setupSTPlayer() {
@@ -169,6 +179,9 @@ async function loadSTTrack(index) {
     } catch (_) {}
   }
 
+  if (import.meta.env.DEV) {
+    console.warn("[ST] cache miss, cargando directo desde red:", url);
+  }
   stAudio.src = url;
   stAudio.load();
 }
@@ -189,7 +202,7 @@ function updateSTDownloadUI(progress) {
 }
 
 async function downloadSTIfNeeded() {
-  if (!SOUNDTRACK.length || stIsDownloading) return;
+  if (!SOUNDTRACK.length || stIsDownloading) return stDownloadPromise;
 
   if (typeof caches === "undefined") return;
   const cache = await caches.open(ST_CACHE_NAME);
@@ -213,6 +226,7 @@ async function downloadSTIfNeeded() {
   if (!toDownload.length) return;
 
   stIsDownloading = true;
+  stDownloadPromise = (async () => {
   updateSTDownloadUI(0);
 
   // Solicitar almacenamiento persistente para que el navegador no evicte la caché
@@ -265,6 +279,8 @@ async function downloadSTIfNeeded() {
 
   stIsDownloading = false;
   updateSTDownloadUI(-1);
+  })();
+  return stDownloadPromise;
 }
 
 function duckST() {

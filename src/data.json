@@ -1262,6 +1262,72 @@
           "src": "audios/misiones/morrowind/e36.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A01 - Portador de la maldición",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "Bazrag, el rey orco, ha solicitado ayuda al Gremio de magos para encargarse de una poderosa e indisciplinada joven maga en Wrothgar, y has sido seleccionado para el trabajo. De camino al asentamiento natal de Bazrag en Fortaleza Fharun, examinas la carta del monarca al gremio.\n«La joven Kharzug gra-Magul tal vez tenga un gran potencial mágico, pero muchos de mis hermanos no tienen mucha paciencia con su “volatilidad”. Tiende a perder el control de sus hechizos ígneos, lo que ha provocado que muchos de los otros residentes de Fharun la acosen y que los bretones no dejen de quejarse de ella. De hecho, me han dicho que en estos momentos está escondida cerca de la ciudad tras otro incidente con los lugareños. Me temo que la situación esté a punto de causar un altercado violento. Creo que le vendría bien un poco de orientación, tal vez bajo la custodia de vuestro gremio. Ahora mismo es demasiado peligrosa para sí misma y para los demás».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a01.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B02 - Portador de la maldición",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "Llegas a Fharun y te encuentras con que Kharzug ya está en apuros; una turba la confronta por freír accidentalmente a un rebaño de echatere domesticados. Aunque consigues rechazar a sus atacantes y llevarla a la relativa seguridad de tu campamento, se la ve claramente descontenta.\n«Ya veo cómo es esto... el gremio se interesa en mí cuando piensa que voy a mancillar su noble profesión». Intentas explicarle y asegurarle que no es el caso, pero es evidente que no confía en ti.\n«Bueno, ya que estás aquí, déjame decirte que las cosas han empeorado últimamente. Creo que... mi magia está siendo contaminada de alguna forma. Por lo general, cuando tengo uno de mis... “arrebatos”, antes tengo una especie de sueño extraño. Es muy real y vívido y, cuando vuelvo en mí, me encuentro en mitad de algún ritual o hechizo».\n Sacude la cabeza, frustrada. «He estado leyendo e investigando. Se cuenta que existen unos antiguos tótems en Roca Alta que podrían ayudarme. Según las historias, fueron bendecidos por Vaermina, el príncipe daédrico de los sueños. Creo que podrían ayudarme a mantener el control cuando vuelva a pasar por un “episodio” de esos, pero no he podido viajar muy lejos por mi cuenta. Puesto que, al parecer, eres mi guardaespaldas por el momento, ¿te importaría ser útil y ayudarme a buscar esas reliquias?».\nTe quedas un momento pensando. La solicitud del Gremio de magos era bastante... abierta, así que a los de arriba probablemente les parezca bien este «desvío».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b02.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B02 - Portador de la maldición (Al menos un aventurero es un Orco)",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "Llegas a Fharun y te encuentras con que Kharzug ya está en apuros; una turba la confronta por freír accidentalmente a un rebaño de echatere domesticados. Aunque consigues rechazar a sus atacantes y llevarla a la relativa seguridad de tu campamento, se la ve claramente descontenta.\n«Ya veo cómo es esto... el gremio se interesa en mí cuando piensa que voy a mancillar su noble profesión». Intentas explicarle y asegurarle que no es el caso, pero es evidente que no confía en ti.\n«Bueno, ya que estás aquí, déjame decirte que las cosas han empeorado últimamente. Creo que... mi magia está siendo contaminada de alguna forma. Por lo general, cuando tengo uno de mis... “arrebatos”, antes tengo una especie de sueño extraño. Es muy real y vívido y, cuando vuelvo en mí, me encuentro en mitad de algún ritual o hechizo».\n Sacude la cabeza, frustrada. «He estado leyendo e investigando. Se cuenta que existen unos antiguos tótems en Roca Alta que podrían ayudarme. Según las historias, fueron bendecidos por Vaermina, el príncipe daédrico de los sueños. Creo que podrían ayudarme a mantener el control cuando vuelva a pasar por un “episodio” de esos, pero no he podido viajar muy lejos por mi cuenta. Puesto que, al parecer, eres mi guardaespaldas por el momento, ¿te importaría ser útil y ayudarme a buscar esas reliquias?».\nTe quedas un momento pensando. La solicitud del Gremio de magos era bastante... abierta, así que a los de arriba probablemente les parezca bien este «desvío».\n Dándose cuenta finalmente de tu aspecto bajo la túnica del gremio, Kharzug se relaja por ver a un congénere orco.\n«¡Vaya! Es inteligente tener a uno de los nuestros aquí. De no ser así, lo mismo el gremio podría enfadar a todo Wrothgar. Me sorprende que el gremio se preocupe por nosotros de esa manera». Se disculpa por su hostilidad y te invita a compartir sus pertenencias.\n«No es la primera vez que me llaman “volátil”, así que, bueno, espero que esto suavice el golpe cuando te lance una bola de fuego». Tras su broma, se ríe por primera vez delante de ti.\n «Por otra parte, está claro que los bretones sospecharán al ver dos orcos ayudándose mutuamente».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b02_orco.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C03 - Portador de la maldición",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "Atrás quedan las noches de inquietud, con la incertidumbre de si Kharzug dormiría tranquila o provocaría un estallido de llamas. Desde que has localizado los tótems, su estado parece haber mejorado, y tú, por tu parte, has llegado a respetar la gran inteligencia que se esconde tras la brusca apariencia de la orca. Hoy, una carta del Gremio de magos ha llegado, recomendando que Kharzug viaje, con los tótems, a un enclave en Skyrim, donde su estado podrá ser estudiado más de cerca y, con suerte, curado. Hasta Kharzug se siente esperanzada, así que se da el gusto de tomar un buen trago de aguamiel en La Jarra Ondulante, celebrando su inminente partida del puerto de Punta Norte al día siguiente. Lo que era un trago se convierte en bastantes, y poco a poco vais cayendo prisioneros del sueño. Cuando estás a punto de dormirte, oyes una voz grave, pero aunque la oyes con claridad, no basta para despertarte.\n «Portador de esta maldición, ¡qué poder posees! Busca la eternidad con nosotros, no dejes que los necios te impidan desatar tu potencial».\n Cuando abres los ojos de golpe, te queda claro que algo va mal. Estás rodeado de una especie de niebla púrpura... y de un grupo de figuras amenazadoras. Su líder, un hombre bretón con el rostro lleno de cicatrices, da un paso adelante y se dirige a Kharzug. La orca mira a su alrededor y se da cuenta, sobresaltada, de que estás aquí con ella. «Has encontrado las reliquias de Vaermina para nosotros, has servido a los Soñadores Supernos en tu aflicción sin saberlo. Camina por el reino de la inconsciencia, como nosotros, y ayúdanos a usar los tótems para vencer a la muerte... Porque, ¿qué es la muerte sino un sueño sin fin, sin vigilia? Pero nada es imposible para Vaermina».\nVes que los ojos de Kharzug van de un lado a otro, analizando el entorno. Sospechas, si no es evidente, que este hombre acaba de proporcionar una detallada explicación acerca de sus extraños sueños.\n«Y... ¿si declino la oferta?», pregunta con una cortesía fingida.\n«Entonces quedarás prisionera en un sueño interminable hasta que Vaermina vea oportuno nutrirse de ti».\nKharzug sonríe. «Más o menos era la respuerta que esperaba». Entonces, la orca se incorpora, con una llama surgiendo de la punta de su bastón.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/c03.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E04 - Portador de la maldición",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "El último tótem se rompe, todo se vuelve negro y... abres los ojos. Es de día, el tabernero os mira a Kharzug y a ti, pensando que solo sois clientes que se han dormido tras una noche en la que han bebido de más. Cuando Kharzug recobra la consciencia, se apresura a rebuscar en su mochila.\n«Lo que sospechaba». De su mochila saca los tótems, que están chamuscados como si los hubiera alcanzado un rayo.\n«Los tótems no me estaban ayudando a dormir. Los sectarios los usaron para manipularme todo este tiempo».\nNo hay ningún rastro de los Soñadores Supernos en Punta Norte, así que es muy probable que los que derrotaste en la última batalla sigan por ahí en algún lugar. Con esto en mente, Kharzug se da prisa en subirse al barco que la llevará a Skyrim, donde espera estar alejada de la influencia de los sectarios hasta que controle mejor sus habilidades. Al embarcar, te da las gracias a regañadientes, pero te das cuenta de que aprecia de corazón la ayuda que le has brindado.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e04.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E05 - Portador de la maldición",
+        "description": "Gremio de magos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "magos",
+        "leafDescription": "Te despiertas y Kharzug no está. La viste caer víctima de algún extraño ritual dentro del sueño, y no pudiste liberarla mientras escapabas. Lo único que queda es un trozo de piedra adornado con símbolos. Aparentemente, eso es lo que dejan los lazos usados por los Soñadores para atrapar a sus víctimas en sus propias mentes inconscientes. El Gremio de magos está decepcionado, aunque que Kharzug ya no esté en Wrothgar es positivo para el rey Bazrag. Sin embargo, no puedes evitar sentirte como si hubieras defraudado a Kharzug. En los siguientes días, tu mente no para de darle vueltas a una idea: ¿podrías hacer algo más por ella?",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e05.mp3",
+          "title": ""
+        }
       }
     ]
   },

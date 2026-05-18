@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v8";
 const STATIC_CACHE = `ahlcg-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `ahlcg-runtime-${CACHE_VERSION}`;
 const SOUNDTRACK_CACHE = "botse-soundtrack-v1";
@@ -58,6 +58,22 @@ async function networkFirst(request, fallbackToCache = true) {
   }
 }
 
+async function cacheFirst(request) {
+  const runtimeCache = await caches.open(RUNTIME_CACHE);
+  const cachedResponse = await runtimeCache.match(request);
+  if (cachedResponse) return cachedResponse;
+
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse && networkResponse.ok) {
+      runtimeCache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch {
+    return caches.match(`${BASE}/`);
+  }
+}
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
@@ -68,17 +84,22 @@ self.addEventListener("fetch", (event) => {
   }
 
   const isNavigationRequest = event.request.mode === "navigate";
+  const isAudioRequest = event.request.destination === "audio";
   const isDynamicAsset =
     event.request.destination === "script" ||
     event.request.destination === "style" ||
     event.request.destination === "font" ||
-    event.request.destination === "audio" ||
     event.request.destination === "video" ||
     event.request.destination === "manifest" ||
     url.pathname.endsWith(".json");
 
   if (isNavigationRequest || isDynamicAsset) {
     event.respondWith(networkFirst(event.request));
+    return;
+  }
+
+  if (isAudioRequest) {
+    event.respondWith(cacheFirst(event.request));
     return;
   }
 

@@ -1328,6 +1328,358 @@
           "src": "audios/misiones/roca_alta/e05.mp3",
           "title": ""
         }
+      },
+      {
+        "label": "A06 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "En medio de las muchas conversaciones que se oyen en la taberna, tu agente se sienta en una mesa detrás de ti.\n «Un oficial del Gremio de magos ha solicitado que recuperemos un artefacto, un guantelete negro, para ser exactos. Se supone que está en el Risco de la Perdición».\nEl Risco de la Perdición, antaño una torre de los ayleid, se ha ganado la reputación de ser uno de los lugares más peligrosos de Roca Alta. Hasta hace poco, sus ruinas malditas albergaban una reliquia mortal llamada el Remanente oscuro, pero después de que un desafortunado incidente provocara la eliminación del Remanente, algunas bandas de osados cazadores de tesoros han acudido allí en busca de objetos mágicos que aún puedan permanecer intactos, esperando a ser descubiertos.  Le preguntas al agente por qué el mago no ha recurrido a alguien de su gremio o contratado a los Intrépidos.\n«¿No es obvio? Porque es para uso personal, una solicitud “extraoficial”. Al fin y al cabo, no somos el gremio de propierarios legítimos».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a06.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B07 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "Llegas a la zona indicada y encuentras un cofre antiguo, tal y como se describe en el contrato. Al abrirlo, ves un trozo de un mineral negro y liso. Cuando te agachas para cogerlo, se abalanza sobre tu mano, moviéndose como una anguila y enganchándose como si tuviera los dientes de una sanguijuela. Cuando deja de moverse, ves que ha envuelto tu mano hasta adoptar la forma del guantelete que buscabas. Te recorre un escalofrío, no de poder, ni mágico, sino de terror. Por mucho que lo intentes, eres incapaz de quitártelo. De entre las sombras, aparece un ente sombrío. Solo puedes pensar en huir.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b07.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C08 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "Tras escapar del Risco de la Perdición, te ves sorprendido por un mensaje étereo que se conjura ante tus ojos.\n«Gracias por su servicio. Soy Iudex Ovidius, quien solicitó la recuperación del guantelete. El pago por sus servicios será realizado en la metrópolis que escoja. Sabré el lugar que seleccione, no se preocupe». El escrito desaparece tan rápido como apareció. Esperabas que la sensación de terror se disipara al volver a la superficie, pero aún sigue ahí. Te pones a pensar en las viejas historias que se cuentan del Risco de la Perdición y recuerdas una acerca de La Muerte Andante, un ente indescriptible que persigue a aquellos que osan adentrarse en la torre. Se dice que, a la vez que te persigue, te va robando años de vida. Aunque has conseguido salir ileso del Risco de la Perdición, aún sientes el mismo escalofrío. Además, no cabe duda de que el guantelete que llevas adherido tiene la culpa. Lo mejor sería quitártelo cuanto antes, pero te surge una duda... Este tal Ovidius que lo quiere, ¿qué posible uso tiene pensado para él?",
+        "audio": {
+          "src": "audios/misiones/roca_alta/c08.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D09 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "Cerca del Refugio de forajidos de la ciudad, encuentras un túnel lateral abandonado, donde te sorprende encontrar a un hombre que se identifica como Ovidius ya esperándote, junto con varios acólitos con túnicas de un color gris oscuro. Hay también, muy a tu pesar, un vigilante daédrico presente, aprisionado en un círculo mágico mientras se mueve furioso. El imperial ya entrado en años extiende la mano y el guantelete se suelta y cae al suelo. Un saco de monedas se materializa justo a tu lado. Con voz de pocos amigos, Ovidius se dirige a ti. «Puedes retirarte». Sin embargo, cuando te das la vuelta para irte, uno de los acólitos encapuchados levanta la mano.\n«Iudex, has desafiado a nuestra señora durante demasiado tiempo, y sabemos que tienes tus propios planes para el guantelete. La paciencia de Deslandra se ha agotado». Entonces, el encapuchado se gira hacia ti. «Desgraciadamente, tú también deberás ser eliminado».\n En ese instante, el círculo mágico se disuelve y el vigilante se lanza hacia ti. «¡Rápido, pásame el guantelete y acabemos juntos con estos idiotas!». Ovidius te mira, esperando que le lances el artefacto. Solo tienes unos instantes para dudar. Quieres salir vivo de allí, pero tampoco te apasiona la idea de que alguno de los interesados tenga en su poder una poderosa reliquia mágica.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/d09.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D10 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "Puede que Ovidius sea un mago de mala reputación, pero no es la primera vez que tratas con gente de su calaña, y te vendría bien toda la ayuda posible contra un vigilante y un ejército de cultistas. Le das una patada al guantelete en su dirección y observas cómo se lo pone. Sus ojos se ennegrecen y te cuestionas el precio que has pagado por salvar tu vida.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/d10.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D11 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "En un arrebato, tal vez de locura, coges el guantelete y se lo lanzas al vigilante, que lo agarra con un tentáculo y, por lo menos por ahora, parece dejar de estar furioso. A diferencia de Ovidius, que se encoleriza al instante.\n«¡Idiota! ¡Sois todos unos idiotas!». Un aura azul emana de él mientras se eleva en el aire, preparándose para castigar a todos sus enemigos.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/d11.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E12 - Envuelto en muerte",
+        "description": "Gremio de ladrones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ladrones",
+        "leafDescription": "En medio del caos, Ovidius logró desaparecer y el guantelete fue destruido. Sin embargo, el saco de monedas no sufrió la misma suerte, de manera que te encuentras en el Refugio de forajidos, mareado y confundido, sí, pero también más rico. A veces, cuando uno completa un trabajo, lo único que aprende es que es mejor no repetir nada parecido. Seguramente, todo este asunto termine de romper el débil vínculo que quedara entre Ovidius y el Gremio de magos, y además sospechas que, si ha sobrevivido, él y la «señora» de los cultistas seguramente hayan hecho las paces. Tu experiencia como ladrón te ha enseñado que los socios criminales que se pelean suelen volver a unirse cuando se dan cuenta que el otro tiene algo que ofrecer. Si acaso, pasar tan cerca de la muerte habrá incrementado la lealtad de Ovidius. Si no pudo con su rival, es probable que se haya convertido en su más ferviente servidor, al menos hasta que se le presente otra oportunidad para traicionarla.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e12.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A13 - Roca Alta y su alta alcurnia",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "luchadores",
+        "leafDescription": "El Gremio de luchadores te ha escogido para este trabajo por tu discreción y tu destreza en combate. Al entrar en la trastienda de El León Rosado, te saluda un bretón joven de apariencia atractiva. Por su aspecto, debe rondar los veinte años. Cuando te sientas frente a él, te explica su situación con tono de disculpa.\n«Mi nombre es Uthard Scoth. Sé que puede sonar difícil de creer, pero soy el hijo de la princesa Rayelle, hija del rey traidor, Ranser, o eso es lo que me han dicho. El contacto con mis padres ha sido prácticamente nulo desde mi nacimiento, aunque siempre me han cuidado bien, económicamente hablando. Fui concevido justo antes de la guerra de Ranser, así que, obviamente, lo mejor para la familia real era no reconocer mi existencia».\nSe inclina hacia delante mientras explica la razón por la que ha acudido al Gremio de luchadores.\n«Debido a los recientes eventos, todo ciudadano de Roca Alta con sangre real es un potencial objetivo. He estado buscando una manera de salir de la región. Ni me interesa la política ni mucho menos quiero convertirme en el peón de algún noble venido a más que pretenda usarme en su juego de poder. Sin embargo, me han dicho que todos los puertos importantes de la región están siendo vigilados por matones que, al parecer, buscan a un hombre que se ajusta mucho a mi descripción... En mis viajes, he hecho amigos en Wrothgar, y me han garantizado que habrá un bote discreto esperándome si llego hasta la Fortaleza Fharun. Lo único que necesito es un escolta capaz de llevarme allí».\nSus ojos miran a su alrededor por un momento, como si esperara que alguien estuviera espiando.\n«Hay... otra cosa que me preocupa». El volumen de su voz es mucho más bajo, te inclinas hacia delante, esforzándote por oírle. «He visto... gente siguiéndome cerca de Salto de la Daga. He oído susurros, creo que casi caigo en una o dos de sus emboscadas. En una de ellas, seguí al sospechoso, pero escapó. Sin embargo, dejó caer un trozo de papel, una hoja que se resbaló de su túnica. En él ponía: “Los ejércitos se alzan al ver la sangre real. Es así como su líder el premio reclamará”». Uthard tiembla al recordarlo. «¿Me ayudarás?».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a13.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E14 - Roca Alta y su alta alcurnia",
+        "description": "Gremio de luchadores",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "luchadores",
+        "leafDescription": "A pesar de las amenazas a la vida de Uthard, consigues llevarlo sano y salvo a Fharun. Verlo partir incluso llega a entristecerte. Es un muchacho bien hablado, inteligente y que está agradecido de verdad por tu ayuda.\n«Si no nos hundimos, mi destino es Estivalia. Búscame si alguna vez estás por allí. Y mándame una carta si llegas a descubrir qué querían conseguir los que me han estado acechando». Entonces, se detiene un momento, pensativo.\n«Ahora que lo pienso... Tal vez debería haberlo dicho antes. La nota que encontré estaba escrita en una página arrancada de un libro. Conseguí descubrir cuál era ese libro. Si no recuerdo mal, el título era: “Los antiguos campos de batalla de Roca Alta”. No encontré nada relevante, pero tal vez a ti pueda servirte de algo la información».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e14.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A15 - Lista de objetivos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "La Hermandad Oscura ha recibido cuatro contratos políticos de la misma fuente anónima (y generosa, por las recompensas que ofrece). Por lo general, cuando un cliente realiza el Sacramento Negro, el trabajo se lleva a cabo sin hacer más preguntas, pero, en el momento en el que un orco llamado Ghum te asigna la tarea, comenta de manera distraída que este encargo le parece particularmente sospechoso.\n«Los cuatro objetivos son funcionarios de alto rango, cada uno en su ciudad... pero no hay más conexión entre ellos que hayamos podido descubrir. Es probable que no sea una coincidencia que esas ciudades sean los cuatro polos del poder político de Roca Alta. Teniendo en cuenta las recientes disputas entre las facciones de la zona, estas muertes crearán sospechas de que alguna de ellas trata de tomar el poder. No es que eso nos importe, pero... si yo fuera tú, me preocuparía que realizar esta misión pusiera un precio sobre mi cabeza».\nTe entrega la lista de objetivos y te advierte de que lo mejor es que uses un método distinto cada vez. «Es mejor que la gente no sepa que los responsables de cada trabajo son el mismo. Es lo más seguro».\nTambién te dice que uses tu buen juicio para decidir cuántos objetivos eliminar, y te informa de cuál es el punto de encuentro para recibir los pagos. «Habrá una bonificación para ti cuando el trabajo esté hecho».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a15.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B16 - Lista de objetivos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Una vez completado el trabajo, vas al punto de encuentro que Ghum te ha comunicado. Sin embargo, al llegar, te sorprende ver que el emisario de la Hermandad con el que debías reunirte yace en el suelo, asesinado. Junto a él, ves el cuerpo de alguien que consiguió llevarse con él. Sin embargo, por mucho que observas su túnica gris, no sabes identificar a qué colectivo pertenece. Está claro que quienquiera que contactase con la Hermandad no quiere dejar cabos sueltos y no confía en la discreción del gremio. Registras el cuerpo en busca de pistas y encuentras una carta que relaciona a la figura de la túnica con una elfa del bosque con mucho dinero. Estás resuelto a perseguir esta traición a la Hermandad, aunque eso sea bastante más difícil por el caos que tú mismo has estado causando en los distintos gobiernos de Roca Alta",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b16.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E17 - Lista de objetivos",
+        "description": "Hermandad Oscura",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "hermandad_oscura",
+        "leafDescription": "Llegaste hasta los objetivos de la lista de tu Hermano y segaste las vidas de muchos de ellos, pero la elfa del bosque que parecía liderarlos logró desaparecer durante el combate. Los líderes del gremio no están contentos con esa anónima elfa traicionera, por lo que su descripción se ha difundido entre los asesinos de la región. A pesar de los obstáculos, tu trabajo ha sido admirable. Has ejecutado con éxito a tus objetivos y ahora tienes en tu poder varios artefactos con los que los sectarios se habían hecho en medio del caos y la violencia de las distintas capitales de Roca Alta. Hay más trabajos para la Hermandad, si los quisieras, aunque con la agitación política que has generado en la provincia, se abre un amplio abanico de oportunidades para aquellos que saben luchar y tengan algo de iniciativa. Dicho esto, no consigues sacarte a la elfa del bosque de la cabeza. ¿Qué estaría tramando?",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e17.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A18 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Lady Cuchilla, bretona legendaria entre los Intrépidos por su valentía (y su habilidad para aguantar la bebida), arroja un par de contratos sobre la mesa de la taberna. «Ojalá tuviera tiempo para encargarme yo». Si a ella le interesa, harías bien en prestar atención. «Es probable que paguen bien. Hay dos interesados, y al gremio le da igual quién se lleve el premio a casa. Puedes apoyar al mejor postor o “tratar de ser justo”». Por su tono, queda claro que la segunda opción le parece estúpida. Examinas ambos contratos, aún sin firmar. A juzgar por las fechas, la primera petición viene de Umatha, conservadora de la Casa de las Glorias Orsimer. El museo está buscando el Sanapantanos, un bastón legendario de fabricación argoniana que, según se dice, unos guerreros orcos se llevaron de Ciénaga Negra en una incursión a la región hace siglos. La segunda petición viene de Concordia Mercio, la representante en Roca Alta del Anticuario Cyrodílico, organización dedicada a encontrar y catalogar reliquias argonianas. Mercio quiere que el Sanapantanos sea devuelto a su tierra de origen. Ambos contratos incluyen datos que permitirían a un aventurero dedicado encontrar el bastón.\n«Una cosa más... Estos contratos son abiertos, así que, si quieres hacerte con el bastón, que sepas que vas a estar compitiendo con todos los mercenarios de medio pelo de Roca Alta».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a18.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B19 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Siguiendo su rastro, has llegado hasta la ubicación del Sanapantanos y, tal como predijo Lady Cuchilla, no eres el único aquí. Al investigar sobre él, descubriste que el bastón tiene la capacidad de revertir efectos de degradación y corrupción, lo que lo hace inmensamente valioso. Si lo quieres, más te vale esforzarte.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b19.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C20 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Gracias a una combinación de buena planificación y agilidad mental, logras salir ileso con el Sanapantanos en tu poder. Al día siguiente, sin embargo, se te acerca una elfa del bosque de piel amarillenta que dice haber oído de tu botín y querer comprarte el Sanapantanos.\n«Te pagaré más que cualquiera de tus dos compradores».\nLa miras y analizas. Parece sincera en cuanto al pago, pero también percibes maldad en sus ojos.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/c20.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D21 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Haciendo gala de tu mal juicio, te embolsas el dinero y entregas el Sanapantanos. Días después, oyes rumores de una nigromante que, con la ayuda de un poderoso bastón, está realizando resurrecciones experimentales en masa en los Páramos de Glenumbra. Solo puedes desear que no sea la misma persona a quien le vendiste el Sanapantanos.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/d21.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "D22 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Rechazas a la elfa del bosque, que se aleja mientras te mira fijamente. Ahora solo queda decidir qué contrato cumplir. Tal vez, por derecho, pertenezca a los argonianos. Sin embargo, ¿qué mal haría dejarlo en un museo orco? Puede que lo mejor sea sencillamente dárselo a quien ofrezca la mejor recompensa.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/d22.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E23 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "Umatha no cabe en sí de gozo al ver el Sanapantanos y promete hablar bien de ti cuando oiga de trabajos importantes en Wrothgar. Una semana después, recibís una carta de desaprobación del Anticuario Cyrodílico. Es probable que hayas estropeado tu relación con dicha organización a corto plazo. Sin embargo, lo que te preocupa es para qué querría esa elfa del bosque el Sanapantanos tanto como para estar dispuesta a pagar una fortuna por él.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e23.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E24 - Guerra al mejor postor",
+        "description": "Intrépidos",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "intrepidos",
+        "leafDescription": "No vas a conseguir amigos en Wrothgar, pero llevar el Sanapantanos a Concordia Mercius, en Salto de la Daga, hace que te dé las gracias con mucho entusiasmo. Te dice que el Anticuario podría tener más trabajos para ti, si estás interesado. Sientes que has tomado una buena decisión, aunque sigues sin entender por qué aquella elfa estaba dispuesta a pagar tanto.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e24.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A25 - La conspiración de Iudex",
+        "description": "Guardia exterior",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Bodean, el lider de operaciones de la Guardia exterior, se sienta frente a ti en la Posada El Poso Turbio.\n«Algunos contactos del Gremio de ladrones nos han alertado sobre un tal Iudex Ovidius, un imperial que ostenta un rango medio en el Gremio de magos. Un encontronazo casual con él sugiere que está trabajando con una exmiembra de la Guardia exterior, Deslandra, y su grupo disidente, los Soldados del Vacío. Hemos podido descubrir que Ovidius ha tratado de introducir agentes de dicho grupo en varios reinos de Roca Alta, lo que le permitiría orquestar los asuntos en caso de necesitar un golpe de estado. Necesitamos que encuentre a los oficiales que formen parte de esta operación y... te encargues de ellos. Y si puedes hacer lo mismo con Ovidius, mejor que mejor».\nBodean soltó un largo suspiro. «Eliminar agentes del gobierno que actúan por su cuenta se aleja bastante que lo que buscábamos al fundar la Guardia exterior, pero acabar con la corrupción sí es uno de los objetivos, ¿y qué hay más corrupto que un gobierno en la sombra? No podemos permitir que Deslandra y su grupo se consoliden aquí. Trataré de destinar más recursos de la Guardia a obras de caridad por toda la región... Es lo menos que podemos hacer después del caos que estás a punto de sembrar siguiendo nuestras órdenes».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a25.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E26 - La conspiración de Iudex",
+        "description": "Guardia exterior",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "guardia_exterior",
+        "leafDescription": "Ovidius cae de rodillas, sangrando y herido de muerte. Sin embargo, sonríe, y te habla en tono burlesco.\n«Ya es demasiado tarde... Los muertos se levantarán y, tal vez, si Deslandra me considera digno, yo estaré entre ellos...».\nUna vez dicho esto, se desploma, sin vida. Lo registras y llevas todas las pruebas incriminatorias a Bodean. El guardia rojo te mira, contento y satisfecho. «¡Buen trabajo! Tienes una habilidad para sembrar el caos que, si bien es un poco preocupante, te ha servido para completar el trabajo. Informaremos al Gremio de magos de que había un topo e investigaremos las actividades de Ovidius en Glenumbra. Si todo va bien, su conexión con los Soldados del Vacío nos dará alguna pista sobre los planes de Deslandra por todo el continente».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e26.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A27 - Guerreros Soñadores",
+        "description": "Orden Psijic",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Un bretón psijic llamado Calis te pide ayuda con una misión de investigación. «De seguro has oído hablar del grupo de los Soñadores Supernos, que está atormentando Refugio de la Tormenta. Veneran al príncipe daédrico Vaermina, y creen que la única manera de salvar Tamriel del caos que enfrenta es sumirla en una pesadilla viviente controlada por su señor. Pueden actuar en los sueños, lo que les permite alimentarse de la fuerza vital de aquellos que atrapan en el reino de la inconsciencia. Hemos estado vigilando sus actividades, pero, recientemente, un nuevo miembro ha comenzado a destacar».\nTe entrega un pergamino con el dibujo de un hombre bretón con grandes quemaduras en el rostro.\n«Este hombre se llama Fedryn, pero se hace llamar el Tejesueños. Sabemos de buena tinta que está coordinando a otros miembros de los Soñadores para que trabajen bajo su control en otra secta, una que se llama los Soldados del Vacío».\nEn ese momento, Calis frunce el ceño. «La verdad es que, de ese otro grupo, todavía no sabemos mucho. Nos gustaría que averiguaras que traman. Mira esta lista, contiene los lugares donde Fedryn ha sido visto recientemente. Intenta descubrir qué está buscando... pero ten cuidado. Si te descubre, puede crear una pesadilla en la que atraparte».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a27.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B28 - Guerreros Soñadores",
+        "description": "Orden Psijic",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Tus pesquisas han dado su fruto. Al parecer, los Soldados del Vacío tienen intereses en todo Tamriel, pero en Roca Alta están centrados en nigromancia a gran escala, lo que potencialmente podría permitir a un adepto de la mágia comandar una legión de no muertos. Además, todo parece indicar que a Fedryn se le ha prometido una parte de este ejército como su guardia personal de soldados no muertos, lo cuál considera que le ayudará a defender la voluntad de Vaermina. A pesar de tus muchos descubrimientos, te sientes a punto de rendirte. Los Soñadores Supernos han sido alertados de tus actividades, y pasas las noches o con insomnio o amenzado por pesadillas horribles. Afortunadamente, enfrentar tantas pruebas te ha enseñado mucho sobre cómo los sectarios controlan los sueños. De esa manera, te das cuenta de que la única manera de librarte del tormento de Fedryn es buscarle en su territorio y atacarle, es decir, acabar con él dentro de sus propias pesadillas.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b28.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C29 - Guerreros Soñadores",
+        "description": "Orden Psijic",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "El Tejesueños chilla y se desvanece, pero el sueño no. Te preguntas por qué se torturaría creando un laberinto tan infernal como este. ¿Acaso Vaermina se complace más cuanto peor es la pesadilla? En cualquier caso, debes encontrar la forma de salir de aquí antes de que acabes consumido por las oscuras fantasías del príncipe daédrico.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/c29.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E30 - Guerreros Soñadores",
+        "description": "Orden Psijic",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "orden_psijic",
+        "leafDescription": "Calis te saluda con entusiasmo, felicitándote por el buen servicio hecho a la Orden.\n«¡No solo nos has proporcionado información de gran valor sobre los Soñadores y los Soldados del Vacío, sino que además has mermado notablemente el poder de Fedryn, quizás de manera permanente! Realemente impresionante. Ten por seguro que la Orden te tendrá en cuenta para otros trabajos de alto nivel».\nEn ese momento, hace una pausa, ladeando la cabeza mientras examina tu rostro.\n«Aunque... debo decir que se te ve agotado. ¿Has estado durmiendo lo suficiente?».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e30.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A31 - Agentes del caos",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Razum-dar se reúne contigo en el lugar acordado, una habitación trasera en el sótano del Albergue de Skalar. El líder de los Ojos de la Reina te recibe con una sonrisa. «Qué alegría que hayas encontrado el lugar sin dificultades. Raz tiene un trabajo para ti que requiere delicadeza».\nEl khajiita se sienta en un barril y apoya los pies en una caja. Tras eso, saca unos papeles y continúa hablando.\n«Los Ojos de la Reina son numerosos en Roca Alta... pero están siendo arrancados. Alguien los asesina, los adoctrina o los neutraliza de alguna otra forma. Está afectando a agentes de toda la región; es necesario contraatacar».\nEntonces te entrega los papeles, con datos que empieza a explicar. «Raz y los demás Ojos han podido seguir el rastro hasta un grupo que se hace llamar los Soldados del Vacío. No quieren que su existencia sea revelada públicamente, así que... vas a causar algo de caos en su nombre. Este necesita que orquestes una serie de, se podría decir, “incidentes”, todos relacionados con los Soldados. Con suerte, esto creará problemas internos que permitirán a los Ojos eliminarlos».\nRaz te guiña un ojo. «Y si eso hace posible recuperar algunos agentes en medio de la confusión, aún mejor».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a31.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B32 - Agentes del caos",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Raz se acaricia la barbilla mientras piensa cuál podría ser el siguiente movimiento de los Ojos.\n«Tu trabajo ha sido productivo, pero no de la forma que a este le gustaría. Los Ojos han recibido un chivatazo de que los Soldados del Vacío están trabajando en algún tipo de proyecto en el Risco de la Perdición, esa vieja torre ayleid en Cima Rasgada. Está claro que el rumor viene de dentro de la organización, un intento de atraer a los Ojos a un campo de batalla elegido por los Soldados». Entonces, te mira fijamente a los ojos y se inclina adelante.\n «Por otra parte... los Ojos ya están recuperando fuerzas en la región, y sería posible darte el suficiente apoyo. Con un poco de astucia (lo cuál es evidente que tienes, Raz no te habría reclutado de no ser así) los Ojos y tú deberíais ser capaces de desbaratar cualquier operación que estén tramando allí».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b32.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E33 - Agentes del caos",
+        "description": "Ojos de la Reina",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "ojos_reina",
+        "leafDescription": "Mientras sales cojeando del Risco de la Perdición, ves que el pelaje de Raz sigue erizado, aún sigue en estado de alerta.\n«Nunca esperas que haya un señor daédrico, y, si te lo esperas, sabes que lo mejor es no acercarte».\nSe te queda mirando y en sus ojos puedes ver sincero aprecio.\n«Era una trampa aún mayor de lo que imaginábamos. Raz no cree que los daedra supieran que vendríamos, igual que nosotros no nos imaginábamos que ellos estarían aquí. Los Soldados del Vacío son inteligentes, pero, gracias a ti, los Ojos han recuperado su lugar en Roca Alta. Nos ocuparemos de ellos».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e33.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "A34 - El Campeonato de Roca Alta",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Te encuentras en Quietud, donde hay una gran expectación por el Campeonato de Roca Alta, un torneo de combate organizado por el Círculo de Campeones. Pequeños equipos de luchadores de todo Tamriel han venido a la región para poder participar en este torneo de eliminación directa. Sin embargo, una cuestión de mayor interés surge cuando eres contactado por Eveli Flecha Afilada, una elfa del bosque que te propone apuntarte al Campeonato por un motivo en particular. Os reunís para hablar en una pequeña taberna de la ciudad.\n«Me he encariñado con Roca Alta, así que me interesa hacer el bien en la región siempre que tengo la oportunidad. Tengo un contacto, un guardia rojo que se llama Bodean, que cree que hay algún tipo de organización criminal que intentará infiltrarse en el torneo. Dice que todo es cosa de una antigua conocida, una elfa del bosque». Con una sonrisa, te giña un ojo. «Como yo, pero sin mi gracia y encanto. El asunto es que Bodean no sabe qué busca esta elfa. Tu reputación te precede, está claro que puedes dar un poco de pelea... ¿Qué te parecería formar un equipo para unirte al Campeonato e investigar un poquito? Incluso estoy dispuesta a ayudarte, si te apetece».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/a34.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "B35 - El Campeonato de Roca Alta",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Sales victorioso de la primera ronda. Al mezclarte entre los demás competidores, oyes rumores de que las comidas de algunos luchadores fueron adulteradas la noche anterior a su combate con algún tipo de narcótico. Se cree que el origen de dicho compuesto es un boticario de Timón Despojado, lugar que, gracias a una afortunada coincidencia, es donde te diriges para la siguiente ronda del Campeonato. Tomas nota de que debes hacerle una visita cuando estés en la ciudad.",
+        "audio": {
+          "src": "audios/misiones/roca_alta/b35.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "C36 - El Campeonato de Roca Alta",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "Tras ganar otro combate más, te alegrará saber que tus esfuerzos te han conseguido un puesto en la final, que será celebrada en Quietud. Antes de salir a festejar tu victoria, visitas la botica de Timón Despojado implicada en la manipulación de los combates. Al llegar, descubres que el local ha sido recientemente víctima de un allanamiento brutal. Una vez quitas los escombros de la entrada, ves a un anciano nórdico sangrando, con muchas heridas y a las puertas de la muerte.\n«Yo... ¡los oí!... Quieren el... relicario de Emeric...». Tras esas palabras, el hombre cae inconsciente. Haces llamar a un sanador mientras vas encajando las piezas. A Eveli se le iluminan los ojos.\n«¡Claro, menuda estratagema! El ganador del torneo es invitado al castillo de Quietud, que alberga un buen puñado de artefactos de gran poder. ¿Entonces todo esto no es más que el preludio de un gran robo?».\nEntonces, golpea con un puño la palma de su otra mano. «¡Muy bien, detengamos esto antes de que empiece!».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/c36.mp3",
+          "title": ""
+        }
+      },
+      {
+        "label": "E37 - El Campeonato de Roca Alta",
+        "description": "Círculo de Campeones",
+        "provinciaTag": "roca_alta",
+        "gremioTag": "circulo_campeones",
+        "leafDescription": "El combate ha sido todo un desafío, pero has conseguido imponerte a los demás equipos en el Campeonato del Círculo de Campeones. El público corea tu nombre, pero tú, en lugar de caminar hacia el podio, te diriges hacia algunos de tus oponentes derrotados. Durante el combate, les has visto usar una sospechosa cantidad de magia negra. Sin embargo, cuando te acercas a ellos, ves que te miran con desprecio, murmuran algo ininteligible y desaparecen en un portal sombrío. Está claro que su objetivo iba más allá de simplemente ganar el torneo. Al final del día, Eveli te da las gracias por tu ayuda. «Avisaré al personal del rey de que debe haber alguna reliquia en su poder a la que alguien muy poderoso quiere echar el guante. Mientras tanto, ¡tú puedes drisfrutar de codearte con los peces gordos en el palacio! Te lo has ganado».",
+        "audio": {
+          "src": "audios/misiones/roca_alta/e37.mp3",
+          "title": ""
+        }
       }
     ]
   },

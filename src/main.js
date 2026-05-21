@@ -75,7 +75,10 @@ function saveState() {
       provinciaCollapsed,
       gremioCollapsed,
       narrationsCollapsed,
-      bandaCollapsed
+      bandaCollapsed,
+      stVolume,
+      stCurrentTrack,
+      stCurrentTime: stAudio?.currentTime ?? 0
     })
   );
 }
@@ -115,8 +118,10 @@ const stCachedIds = new Set(JSON.parse(localStorage.getItem("stCachedIds") || "[
 
 /** @type {HTMLAudioElement | null} */
 let stAudio = null;
-let stCurrentTrack = 0;
-let stVolume = 100;   // volumen elegido por el usuario (0-100)
+let stCurrentTrack = (typeof state.stCurrentTrack === "number" && state.stCurrentTrack >= 0 && state.stCurrentTrack < SOUNDTRACK.length) ? state.stCurrentTrack : 0;
+let stVolume = (typeof state.stVolume === "number" && state.stVolume >= 0 && state.stVolume <= 100) ? state.stVolume : 100;
+let stRestoreTime = (typeof state.stCurrentTime === "number" && state.stCurrentTime > 0) ? state.stCurrentTime : 0;
+let stSaveTickCount = 0;
 let stIsDucked = false;
 let stPollId = null;
 let stIsSeeking = false;
@@ -150,8 +155,10 @@ function setupSTPlayer() {
       stAudio.play().catch(() => {});
     });
     updateSTUI();
+    saveState();
     updateSTMediaSession(true);
   });
+  stAudio.addEventListener("pause", saveState);
 }
 
 async function loadSTTrack(index) {
@@ -367,11 +374,13 @@ function startSTPoll() {
   stPollId = setInterval(() => {
     if (!stAudio || stAudio.paused) { stopSTPoll(); return; }
     tickSTProgress();
+    if (++stSaveTickCount >= 20) { stSaveTickCount = 0; saveState(); }
   }, 500);
 }
 
 function stopSTPoll() {
   if (stPollId) { clearInterval(stPollId); stPollId = null; }
+  stSaveTickCount = 0;
 }
 
 function tickSTProgress() {
@@ -474,12 +483,33 @@ render();
 if (stEnabled) {
   setupSTPlayer();
   loadSTTrack(stCurrentTrack).then(() => {
+    if (stRestoreTime > 0) {
+      if (isFinite(stAudio.duration) && stAudio.duration > 0) {
+        stAudio.currentTime = stRestoreTime;
+        stRestoreTime = 0;
+      } else {
+        const seekOnce = () => {
+          stAudio.currentTime = stRestoreTime;
+          stRestoreTime = 0;
+          stAudio.removeEventListener("loadedmetadata", seekOnce);
+        };
+        stAudio.addEventListener("loadedmetadata", seekOnce);
+      }
+    }
     stAudio?.play().catch(() => {});
     updateSTUI();
     updateSTMediaSession(true);
   });
   downloadSTIfNeeded();
 }
+
+window.addEventListener("pagehide", () => {
+  saveState();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) saveState();
+});
 
 window.addEventListener("pagehide", (e) => {
   if (!e.persisted && activePlayer?.playing) pauseActivePlayerInternal();
@@ -772,6 +802,7 @@ function bindConfigEvents() {
       loadSTTrack(stCurrentTrack).then(() => {
         if (wasPlaying) stAudio.play().catch(() => {});
         updateSTUI();
+        saveState();
         if (wasPlaying) updateSTMediaSession(true);
       });
     }
@@ -783,6 +814,7 @@ function bindConfigEvents() {
     loadSTTrack(stCurrentTrack).then(() => {
       if (wasPlaying) stAudio.play().catch(() => {});
       updateSTUI();
+      saveState();
       if (wasPlaying) updateSTMediaSession(true);
     });
   });
@@ -818,6 +850,7 @@ function bindConfigEvents() {
     stVolumeSlider.addEventListener("input", () => {
       stVolume = parseInt(stVolumeSlider.value, 10);
       if (stAudio) stAudio.volume = (stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100;
+      saveState();
     });
   }
 

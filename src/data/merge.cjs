@@ -10,7 +10,12 @@ const D = (file) => path.join(__dirname, file);
 
 const appData = {
   ...require(D("./start.json")),
-  ...require(D("./ciudades.json")),
+  ciudades: {
+    ...require(D("./ciudades/_base.json")),
+    options: [
+      ...require(D("./ciudades/cienaga_negra.json")),
+    ],
+  },
   misiones: {
     ...require(D("./misiones/_base.json")),
     options: [

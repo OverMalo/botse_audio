@@ -1,0 +1,145 @@
+[
+  {
+    "label": "Caravana viajera",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "El clima hostil de Ciénaga Negra y su entorno aún más hostil hacen que sea muy difícil viajar por ella. Mientras descansas tus agotados pies en esta caravana viajera, te planteas si podrías llegar a algún acuerdo para reducir la dificultad de tu travesía.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/caravana_viajera.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Alten Corimont",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Alten Corimont es una ciudad portuaria situada en las vías fluviales interiores de Ciénaga Negra, conocida por su monumento distintivo: un velero varado que desempeña diversas funciones sociales y comerciales para los residentes de la ciudad. Esta ciudad está dirigida por la capitana Ojo Único, una pirata argoniana en busca de su próximo pago.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/alten_corimont_intro.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Aldea de Garganta Brillante",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "La aldea natal de la tribu argoniana de Garganta Brillante, la aldea de Garganta Brillante, es conocida por su talentosa comunidad artística insular. Algunos visitantes también van de excursión al cercano monumento de Xinchei Konu, del que se dice que ejerce control sobre el clima de la región.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/aldea_garganta_brillante.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Aldea de Agua Muerta",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "La Aldea Agua Muerta es el hogar de la tribu argoniana de Agua Muerta, conocida sobre otros argonianos por su aislamiento y militarismo. A pesar de su reputación, los Agua Muerta les darán una cordial, aunque cautelosa, bienvenida a aquellos que traten con respeto su cultura.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/aldea_agua_muerta.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Melena Roja",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Fuerte Melena Roja es un puesto avanzado militar en Ciénaga Negra Occidental que sufre recurrentes asaltos. Está controlado por la legión de la Aleta Negra del Pacto de Corazón de Ébano. Recientemente, ha sobrevivido a un asalto a manos de Mehrunes Dagon, el príncipe daédrico de la destrucción, y los residentes están un poco nerviosos, ¡y con razón!",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/fuerte_melena_roja.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Gideon",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Además de tener una importante localización estratégica para el Pacto de Corazón de Ébano, Gideon también se considera una de las entradas principales al resto de Tamriel. Los peregrinos acuden a esta ciudad para ver su inmaculado templo a Dibella, la diosa de la belleza.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/gideon.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Hissmir",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Aunque ya no es una ciudad funcional de por sí, Hissmir sigue considerándose un importante centro cultural para los argonianos gracias a que conservan una estructura xanmeer intacta. Muchos argonianos viajan a este sitio para participar en un rito religioso llamado las Pruebas de las escamas pulidas.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/hissmir.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Leyawiin",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Aunque está situado en la frontera occidental de Ciénaga Negra, Leyawiin no es parte del Pacto de Corazón de Ébano. En lugar de eso, es gobernada por la nobleza imperial y un consejo independiente, lo que le confiere un famoso carácter aislacionista. Es conocida en todo Tamriel por su Gran Capilla a Zenithar, el dios del trabajo.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/leyawiin.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Lilmoth",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Conocida como «la joya supurante de Lodazal Lóbrego», Lilmoth es una ciudad de oportunidades y peligros, un lugar para hacerse de oro y también para arruinarse por culpa de los criminales que recorren sus calles sin control. Quitando los elementos desagradables, es una bonita ciudad antigua que suele cautivar a sus visitantes. El Anticuario Cyrodílico, una organización que colecciona artefactos argonianos, está intentando fundar un museo aquí.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/lilmoth.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Lodazal Percolante",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Para ser un pequeño pueblo, Lodazal Percolante ha pasado por mucho últimamente. Ha sobrevivido recientemente una influencia corrupta en su árbol hist que puso en peligro a parte de su población argoniana. Lodazal Percolante también ha sido objeto de un ataque de las fuerzas del Dominio de Aldmer, por lo que ahora sus residentes desconfían mucho de los extranjeros.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/lodazal_percolante.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Aldea de Susurra Raíces",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Tras una invasión ayleid hace mucho tiempo, la Aldea de Susurra Raíces quedó abandonada, pero recientemente se ha restablecido. Esta tribu se compone de miembros de otras tribus argonianas, incluyendo los cercanos clanes de Garganta Brillante y Agua Muerta, y los bandos todavía se están adaptando al nuevo status quo.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/aldea_susurra_raices.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Baldío de Piedra",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Aunque otros vean a Baldío de Piedra como un pueblucho fluvial, sus residentes están muy orgullosos de su hogar. Están protegidos por los guerreros legendarios conocidos como los Cuatro Vientos, quienes se han reunido recientemente para luchar contra una nueva amenaza que acecha al pueblo que tanto aman.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/baldio_piedra.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte de la Tormenta",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "leafDescription": "Fuerte de la Tormenta, una de las ciudades más grandes de Ciénaga Negra, es conocida por su combinación única de arquitectura de los elfos oscuros y los argonianos, y por estar gobernada por tres vicecanónigos del Pacto de Corazón de Ébano. Los grandes y elaborados salones gremiales de la ciudad atraen a muchos luchadores, magos y artesanos emprendedores.",
+    "audio": {
+      "src": "audios/ciudades/cienaga_negra/fuerte_tormenta.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  }
+]

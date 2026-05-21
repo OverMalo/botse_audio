@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Soñando pesadillas despierto - Día 1",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "gremioTag": "all",
+    "leafDescription": "Has buscado con esmero pistas sobre los supuestos «Soldados del Vacío» y su tráfico de artefactos sobrenaturales al amparo de la agitación en Roca Alta durante todo el día. Cuando te duermes, eres acosado por unos sectarios en túnicas grises y, al despertar, te encuentras en la entrada del Risco de la Perdición, las ruinas malditas de los ayleid donde parece haberse concentrado gran parte de la actividad de la secta. Con cautela, entras y compruebas que tus pesquisas han dado resultados. Al instante, fijas la mirada en Deslandra, la elfa del bosque que, por lo que has averiguado, lidera a los Soldados del Vacío. A su lado, ves a otra persona. Su rostro está cubierto por la sombra que proyecta su capucha, pero su túnica sí es identificable: pertenece a la secta de los Soñadores Supernos, adoradores de los daedra. Entonces, mira en tu dirección, te ve y desaparece al instante, dejándote anonadado. Deslandra, por su parte, te mira calmada, pero amenazante.\n«Tú... ya no te entrometerás más».",
+    "audio": {
+      "src": "audios/misiones/roca_alta/sf01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Soñando pesadillas despierto - Día 2",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "gremioTag": "all",
+    "leafDescription": "Estás cansado y confundido. Nada de lo ocurrido en el Risco de la Perdición ha tenido ningún sentido; los enemigos desaparecen y aparecen ante tus ojos. Nada funciona como debería pero, de alguna forma, has llegado hasta Deslandra y le asestas un golpe mortífero. Entonces, te despiertas, con varias astillas en la cara por haber dormido durante horas sobre una mesa de madera en una taberna a las afueras de Salto de la Daga. Ni Risco de la Perdición, ni Deslandra. Solo la tensión de un mal sueño, sin duda provocado en ti por los Soñadores Supernos que has visto en él. El combate tal vez haya sido un sueño, pero el plan de Deslandra es más que una pesadilla. Te devanas los sesos y examinas las pistas, sabiendo que el tiempo corre en tu contra. Todo apunta a que Deslandra pretende convocar un ejército de no muertos para cumplir sus objetivos, pero ¿dónde podría adquirir rápidamente tantos cuerpos? Si bien es cierto que el Risco de la Perdición guarda muchos secretos, una legión de cadáveres no es probable. Haciendo un repaso mental, recuerdas haber oído sobre la Batalla de los Páramos de Glenumbra, uno de los conflictos más sangrientos de la historia tamriélica. Se dice que en dichos páramos es tan fácil encontrar un cadáver como encontrar un arbusto. Si Deslandra tiene la capacidad para crear un ejército así, este campo de batalla es el lugar idóneo para hacerlo. A juzgar por la distracción que te han tendido los Soñadores, debes darte prisa para intervenir antes de que el tiempo se agote, aunque la verdad es que esta última noche no has descansado nada bien...",
+    "audio": {
+      "src": "audios/misiones/roca_alta/sf02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Soñando pesadillas despierto - Día 3",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "gremioTag": "all",
+    "leafDescription": "Sin aliento, llegas a los Páramos de Glenumbra, temiendo llegar demasiado tarde. Como habías predicho, Deslandra está allí, inmersa en rituales nigrománticos. Multitud de cuerpos emergen como si fueran algún tipo de flor espeluznante. Le gritas, pidiendo que se replantee esta locura, a lo que reacciona girándose hacia ti con un brillo en los ojos que parece de otro mundo.\n«Créeme, no deseo molestar a estas almas más que tú, pero el bien mayor a veces requiere la participación de aquellos que no están dispuestos. Necesito protección y refuerzos para lograr la separación de Tamriel y los reinos de Aetherius, y mis Soldados del Vacío no son suficientes. Estos valientes guerreros caídos sí lo serán. No te preocupes, cuando la magia sea desterrada de este mundo, nadie podrá perturbar su descanso nunca más».\nLa miras fijamente, desafiante, a lo que ella suspira. «Está bien, tienes dos opciones: o confías en mi palabra, o tendrás que unirte a ellos». Entonces, los cuerpos empiezan a tambalearse hacia ti.",
+    "audio": {
+      "src": "audios/misiones/roca_alta/sf03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Soñando pesadillas despierto - Epílogo",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "gremioTag": "all",
+    "leafDescription": "Los muertos han sido puestos de nuevo a descansar, junto con muchos que estaban entre los vivos no hace mucho. Lo primero que piensas es en pedir ayuda a la Guardia del León para enterrar los cuerpos exhumados que cubren el campo de batalla. Es un trabajo sucio, pero te consuela haber evitado que estos honorables muertos fueran usados para otro conflicto más. Se merecen más paz de la que Deslandra les hubiera dado.",
+    "audio": {
+      "src": "audios/misiones/roca_alta/sf_epilogo.mp3",
+      "title": ""
+    }
+  }
+]

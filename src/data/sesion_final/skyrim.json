@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Magia de sangre - Día 1",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "gremioTag": "all",
+    "leafDescription": "Skyrim es una tierra plagada de conflictos, pero, últimamente, hay tantos apuntando a Límite Sombrío que no puede ser una coincidencia. Los ataques de los vampiros y los falmer, la magia cuencana y el contrabando bajo la superficie... Todo está conectado con los asedios de las ciudades de Skyrim, y has descubierto que dichos asaltos se originan en el gigantesco castillo subterráneo conocido como el Bastión de Páramo Gris. Según tus investigaciones, todo apunta a que la elfa del bosque llamada Deslandra está detrás de los ataques, pero su motivación es desconocida. Para descubrir sus planes, tendrás que encontrar la verdadera base de operaciones dentro del Bastión. El complejo es famoso por su inmenso tamaño y su intrincada red de pasadizos secretos y habitaciones escondidas. Juzgando por los movimiento de los guardias vampiro, parecen estar apostados controlando una entrada secreta. Tal vez hay un interruptor escondido...",
+    "audio": {
+      "src": "audios/misiones/skyrim/sf01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Magia de sangre - Día 2",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "gremioTag": "all",
+    "leafDescription": "Tuviste que acabar con algunos vampiros para hacerlo, pero has encontrado la habitación secreta y lo que sospechas que es la entrada a lo que sea que Deslandra esté escondiendo. Al investigar su contenido, te das cuenta de que la habitación es un laboratorio improvisado. En una esquina, ves una mesa con una solución de aspecto fangoso burbujeando tras un grueso cristal. A juzgar por varios restos quemados que hay cerca, parece que esa sustancia es algún tipo de ácido muy potente, probablemente usado más adelante en alguna trampa. En otra esquina, ves otro líquido, mucho más fino y de color rojo. Junto a él ves trozos de distintas plantas de Skyrim, sangre seca y lo que sospechas que es una semilla de Espina Sangrienta. Das un salto al percatarte del plan de Deslandra: pretende combinar las anomalías naturales que se encuentran por todo Skyrim en una única sustancia estable. Puesto que hay varios tubos de ensayo llenos con el suero en la habitación, parece que ya está listo para ser administrado a las distintas criaturas que viven aquí. Oyes golpes en la puerta por la que entraste, que dejaste sellada. No puedes quedarte mucho más, pero dedicar un poco de tiempo a sabotear las investigaciones podría ser útil.",
+    "audio": {
+      "src": "audios/misiones/skyrim/sf02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Magia de sangre - Día 3",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "gremioTag": "all",
+    "leafDescription": "Te lanzas al pasadizo oscuro mientras la puerta a tus espaldas cruje y se rompe. Hueles el hedor del ácido en el aire, lo que deja claro que este pasadizo tiene trampas para ahuyentar visitantes indeseados. Aunque no puedes verla aún, puedes oír la voz de Deslandra de manera entrecortada a través de los interminables pasillos, entremezclada con balbuceos y gritos de quién sabe qué.\n«Incubada por la Espina Sangrienta, la solución... el vampirismo es un fenómeno natural... elimina los efectos secundarios... nos permite pastorear Tamriel... después de librarnos de Aetherius y Oblivion...».\nSolo puedes entender trozos del discurso, pero captas la idea. Deslandra pretende realizar un experimento científico muy arriesgado que, si sale bien, podría volverla prácticamente imparable si sus planes no son frustrados aquí y ahora.",
+    "audio": {
+      "src": "audios/misiones/skyrim/sf03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Magia de sangre - Epílogo",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "gremioTag": "all",
+    "leafDescription": "Una vez terminado el trabajo, huyes apresuradamente del Bastión de Páramo Gris. Solo te detienes para prender fuego a todos los restos: plantas Espina Sangrienta, viales de sangre y cadáveres de vampiros. El chupasangre que quiera mudarse a este lugar va a tener que arreglar todo este estropicio. De vuelta a la seguridad de la superficie, reflexionas en la lógica del plan de Deslandra. Fiel a su declarado odio a la magia, trató de obtener habilidades sobrenaturales a través de la ciencia. ¿Es la aflicción del vampirismo realmente mejor comprendida desde un punto de vista médico? ¿Seguirían existiendo vampiros en un mundo separado de la magia? La verdad es que no puedes evitar sentir algo de curiosidad, pero, en última instancia, te alegras de no averiguarlo nunca.",
+    "audio": {
+      "src": "audios/misiones/skyrim/sf_epilogo.mp3",
+      "title": ""
+    }
+  }
+]

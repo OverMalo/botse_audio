@@ -1,0 +1,12 @@
+{
+  "ambientConfig": {
+    "general": "audios/ambient/general.mp3",
+    "provincias": {
+      "cienaga_negra": "",
+      "skyrim": "",
+      "roca_alta": "",
+      "morrowind": "",
+      "cyrodiil": ""
+    }
+  }
+}

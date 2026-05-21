@@ -1,0 +1,47 @@
+[
+  {
+    "label": "El terror mecánico - Día 1",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "gremioTag": "all",
+    "leafDescription": "A medida que descubres más y más acerca de las extrañas excavaciones que están ocurriendo por todo Morrowind y su conexión con tu misión anterior, ves que todo te lleva una y otra vez a las ruinas de Nchuleftingth. La fábrica dwemeri de lava de su interior puede ser utilizada para crear grandes y complejas piezas de maquinaria, lo cual parece estar relacionado con los planos que has encontrado y que supuestamente pertenecen a la elfa del bosque Deslandra. Mientras te preparas para el arduo viaje a las profundidades de las ruinas, no puedes parar de pensar en todo lo que podrías encontrarte allí. El tiempo apremia, pero una buena preparación puede salvarte la vida en un lugar como este.",
+    "audio": {
+      "src": "audios/misiones/morrowind/sf01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "El terror mecánico - Día 2",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "gremioTag": "all",
+    "leafDescription": "Tras recorrer los túneles de los enanos en las entrañas de Morrowind por lo que parecen horas, pensando ya que debes haberte perdido, llegas a una gran caverna. Ves a Deslandra cerca del centro de la estancia, trasteando con algo que no puedes identificar de inmediato. Algo bastante grande. Prestas atención a las palabras que dirige a sus acólitos, que se hallan agrupados delante de ella.\n«Pronto, mis Soldados del Vacío, el esfuerzo que hemos dedicado a este artefacto dwemeri dará su fruto. Vuestro empeño y dedicación en recolectar las piezas y trabajarlas han convertido este antiguo centurión en una creación formidable. ¡Por tanto, en vuestro honor, pasará a llamarse el Centurión del Vacío! En cuanto esté completamente operativo, nadie podrá evitar que purguemos la magia de Nirn. ¡Podremos asaltar las puertas de Oblivion y cerrarlas nosotros mismos!».\nLa multitud ruge. Sospechas que las promesas de Deslandra pueden ser exageradas, pero eso no cambia que alguien tiene que encargarse de ese centurión antes de que haga un daño irreversible a todo Tamriel.",
+    "audio": {
+      "src": "audios/misiones/morrowind/sf02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "El terror mecánico - Día 3",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "gremioTag": "all",
+    "leafDescription": "Has derrotado a Deslandra y reducido el Centurión del Vacío a chatarra, pero no hay tiempo para celebraciones. Los últimos estertores y movimientos del autómata han sacudido los cimientos de las ruinas. A juzgar por las rocas que caen y los pilaren que se desploman, Nchuleftingth está a punto de venirse abajo. Deslandra aún tiene adeptos fuera y sabes que alguien debe informar a las autoridades de sus planes; ¡esa información no puede morir contigo! Y, bueno, aunque pudiera, tienes aún mucho por lo que vivir. Tienes que salir de estos túneles, cuanto antes. Sin embargo, sientes la mirada de más enemigos a tus espaldas. Aún quedan aliados de la elfa del bosque en el interior de las ruinas.",
+    "audio": {
+      "src": "audios/misiones/morrowind/sf03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "El terror mecánico - Epílogo",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "gremioTag": "all",
+    "leafDescription": "Sales de las profundidades, parpadeando, de vuelta a la nublada luz del día de Páramo de Vvarden. Deslandra, su construcción y la mayoría de su ejército yacen bajo tierra. Tiemblas al pensar en que podrías haber acabado igual. Te diriges a la Ciudad de Vivec para informar a los Ordenantes sobre los restantes de la secta de Deslandra mientras piensas en lo irónico del destino de la elfa del bosque. En algunos cientos de años, esta arqueóloga aficionada podría aparecer en el lugar de una excavación.",
+    "audio": {
+      "src": "audios/misiones/morrowind/sf_epilogo.mp3",
+      "title": ""
+    }
+  }
+  
+]

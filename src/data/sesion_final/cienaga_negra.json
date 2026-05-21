@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Muerto de raíz - Día 1",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "gremioTag": "all",
+    "leafDescription": "Investigar los extraños experimentos que se están realizando con la flora y la fauna local te ha llevado a una arboleda situada cerca del corazón de Ciénaga Negra. Conforme te acercas, notas que el paisaje empeora. Aunque a menudo peligrosas, la flora y la fauna de la provincia siempre te han parecido robustas, coloridas y llamativas... Aquí, todo se ve distinto, más oscuro, más... corrompido. Oyes lo que parece el sonido de una batalla, por lo que corres para ver quién ha podido llegar antes que tú. Te sorprende ver a Bodean, uno de los líderes de la Guardia exterior, que te pide ayuda en su lucha contra algunas temibles criaturas. Durante el combate, ves cómo intenta apartar la maleza y las piedras que cubren un sospechoso hueco en la base del tronco de un enorme árbol. Te prometes que, si sobrevives, le preguntarás cómo es que ambos habéis acabado llegando al mismo lugar.",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/sf01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Muerto de raíz - Día 2",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "gremioTag": "all",
+    "leafDescription": "Os apresuráis a entrar en la recién descubierta caverna, en la que de inmediato quedáis envueltos en oscuridad. Por suerte o por desgracia, la entrada se derrumba detrás de vosotros, por lo que Bodean enciende una antorcha para iluminar los alrededores. Bodean empieza a explicarte cosas sobre la situación actual mientras la luz de la antorcha te permite ver en detalle las cicatrices de su rostro.\n«Muchos de los árboles más místicos de Ciénaga Negra tienen sus raíces convergiendo en este área. Hay mucho que no sabemos sobre la conexión entre estas raíces y las fuerzas de otros planos, pero una exmiembra de la Guardia exterior, Deslandra, planea corromperlas con la intención de debilitar la conexión entre Nirn y los reinos mágicos. ¡Ayúdame a encontrarla y a librar estas tierras de esta peligrosa lacra!».\nAl mirar a tu alrededor, te das cuenta de que las lianas y enredaderas que has ido cortando palpitan con una extraña energía mágica. Si almacenas unas cuantas, podrías ayudar a los sanadores de la provincia a contrarrestar lo que sea que Deslandra planea, pero quizás también podrías usarlas para conseguir cierta ventaja en la confrontación final. Te giras y miras a Bodean, que respira con dificultad. Es difícil ver en la oscuridad la gravedad de sus heridas del combate anterior, pero tal vez no pueda continuar.",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/sf02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Muerto de raíz - Día 3",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "gremioTag": "all",
+    "leafDescription": "Conforme avanzas por el barro y la oscuridad, oyes una voz al final del túnel en el que estás. Cuando giras en la última curva, ves a una elfa del bosque, Deslandra, en un gran claro subterráneo.\n«¡Encontrad las raíces más grandes para que pueda echarles mi solución! Si de verdad queremos librar a Tamriel de la magia, debemos cortar todos los lazos que existan. ¡Si corrompemos estas raíces, lo demás caerá por su propio peso!».\nDas un paso y resbalas en un charco. Deslandra se gira hacia ti con una extraña energía de color ámbar en su rostro. Entonces te das cuenta de que ha probado su sustancia sobre sí misma. ¡Y es ella misma la que corremperá las raíces!\n«Llegas tarde, aventurero iluso. Una vez que la magia de Ciénaga Negra caiga, el vínculo entre planos se debilitará y Nirn será libre de las cadenas de la magia. Puedes acabar conmigo, pero mis soldados ya están en sus puestos».\nHabla confiada, pero has oído sus órdenes: las raíces aún no han sido localizadas.",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/sf03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "Muerto de raíz - Epílogo",
+    "description": "",
+    "provinciaTag": "cienaga_negra",
+    "gremioTag": "all",
+    "leafDescription": "Has impedido que la corrupción se extienda por las raíces de los grandes árboles y has extinguido para siempre la espeluznante luz de los ojos de Deslandra. Buscas en sus bolsillos y encuentras un vial intacto de su solución. Lo levantas ante la luz de la antorcha y te quedas observando su enfermiza luz de color ámbar. ¿Qué habría ocurrido si se le hubiera permitido a la elfa continuar con su plan? Los árboles de Ciénaga Negra se cuentan entre los seres vivos más antiguos de Nirn. Es probable que sobrevivan mucho más que los hombres y los mer. Incluso si el plan de Deslandra no hubiera funcionado como ella esperaba, el ecosistema de la provincia habría sufrido un daño enorme. Viertes el contenido del vial y te lo guardas. Será mejor que nadie tenga una muestra que estudiar.",
+    "audio": {
+      "src": "audios/misiones/cienaga_negra/sf_epilogo.mp3",
+      "title": ""
+    }
+  }
+]

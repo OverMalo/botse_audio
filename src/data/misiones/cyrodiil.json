@@ -1,0 +1,398 @@
+[
+  {
+    "label": "A01 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "Yudex Ovidius, una eminencia en el sistema disciplinario interno del gremio, demuestra cierto interés en ti. Recibes una carta suya pidiéndote que te reúnas con él en las ruinas ayleid de Sedor. Dice tener una pista acerca de algunos documentos importantes que se quedaron en Ciudad Imperial cuando el Gremio de magos se vio obligado a dejar atrás su antigua sede. Parece que le vendría bien algo de apoyo al tratar con un sectario al que ha estado siguiendo y que, supuestamente, sabe algo sobre los documentos.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B02 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "Ovidius te da las gracias por tu ayuda y te explica la situación en mayor profundidad. Mientras, el miembro cautivo del Gusano Negro se agita y retuerce, con la boca tapada, los brazos atados y los ojos llenos de ira.\n«Lo necesitaba no solo por la información en su mente, sino también por la oscuridad en su corazón, que es clave para abrir algunos de los mecanismos que existen en las alcantarillas. Cuando el Gremio de magos se vio forzado a dejar la Universidad Arcana de Ciudad Imperial, tuvimos que hacerlo a toda prisa. Cogimos lo que pudimos, pero muchos objetos de valor se quedaron atrás. Afortunadamente, parte de lo que se perdió quedó escondido o simplemente extraviado en el caos, por lo que el gremio ha estado financiando expediciones para recuperar algunos objetos. Estos documentos que buscamos listan a miembros del gremio asociados a la Orden del Gusano Negro, por lo que sería un gran peligro para ellos que las pruebas de su asociación cayera en las manos equivocadas. Gracias por cumplir con tu deber».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C03 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "Tu guía involuntario te ha sido de gran ayuda para orientarte en este traicionero lugar, pero eso no ha evitado que te sientas acosado, tanto por los enemigos que has visto como por los que aún no. Al doblar una esquina, te encuentras con unas figuras enmascaradas. Su líder es una figura imponente cuyos rasgos quedan ocultos por la penumbra, al igual que su constitución y el número de sus acompañantes. Os miran y uno de ellos, no sabes cuál, empieza a hablar.\n«Admiro tu tenacidad, pero me han contratado para recuperar estos documentos y me atrevería a decir que te han engañado acerca de su contenido. Es más, tengo razones para creer que Ovidius es el topo, y que a quien ha estado espiando es al Gremio de magos. ¿Podría esa información ser del suficiente valor para tus superiores y, por tanto, que dejaras que nos llevemos esos documentos por las buenas?».\nOvidius resopla, indignado. «¡Ja! Está claro que este farsante nos está vendiendo humo. No hay quien se crea esa historia, sus vanas palabras no lograrán engañarnos». Entonces, se gira hacia ti, apuntándote con su bastón.\n«No te vayas a atrever a traicionar al gremio. Estos documentos son importantísimos y pasaré por encima de ti si es necesario».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "D04 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "No te gusta ni un pelo el tono de Ovidius, pero es cierto que esa actitud no es suficiente fundamento como para creer las palabras de un desconocido que has encontrado en las alcantarillas. Sin embargo, en el momento en el que dudas y Ovidius se enfurece, el sectario logra liberarse del hechizo y lanza algunos conjuros en vuestra dirección. La figura enmascarada se queja y se interna en las sombras, aunque estás seguro de que aún acecha por los alrededores, lista para robarte lo que buscas recuperar. A la vez que combates en las alcantarillas, estás pendiente del mago que te ha traído hasta aquí, preocupado de que tal vez no se preste muy dispuesto a ayudarte cuando haya que salir.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/d04.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E05 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "Tal vez te precipitaste al confiar en un ladrón, pero resultó ser la decisión correcta. A Ovidius no le sentó nada bien tu traición improvisada pero, tras plantarle cara, lo dejaste derribado en las alcantarillas, sangrando. Los ladrones te conducen al escondite de los documentos y te dejan echar un vistazo antes de marcharse con su botín «legítimamente robado». Tal y como dijeron, los documentos prueban que Ovidius no es un miembro leal del gremio, sino que se comunicaba regularmente con una tal Deslandra para contarle sobre secretos internos del gremio. Decides llevar esta información a los líderes del gremio para ver si pueden esclarecer la identidad de esta misteriosa persona.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e05.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E06 - Entrada a las alcantarillas",
+    "description": "Gremio de magos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "magos",
+    "leafDescription": "Ovidius y tú cogéis los documentos y salís de las alcantarillas, pero el mago solo te deja ver alguno de los documentos, aquellos relacionados con una secta, la Orden de la Llama Vigilante, que parece haberse infiltrado en las tres alianzas. Cuando le preguntas sobre los supuestos agentes de la Orden del Gusano Negro, alega que es información confidencial y, con una rápida y barata excusa, se despide y se va. Cuando llegas al salón del gremio más cercano, informas a tus supervisores sobre la misión, que te dicen que no les consta que Ovidius hubiera emprendido tal misión. Preocupado, les cuentas todo lo que has visto y piensas cómo podrías encontrar a la figura enmascarada con la que hablaste o, en su defecto, a quien lo contratase.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e06.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A07 - Los documentos cyrodílicos",
+    "description": "Gremio de ladrones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ladrones",
+    "leafDescription": "Te llega un trabajo urgente y arriesgado cuyo pago te han asegurado estará a la altura. Un anónimo y taciturno guardia rojo ha recurrido al Gremio de ladrones para recuperar cierta documentación importante que se encuentra en las profundidades de las alcantarillas bajo Ciudad Imperial. No le importan los métodos que se usen, lo que seguramente sea lo mejor, ya que tu contacto del gremio te ha referido a un exadepto del Gusano Negro que, según dice, conoce bien los oscuros pasadizos bajo la ciudad. Por desgracia, dicho sectario ha sido capturado por unos mercenarios cerca de una granja abandonada conocida como Vigía de Harlun. Liberar a un maníaco adorador de la muerte no es algo que atraiga mucho, pero lo mismo puedes hacerlo, sonsacarle lo que necesitas y dejarlo atado para que venga quien quiera a por él.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a07.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B08 - Los documentos cyrodílicos",
+    "description": "Gremio de ladrones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ladrones",
+    "leafDescription": "Una vez puesto a salvo, tu nuevo compañero suspira, aliviado, y estira sus tensos músculos.\n«¡Bendito seas, amable forastero!», te dice, mientras sigue mirando hacia atrás. Cuando se gira para darte las gracias en condiciones, ve que has sacado de tu mochila una venda para los ojos, cuerdas y demás instrumentos poco tranquilizadores. Antes de que entienda lo que pasa, ya lo tienes maniatado y con los ojos vendados. Tras una pequeña dosis de coacción, el sectario revela la localización de la cámara en la que, en las profundidades de las alcantarillas, se guardan varios documentos mágicos. También te dice el método para abrir la cámara: una gema de alma negra inestable. A diferencia de las gemas de alma normales, estas requieren almas de criaturas inteligentes, como la de un hombre, un mer o un hombre bestia. Como no quieres ensuciarte las manos, le preguntas dónde podrías hacerte con una. A regañadientes, te menciona tres cargamentos distintos introducidos como contrabando a través de envíos de las tres alianzas. Lo atas al árbol más cercano y sigues tu camino mientras sus insultos se oyen cada vez menos.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b08.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C09 - Los documentos cyrodílicos",
+    "description": "Gremio de ladrones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ladrones",
+    "leafDescription": "La gema de alma brilla con un mórbido color negro azulado. Como quedó demostrado en tu reciente escaramuza, su apetito por más almas es insaciable. El Gremio de ladrones siempre ha preferido trabajos sin derramamiento de sangre, pero eres consciente de que, en este caso en particular, tendrás que tener aún más cuidado debido al artefacto que portas. Tras informar al gremio de tus progresos, recibes más información acerca de los documentos que debes recuperar. Al parecer, contienen pruebas de que un destacado miembro del Gremio de magos llamado Iudex Ovidius está aliado con una poderosa maga llamada Deslandra, que ha estado usándolo como topo para manipular al Gremio de magos según sus propios intereses. Te pones en marcha hacia Ciudad Imperial, sabiendo que, si la información es correcta, es poco probable que Iudex Ovidius se quede de brazos cruzados mientras tú te abres camino hacia la cámara.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c09.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "D10 - Los documentos cyrodílicos",
+    "description": "Gremio de ladrones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ladrones",
+    "leafDescription": "El antiguo mecanismo de la cámara tiembla y rechina mientras la energía de la gema de alma es drenada por completo. Sin embargo, oyes algunas voces más adelante. ¡Alguien ha llegado antes que tú! En ese momento, ocurren dos cosas a la vez. Por un lado, encuentras el cuerpo del sectario que liberaste, arrugado y demacrado. Alguien entendido en la magia de almas ha utilizado a este sectario para abrir directamente la cámara. También oyes una voz dirigirse al que parece ser el líder del grupo por el nombre «Ovidius». Sopesas tus opciones, sabiendo que, probablemente, son la desesperación y la rabia lo que impulsa a este hombre a intentar ocultar su traición a uno de los gremios más poderosos de todo Tamriel. Aún en las sombras, gritas a los aliados del mago que se marchen, explicándoles la clase de hombre que es Ovidius. Un haz de fuego surge del bastón del mago. Es evidente que no bastarán las palabras para zanjar este asunto.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/d10.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E11 - Los documentos cyrodílicos",
+    "description": "Gremio de ladrones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ladrones",
+    "leafDescription": "Ovidius no se anda con chiquitas, pero consigues apoderarte de los documentos y escapar de sus garras. Cuando te presentas en el lugar de encuentro para entregarlos, te sorprende no ver a un intermediario, sino al comprador en persona. El guardia rojo se identifica como Bodean.\n«Has visto el poder de Ovidius, así que puedes imaginarte el peligro que los que tengan un poder similar y piensen como él podrían representar para todo Tamriel. Te traigo tu recompensa, pero también una propuesta. He observado tus proezas desde la distancia y tengo que decir que necesitamos gente como tú. Únete a mi grupo y lucha con nosotros contra Deslandra. ¡Pon tus habilidades al servicio de la justicia!».\nTe muestras dubitativo y Bodean se encoge de hombros. «He dicho lo que tenía que decir. Puede que la idea de unirte a unos justicieros no te atraiga. Si ese es el caso, te deseo lo mejor. Y, si me permites el atrevimiento, te sugiero que investigues a Deslandra por tu cuenta, usando tus... métodos propios. Puede que mis socios y yo podamos ayudarte».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e11.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A12 - Sofocando las llamas",
+    "description": "Gremio de luchadores",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "luchadores",
+    "leafDescription": "Se te acerca un argoniano que responde al nombre de Muchas Peleas. Es un miembro del Gremio de luchadores que se ha labrado una buena reputación en la región y dice tener un trabajo para ti.\n«Un cliente ha contratado al gremio para acabar con la influencia de unos sectarios, la Orden de la Llama Vigilante. Están dedicados a Mehrunes Dagon, el príncipe daédrico de la destrucción. Las tres alianzas suelen ser bastante territoriales cuando un gremio quiere actuar en alguno de los frentes de batalla, pero, en este caso, todos los involucrados están de acuerdo en que deshacerse de los sectarios sería beneficioso. El Pacto nos ha dado permiso para entrar en el Bastión de Insignia del Rey».\nMuchas Peleas te entrega un mapa marcado con los lugares en los que los sectarios han sido vistos.\n«Cyrodiil es el centro de la actividad de la Llama Vigilante, ya que les proporciona un suministro constante de cuerpos que sacia el apetito de destrucción de Dagon. Los únicos a los que parece que no les interesa que la secta desaparezca es a los que apoyan al Imperio. Tal vez se estén beneficiando del caos que causan o puede que tengan algún acuerdo en las sombras. No sería de extrañar, todos sabemos que hay alguna relación entre los líderes de los Remanentes y la Orden del Gusano Negro. ¿Estarán los daedra trabajando en equipo por primera vez?».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a12.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B13 - Sofocando las llamas",
+    "description": "Gremio de luchadores",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "luchadores",
+    "leafDescription": "Has hecho un magnífico trabajo siguiendo el rastro de la secta, pero, conforme has ido acabando con ellos, las pistas sobre las ubicaciones restantes han ido escaseando cada vez más. Como dijo Muchas Peleas, has encontrado correspondencia entre miembros de la Orden de la Llama Vigilante y un miembro no identificado de la Orden del Gusano Negro. Sin embargo, a juzgar por el secretismo de las cartas, el miembro de la Orden del Gusano Negro parece tener una esfera de influencia independiente dentro de la organización. Varias de las cartas tienen un tono airado, parece que los de la Llama Vigilante son algo escépticos ante la ayuda de la Orden del Gusano Negro. Por lo visto, sus actividades, que incluyen investigar cosas que no terminas de entender, como «nímica inversa» o «las Cuatro Ambiciones», no han dado mucho fruto, y la ayuda externa ha aportado bien poco. Cuando piensas que tal vez es el momento de dejar de cazar a los de la Llama Vigilante, encuentras una nota anónima en tu campamento. La nota dice: «Tu trabajo en Cyrodiil no pasa desapercibido y es muy valorado. En el mapa que encontrarás con la nota aparece el principal lugar de reunión de los miembros restantes de la Llama Vigilante en la provincia. Se han congregado ahí pensando que estarán a salvo de tu campaña contra ellos».\nMiras el mapa adjunto con desconfianza... pero crees que por lo menos merece la pena acercarse y comprobar su veracidad.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b13.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E14 - Sofocando las llamas",
+    "description": "Gremio de luchadores",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "luchadores",
+    "leafDescription": "En efecto, el mapa que acompañaba la carta anónima da en el clavo y consigues acabar o dispersar a la mayoría de los sectarios de la Llama Vigilante que quedaban en la región. La identidad de tu informante sigue siendo un misterio, pero llevas toda la información (y la correspondencia que has podido conseguir de la Orden) a Muchas Peleas.\n«Interesante... No puedo revelar la identidad del grupo que nos contrató para eliminar la secta, son muy reservados, y tienen ojos en todas partes, ¿sabes? Pero pienso que nos hubieran dado esa información desde el principio si la hubieran tenido. No, aquí hay claramente alguien más implicado, interesado en acabar con la Llama Vigilante. ¿Tal vez sea aquel sectario del Gusano Negro con el que se estaban comunicando los de la Llama Vigilante? Dado lo infructuoso que fue su trabajo conjunto, puede que esto haya sido una especie de sabotaje en venganza».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e14.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A15 - Extinguir la llama",
+    "description": "Hermandad Oscura",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "hermandad_oscura",
+    "leafDescription": "La Matriarca de la Hermandad Oscura, Astara Caerellius, te convoca para informarte de que el Sacramento Negro ha sido iniciado. La Hermandad tiene un nuevo contrato, nada menos que con el Gremio de magos.\n«No quieren ensuciarse las manos, ni que se sepa que nos las ensuciamos por ellos, así que debe ser un trabajo extremadamente discreto». La imperial frunce el ceño mientras te habla, está claro que es un asunto muy serio.\n«Al parecer, saben de buena tinta que hay miembros de la llamada Orden de la Llama Vigilante infiltrados en posiciones de mucha autoridad en los ejércitos de las tres alianzas. Tu trabajo es eliminarlos con, y en esto el gremio ha hecho especial hincapié, el menor daño colateral posible. Sé rápido, cada vez que elimines a uno de los objetivos probablemente llames la atención de su organización, que incrementará sus esfuerzos en acabar contigo».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a15.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B16 - Extinguir la llama",
+    "description": "Hermandad Oscura",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "hermandad_oscura",
+    "leafDescription": "Tus esfuerzos asesinos en el territorio del Dominio de Aldmer te convierte en el enemigo público número uno de la zona y, aunque tal vez eso era de esperar, lo que sí que te sorprende es lo rápido que se ha extendido la versión de que el asesinato fue obra de los espías de la Alianza de Salto de la Daga, el Círculo de las Dagas, y no de la Hermandad algún otro grupo. No recuerdas haber dejado ningún indicio que apunte hacia la Alianza, pero aún te quedan dos víctimas de acuerdo con el Sacramento Negro, y has decidido que el siguiente sea el que ostenta un puesto en la burocracia de la Alianza. Si todo va bien, eso acallará los rumores sobre su implicación.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b16.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C17 - Extinguir la llama",
+    "description": "Hermandad Oscura",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "hermandad_oscura",
+    "leafDescription": "Dos tercios de Cyrodiil buscan verte muerto, pero eso significa que estás cumpliendo con tu trabajo. Tu último asesinato ha acabado con la especulación de que el asesinato en el territorio del Dominio era obra de los espías de la Alianza, pero ahora todas las miradas se dirigen a los Armígeros Ocultos del Pacto de Corazón de Ébano. Teniendo en cuenta que solo te queda un objetivo y que este está oculto en el territorio del Pacto, lo mejor será que lo despaches rápido y, por qué no, tal vez dejar luego Cyrodiil y disfrutar de unas largas vacaciones.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c17.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "D18 - Extinguir la llama",
+    "description": "Hermandad Oscura",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "hermandad_oscura",
+    "leafDescription": "¡Misión cumplida! Sin embargo, las tres alianzas están sumidas en el caos, recriminándose unas a otras y atacándose con temeridad. No tienes ni idea de cuál es el origen de esos rumores sobre que los asesinatos eran operaciones militares de alguna de las alianzas, pero han sido tan persistentes que todo te lleva a pensar que alguien los ha fabricado a propósito para sembrar el caos. Sabes que tu matrona no querrá que regreses sin el cuadro completo de la situación, así que te esmeras en investigar la fuente de los rumores y te das cuenta de que las escaramuzas entre las alianzas han dejado la parte central de Cyrodiil casi sin presencia militar. Has oído de la presencia de una nueva áncora oscura, artefactos daedra que han estado cayendo del cielo por todo el continente, en las afueras de Ciudad Imperial. Es muy posible que quienquiera que esté alentando este conflicto quiera estudiar el áncora sin interrupciones, y tú vas a comprobarlo.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/d18.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E19 - Extinguir la llama",
+    "description": "Hermandad Oscura",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "hermandad_oscura",
+    "leafDescription": "Aunque la naturaleza exacta de la misión de la Orden del Gusano Negro es desconocida para el público en general, es la opinión popular que las áncoras oscuras están relacionadas de alguna forma con su objetivo. Cuando llegas a ver de lejos el áncora oscura, ves efectivamente sectarios del Gusano Negro, además de pruebas de que estaban tras los rumores que te han estado dificultando la misión. Mientras limpias los restos de tu «interrupción» a sus actividades, te sorprende descubrir que los sectarios estaban desmontando el áncora y llevándose las piezas a otro lugar, tal vez para analizarlas. Al llevar tu informe (y algunas partes del áncora oscura) a Caerellius, esta frunce el ceño, extrañada.\n«Parece obra de alguien que va por libre dentro de la secta... Tal vez esto requiera de una investigación más a fondo. A la Hermandad le gusta conocer los jugadores de cada partida».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e19.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A20 - Artefacto o «artificción»",
+    "description": "Intrépidos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "intrepidos",
+    "leafDescription": "Tener una opinión sobre el estado del Imperio en la Guerra de los Tres Estandartes no es emocionante ni se paga bien, por lo que es irrelevante para los Intrépidos. Lo que sí es de gran interés para ellos es la promesa de un tesoro esperando a ser descubierto y, en este caso, la Guerra de los Tres Estandartes y algunas riquezas potenciales están relacionadas. La Universidad Arcana de Ciudad Imperial solía ser la sede central del Gremio de magos en Tamriel, antes de que la ciudad se viera asolada por los daedra y los sectarios del Gusano Negro. Por aquel entonces, la universidad fue saqueada, perdiendo muchos de sus valiosos y poderosos artefactos mágicos en el proceso. Sin embargo, ha aparecido recientemente una luchadora por la libertad en Ciudad Imperial, una figura misteriosa que responde al nombre «Dragona de Cuchillas». Afirma haber sacado muchos de los objetos más valiosos del gremio de la universidad antes de que los cultistas se hicieran con ellos y haberlos escondido bajo tierra en algún lugar. A los Intrépidos les encantaría encontrar dicho escondite, y a ti te encantaría ser tú el miembro en conseguirlo. Aun así, antes de hacer nada, necesitarás contactar con varios habitantes de Cyrodiil que aseguran saber algo sobre los planes de la Dragona. Si, con algo de suerte, los favores que te piden a cambio de la información no son demasiado difíciles, podrás conseguir lo que buscas sin que otro potencial competidor llegue antes.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a20.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E21 - Artefacto o «artificción»",
+    "description": "Intrépidos",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "intrepidos",
+    "leafDescription": "No encuentras todo lo que la Dragona de Cuchillas dice haber escondido, pero el alijo que has encontrado tiene sin duda mucho valor, el suficiente para atraer a la misteriosa atacante que casi acaba contigo en las cuevas. Es evidente que no era de fiar, por lo que te alegras de haber evitado que pueda usar estos artefactos para lo que sea que tuviera en mente hacer. Ahora están sanos y salvos contigo y, junto con los artefactos, has podido hacerte con pruebas dejadas por la Dragona de que aún se pueden encontrar más objetos de valor en las cámaras ocultas dentro de la propia Universidad Arcana.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e21.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A22 - Gremio que madruga, el gusano captura",
+    "description": "Guardia exterior",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "guardia_exterior",
+    "leafDescription": "El líder de operaciones de la Guardia exterior, Bodean, te dice que han descubierto lo que la misteriosa elfa del bosque Deslandra está tramando en Cyrodiil.\n«Al parecer, está metida en multitud de operaciones encubiertas interconectadas por toda la región, especialmente dentro de la Orden del Gusano Negro. Sospechamos que está aprovechando esta conexión para obtener información y acceso a la extraña convergencia que se está produciendo entre Tamriel y Oblivion, aunque desconocemos sus objetivos. Por alguna razón, ha buscado ganarse su confianza o, al menos, cierto poder dentro de la secta, puesto que tiene capacidad para dirigir personalmente a sus leales subordinados para cumplir sus órdenes al amparo de la Orden».\nDicho esto, Bodean hace una pausa y suspira. «La verdad sea dicha, la Guardia exterior apoya cualquier cosa que pueda traer un final rápido y pacífico a la Guerra de los Tres Estandartes, pero es incluso más importante que Deslandra no tenga éxito en lo que sea que está planeando. Me gustaría que te aliaras con la facción que pienses que tenga más posibilidades de frenar su influencia. De seguro la mayoría de ellas estarán deseando asestar un golpe a la Orden del Gusano Negro, incluso si Deslandra no es realmente uno de ellos».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a22.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E23 - Gremio que madruga, el gusano captura",
+    "description": "Guardia exterior",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "guardia_exterior",
+    "leafDescription": "Una vez completada la operación, Bodean te felicita por el trabajo bien hecho. «Incluso has conseguido más pruebas que nos permiten entender mejor en qué estaban trabajando los agentes de Deslandra. Por lo que hemos averiguado, parece que Mannimarco, el líder de la Orden del Gusano Negro, pretende usar las áncoras oscuras que han ido apareciendo y anclándose al suelo por todo Tamriel para fusionar Nirn, nuestro mundo físico, con el plano daédrico de Puerto Gélido. Deslandra detesta la influencia daédrica, así que es imposible que le esté ayudando, y queda confirmado por lo que has encontrado. En vez de eso, parece que sus Soldados del Vacío se han dedicado a aprender los entresijos de cómo Mannimarco pretende realizar el ritual para poder sabotearlo para beneficio propio. De hecho, tus esfuerzos han interrumpido un experimento que los Soldados estaban llevando a cabo en una áncora oscura. Ambos planos estarán inestables cuando ocurra la “fusión” de Mannimarco, así que hay muchos posibles efectos mágicos, a cada cual más peligroso...». Tras un profundo suspiro, Bodean concluye: «Las respuestas generan más preguntas... Pero, aun así, esto es una gran ayuda a la causa de la Guardia».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e23.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A24 - Compañeros improbables",
+    "description": "Orden Psijic",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "orden_psijic",
+    "leafDescription": "En un inesperado giro de los acontecimientos, la Orden Psijic te asigna un trabajo que consiste en infiltrarte en una secta de Cyrodiil, la Orden de la Llama Vigilante. Tras algunas deserciones importantes, hay un vacío en sus puestos de autoridad y te han pedido que investigues de manera encubierta sus ritos oscuros y desbarates la organización si piensas que sus planes son peligrosos. Lo más extraño de todo es que, al parecer, ya hay alguien haciendo esto. Se te ha acercado un pequeño grupo con túnicas de la Llama Vigilante que dicen querer sabotear los planes de la secta. Se identifican como miembros de otro grupo, los Soldados del Vacío, cuyo líder tiene un gran interés en que el príncipe daédrico de la destrucción, Mehrunes Dagon, no sea convocado a Tamriel (de acuerdo con sus argumentos, nadie en su sano juicio querría tal cosa). Uno de ellos te explica que la secta pretende sacrificar a uno de los suyos para dar poder al emisario de Dagon, un señor daédrico llamado Moath. La primera parte del rito tendrá lugar en unas conocidas ruinas ayleid.\n«Nuestra intención es tomar el control del sacrificio para manipularlo y hacer que, cuando Moath sea invocado a Nirn, sea más débil. Un sacrificio más débil causa una invocación más débil. Podríamos unir nuestras fuerzas para que sea más fácil, pero, si no confías en nosotros, podemos ir por separado. No te delataremos».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a24.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B25 - Compañeros improbables",
+    "description": "Orden Psijic",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "orden_psijic",
+    "leafDescription": "De acuerdo con el plan, tu y los sectarios infiltrados sois los únicos supervivientes en el lugar del sacrificio. El que habló contigo antes te explica el siguiente paso en el plan de los Soldados del Vacío.\n«Ahora que el sacrificio ha tenido lugar, los restos deben ser ceremonialmente profanados en un enclave secreto de la Llama Vigilante, al noroeste de Cyrodiil. Una vez allí, nos encontraremos con verdaderos miembros de la Orden y quemaremos el cuerpo con ciertos artefactos mágicos. De esa manera, podremos invocar a Moath en el momento apropiado y acabar con él de inmediato». Tras una pausa, continúa. «Aunque claro, hacer el viaje hasta allí, con toda la devastación causada por la guerra, podría ser muy difícil. ¿Tal vez sería posible aprovechar la influencia de la Orden Psijic?».\nEse comentario es bastante desafortunado. En ningún momento has revelado pertenecer a la Orden Psijic, y ni siquiera sabes a ciencia cierta cómo los Soldados del Vacío sabían siquiera que estabas en una misión encubierta. Aunque decides seguir con el plan, estás más que convencido de que no debes perder de vista a tus desconcertantes compañeros.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b25.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C26 - Compañeros improbables",
+    "description": "Orden Psijic",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "orden_psijic",
+    "leafDescription": "Al día siguiente del segundo paso del sacrificio, te despiertas con la sorpresa de que los Soldados del Vacío se han ido. Donde deberían estar ellos, encuentras una nota escrita a toda prisa.\n«¡Gracias por la ayuda! Podemos llevar a cabo la destrucción de Xivilai Moath por nuestra cuenta, sin ponerte a ti en peligro. ¡Quizás nos volvamos a ver en otro enclave prohibido!».\n¿Es que te toman por tonto? Compruebas la ubicación del cuerpo sacrificado y ves que, aunque el cuerpo sigue ahí, no hay ni rastro de los supuestos artefactos mágicos que mencionaron. ¿Sería todo una estratagema para hacerse con ellos o han sido solo un botín adicional con el que se han hecho mientras llevaban a cabo su misión? La verdad es que no estás seguro, pero decides acompañar al resto de los miembros de la Llama Vigilante al lugar de invocación por si acaso.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c26.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E27 - Compañeros improbables",
+    "description": "Orden Psijic",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "orden_psijic",
+    "leafDescription": "Te alegras de haber ignorado la nota de los Soldados del Vacío. Xivilai Moath fue invocado y los Soldados estaban allí, de acuerdo al plan, pero fueron incapaces de derrotar al príncipe daédrico. Afortunadamente, tú aportaste la fuerza que faltaba para obligar a Moath a volver a Oblivion. Además, ahora que dudas de las motivaciones de los que fueron tus compañeros, decides destruir los artefactos que habían robado durante la supuesta operación conjunta. El líder del grupo de Soldados resopla. «Nos hemos quedado sin tapadera alguna... A nuestro honorable líder no le hará ninguna gracia que privaras a la causa de los Soldados de esas reliquias, pero todos estábamos interesados en que Moath se quedara donde le correspondía. Pronto, será sellado para siempre. Hablaré bien de ti, y tal vez nuestro líder te tenga en cuenta para después de La Gran Nulificación».\nLo presionas para sonsacarle más información, pero se niega a hablar. No deseas causar más daños, así que los dejas marchar.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e27.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A28 - Capa y puñal",
+    "description": "Ojos de la Reina",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ojos_reina",
+    "leafDescription": "Una elfa del bosque llamada Cariel te informa de una peligrosa misión de los Ojos en el corazón de Cyrodiil.\n«Hemos sido informados de que un par de sectarios del Gusano Negro quieren desertar. Nos darán información sobre el funcionamiento interno de la secta y de sus objetivos. A cambio, les daremos protección y mostraremos clemencia ante sus... aficiones desagradables». Por su expresión, está claro que la idea no le agrada. «Mira, yo no hago las reglas; las hace Raz, que para algo es el líder. Tendras que infiltrarte en las alcantarillas imperiales para llevarte a los desertores y sacarlos sin que os identifiquen. No queremos que esta actividad pueda rastrearse hasta llegar a los Ojos».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a28.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B29 - Capa y puñal",
+    "description": "Ojos de la Reina",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ojos_reina",
+    "leafDescription": "Aunque tú y los desertores os las arreglasteis para dar esquinazo al Gusano Negro, es evidente que la secta da mucha importancia a su secretismo. Por tanto, el camino hacia el sur hasta tu punto de extracción está bloqueado por patrullas de sectarios y soldados imperiales que buscan a sus compatriotas traidores. Decides desviarte hacia el oeste para pasar desapercibido y reunir provisiones para el viaje. Hablando del viaje, aún no ha empezado y ya deseas que termine. Los dos sectarios que te acompañan son desagradables, su aspecto sombrío, con una mezcla de palidez y poca higiene, combina a la perfección con sus oscuras almas. Sus conversaciones, en las que los has oído reirse de sacrificios y torturas que han realizado, hacen que te entren ganas de que «se te escape» un espadazo. Luego solo tendrías que informar de que la operación fracasó desafortunadamente. Pero tienes un trabajo que hacer y ya has hecho mucho progreso, lo mejor será que lo lleves a buen término.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b29.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C30 - Capa y puñal",
+    "description": "Ojos de la Reina",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ojos_reina",
+    "leafDescription": "Aunque has logrado salir de las alcantarillas imperiales, no ha sido la salida más limpia; la Orden del Gusano Negro os sigue de cerca. Antes de que puedas volver al punto de extracción, tendrás que reunirte con un contacto en el oeste, donde podrás comprar nuevas identidades para ti y para los sectarios que te acompañan. Estás muy frustrado porque vas con retraso, pero la verdad es que no puedes dejar de guardarte las espaldas, los dos sectarios parecen mirarte con una hostilidad persistente, como si estuvieran calculando el momento oportuno para degollarte. No tienes ni idea de qué responsabilidades tenían dentro de la Orden, pero tienes claro que no eran meros guardas.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c30.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "D31 - Capa y puñal",
+    "description": "Ojos de la Reina",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ojos_reina",
+    "leafDescription": "Una vez terminados los preparativos, partes en dirección a Vlastarus, donde Cariel te ha dicho que Razum-Dar en persona estará esperando para tu extracción y la de los malhechores que te acompañan. La Orden del Gusano Negro aún sigue persiguiendo a dicha pareja, y tienes el mal presentimiento de que te verás obligado a luchar al menos una vez más antes de terminar con esto de una vez por todas.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/d31.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E32 - Capa y puñal",
+    "description": "Ojos de la Reina",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "ojos_reina",
+    "leafDescription": "Al final de todo este embrollo, te dices a ti mismo que al menos todo ha terminado. No te sientes muy cómodo con haber liberado a un par de sectarios que ahora disfrutarán de libertad y protección, y, después de la dura travesía, tampoco te sientes especialmente bien físicamente hablando. Al verte agotado y desmoralizado, Razum-Dar se te acerca.\n«Raz sabe que el espionaje puede ser duro, pero ya estamos obteniendo información valiosa. Por ejemplo, ahora sabemos detalles no solo sobre el funcionamiento interno de los planes de Mannimarco en Ciudad Imperial, sino también de otra sectaria llamada Deslandra, que parece dirigir su propia operación dentro de la Orden del Gusano Negro. Los desertores piensan que está tramando un plan propio aprovechándose del trabajo de Mannimarco. Da escalofríos pensarlo».\nAunque lo diga, no ves que se estremezca ni un ápice. «En cualquier caso, date algo de tiempo y avisa a Raz cuando estés listo para la siguiente misión. O no lo hagas, tú decides. A Raz no le gusta arrancar un Ojo, pero de nada sirve un ojo que no quiera ver».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e32.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "A33 - Corrupción en el Círculo",
+    "description": "Círculo de Campeones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "circulo_campeones",
+    "leafDescription": "Recibes una carta del Maestro de batalla Rivyn, líder del Círculo de Campeones, solicitando tu ayuda en un asunto urgente. En este caso, el motivo de su preocupación no es una competición, sino un asunto de regulación, pero tus aptitudes de combate seguirán siendo necesarias para la misión. Tras el saludo de rigor, Rivyn va directo al grano.\n«El centro de Cyrodiil es demasiado peligroso para organizar combates, pero, al pasar nuestro principal campo de batalla al puesto de avanzada de Istirus, estamos demasiado lejos de las líneas del frente de la Guerra de los Tres Estandartes, lo que no nos permite encargarnos de los que usan de manera ilegal el nombre del Círculo de Campeones. Recientemente, un grupo desconocido que afirma representarnos ha empezado a celebrar combates sin licencia en la zona. Dichos combates son peligrosos y solo logran dañar nuestra reputación. Temo que el organizador tenga un motivo oculto para hacer esto. Encuentra esos combates y acaba con ellos como sea. Una fiera combatiente del Círculo que suele ayudarnos con asuntos peliagudos se unirá a ti. Esta khajiita mantiene su nombre en secreto, todos la conocen simplemente como Bazri la mala».\nHas oído hablar de ella, es conocida como una oponente formidable que no duda en dar un golpe bajo a cambio de una victoria. Será un buen apoyo en combate, pero no confiarías en que te cubra las espaldas.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/a33.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "B34 - Corrupción en el Círculo",
+    "description": "Círculo de Campeones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "circulo_campeones",
+    "leafDescription": "Tu opinión sobre Bazri la mala queda confirmada rápidamente. Juntos desmanteláis el primer combate ilícito, pero te ves obligado a tomar el control de los interrogatorios cuando la khajiita deja a uno inconsciente. Los demás dicen que el organizador, cuyo nombre desconocen, recluta a los combatientes con algún propósito, pero habéis interrumpido el combate antes de que pudieran descubrir cuál es. Bazri se impacienta y da un golpe con el puño. «¡No estamos sacando nada de estos idiotas! Tenemos que encontrar el siguiente combate y ver si los de allí saben algo más».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/b34.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "C35 - Corrupción en el Círculo",
+    "description": "Círculo de Campeones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "circulo_campeones",
+    "leafDescription": "A estas alturas, Bazri la mala te está poniendo más nervioso que los combates en sí. Tras el segundo combate, en el que ha reducido fuertes guerreros a masas ensangrentadas, se ha ido furiosa después de que cuestionaras sus métodos. Tendrás que informar a Rivyn de su comportamiento una vez todo esto acabe. Consigues más información de estos supervivientes. Los organizadores han estado asegurando que los combates que celebraban eran en nombre del Círculo de Campeones y su asociación con un grupo llamado los Soldados del Vacío, que está buscando guerreros capaces que quieran unirse a sus filas. No sabes nada de estos Soldados, pero está claro que sus intereses nada tienen que ver con los del Círculo. A juzgar por lo que has podido descubrir, estás pisándoles los talones a esos farsantes, y estás seguro de que podrás acabar con ellos cuando los encuentres.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/c35.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "E36 - Corrupción en el Círculo",
+    "description": "Círculo de Campeones",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "circulo_campeones",
+    "leafDescription": "Mientras entrecierras los ojos entre tus vendas, escribes: «Maestro de batalla Rivyn, los combates ilícitos han sido clausurados. Por desgracia, su fiel sirviente Bazri la mala resultó no ser tan fiel. Al final, estaba aliada con los organizadores de los combates, una secta conocida como los Soldados del Vacío. Se cree que Bazri encontró su final en el combate directo contra los organizadores, pero su cuerpo no pudo ser encontrado. Si desea discutir más detalles o los próximos pasos en persona, por favor, indíquemelo en la respuesta».",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/e36.mp3",
+      "title": ""
+    }
+  }
+]

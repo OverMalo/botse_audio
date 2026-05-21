@@ -1,0 +1,229 @@
+{
+  "encuentros_generales": {
+    "title": "ENCUENTROS GENERALES",
+    "description": "",
+    "ambient": "",
+    "options": [
+      {
+        "label": "GE-01",
+        "description": "El ataque del Wabbajack",
+        "leafDescription": "Mientras bajas un camino poco transitado, un grupo de figuras con túnicas te rodean. Su líder, un khajiita, alza un bastón con una cabeza con la boca muy abierta en su extremo.\n «¡El Gato del Skooma exige diversión!», exclama el peludo sectario.\n«¿Morderán tus dientes o agarrarán nuestras zarpas? ¡El Wabbajack proveerá y Sheggorath decidirá!».\nApunta con el bastón a uno de sus subordinados, que se transforma ante tus ojos en una cuña de queso. Si valoras tu integridad física, deberías pensar rápido qué hacer.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_01.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-02",
+        "description": "Mina abandonada",
+        "leafDescription": "A juzgar por el montón de escombros y restos oxidados que hay fuera de esta cueva, te has topado con una explotación minera abandonada hace ya mucho tiempo. En los tiempos que corren, es difícil identificar la causa. ¿Dejó de ser rentable o la guerra se acercó demasiado? Tal vez hubiera un derrumbe. Lo que está claro es que, desde fuera, va a ser imposible saberlo. Estás dividido; coger un pico y adentrarse en la cueva puede conducir a riquezas inesperadas, pero buscar en la pila de escombros parece bastante más seguro.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_02.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-03",
+        "description": "La inaudita caja de las maravillas",
+        "leafDescription": "Un sombrío grupo de bandidos te acorrala. Uno de ellos revela una caja enigmática, con símbolos y grabados.\n\n «Tenemos muchas cosas que enseñarte...», te susurra el bandido mientras sus dedos acarician la caja, que parece cambiar de forma continuamente. No eres un experto en curiosidades de Apocrypha, pero sospechas que estás ante un artefacto de Hermaeus Mora, el príncipe daédrico del conocimiento prohibido. Lo que es seguro es que nada bueno puede salir de liberar el contenido de dicho artefacto, aunque interrumpir al bandido tampoco estará exento de peligros.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_03.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-04",
+        "description": "Ladrones en el camino",
+        "leafDescription": "Observas una caravana de mercaderes acercándose por el camino. Sin embargo, cuando se cruzan contigo, muchos de ellos te miran fijamente, lo cual te hace sospechar. Recuerdas haber oído sobre una banda de ladrones que actúan por lo alrededores, al parecer, fingiendo ser mercaderes. Piensas que has dado con ellos, y no se les ve muy duros, por lo que, lo mismo, es una buena oportunidad para «liberar» objetos de dudosa procedencia.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_04.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-05",
+        "description": "El pozo de «vida»",
+        "leafDescription": "Tras horas de viaje sin parar, ver un pozo en el camino es un alivio, al menos hasta que llegas y ves que está sellado. Tendrás que esperar para saciar tu sed. Sin embargo, tras investigar un poco, te das cuenta de que el pozo está seco y, al quitar los tablones, ves una escalera oculta que baja hasta llevar a quién sabe dónde. Te parece ver un tenue brillo en el fondo del pozo. ¿Valdrá la pena bajar a investigar?",
+        "audio": {
+          "src": "audios/encuentros/general/ge_05.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-06",
+        "description": "¡Capturado!",
+        "leafDescription": "Te despiertas de un profundo sueño, desorientado y confundido. Conforme sales de ese estado, te das cuenta de que estás maniatado y sin tu equipamiento. Cerca, tus presuntos captores duermen junto al fuego que encendiste horas antes. ¡Esto es un insulto, es imperdonable! Por otra parte, los captores parecen bastante fuertes. Lo mismo sí se puede perdonar... Si huyeras, ¿qué es lo peor que podría pasar? Los objetos son reemplazables, los miembros del cuerpo, no tanto.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_06.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-07",
+        "description": "Estanque inmaculado",
+        "leafDescription": "Al subir una pequeña colina, encuentras una imagen de lo más curiosa. Todo tipo de animales, incluso enemigos naturales, bebiendo en armonía de un estanque de agua cristalina. El agua está tan limpia que puedes ver su fondo rocoso. Es una escena pintoresca que podrías arruinar con un simple movimiento. Cazar a alguna de estas criaturas podría otorgarte no solo un buen trofeo, sino una buena recompensa. Aunque, por otro lado, debe haber algo especial en ese agua para que los animales se comporten así. Puede que valga más la pena ir a probarla.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_07.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-08",
+        "description": "Huesos rotos",
+        "leafDescription": "Una voz espeluznante surge de las profundidades de la cueva en la que acabas de entrar.\n\n «¡Soy un temido nigromante de gran renombre! ¿Osas adentrarte en mis dominios? ¡Estos huesos me pertenecen a mí y solo a mí! Muchos son los que han tratado de vencer a mi ejército de esqueletos, ¡pero han sido demasiados huesos para todos ellos!».\n\n Las palabras se detienen para darte tiempo a pensar, pero algo te dice que, por muy invencible que se crea, es posible derrotarlo. Darte la vuelta ahora sería traicionar tu potencial.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_08.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-09",
+        "description": "La economía del mercado negro",
+        "gremioTag": "all",
+        "leafDescription": "Aunque sus operaciones son un fastidio para los que aman la ley y el orden, el Gremio de ladrones se ha ganado un lugar como una institución más en Tamriel. La mayoría de autoridades toleran su presencia a cambio de que el gremio mantenga sus actividades delictivas e ilícitas a un nivel «aceptable». Una de las tradiciones más famosas del gremio es que sus miembros dejen aquellos objetos robados que no necesiten en «tesoros de ladrones» repartidos por el campo. Hoy, sin embargo, te has encontrado con un justiciero un poco despistado que ha reunido varios de estos tesoros con el fin de destruir esta valiosa (aunque delictiva) red de ayuda. Sin duda alguna, tú prefieres que los tesoros sigan en circulación...",
+        "audio": {
+          "src": "audios/encuentros/general/ge_09.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all"
+      },
+      {
+        "label": "GE-10",
+        "description": "¡Fuera de aquí!",
+        "leafDescription": "Hoy hay demasiada gente en el camino principal, así que decides buscar una ruta alternativa cruzando valles y colinas remotos. Conforme te alejas del camino, notas unas piedras con formas extrañas tapadas por la maleza. Con curiosidad, comienzas a excavar, y pronto te das cuenta de que has dado con unas ruinas ayleid desconocidas. Mientras las exploras, oyes a unos bandidos conversar. Parece que han encontrado tu descubrimiento. Ojeas el interior de las ruinas y ves varios armeros antiguos. No tienes ni idea de si las armas en ellos aún serán útiles, pero es seguro que esos rufianes querrán descubrirlo.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_10.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-11",
+        "description": "¿Los Ocho proveen?",
+        "leafDescription": "Un alto elfo algo desaliñado se cruza en tu camino, llevando sus pertenencias empaquetadas y atadas al extremo de su bastón de restauración.\n\n«Dime, amigo, ¿donarías algo a un mago trabajador? Cuando se muestra generosidad, ¡los Ocho recompensan!».\n\nPor su aspecto, no parece que este alto elfo dedique mucho tiempo a estar en comunión con los Ocho, pero... que un mago te deba una siempre es algo bueno, ¿no? Compruebas tu bolsa para ver si hay algo de lo que no te importaría desprenderte.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_11.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-12",
+        "description": "Un encargo inesperado",
+        "leafDescription": "Ves un viajero algo más adelante en el camino que se tuerce el tobillo y cae al suelo, así que te acercas para ayudarle. Cuando se gira a mirarte, das un paso atrás, sorprendido por sus ojos grises y su pálida piel. El maormer, o elfo del mar, solo dice «gracias» mientras lo ayudas a ponerse en pie.\n\n«Como ves, estoy herido», dice el elfo mientras se recoloca su armadura de cuero y comprueba sus afiladas dagas.\n«Pero estoy en medio de un trabajo y, si no puedo completarlo... Bueno, yo siempre cumplo. Pareces hábil. Si me ayudas con mi encargo, me aseguraré de que recibas una buena compensación».",
+        "audio": {
+          "src": "audios/encuentros/general/ge_12.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-13",
+        "description": "Aires de grandeza",
+        "leafDescription": "«Oye, tú...».\n\nMiras por todos lados hasta que ves a una khajiita escondida, moviendo la mano para captar tu atención. En su otra mano tiene una pequeña bolsita. Se acerca y te la coloca en la mano mientras sus orejas se mueven, en alerta. \n\n«Nueva azúcar lunar para mentes abiertas. Da fuerza, da poder. Tómala y habla a otros de khajiita y su mercancía».\n\nDando un paso atrás, evalúas a tu nueva conocida. Está claro que te acaba de dar una muestra de su producto, pero un aumento de fuerza en combate puede resultar muy útil, siempre y cuando los efectos secundarios no sean demasiado fuertes...",
+        "audio": {
+          "src": "audios/encuentros/general/ge_13.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-14",
+        "description": "Paz y sosiego",
+        "leafDescription": "A veces, es fácil no darse cuenta, por estar centrado en las misiones o en los peligros a tu alrededor, de que el mundo que te rodea es precioso. Tamriel es un lugar hostil, cierto, pero también es un lugar lleno de bondad, un deleite para los sentidos y está lleno de vistas sobrecogedoras. Es importante tomarse un respiro y disfrutar de la fortuna de seguir vivo un día más.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_14.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-15",
+        "description": "Futuro imperfecto",
+        "leafDescription": "Ves un puesto en medio del camino del que sale un olor rancio. En él, un imperial de avanzada edad, con barba desaliñada y ojos enrojecidos, te mira y te hace señas con las manos.\n\n«¡Te aguardan grandes sucesos! Por una moneda a un anciano, sabrás lo que el futuro te tiene preparado».\n\nTu primer impulso es rechazarlo con educación, pero te das cuenta de que, escondido entre sus pies, tiene un saco lleno de oro. Está claro que los lugareños depositan mucha confianza en este supuesto adivino, y quizás tú deberías hacer lo mismo.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_15.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-16",
+        "description": "Lazos por doquier",
+        "leafDescription": "Oyes un grito y ves a una bretona agachada en el camino, colocando una especie de lazo.\n\n«Ten cuidado con ese camino, viajero. Hay bandidos en la zona y he decidido poner a prueba unas trampas que he diseñado yo misma».\n\nTe mira con detenimiento.\n\n«¿Sabes?Tal vez podrías ayudarme a colocarlas. Después de todo, cuanto más efectivas sean mis trampas, ¡más fácil te resultará tu viaje!».",
+        "audio": {
+          "src": "audios/encuentros/general/ge_16.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-17",
+        "description": "Proezas de fuerza",
+        "leafDescription": "Te detienes ante el paso del pregonero de una feria ambulante, un orco desdentado cuyo aspecto estropeado no logra anular su inexplicable encanto. Antes de que te des cuenta, te encuentras haciendo cola en una caseta de aún peor aspecto que el orco, desenfundando tus armas y preparándote para poner a prueba tu fuerza en un juego de «habilidad», posiblemente amañado.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_17.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-18",
+        "description": "Quienes se benefician de los peajes",
+        "leafDescription": "Te han advertido de que el camino se vuelve casi intransitable a partir de este punto. Al parecer, esta zona está llena de animales venenosos y el terreno es irregular. Un grupo de listillos ha aprovechado la situación para crear una improvisada estación de peajes en el camino más accesible de la zona. No te apetece darles el dinero que tanto te ha costado conseguir, así que tienes un par de opciones disponibles. Puedes intentar colarte sin ser visto o puedes aventurarte a cruzar el entorno natural.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_18.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-19",
+        "description": "Cazar o recolectar",
+        "leafDescription": "Te encuentras con una caravana destrozada. Hay contenedores saqueados y varios cadáveres. Ya es demasiado tarde para ayudar a estas personas, pero te das cuenta de que puedes sacar beneficio de esta desgracia. Es probable que quede algo rescatable entre los restos, si rebuscas el tiempo necesario. Por otra parte, un estudio cuidadoso de las huellas que se alejan de la escena podría proporcionar información valiosa sobre los enemigos que acechan en el camino.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_19.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      },
+      {
+        "label": "GE-20",
+        "description": "Parte del velo",
+        "leafDescription": "«Adelante, pase».\n\n Una anciana dunmeri te hace señas para que entres en su andrajosa tienda y te indica que te sientes en el suelo cubierto de polvo frente a ella. Antes de que puedas negarte, te ves arrastrado al interior. Con sus manos te hace un claro gesto con el que exige monedas a cambio de «servicios místicos». Estás a punto de negarte, pero entonces empieza a decirte detalles personales tuyos y sus ojos te miran amenazantes. Debes hacer algo con esta chantajista sobrenatural, ya sea ceder a sus exigencias o asegurarte de que sepa que no debe amenazarte.",
+        "audio": {
+          "src": "audios/encuentros/general/ge_20.mp3",
+          "title": ""
+        },
+        "provinciaTag": "all",
+        "gremioTag": "all"
+      }
+    ]
+  }
+}

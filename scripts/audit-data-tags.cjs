@@ -1,4 +1,4 @@
-const data = require("../src/data.json");
+const data = require("../src/data/merge.cjs");
 
 let leaf = 0;
 let withProvincia = 0;

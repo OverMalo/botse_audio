@@ -1,0 +1,33 @@
+{
+  "start": {
+    "title": "The Elders Scroll: La traición de la segunda era",
+    "description": "",
+    "options": [
+      {
+        "label": "Ciudades",
+        "description": "",
+        "next": "ciudades"
+      },
+      {
+        "label": "Encuentros Generales",
+        "description": "",
+        "next": "encuentros_generales"
+      },
+      {
+        "label": "Encuentros Provinciales",
+        "description": "",
+        "next": "encuentros_provinciales"
+      },
+      {
+        "label": "Misiones",
+        "description": "",
+        "next": "misiones"
+      },
+      {
+        "label": "Sesión final",
+        "description": "",
+        "next": "sesion_final"
+      }
+    ]
+  }
+}

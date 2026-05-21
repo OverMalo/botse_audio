@@ -1,6 +1,52 @@
 import "./styles.css";
-import appData from "./data.json";
 import SOUNDTRACK from "./soundtrack.json";
+
+// ── Data (split across multiple files for maintainability) ──────────────────
+import _start from "./data/start.json";
+import _ciudades from "./data/ciudades.json";
+import _misionesBase from "./data/misiones/_base.json";
+import _misionesCN from "./data/misiones/cienaga_negra.json";
+import _misionesSkyrim from "./data/misiones/skyrim.json";
+import _misionesRA from "./data/misiones/roca_alta.json";
+import _misionesMW from "./data/misiones/morrowind.json";
+import _misionesCY from "./data/misiones/cyrodiil.json";
+import _encuentrosG from "./data/encuentros_generales.json";
+import _encuentrosP from "./data/encuentros_provinciales.json";
+import _sesionFinalBase from "./data/sesion_final/_base.json";
+import _sesionFinalCN from "./data/sesion_final/cienaga_negra.json";
+import _sesionFinalRA from "./data/sesion_final/roca_alta.json";
+import _sesionFinalSkyrim from "./data/sesion_final/skyrim.json";
+import _sesionFinalMW from "./data/sesion_final/morrowind.json";
+import _sesionFinalCY from "./data/sesion_final/cyrodiil.json";
+import _ambientConfig from "./data/ambient.json";
+
+const appData = {
+  ..._start,
+  ..._ciudades,
+  misiones: {
+    ..._misionesBase,
+    options: [
+      ..._misionesCN,
+      ..._misionesSkyrim,
+      ..._misionesRA,
+      ..._misionesMW,
+      ..._misionesCY,
+    ],
+  },
+  ..._encuentrosG,
+  ..._encuentrosP,
+  sesion_final: {
+    ..._sesionFinalBase,
+    options: [
+      ..._sesionFinalCN,
+      ..._sesionFinalRA,
+      ..._sesionFinalSkyrim,
+      ..._sesionFinalMW,
+      ..._sesionFinalCY,
+    ],
+  },
+  ..._ambientConfig,
+};
 
 const screenEl = document.getElementById("screen");
 

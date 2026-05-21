@@ -1,0 +1,47 @@
+[
+  {
+    "label": "La batalla de todos los estandartes - Día 1",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "all",
+    "leafDescription": "Los planes de Deslandra tal vez se hayan vuelto contra ella, pero los tuyos también se han vuelto contra ti. Pocas palabras fueron necesarias para alertar a algunos generales clave de las tres alianzas de que debían actuar contra Deslandra, que ganaba poder en la región a pasos agigantados, a menudo cooperando con la odiada Orden del Gusano Negro. Sin embargo, los tres ejércitos enviaron a la vez un contingente para enfrentarla y llevarse toda la gloria. Cuando los ejércitos se ven en el campo de batalla, dudan de si atacar a las fuerzas de la elfa del bosque o a sus oponentes. Deslandra, preparada para el combate, aprovecha esa indecisión para ordenar a sus tropas atacar mientras ella desaparece en el caos. Estás en medio de una guerra a cuatro bandos y piensas que lo mejor será que ayudes a uno a triunfar lo antes posible.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/sf01.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "La batalla de todos los estandartes - Día 2",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "all",
+    "leafDescription": "La general de la facción victoriosa se te acerca, agradecida. Tras una breve conversación, está claro que piensa que Deslandra es solo otra figura en busca de poder en Cyrodiil, tal vez buscando llegar al Trono de Rubí o a liderar la Orden del Gusano Negro. Decides no compartir tus sospechas apocalípticas de los planes de la elfa y retirarte al campamento de tu nueva compañera para hacer los preparativos. La elfa del bosque ha sido vista huyendo hacia las alcantarillas de Ciudad Imperial, y está claro que vas a ir tras ella.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/sf02.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "La batalla de todos los estandartes - Día 3",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "all",
+    "leafDescription": "Te ofreces a explorar ante de que se movilicen las tropas, esperando en secreto poder hacerte una mejor idea de los planes de Deslandra. La búsqueda es breve, pues Deslandra ha preparado su operación en el Barathrum Centrata, la parte central de las alcantarillas, justo debajo de la mística Torre Blanca y Dorada de Ciudad Imperial. Ya está realizando el ritual y se encuentra bien protegida. En tus investigaciones, has descubierto que Deslandra y sus aliados han obtenido mucha información sobre la Orden del Gusano Negro y sobre la actividad daédrica de la región. Sin ser un experto en Oblivion, te parece evidente que estás siendo testigo de cómo esa información es usada: una especie de ventana mágica a una tétrica dimensión se ha abierto delante de la líder de los Soldados del Vacío. Deslandra lo celebra a voz en cuello.\n«La fusión de planos de Mannimarco casi ocurre. Él busca combinar Nirn con Oblivion, y nosotros vamos a atacar en el momento en que las fronteras entre los planos son más débiles. ¡Nuestro ritual romperá las cadenas de las áncoras oscuras, un cataclismo mágico que destruirá los lazos entre nuestro plano y los planos mágicos para siempre!».\nEs cierto que no has entendido todo lo que ha dicho, pero sí lo suficiente para saber que Deslandra está a punto de producir una catástrofe que afectaría a todos los seres vivos de Nirn. Comandas a las filas a tus espaldas, ordenando ataque a discreción y esperando que seáis suficientes para detener su conjuro.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/sf03.mp3",
+      "title": ""
+    }
+  },
+  {
+    "label": "La batalla de todos los estandartes - Epílogo",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "gremioTag": "all",
+    "leafDescription": "Deslandra y sus fuerzas han sido derrotadas y sus cuerpos llenan el lugar. El portal a Oblivion se ha cerrado. Por otra parte, lo que Mannimarco está tramando suena tan mal como lo que acabas de detener, pero tienes la sensación de que algún otro héroe se encargará de evitar esa catástrofe. Tu nueva amiga, la general del ejército, te pregunta si tienes idea alguna de lo que planeaba esa elfa del bosque. Finges no saberlo; ahora que la amenaza se ha desvanecido, no es necesario que lo sepa... Al fin y al cabo, hay cosas que es mejor no saber.",
+    "audio": {
+      "src": "audios/misiones/cyrodiil/sf_epilogo.mp3",
+      "title": ""
+    }
+  }
+
+]

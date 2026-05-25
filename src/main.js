@@ -110,7 +110,6 @@ function loadState() {
     revealedDescriptions: [],
     autoPlay: true,
     playbackRate: 1,
-    ambientEnabled: true,
     stEnabled: false,
     provinciaCollapsed: false,
     gremioCollapsed: false,
@@ -130,7 +129,6 @@ function saveState() {
       revealedDescriptions: [...revealedDescriptions],
       autoPlay,
       playbackRate,
-      ambientEnabled,
       stEnabled,
       provinciaCollapsed,
       gremioCollapsed,
@@ -150,10 +148,7 @@ let expandedPanels = new Set(Array.isArray(state.expandedPanels) ? state.expande
 let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? state.revealedDescriptions : []);
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
 let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
-let ambientEnabled = typeof state.ambientEnabled === "boolean" ? state.ambientEnabled : true;
 let stEnabled = typeof (state.stEnabled ?? state.ytEnabled) === "boolean" ? (state.stEnabled ?? state.ytEnabled) : false;
-// Exclusión mutua: ambas no pueden estar activas a la vez
-if (stEnabled && ambientEnabled) ambientEnabled = false;
 
 // Vista activa: "inicio" (bienvenida) o "narraciones"
 let view = state.view === "narraciones" ? "narraciones" : "inicio";
@@ -209,7 +204,7 @@ document.addEventListener("keydown", (event) => {
 
 // ── Soundtrack ────────────────────────────────────────────
 
-const ST_CACHE_NAME = "botse-soundtrack-v1";
+const ST_CACHE_NAME = "botse-soundtrack-v2";
 // IDs de pistas ya descargadas (persistido en localStorage para evitar cache.open en cada arranque)
 const stCachedIds = new Set(JSON.parse(localStorage.getItem("stCachedIds") || "[]"));
 
@@ -537,7 +532,6 @@ function renderMusicBar() {
 // Arranca la música por primera vez (al pulsar play sin estar enganchada).
 function engageMusic() {
   stEnabled = true;
-  ambientEnabled = false; // exclusión mutua con el audio ambiente
   setupSTPlayer();
   loadSTTrack(stCurrentTrack).then(() => {
     stAudio?.play().catch(() => {});
@@ -1051,10 +1045,6 @@ function renderSidebar() {
             <input type="checkbox" id="autoplay-checkbox" class="autoplay-checkbox"${autoPlay ? " checked" : ""}>
             <span>${escapeHtml(t("sidebar.autoplay"))}</span>
           </label>
-          <label class="sidebar-ctrl-label">
-            <input type="checkbox" id="ambient-checkbox" class="autoplay-checkbox"${ambientEnabled ? " checked" : ""}>
-            <span>${escapeHtml(t("sidebar.ambient"))}</span>
-          </label>
           <div class="sidebar-speed">${speedChips}</div>
         </div>
       </div>
@@ -1086,28 +1076,6 @@ function bindConfigEvents() {
     checkbox.addEventListener("change", () => {
       autoPlay = checkbox.checked;
       saveState();
-    });
-  }
-
-  const ambientCheckbox = document.getElementById("ambient-checkbox");
-  if (ambientCheckbox) {
-    ambientCheckbox.addEventListener("change", () => {
-      ambientEnabled = ambientCheckbox.checked;
-      if (ambientEnabled && stEnabled) {
-        // El audio ambiente y la música de fondo son mutuamente excluyentes.
-        stEnabled = false;
-        stAudio?.pause();
-        stopSTPoll();
-        restoreST();
-        if ("mediaSession" in navigator) {
-          navigator.mediaSession.playbackState = "none";
-          navigator.mediaSession.metadata = null;
-        }
-        renderMusicBar();
-      }
-      stopActivePlayer();
-      saveState();
-      render();
     });
   }
 
@@ -1809,7 +1777,8 @@ function renderLeafContent(node) {
   const panelSrc = audioUrl(node.audioSrc);
 
   // Only resolve ambient when open — avoids creating WebMediaPlayers for closed panels.
-  const rawAmbientSrc = (isOpen && ambientEnabled && !stEnabled) ? resolveAmbientSrc(node.id) : null;
+  // Use ambient when ST is not currently playing; duck ST instead when it is.
+  const rawAmbientSrc = (isOpen && !(stAudio && !stAudio.paused)) ? resolveAmbientSrc(node.id) : null;
   const ambientSrc = audioUrl(rawAmbientSrc);
 
   const descriptionHtml = renderLeafDescription(node);

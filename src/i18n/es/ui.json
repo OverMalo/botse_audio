@@ -101,10 +101,6 @@
         "desc": "(de 1x a 1,5x) para adaptarla al ritmo de la mesa."
       },
       {
-        "term": "Audio ambiente inmersivo",
-        "desc": "distinto según el escenario, que envuelve cada narración."
-      },
-      {
         "term": "Banda sonora original",
         "desc": "con reproductor integrado, control de volumen y mezcla automática con la narración."
       },
@@ -114,11 +110,11 @@
       },
       {
         "term": "Funciona sin conexión",
-        "desc": "instálala como aplicación (PWA) y reproduce todo el contenido aunque no tengas internet."
+        "desc": "instálala como aplicación (PWA) y reproduce todo el contenido aunque no tengas internet. La Banda Sonora se descarga por separado para ahorrar espacio, pero también se puede usar sin conexión una vez descargada."
       }
     ],
     "note": "Consejo: activa el audio ambiente o la banda sonora desde el menú lateral para dar atmósfera a toda la sesión.",
-    "footerCredits": "Aplicación desarrollada por OverMalo. The Elder Scrolls, junto con sus marcas, nombres y contenidos, es propiedad de sus respectivos titulares. Este es un proyecto de fans sin ánimo de lucro, sin ningún uso comercial ni profesional.",
+    "footerCredits": "Aplicación desarrollada por OverMalo. The Elder Scrolls, junto con sus marcas, nombres y contenidos, es propiedad de sus respectivos titulares.",
     "footerDisclaimer": "Esta aplicación es un complemento de la experiencia de juego: no sustituye al juego original ni pretende reemplazarlo.",
     "footerContact": "Para dudas, consultas, sugerencias o reporte de errores, escribe a"
   }

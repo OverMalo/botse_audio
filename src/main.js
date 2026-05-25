@@ -5,6 +5,10 @@ import SOUNDTRACK from "./soundtrack.json";
 import _start from "./data/start.json";
 import _ciudadesBase from "./data/ciudades/_base.json";
 import _ciudadesCN from "./data/ciudades/cienaga_negra.json";
+import _ciudadesCY from "./data/ciudades/cyrodiil.json";
+import _ciudadesRA from "./data/ciudades/roca_alta.json";
+import _ciudadesMW from "./data/ciudades/morrowind.json";
+import _ciudadesSkyrim from "./data/ciudades/skyrim.json";
 import _misionesBase from "./data/misiones/_base.json";
 import _misionesCN from "./data/misiones/cienaga_negra.json";
 import _misionesSkyrim from "./data/misiones/skyrim.json";
@@ -27,6 +31,10 @@ const appData = {
     ..._ciudadesBase,
     options: [
       ..._ciudadesCN,
+      ..._ciudadesCY,
+      ..._ciudadesRA,
+      ..._ciudadesMW,
+      ..._ciudadesSkyrim,
     ],
   },
   misiones: {

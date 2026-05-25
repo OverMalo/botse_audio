@@ -1,0 +1,145 @@
+[
+  {
+    "label": "Caravana viajera",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Es mejor evitar pasar por los cambiantes campos de batalla de Cyrodiil, pero un aventurero emprendedor puede aprovechar el caos para esconder su identidad bajo un disfraz o dejar atrás a sus perseguidores internándose en la batalla. Al encontrar una caravana que ha sobrevivido a esta tierra asolada por la guerra, piensas cuál será tu siguiente movimiento y te planteas cambiar de vida.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/caravana_viajera.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Bruma",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Bruma es una de las ciudades más diezmadas de Cyrodiil. Su lealtad cambiante en la Guerra de los Tres Estandartes no ha causado más que destrucción y, por si fuera poco, la ciudad está amenazada por el áncora oscura cercana y su ejército daedra, lo que hace que los supervivientes vivan en constante temor.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/bruma.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Castillo de Bota Negra",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "El Castillo Bota Negra es una fortaleza cuyo control se disputa frecuentemente entre las facciones, pero que suele estar bajo el control del Dominio de Aldmer. Tiene una importante posición estratégica y protege una gran puerta hacia Elsweyr justo tras la región de la Marca del Segador.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/castillo_bota_negra.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Castillo Vedeja de Sangre",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Fortaleza del Dominio de Aldmer en la Guerra de los Tres Estandartes. El Castillo Vedeja de Sangre es escenario frecuente de asedios y contraasaltos, pero quienes quieran relajarse observando la naturaleza pueden visitar la cercana cueva de Vedeja de Sangre, donde se puede encontrar una gran variedad de animales salvajes y peligrosos campando a sus anchas.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/castillo_vedeja_sangre.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Bastión de Chalman",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Aunque suele estar bajo el control del Pacto de Corazón de Ébano, la posición estratégica del Bastión de Chalman en el centro de Cyrodiil lo vuelve un objetivo frecuente de las otras facciones en la Guerra de los Tres Estandartes. «Aquellos que resistieron en el Bastión de Chalman» es una famosa canción tamriélica que trata sobre los participantes en una batalla particularmente sangrienta que sucedió allí.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/bastion_chalman.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Cheydinhal",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Las tierras circundantes a Cheydinhal están sumidas en la Guerra de los Tres Estandartes, pero Cheydinhal enfrenta un conflicto propio e interno. Se ha formado un creciente movimiento de resistencia contra los que quedan de la Legión Imperial, que aún dicen tener el dominio oficial de la ciudad.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/cheydinhal.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Chorrol",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Conocido en la antigüedad por ser un punto de encuentro informal para mercaderes que estos llamaban «el Lugar del Pequeño Roble», Chorrol llegó a convertirse en un centro neurálgico en el comercio del centro de Cyrodiil. Sin embargo, hace algunos años, el primero de una serie de catastróficos terremotos asoló la zona, acabando con la vida de muchos de sus residentes y haciendo aparecer letales atronach de las llamas. Los que quedan deben andar con cuidado y no confiarse.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/chorrol.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Vado de la Brizna",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Vado de la Brizna es una gran ciudad agrícola del sur de Cyrodiil. Probablemente debido a su suministro regular de alimentos, es con frecuencia el objetivo de incursiones de las tres alianzas, así como de incursiones del cercano clan de trasgos, la Mano Sangrienta.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/vado_brizna.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Ceniza",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "El Fuerte Ceniza, que suele estar bajo el control de la Alianza de Salto de la Daga, es un punto clave en la ruta de tránsito utilizada para transportar tropas de un lugar a otro de la provincia. Además, gracias a su granja, su aserradero y su mina, es autosuficiente, lo que lo convierte en una propiedad estratégica de aún más valor.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/fuerte_ceniza.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Custodio",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "El Fuerte Custodio es una pieza crucial en la estrategia bélica de la Alianza de Salto de la Daga en esta guerra. Se encuentra en uno de los puntos de acceso a las tierras de la Alianza, un paso estrecho que conduce directamente al corazón de la región de Craglorn. Perder su control sería devastador para la Alianza.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/fuerte_custodio.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Ciudad Imperial",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Asolada y llena de peligros mortales, Ciudad Imperial, que solía ser grandiosa, ahora se encuentra al borde del colapso, ocupada solo por sectarios del Gusano Negro y una gran variedad de daedra. Si bien tiene cierto atractivo para aquellos que buscan poderes oscuros, es difícil que dichas personas puedan resistir la corrupción que dicho poder produce y que es capaz de consumirlo todo.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/ciudad_imperial.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Bastión de Insignia del Rey",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "El Bastión de Insignia del Rey es un eslabón vital en la cadena de propiedades del Pacto de Corazón de Ébano en Cyrodiil. Se rumorea que un grupo de contrabandistas se ha asentado en la cercana (y conocida por su peligrosidad) caverna de Insignia del Rey. Sin embargo, hasta ahora, cualquier intento de «negocio» en la zona ha sido frustrado por la milicia del Pacto.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/bastion_rey.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Vlastarus",
+    "description": "",
+    "provinciaTag": "cyrodiil",
+    "leafDescription": "Tanto los soldados como los aventureros disfrutan de la oportunidad de comerciar con los ciudadanos de Vlastarus. Los laboriosos herreros de la ciudad están encantados de desprenderse de sus artesanales armas y armaduras para mantener su hogar a salvo.",
+    "audio": {
+      "src": "audios/ciudades/cyrodiil/vlastarus.mp3",
+      "title": "" 
+    },
+    "gremioTag": "all"
+  }
+]

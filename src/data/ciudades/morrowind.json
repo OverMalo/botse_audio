@@ -1,0 +1,145 @@
+[
+  {
+    "label": "Caravana viajera",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Las noticias sobre unas misteriosas excavaciones te han estado rondando la cabeza, pero estos elfos oscuros nómadas cenicios te ofrecen cobijo y la oportunidad de comerciar. Estás tentado a aceptar su oferta, aunque eso signifique demorarte en las muchas cosas que quedan por hacer.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/caravana_viajera.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Balmora",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Balmora es una ciudad bastante nueva para los estándares de Tamriel, pues fue construida tras la caída del Segundo Imperio. Aunque su construcción ha sido un tema delicado entre las grandes casas de Morrowind, su posición estratégica cerca de la costa de Páramo de Vvarden promete otorgarle una gran importancia en los años venideros.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/balmora.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Vigilia de Davon",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Vigilia de Davon siempre ha estado en el punto de mira de la historia. La fortaleza de la Casa Indoril ha sido asediada repetidamente en las últimas décadas, y fue salvada por la Alianza de Salto de la Daga del ataque de un daedra desbocado. A pesar de dichos incidentes, la vida sigue, en gran parte gracias a que Vigilia de Davon es una importante ciudad portuaria en el mar Interior de Morrowind.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/vigilia_davon.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Corazón de Ébano",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Corazón de Ébano es un crisol de razas autoproclamado, pero no hace méritos para llegar a tanto. Los nórdicos, los elfos oscuros y los argonianos que conviven entre sus muros viven en paz, pero incómodos. Los dirigentes de la ciudad promueven distintas fiestas para que todos disfruten, tratando de fomentar un espíritu de unidad.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/corazon_ebano.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Gnisis",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Esta pequeña explotación de la Casa Redoran es conocida por su prodigiosa minería de kwama. Sus operaciones se vieron amenazadas por el descubrimiento de un peligroso artefacto dwemer en las profundidades de la mina, pero la crisis se evitó y la ciudad volvió rápidamente a la normalidad, para la fortuna de sus habitantes.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/gnisis.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Kragenmoor",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "La ciudad capital de la Casa Dres, Kragenmoor, tiene una mala reputación en el Pacto de Corazón de Ébano. Parte de esa reputación viene de la arrogancia de las demás casas, puesto que una parte considerable de la economía de la ciudad se basa en el humilde cultivo de arroz de sal, pero otra parte es justificada, pues la Casa Dres es famosa por saltarse la prohibición de la esclavitud del Pacto.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/kragenmoor.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "El Duelo",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Hogar de la diosa del Tribunal Almalexia. El Duelo es una ciudad legendaria, venerada por los elfos oscuros de todo Tamriel. Por ser la capital del Pacto de Corazón de Ébano y una de las ciudades sagradas de la religión dunmeri, la ciudad tiene un estricto programa de vigilancia y diversas fuerzas de seguridad, entre las que se incluyen los Ordenantes, los sagrados guardianes del templo del Tribunal.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/el_duelo.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Narsis",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Fundada hace mucho tiempo por el profeta Veloth, Narsis se ha labrado un camino único, volviéndose la capital de la Casa Hlaalu. Famosa por su bella flora autóctona y por tener una de las razas más fiables de guar de todo Morrowind, la ciudad tiene mucho de lo que enorgullecerse, aunque actualmente se está recuperando de un reciente brote de la plaga de Llodos.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/narsis.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Necrom",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Conocida coloquialmente como «la Ciudad de los Muertos», Necrom es famosa en todo Tamriel por los ritos funerarios sagrados que se practican entre sus muros. Su importancia en la tradición religiosa dunmeri ha hecho que no esté afiliada a ninguna casa dunmeri, de manera que todos puedan celebrar los ritos en paz.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/necrom.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Sadrith Mora",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "La ciudad seta de Sadrith Mora es uno de los asentamientos más importantes de la Casa Telvanni. Como es típico de ellos, y siendo que la Casa Telvanni está fuera del Pacto de Corazón de Ébano, el asentamiento isleño es remoto y de difícil acceso. Sin embargo, quien consigue llegar se encontrará con un mundo de infinitas posibilidades mágicas a su alcance.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/sadrith_mora.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Sailenmora",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Cerca de Sailenmora hay un pequeño asentamiento: un antiguo santuario dedicado al elfo oscuro san Vorys. Un grupo de khajiitas baandari nómadas también están residiendo en las cercanías, lo que disgusta a los sacerdotes encargados del santuario.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/sailenmora.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Ciénaga Silenciosa",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Ciénaga Silenciosa ha sido fundada recientemente en la costa oriental de Morrowind por colonos argonianos después de que el Pacto de Corazón de Ébano prohibiera el antaño extendido comercio de esclavos de los elfos oscuros. En su poco tiempo de existencia, el asentamiento ya ha tenido que sufrir muchas cosas, como el reciente asalto a manos de los piratas de Renrijra Maor.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/cienaga_silenciosa.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Ciudad de Vivec",
+    "description": "",
+    "provinciaTag": "morrowind",
+    "leafDescription": "Probablemente, la ciudad más sagrada de Morrowind. La Ciudad de Vivec recibe ese nombre por el dios del Tribunal que tiene allí su hogar. Mística y grandiosa, la ciudad está llena de misterios; desde el propio Vivec hasta la pequeña luna que, por imposible que parezca, yace suspendida sobre la ciudad.",
+    "audio": {
+      "src": "audios/ciudades/morrowind/ciudad_vivec.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  }
+]

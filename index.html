@@ -13,25 +13,52 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voice Over.</title>
+    <title>The Elder Scrolls — Voice Over</title>
 
-    <meta name="theme-color" content="#0f172a" />
-    <meta name="description" content="Textos narrados de The Elders Scrolls" />
+    <meta name="theme-color" content="#0c0704" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Textos narrados de The Elder Scrolls" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   </head>
   <body>
+    <!--
+      Los textos en español de este HTML son solo el "arranque" (primer pintado /
+      sin JS). La fuente de verdad de TODA la interfaz son los .json de i18n
+      (src/i18n/<idioma>/ui.json); main.js los aplica en cuanto carga (applyStaticI18n)
+      y al cambiar de idioma.
+    -->
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
     <div class="app">
       <header class="topbar">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menú lateral" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+        <span class="topbar-emblem" aria-hidden="true">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M24 3 L41 12 V28 C41 38 33 43 24 45 C15 43 7 38 7 28 V12 Z" />
+            <path d="M24 14 L30 24 L24 34 L18 24 Z" fill="currentColor" stroke="none" />
+          </svg>
+        </span>
         <div class="title-wrap">
-          <h1>VoiceOver</h1>
+          <h1>The Elder Scrolls — Voice Over</h1>
         </div>
+        <div class="lang-switcher" id="lang-switcher"></div>
       </header>
 
-      <main class="content">
-        <section class="screen-card" id="screen"></section>
-      </main>
+      <div class="music-bar" id="music-bar"></div>
+
+      <div class="app-body">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <main class="content" id="main-content" tabindex="-1">
+          <section class="screen-card" id="screen" aria-label="Narraciones"></section>
+        </main>
+      </div>
     </div>
 
     <script type="module" src="/src/main.js"></script>

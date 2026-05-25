@@ -1,29 +1,30 @@
 import "./styles.css";
-import SOUNDTRACK from "./soundtrack.json";
+import { t, getLang, setLang, LANGUAGES, getContent } from "./i18n.js";
+import SOUNDTRACK from "./i18n/es/soundtrack.json";
 
 // ── Data (split across multiple files for maintainability) ──────────────────
-import _start from "./data/start.json";
-import _ciudadesBase from "./data/ciudades/_base.json";
-import _ciudadesCN from "./data/ciudades/cienaga_negra.json";
-import _ciudadesCY from "./data/ciudades/cyrodiil.json";
-import _ciudadesRA from "./data/ciudades/roca_alta.json";
-import _ciudadesMW from "./data/ciudades/morrowind.json";
-import _ciudadesSkyrim from "./data/ciudades/skyrim.json";
-import _misionesBase from "./data/misiones/_base.json";
-import _misionesCN from "./data/misiones/cienaga_negra.json";
-import _misionesSkyrim from "./data/misiones/skyrim.json";
-import _misionesRA from "./data/misiones/roca_alta.json";
-import _misionesMW from "./data/misiones/morrowind.json";
-import _misionesCY from "./data/misiones/cyrodiil.json";
-import _encuentrosG from "./data/encuentros_generales.json";
-import _encuentrosP from "./data/encuentros_provinciales.json";
-import _sesionFinalBase from "./data/sesion_final/_base.json";
-import _sesionFinalCN from "./data/sesion_final/cienaga_negra.json";
-import _sesionFinalRA from "./data/sesion_final/roca_alta.json";
-import _sesionFinalSkyrim from "./data/sesion_final/skyrim.json";
-import _sesionFinalMW from "./data/sesion_final/morrowind.json";
-import _sesionFinalCY from "./data/sesion_final/cyrodiil.json";
-import _ambientConfig from "./data/ambient.json";
+import _start from "./i18n/es/data/start.json";
+import _ciudadesBase from "./i18n/es/data/ciudades/_base.json";
+import _ciudadesCN from "./i18n/es/data/ciudades/cienaga_negra.json";
+import _ciudadesCY from "./i18n/es/data/ciudades/cyrodiil.json";
+import _ciudadesRA from "./i18n/es/data/ciudades/roca_alta.json";
+import _ciudadesMW from "./i18n/es/data/ciudades/morrowind.json";
+import _ciudadesSkyrim from "./i18n/es/data/ciudades/skyrim.json";
+import _misionesBase from "./i18n/es/data/misiones/_base.json";
+import _misionesCN from "./i18n/es/data/misiones/cienaga_negra.json";
+import _misionesSkyrim from "./i18n/es/data/misiones/skyrim.json";
+import _misionesRA from "./i18n/es/data/misiones/roca_alta.json";
+import _misionesMW from "./i18n/es/data/misiones/morrowind.json";
+import _misionesCY from "./i18n/es/data/misiones/cyrodiil.json";
+import _encuentrosG from "./i18n/es/data/encuentros_generales.json";
+import _encuentrosP from "./i18n/es/data/encuentros_provinciales.json";
+import _sesionFinalBase from "./i18n/es/data/sesion_final/_base.json";
+import _sesionFinalCN from "./i18n/es/data/sesion_final/cienaga_negra.json";
+import _sesionFinalRA from "./i18n/es/data/sesion_final/roca_alta.json";
+import _sesionFinalSkyrim from "./i18n/es/data/sesion_final/skyrim.json";
+import _sesionFinalMW from "./i18n/es/data/sesion_final/morrowind.json";
+import _sesionFinalCY from "./i18n/es/data/sesion_final/cyrodiil.json";
+import _ambientConfig from "./i18n/es/data/ambient.json";
 
 const appData = {
   ..._start,
@@ -63,35 +64,33 @@ const appData = {
 };
 
 const screenEl = document.getElementById("screen");
+const sidebarEl = document.getElementById("sidebar");
 
+// Solo los IDs son estables; las etiquetas mostradas se traducen con t() en
+// tiempo de render (provincias.<id> / gremios.<id> en los .json de i18n).
 const FILTER_OPTIONS = {
-  provincias: [
-    { id: "cienaga_negra", label: "Ciénaga Negra" },
-    { id: "skyrim", label: "Skyrim" },
-    { id: "roca_alta", label: "Roca Alta" },
-    { id: "morrowind", label: "Morrowind" },
-    { id: "cyrodiil", label: "Cyrodiil" }
-  ],
+  provincias: ["cienaga_negra", "skyrim", "roca_alta", "morrowind", "cyrodiil"],
   gremios: [
-    { id: "circulo_campeones", label: "Círculo de Campeones" },
-    { id: "ladrones", label: "Gremio de ladrones" },
-    { id: "luchadores", label: "Gremio de luchadores" },
-    { id: "magos", label: "Gremio de magos" },
-    { id: "guardia_exterior", label: "Guardia exterior" },
-    { id: "hermandad_oscura", label: "Hermandad Oscura" },
-    { id: "intrepidos", label: "Intrépidos" },
-    { id: "ojos_reina", label: "Ojos de la Reina" },
-    { id: "orden_psijic", label: "Orden Psijic" }
+    "circulo_campeones",
+    "ladrones",
+    "luchadores",
+    "magos",
+    "guardia_exterior",
+    "hermandad_oscura",
+    "intrepidos",
+    "ojos_reina",
+    "orden_psijic"
   ]
 };
 
-const PROVINCIA_LABELS = Object.fromEntries(
-  FILTER_OPTIONS.provincias.map((item) => [item.id, item.label])
-);
+const provinciaLabel = (id) => t(`provincias.${id}`);
+const gremioLabel = (id) => t(`gremios.${id}`);
 
-const GREMIO_LABELS = Object.fromEntries(
-  FILTER_OPTIONS.gremios.map((item) => [item.id, item.label])
-);
+// Imagen de cabecera de la landing. Pon "" para volver al placeholder "ASSET HERE".
+const WELCOME_BANNER_SRC = "images/tes_bse_banner_02.jpg";
+
+// Email de contacto que aparece en el pie de la landing.
+const CONTACT_EMAIL = "overmalo@gmail.com";
 
 function loadState() {
   try {
@@ -124,6 +123,7 @@ function saveState() {
   localStorage.setItem(
     "navState",
     JSON.stringify({
+      view,
       selectedProvincia,
       selectedGremio,
       expandedPanels: [...expandedPanels],
@@ -155,6 +155,9 @@ let stEnabled = typeof (state.stEnabled ?? state.ytEnabled) === "boolean" ? (sta
 // Exclusión mutua: ambas no pueden estar activas a la vez
 if (stEnabled && ambientEnabled) ambientEnabled = false;
 
+// Vista activa: "inicio" (bienvenida) o "narraciones"
+let view = state.view === "narraciones" ? "narraciones" : "inicio";
+
 let provinciaCollapsed = typeof state.provinciaCollapsed === "boolean" ? state.provinciaCollapsed : false;
 let gremioCollapsed = typeof state.gremioCollapsed === "boolean" ? state.gremioCollapsed : false;
 let narrationsCollapsed = typeof state.narrationsCollapsed === "boolean" ? state.narrationsCollapsed : false;
@@ -163,12 +166,46 @@ let bandaCollapsed = typeof state.bandaCollapsed === "boolean" ? state.bandaColl
 /** @type {null | { rafId: number, panelEl: HTMLAudioElement, ambientEl: HTMLAudioElement|null, hasAmbient: boolean, totalDuration: number, playerEl: HTMLElement, isSeeking: boolean }} */
 let activePlayer = null;
 
-const contentTree = buildTreeFromStart();
-const accordionIndex = buildAccordionIndex(contentTree);
+let contentTree = buildTreeFromStart();
+let accordionIndex = buildAccordionIndex(contentTree);
 
 let swRegistration = null;
 
 registerServiceWorker();
+
+// ── Sidebar toggle (mobile) ──────────────────────────────────────────────
+const sidebarToggleEl = document.getElementById("sidebar-toggle");
+
+function setSidebarOpen(open) {
+  sidebarEl.classList.toggle("sidebar--open", open);
+  document.getElementById("sidebar-overlay").classList.toggle("sidebar-overlay--visible", open);
+  sidebarToggleEl?.setAttribute("aria-expanded", open ? "true" : "false");
+  sidebarToggleEl?.setAttribute("aria-label", open ? t("a11y.closeSidebar") : t("a11y.openSidebar"));
+}
+
+sidebarToggleEl?.addEventListener("click", () => {
+  const willOpen = !sidebarEl.classList.contains("sidebar--open");
+  setSidebarOpen(willOpen);
+  // Move focus into the sidebar when opening for keyboard users
+  if (willOpen) sidebarEl.querySelector(".sidebar-nav-item")?.focus();
+});
+document.getElementById("sidebar-overlay")?.addEventListener("click", () => setSidebarOpen(false));
+
+// Title click → go to landing
+document.querySelector(".title-wrap")?.addEventListener("click", () => {
+  view = "inicio";
+  stopActivePlayer();
+  saveState();
+  render();
+});
+
+// Close the mobile sidebar with Escape and return focus to the toggle
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && sidebarEl.classList.contains("sidebar--open")) {
+    setSidebarOpen(false);
+    sidebarToggleEl?.focus();
+  }
+});
 
 // ── Soundtrack ────────────────────────────────────────────
 
@@ -264,7 +301,7 @@ function updateSTDownloadUI(progress) {
   }
   bar.style.display = "";
   const pct = Math.round(progress * 100);
-  if (text) text.textContent = `Descargando… ${pct}%`;
+  if (text) text.textContent = t("soundtrackPlayer.downloading", { pct });
   if (fill) fill.style.width = `${pct}%`;
 }
 
@@ -419,13 +456,17 @@ function restoreSTFade() {
 
 function updateSTUI() {
   const titleEl = document.getElementById("st-track-title");
-  const playBtn = screenEl.querySelector("[data-st-playpause]");
-  if (titleEl) titleEl.textContent = SOUNDTRACK[stCurrentTrack]?.title ?? "";
-  if (playBtn) {
-    const isPlaying = stAudio ? !stAudio.paused : false;
-    playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+  const playBtn = document.querySelector("[data-st-playpause]");
+  const engaged = stEnabled && stAudio;
+  const isPlaying = engaged ? !stAudio.paused : false;
+  if (titleEl) {
+    titleEl.textContent = engaged
+      ? (SOUNDTRACK[stCurrentTrack]?.title ?? "")
+      : t("soundtrackPlayer.idle");
   }
-  if (stAudio && !stAudio.paused) startSTPoll(); else stopSTPoll();
+  if (playBtn) playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+  musicBarEl?.classList.toggle("music-bar--playing", isPlaying);
+  if (engaged && !stAudio.paused) startSTPoll(); else stopSTPoll();
   tickSTProgress();
 }
 
@@ -455,34 +496,137 @@ function tickSTProgress() {
   if (totalEl) totalEl.textContent = isFinite(duration) && duration > 0 ? formatTimeLong(duration) : "-:--";
 }
 
-function renderSTMiniPlayer() {
-  const title = SOUNDTRACK[stCurrentTrack]?.title ?? "Sin pistas";
-  const isPlaying = stAudio ? !stAudio.paused : false;
-  return `
-    <div class="yt-mini-player">
-      <div class="yt-top-row">
-        <div class="yt-controls">
-          <button type="button" class="yt-btn" data-st-prev aria-label="Canción anterior">⏮</button>
-          <button type="button" class="yt-btn" data-st-playpause aria-label="Reproducir/Pausar">${isPlaying ? "&#9646;&#9646;" : "&#9654;"}</button>
-          <button type="button" class="yt-btn" data-st-next aria-label="Canción siguiente">⏭</button>
-        </div>
-        <span class="yt-title" id="st-track-title">${escapeHtml(title)}</span>
+// Barra de música de ambiente, persistente en la zona superior (independiente de
+// la sección). Mantiene los mismos IDs que usa la lógica de audio (updateSTUI,
+// tickSTProgress, updateSTDownloadUI…). Se renderiza y enlaza UNA sola vez.
+function renderMusicBar() {
+  if (!musicBarEl) return;
+  const engaged = stEnabled && stAudio;
+  const isPlaying = engaged ? !stAudio.paused : false;
+  const title = engaged
+    ? (SOUNDTRACK[stCurrentTrack]?.title ?? t("soundtrackPlayer.fallbackTitle"))
+    : t("soundtrackPlayer.idle");
+
+  musicBarEl.className = `music-bar${isPlaying ? " music-bar--playing" : ""}`;
+  musicBarEl.innerHTML = `
+    <div class="mb-inner" role="group" aria-label="${escapeAttribute(t("soundtrackPlayer.barLabel"))}">
+      <span class="mb-icon" aria-hidden="true">&#9835;</span>
+      <div class="mb-controls">
+        <button type="button" class="mb-btn" data-st-prev aria-label="${escapeAttribute(t("soundtrackPlayer.prev"))}">&#9198;</button>
+        <button type="button" class="mb-btn mb-btn--play" data-st-playpause aria-label="${escapeAttribute(t("soundtrackPlayer.playPause"))}">${isPlaying ? "&#9646;&#9646;" : "&#9654;"}</button>
+        <button type="button" class="mb-btn" data-st-next aria-label="${escapeAttribute(t("soundtrackPlayer.next"))}">&#9197;</button>
       </div>
-      <div class="yt-progress-row">
-        <span class="yt-time" id="st-current-time">0:00</span>
-        <input type="range" class="yt-seekbar" id="st-seekbar" min="0" max="1000" value="0" step="1">
-        <span class="yt-time" id="st-total-time">-:--</span>
+      <span class="mb-title" id="st-track-title">${escapeHtml(title)}</span>
+      <div class="mb-progress">
+        <span class="mb-time" id="st-current-time">0:00</span>
+        <input type="range" class="mb-seekbar" id="st-seekbar" min="0" max="1000" value="0" step="1" aria-label="${escapeAttribute(t("soundtrackPlayer.seek"))}">
+        <span class="mb-time" id="st-total-time">-:--</span>
       </div>
-      <div id="st-download-bar" class="st-download-bar" style="display:none">
+      <div class="mb-volume">
+        <span class="mb-vol-icon" aria-hidden="true">&#128266;</span>
+        <input type="range" class="mb-volume-slider" id="st-volume" min="0" max="100" value="${stVolume}" step="1" aria-label="${escapeAttribute(t("soundtrackPlayer.volume"))}">
+      </div>
+      <div id="st-download-bar" class="mb-download" style="display:none" role="status" aria-live="polite">
         <span id="st-download-text"></span>
         <div class="st-download-progress"><div class="st-download-progress-fill" id="st-download-fill" style="width:0%"></div></div>
       </div>
-      <div class="yt-volume-row">
-        <span class="yt-vol-icon">🔊</span>
-        <input type="range" class="yt-volume-slider" id="st-volume" min="0" max="100" value="${stVolume}" step="1">
-      </div>
     </div>
   `;
+}
+
+// Arranca la música por primera vez (al pulsar play sin estar enganchada).
+function engageMusic() {
+  stEnabled = true;
+  ambientEnabled = false; // exclusión mutua con el audio ambiente
+  setupSTPlayer();
+  loadSTTrack(stCurrentTrack).then(() => {
+    stAudio?.play().catch(() => {});
+    updateSTMediaSession(true);
+    updateSTUI();
+  });
+  downloadSTIfNeeded();
+  stopActivePlayer();
+  renderMusicBar();
+  saveState();
+  render(); // refresca el sidebar (el ajuste de audio ambiente puede haber cambiado)
+  setTimeout(updateSTUI, 200);
+}
+
+function stPlayPause() {
+  if (!stEnabled || !stAudio) { engageMusic(); return; }
+  if (stAudio.paused) {
+    stAudio.play().catch(() => {});
+    updateSTMediaSession(true);
+  } else {
+    stAudio.pause();
+    updateSTMediaSession(false);
+  }
+  updateSTUI();
+}
+
+function stPrev() {
+  if (!stAudio || !SOUNDTRACK.length) return;
+  const wasPlaying = !stAudio.paused;
+  if (stAudio.currentTime > 3) {
+    stAudio.currentTime = 0;
+    updateSTUI();
+    if (wasPlaying) updateSTMediaSession(true);
+  } else {
+    stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
+    loadSTTrack(stCurrentTrack).then(() => {
+      if (wasPlaying) stAudio.play().catch(() => {});
+      updateSTUI();
+      saveState();
+      if (wasPlaying) updateSTMediaSession(true);
+    });
+  }
+}
+
+function stNext() {
+  if (!stAudio || !SOUNDTRACK.length) return;
+  const wasPlaying = !stAudio.paused;
+  stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
+  loadSTTrack(stCurrentTrack).then(() => {
+    if (wasPlaying) stAudio.play().catch(() => {});
+    updateSTUI();
+    saveState();
+    if (wasPlaying) updateSTMediaSession(true);
+  });
+}
+
+// Eventos de la barra de música. Delegación sobre el contenedor persistente:
+// así renderMusicBar() puede reescribir su contenido sin perder los listeners.
+function bindMusicBarEvents() {
+  if (!musicBarEl || musicBarEl.dataset.bound === "true") return;
+  musicBarEl.dataset.bound = "true";
+
+  musicBarEl.addEventListener("click", (event) => {
+    if (event.target.closest("[data-st-playpause]")) stPlayPause();
+    else if (event.target.closest("[data-st-prev]")) stPrev();
+    else if (event.target.closest("[data-st-next]")) stNext();
+  });
+
+  const startSeek = (event) => { if (event.target.id === "st-seekbar") stIsSeeking = true; };
+  musicBarEl.addEventListener("mousedown", startSeek);
+  musicBarEl.addEventListener("touchstart", startSeek, { passive: true });
+
+  musicBarEl.addEventListener("change", (event) => {
+    if (event.target.id !== "st-seekbar") return;
+    stIsSeeking = false;
+    if (!stAudio) return;
+    const duration = stAudio.duration;
+    if (isFinite(duration) && duration > 0) {
+      stAudio.currentTime = (parseInt(event.target.value, 10) / 1000) * duration;
+      tickSTProgress();
+    }
+  });
+
+  musicBarEl.addEventListener("input", (event) => {
+    if (event.target.id !== "st-volume") return;
+    stVolume = parseInt(event.target.value, 10);
+    if (stAudio) stAudio.volume = (stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100;
+    saveState();
+  });
 }
 
 function updateSTMediaSession(playing) {
@@ -490,8 +634,8 @@ function updateSTMediaSession(playing) {
   const base = import.meta.env.BASE_URL;
   if (playing) {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: SOUNDTRACK[stCurrentTrack]?.title ?? "Soundtrack",
-      artist: "BOTSE",
+      title: SOUNDTRACK[stCurrentTrack]?.title ?? t("soundtrackPlayer.fallbackTitle"),
+      artist: t("app.mediaArtist"),
       artwork: [
         { src: `${base}icons/icon-192.png`, sizes: "192x192", type: "image/png" },
         { src: `${base}icons/icon-512.png`, sizes: "512x512", type: "image/png" },
@@ -538,6 +682,136 @@ function updateSTMediaSession(playing) {
   navigator.mediaSession.playbackState = playing ? "playing" : "paused";
 }
 
+// Barra de música de ambiente (persistente en la zona superior).
+const musicBarEl = document.getElementById("music-bar");
+
+// ── Language switcher ─────────────────────────────────────────────────────
+const langSwitcherEl = document.getElementById("lang-switcher");
+let langMenuOpen = false;
+
+function renderLangSwitcher() {
+  if (!langSwitcherEl) return;
+  const current = getLang();
+  const currentLangObj = LANGUAGES.find((l) => l.code === current) || LANGUAGES[0];
+  const options = LANGUAGES.map((l) => {
+    const isCurrent = l.code === current;
+    return `<button type="button" class="lang-option" role="menuitemradio" aria-checked="${isCurrent ? "true" : "false"}" data-lang-code="${escapeAttribute(l.code)}"><span class="lang-option-mark" aria-hidden="true">${isCurrent ? "◆" : "◇"}</span><span>${escapeHtml(l.name)} (${escapeHtml(l.label)})</span></button>`;
+  }).join("");
+
+  const btnLabel = `${t("langSwitcher.label")}. ${t("langSwitcher.current", { name: currentLangObj.name })}`;
+
+  langSwitcherEl.innerHTML = `
+    <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="menu" aria-expanded="${langMenuOpen ? "true" : "false"}" aria-label="${escapeAttribute(btnLabel)}">
+      <span class="lang-globe" aria-hidden="true">&#127760;</span>
+      <span class="lang-current">${escapeHtml(currentLangObj.label)}</span>
+      <span class="lang-caret" aria-hidden="true">&#9662;</span>
+    </button>
+    <div class="lang-menu" id="lang-menu" role="menu" aria-label="${escapeAttribute(t("langSwitcher.menuLabel"))}"${langMenuOpen ? "" : " hidden"}>
+      ${options}
+    </div>
+  `;
+  bindLangSwitcherEvents();
+}
+
+function bindLangSwitcherEvents() {
+  const btn = document.getElementById("lang-btn");
+  const menu = document.getElementById("lang-menu");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    langMenuOpen = !langMenuOpen;
+    menu.hidden = !langMenuOpen;
+    btn.setAttribute("aria-expanded", langMenuOpen ? "true" : "false");
+    if (langMenuOpen) menu.querySelector(".lang-option")?.focus();
+  });
+
+  menu.querySelectorAll("[data-lang-code]").forEach((opt) => {
+    opt.addEventListener("click", () => {
+      const code = opt.dataset.langCode;
+      langMenuOpen = false;
+      const changed = code !== getLang() && setLang(code);
+      if (changed) {
+        stopActivePlayer();
+        reloadContent();
+        applyStaticI18n();
+        render();
+      }
+      renderLangSwitcher();
+      document.getElementById("lang-btn")?.focus();
+    });
+  });
+}
+
+function closeLangMenu() {
+  if (!langMenuOpen) return;
+  langMenuOpen = false;
+  document.getElementById("lang-menu")?.setAttribute("hidden", "");
+  document.getElementById("lang-btn")?.setAttribute("aria-expanded", "false");
+}
+
+document.addEventListener("click", (event) => {
+  if (langMenuOpen && langSwitcherEl && !langSwitcherEl.contains(event.target)) closeLangMenu();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && langMenuOpen) {
+    closeLangMenu();
+    document.getElementById("lang-btn")?.focus();
+  }
+});
+
+// Recarga el contenido (datos + banda sonora) y reconstruye el árbol al cambiar
+// de idioma. Los ids del árbol son estructurales (no dependen del texto), así que
+// los paneles abiertos siguen siendo válidos.
+function reloadContent() {
+  contentTree = buildTreeFromStart();
+  accordionIndex = buildAccordionIndex(contentTree);
+  if (stCurrentTrack >= SOUNDTRACK.length) stCurrentTrack = 0;
+}
+
+// Localiza el manifest de la PWA. El idioma por defecto usa el fichero estático
+// (instalable); para otros idiomas se genera uno al vuelo desde su manifest.json.
+const DEFAULT_MANIFEST_LANG = LANGUAGES[0]?.code || "es";
+function applyManifest() {
+  const link = document.querySelector('link[rel="manifest"]');
+  if (!link) return;
+  if (getLang() === DEFAULT_MANIFEST_LANG) {
+    if (link.dataset.objUrl) {
+      URL.revokeObjectURL(link.dataset.objUrl);
+      delete link.dataset.objUrl;
+    }
+    link.href = `${import.meta.env.BASE_URL}manifest.webmanifest`;
+    return;
+  }
+  try {
+    const blob = new Blob([JSON.stringify(getContent().manifest)], { type: "application/manifest+json" });
+    if (link.dataset.objUrl) URL.revokeObjectURL(link.dataset.objUrl);
+    const url = URL.createObjectURL(blob);
+    link.href = url;
+    link.dataset.objUrl = url;
+  } catch {}
+}
+
+// Applies translations to document-level / static chrome that lives outside render().
+function applyStaticI18n() {
+  document.documentElement.lang = getLang();
+  document.title = t("app.title");
+  document.querySelector('meta[name="description"]')?.setAttribute("content", t("app.metaDescription"));
+  const skip = document.querySelector(".skip-link");
+  if (skip) skip.textContent = t("app.skipLink");
+  const h1 = document.querySelector(".title-wrap h1");
+  if (h1) h1.textContent = t("app.title");
+  sidebarToggleEl?.setAttribute(
+    "aria-label",
+    sidebarEl.classList.contains("sidebar--open") ? t("a11y.closeSidebar") : t("a11y.openSidebar")
+  );
+  applyManifest();
+}
+
+applyStaticI18n();
+renderLangSwitcher();
+renderMusicBar();
+bindMusicBarEvents();
 render();
 
 if (stEnabled) {
@@ -576,6 +850,23 @@ window.addEventListener("pagehide", (e) => {
 });
 
 function registerServiceWorker() {
+  // En desarrollo NO usamos el service worker: provoca que se sirva un index.html
+  // cacheado y obsoleto (recargas lentas, UI desincronizada). Además, si quedó
+  // uno registrado de una sesión previa, lo eliminamos y limpiamos sus cachés.
+  if (import.meta.env.DEV) {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations()
+        .then((regs) => regs.forEach((reg) => reg.unregister()))
+        .catch(() => {});
+    }
+    if (typeof caches !== "undefined") {
+      caches.keys()
+        .then((keys) => keys.filter((k) => k !== ST_CACHE_NAME).forEach((k) => caches.delete(k)))
+        .catch(() => {});
+    }
+    return;
+  }
+
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", async () => {
       try {
@@ -624,9 +915,21 @@ function registerServiceWorker() {
 }
 
 function render() {
+  sidebarEl.innerHTML = renderSidebar();
+
+  if (view === "inicio") {
+    screenEl.setAttribute("aria-label", t("a11y.screenWelcome"));
+    screenEl.innerHTML = renderWelcome();
+    bindFilterEvents();
+    bindConfigEvents();
+    return;
+  }
+
+  screenEl.setAttribute("aria-label", t("a11y.screenNarrations"));
+
   let bodyHtml;
   if (!selectedProvincia) {
-    bodyHtml = '<div class="empty-screen">Selecciona una provincia para ver el contenido.</div>';
+    bodyHtml = `<div class="empty-screen">${escapeHtml(t("content.selectProvince"))}</div>`;
   } else {
     const filteredRoots = contentTree
       .map(filterTree)
@@ -634,14 +937,19 @@ function render() {
 
     bodyHtml = filteredRoots.length
       ? filteredRoots.map((node) => renderPanel(node, 0)).join("")
-      : '<div class="empty-screen">No hay paneles que coincidan con los filtros seleccionados.</div>';
+      : `<div class="empty-screen">${escapeHtml(t("content.noMatches"))}</div>`;
   }
+
+  const provLabel = selectedProvincia ? provinciaLabel(selectedProvincia) : null;
+  const gremLabel = selectedGremio ? gremioLabel(selectedGremio) : null;
+  const breadcrumb = provLabel
+    ? `<p class="description breadcrumb">${escapeHtml(provLabel)}${gremLabel ? ` &mdash; ${escapeHtml(gremLabel)}` : ""}</p>`
+    : "";
 
   screenEl.innerHTML = `
     <div class="single-screen-head">
-      <h2>The Elders Scroll: La traición de la segunda era</h2>
-      <p class="description">Explora categorías y despliega cada panel para ver su contenido.</p>
-      ${renderFilters()}
+      <h2>${escapeHtml(t("app.campaignTitle"))}</h2>
+      ${breadcrumb}
     </div>
     <div class="accordion-root">
       ${bodyHtml}
@@ -654,127 +962,103 @@ function render() {
   bindDescriptionRevealEvents();
 }
 
-function renderFilters() {
-  const provinciaLabel = selectedProvincia
-    ? PROVINCIA_LABELS[selectedProvincia]
-    : null;
-  const gremioLabel = selectedGremio
-    ? GREMIO_LABELS[selectedGremio]
-    : null;
+function renderWelcome() {
+  const features = t("welcome.features");
+  const featuresHtml = (Array.isArray(features) ? features : [])
+    .map((f) => `<li><strong>${escapeHtml(f.term)}</strong> ${escapeHtml(f.desc)}</li>`)
+    .join("");
+
+  const bannerHtml = WELCOME_BANNER_SRC
+    ? `<img class="welcome-banner-img" src="${escapeAttribute(import.meta.env.BASE_URL + WELCOME_BANNER_SRC)}" alt="${escapeAttribute(t("welcome.bannerAlt"))}" decoding="async">`
+    : `<div class="welcome-banner" role="img" aria-label="${escapeAttribute(t("welcome.bannerAria"))}">
+        <span class="welcome-banner-label">${escapeHtml(t("welcome.bannerLabel"))}</span>
+      </div>`;
 
   return `
-    <div class="filters-panel">
-      <div class="filter-group filter-group--collapsible${provinciaCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="">
-        <button
-          type="button"
-          class="filter-group-toggle"
-          data-filter-collapse="provincia"
-          aria-expanded="${provinciaCollapsed ? "false" : "true"}"
-        >
-          <span class="filter-group-main">
-            <span class="filter-group-selected">${provinciaLabel ? escapeHtml(provinciaLabel) : "Selecciona una provincia"}</span>
-            ${provinciaLabel ? "<span class=\"filter-group-label\"></span>" : ""}
-          </span>
-          <span class="panel-icon" aria-hidden="true">${provinciaCollapsed ? "+" : "−"}</span>
-        </button>
-        <div class="filter-group-body${provinciaCollapsed ? " is-hidden" : ""}">
-          <div class="filter-options">
-            ${FILTER_OPTIONS.provincias.map((item) => renderCheckable("provincia", item.id, item.label, selectedProvincia === item.id)).join("")}
-          </div>
-        </div>
+    <div class="welcome">
+      ${bannerHtml}
+      <div class="welcome-intro">
+        <h2>${escapeHtml(t("app.campaignTitle"))}</h2>
+        <p class="welcome-lead">${escapeHtml(t("welcome.lead"))}</p>
+        <p class="welcome-text">${escapeHtml(t("welcome.intro"))}</p>
+        <h3 class="welcome-features-title">${escapeHtml(t("welcome.featuresTitle"))}</h3>
+        <ul class="welcome-features">
+          ${featuresHtml}
+        </ul>
+        <p class="welcome-text welcome-note">${escapeHtml(t("welcome.note"))}</p>
       </div>
-      <div class="filter-group filter-group--collapsible${gremioCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="">
-        <button
-          type="button"
-          class="filter-group-toggle"
-          data-filter-collapse="gremio"
-          aria-expanded="${gremioCollapsed ? "false" : "true"}"
-        >
-          <span class="filter-group-main">
-            <span class="filter-group-selected">${gremioLabel ? escapeHtml(gremioLabel) : "Selecciona un gremio"}</span>
-            ${gremioLabel ? "<span class=\"filter-group-label\"></span>" : ""}
-          </span>
-          <span class="panel-icon" aria-hidden="true">${gremioCollapsed ? "+" : "−"}</span>
-        </button>
-        <div class="filter-group-body${gremioCollapsed ? " is-hidden" : ""}">
-          <div class="filter-options">
-            ${FILTER_OPTIONS.gremios.map((item) => renderCheckable("gremio", item.id, item.label, selectedGremio === item.id)).join("")}
-          </div>
-        </div>
-      </div>
+      <footer class="welcome-footer">
+        <p>${escapeHtml(t("welcome.footerCredits"))}</p>
+        <p>${escapeHtml(t("welcome.footerDisclaimer"))}</p>
+        <p>${escapeHtml(t("welcome.footerContact"))} <a href="mailto:${CONTACT_EMAIL}">${escapeHtml(CONTACT_EMAIL)}</a></p>
+      </footer>
     </div>
-    <div class="config-panel">
-      <div class="filter-group filter-group--collapsible${narrationsCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="Narraciones">
-        <button
-          type="button"
-          class="filter-group-toggle"
-          data-filter-collapse="narraciones"
-          aria-expanded="${narrationsCollapsed ? "false" : "true"}"
-        >
-          <span class="filter-group-main">
-            <span class="filter-group-selected">Narraciones</span>
-          </span>
-          <span class="panel-icon" aria-hidden="true">${narrationsCollapsed ? "+" : "−"}</span>
-        </button>
-        <div class="filter-group-body config-group-body${narrationsCollapsed ? " is-hidden" : ""}">
-          <label class="autoplay-label">
-            <input
-              type="checkbox"
-              id="autoplay-checkbox"
-              class="autoplay-checkbox"
-              ${autoPlay ? "checked" : ""}
-            />
-            <span>Auto-play</span>
-          </label>
-          <label class="autoplay-label">
-            <input
-              type="checkbox"
-              id="ambient-checkbox"
-              class="autoplay-checkbox"
-              ${ambientEnabled ? "checked" : ""}
-            />
-            <span>Audio ambiente</span>
-          </label>
-          <div class="filter-options">
-            ${[1.00, 1.15, 1.25, 1.5].map((rate) => {
-              const active = playbackRate === rate;
-              const label = `${rate.toFixed(2)}x`;
-              return `<button
-                type="button"
-                class="checkable-chip${active ? " checkable-chip--active" : ""}"
-                data-config-rate="${rate}"
-                aria-pressed="${active ? "true" : "false"}"
-              ><span class="checkable-chip-mark" aria-hidden="true">${active ? "●" : "○"}</span><span>${label}</span></button>`;
-            }).join("")}
-          </div>
+  `;
+}
+
+function renderSidebar() {
+  // Province/guild highlights only make sense once the user is browsing
+  // narrations. On the welcome page nothing here should appear selected.
+  const inNarr = view === "narraciones";
+
+  // Provincia = entrar en una sección → fila con chevron (›).
+  const provinciaItems = FILTER_OPTIONS.provincias.map((id) => {
+    const active = inNarr && selectedProvincia === id;
+    return `<button type="button" class="sidebar-nav-item sidebar-nav-item--section${active ? " sidebar-nav-item--active" : ""}" data-filter-type="provincia" data-filter-value="${escapeAttribute(id)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${active ? "◆" : "◇"}</span><span class="sidebar-nav-text">${escapeHtml(provinciaLabel(id))}</span><span class="sidebar-nav-chevron" aria-hidden="true">&rsaquo;</span></button>`;
+  }).join("");
+
+  // Gremio = filtro/modificador del contenido → lista indentada con casillas (▣/▢).
+  const gremioNoneActive = inNarr && !selectedGremio;
+  const gremioBtn = (value, label, active) =>
+    `<button type="button" class="sidebar-nav-item sidebar-nav-item--filter${active ? " sidebar-nav-item--active" : ""}" data-filter-type="gremio" data-filter-value="${escapeAttribute(value)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot sidebar-nav-dot--check" aria-hidden="true">${active ? "▣" : "▢"}</span><span class="sidebar-nav-text">${escapeHtml(label)}</span></button>`;
+  const gremioItems = [
+    gremioBtn("", t("sidebar.allGuilds"), gremioNoneActive),
+    ...FILTER_OPTIONS.gremios.map((id) => gremioBtn(id, gremioLabel(id), inNarr && selectedGremio === id)),
+  ].join("");
+
+  const speedChips = [1.00, 1.15, 1.25, 1.5].map((rate) => {
+    const active = playbackRate === rate;
+    return `<button type="button" class="checkable-chip${active ? " checkable-chip--active" : ""}" data-config-rate="${rate}" aria-pressed="${active ? "true" : "false"}"><span class="checkable-chip-mark" aria-hidden="true">${active ? "●" : "○"}</span><span>${rate.toFixed(2)}x</span></button>`;
+  }).join("");
+
+  const inicioActive = view === "inicio";
+
+  return `
+    <nav class="sidebar-nav" aria-label="${escapeAttribute(t("a11y.sidebarNav"))}">
+      <button type="button" class="sidebar-close" data-sidebar-close aria-label="${escapeAttribute(t("a11y.closeSidebar"))}">&#10005;</button>
+      <div class="sidebar-section">
+        <div class="sidebar-nav-list">
+          <button type="button" class="sidebar-nav-item${inicioActive ? " sidebar-nav-item--active" : ""}" data-nav-view="inicio" aria-current="${inicioActive ? "page" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${inicioActive ? "◆" : "◇"}</span>${escapeHtml(t("sidebar.home"))}</button>
         </div>
       </div>
-      <div class="filter-group filter-group--collapsible${bandaCollapsed ? " filter-group--collapsed" : ""}" role="group" aria-label="Banda Sonora">
-        <button
-          type="button"
-          class="filter-group-toggle"
-          data-filter-collapse="banda"
-          aria-expanded="${bandaCollapsed ? "false" : "true"}"
-        >
-          <span class="filter-group-main">
-            <span class="filter-group-selected">Banda Sonora</span>
-          </span>
-          <span class="panel-icon" aria-hidden="true">${bandaCollapsed ? "+" : "−"}</span>
-        </button>
-        <div class="filter-group-body config-group-body${bandaCollapsed ? " is-hidden" : ""}">
-          <label class="autoplay-label">
-            <input
-              type="checkbox"
-              id="st-checkbox"
-              class="autoplay-checkbox"
-              ${stEnabled ? "checked" : ""}
-            />
-            <span>Soundtrack</span>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">${escapeHtml(t("sidebar.provincia"))}</h3>
+        <p class="sidebar-section-hint">${escapeHtml(t("sidebar.provinciaHint"))}</p>
+        <div class="sidebar-nav-list">${provinciaItems}</div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section sidebar-section--filter">
+        <h3 class="sidebar-heading">${escapeHtml(t("sidebar.gremio"))}</h3>
+        <p class="sidebar-section-hint">${escapeHtml(t("sidebar.gremioHint"))}</p>
+        <div class="sidebar-nav-list sidebar-nav-list--filter">${gremioItems}</div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">${escapeHtml(t("sidebar.playback"))}</h3>
+        <div class="sidebar-controls">
+          <label class="sidebar-ctrl-label">
+            <input type="checkbox" id="autoplay-checkbox" class="autoplay-checkbox"${autoPlay ? " checked" : ""}>
+            <span>${escapeHtml(t("sidebar.autoplay"))}</span>
           </label>
-          ${stEnabled ? renderSTMiniPlayer() : ""}
+          <label class="sidebar-ctrl-label">
+            <input type="checkbox" id="ambient-checkbox" class="autoplay-checkbox"${ambientEnabled ? " checked" : ""}>
+            <span>${escapeHtml(t("sidebar.ambient"))}</span>
+          </label>
+          <div class="sidebar-speed">${speedChips}</div>
         </div>
       </div>
-    </div>
+    </nav>
   `;
 }
 
@@ -797,7 +1081,7 @@ function renderCheckable(type, value, label, checked) {
 }
 
 function bindConfigEvents() {
-  const checkbox = screenEl.querySelector("#autoplay-checkbox");
+  const checkbox = document.getElementById("autoplay-checkbox");
   if (checkbox) {
     checkbox.addEventListener("change", () => {
       autoPlay = checkbox.checked;
@@ -805,36 +1089,13 @@ function bindConfigEvents() {
     });
   }
 
-  const ambientCheckbox = screenEl.querySelector("#ambient-checkbox");
+  const ambientCheckbox = document.getElementById("ambient-checkbox");
   if (ambientCheckbox) {
     ambientCheckbox.addEventListener("change", () => {
       ambientEnabled = ambientCheckbox.checked;
       if (ambientEnabled && stEnabled) {
+        // El audio ambiente y la música de fondo son mutuamente excluyentes.
         stEnabled = false;
-        stAudio?.pause();
-        stopSTPoll();
-        restoreST();
-      }
-      stopActivePlayer();
-      saveState();
-      render();
-    });
-  }
-
-  const stCheckbox = screenEl.querySelector("#st-checkbox");
-  if (stCheckbox) {
-    stCheckbox.addEventListener("change", () => {
-      stEnabled = stCheckbox.checked;
-      if (stEnabled) {
-        ambientEnabled = false;
-        setupSTPlayer();
-        loadSTTrack(stCurrentTrack).then(() => {
-          stAudio?.play().catch(() => {});
-          updateSTMediaSession(true);
-          updateSTUI();
-        });
-        downloadSTIfNeeded();
-      } else {
         stAudio?.pause();
         stopSTPoll();
         restoreST();
@@ -842,79 +1103,15 @@ function bindConfigEvents() {
           navigator.mediaSession.playbackState = "none";
           navigator.mediaSession.metadata = null;
         }
+        renderMusicBar();
       }
       stopActivePlayer();
       saveState();
       render();
-      if (stEnabled) setTimeout(updateSTUI, 200);
     });
   }
 
-  screenEl.querySelector("[data-st-prev]")?.addEventListener("click", () => {
-    if (!stAudio || !SOUNDTRACK.length) return;
-    const wasPlaying = !stAudio.paused;
-    if (stAudio.currentTime > 3) {
-      stAudio.currentTime = 0;
-      updateSTUI();
-      if (wasPlaying) updateSTMediaSession(true);
-    } else {
-      stCurrentTrack = (stCurrentTrack - 1 + SOUNDTRACK.length) % SOUNDTRACK.length;
-      loadSTTrack(stCurrentTrack).then(() => {
-        if (wasPlaying) stAudio.play().catch(() => {});
-        updateSTUI();
-        saveState();
-        if (wasPlaying) updateSTMediaSession(true);
-      });
-    }
-  });
-  screenEl.querySelector("[data-st-next]")?.addEventListener("click", () => {
-    if (!stAudio || !SOUNDTRACK.length) return;
-    const wasPlaying = !stAudio.paused;
-    stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
-    loadSTTrack(stCurrentTrack).then(() => {
-      if (wasPlaying) stAudio.play().catch(() => {});
-      updateSTUI();
-      saveState();
-      if (wasPlaying) updateSTMediaSession(true);
-    });
-  });
-  screenEl.querySelector("[data-st-playpause]")?.addEventListener("click", () => {
-    if (!stAudio) return;
-    if (stAudio.paused) {
-      stAudio.play().catch(() => {});
-      updateSTMediaSession(true);
-    } else {
-      stAudio.pause();
-      updateSTMediaSession(false);
-    }
-    updateSTUI();
-  });
-
-  const stSeekbar = document.getElementById("st-seekbar");
-  if (stSeekbar) {
-    stSeekbar.addEventListener("mousedown", () => { stIsSeeking = true; });
-    stSeekbar.addEventListener("touchstart", () => { stIsSeeking = true; }, { passive: true });
-    stSeekbar.addEventListener("change", () => {
-      stIsSeeking = false;
-      if (!stAudio) return;
-      const duration = stAudio.duration;
-      if (isFinite(duration) && duration > 0) {
-        stAudio.currentTime = (parseInt(stSeekbar.value, 10) / 1000) * duration;
-        tickSTProgress();
-      }
-    });
-  }
-
-  const stVolumeSlider = document.getElementById("st-volume");
-  if (stVolumeSlider) {
-    stVolumeSlider.addEventListener("input", () => {
-      stVolume = parseInt(stVolumeSlider.value, 10);
-      if (stAudio) stAudio.volume = (stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100;
-      saveState();
-    });
-  }
-
-  screenEl.querySelectorAll("[data-config-rate]").forEach((button) => {
+  document.querySelectorAll("[data-config-rate]").forEach((button) => {
     button.addEventListener("click", () => {
       const rate = parseFloat(button.dataset.configRate);
       playbackRate = rate;
@@ -928,7 +1125,7 @@ function bindConfigEvents() {
         if (activePlayer.ambientEl) activePlayer.ambientEl.playbackRate = rate;
       }
 
-      screenEl.querySelectorAll("[data-config-rate]").forEach((btn) => {
+      document.querySelectorAll("[data-config-rate]").forEach((btn) => {
         const btnRate = parseFloat(btn.dataset.configRate);
         const active = playbackRate === btnRate;
         btn.classList.toggle("checkable-chip--active", active);
@@ -942,7 +1139,9 @@ function bindConfigEvents() {
 }
 
 function bindFilterEvents() {
-  screenEl.querySelectorAll("[data-filter-collapse]").forEach((button) => {
+  // data-filter-collapse buttons no longer exist in sidebar (sections are always visible)
+  // kept for backward-compat in case any collapse buttons remain in screenEl
+  document.querySelectorAll("[data-filter-collapse]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.dataset.filterCollapse;
       if (target === "provincia") provinciaCollapsed = !provinciaCollapsed;
@@ -954,20 +1153,42 @@ function bindFilterEvents() {
     });
   });
 
-  screenEl.querySelectorAll("[data-filter-type]").forEach((button) => {
+  // Botón "X" para cerrar el menú lateral en móvil
+  document.querySelector("[data-sidebar-close]")?.addEventListener("click", () => {
+    setSidebarOpen(false);
+    sidebarToggleEl?.focus();
+  });
+
+  // "Inicio" navigation → welcome view
+  document.querySelectorAll("[data-nav-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      view = button.dataset.navView === "inicio" ? "inicio" : "narraciones";
+      stopActivePlayer();
+      saveState();
+      render();
+    });
+  });
+
+  document.querySelectorAll("[data-filter-type]").forEach((button) => {
     button.addEventListener("click", () => {
       const type = button.dataset.filterType;
       const value = button.dataset.filterValue;
-      if (!type || !value) return;
+      if (!type) return;  // value="" is valid (clear guild selection)
 
       if (type === "provincia") {
-        selectedProvincia = selectedProvincia === value ? "" : value;
+        // Always select the province (no toggle-off) and reset the guild
+        // filter to "Todos" by default, then enter the narrations view.
+        selectedProvincia = value;
+        selectedGremio = "";
+        view = "narraciones";
       }
 
       if (type === "gremio") {
         selectedGremio = selectedGremio === value ? "" : value;
       }
 
+      // En móvil NO cerramos el menú al elegir provincia/gremio: el usuario lo
+      // cierra a mano (con el botón ☰ o tocando fuera), igual que los ajustes.
       saveState();
       render();
     });
@@ -1137,7 +1358,7 @@ function setPlayerBtnState(playerEl, isPlaying) {
   if (!btn) return;
   btn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
   btn.classList.toggle("player-btn--playing", isPlaying);
-  btn.setAttribute("aria-label", isPlaying ? "Pausar" : "Reproducir");
+  btn.setAttribute("aria-label", isPlaying ? t("player.pause") : t("player.play"));
 }
 
 function seekPlayer(vt) {
@@ -1311,8 +1532,8 @@ function initPlayer(contentEl, panelEl, ambientEl, totalDuration, panelDuration)
 
   // Register MediaSession metadata and action handlers for OS media controls
   if ("mediaSession" in navigator) {
-    const title = contentEl.closest(".panel")?.querySelector(".panel-title")?.textContent?.trim() || "BOTSE Audio";
-    navigator.mediaSession.metadata = new MediaMetadata({ title, artist: "BOTSE" });
+    const title = contentEl.closest(".panel")?.querySelector(".panel-title")?.textContent?.trim() || t("app.mediaFallbackTitle");
+    navigator.mediaSession.metadata = new MediaMetadata({ title, artist: t("app.mediaArtist") });
     navigator.mediaSession.setActionHandler("play", () => playerEl.querySelector("[data-player-play]")?.click());
     navigator.mediaSession.setActionHandler("pause", () => playerEl.querySelector("[data-player-play]")?.click());
     navigator.mediaSession.setActionHandler("stop", () => stopActivePlayer());
@@ -1571,25 +1792,31 @@ function renderPanel(node, level) {
   `;
 }
 
+// Construye la URL de un audio insertando el idioma activo justo tras "audios/":
+//   "audios/ciudades/x.mp3"  →  <BASE>audios/<lang>/ciudades/x.mp3
+// Así los datos no necesitan saber el idioma: basta con tener los mp3 en
+// public/audios/<lang>/… (p. ej. public/audios/es/…). Devuelve "" si no hay ruta.
+function audioUrl(src) {
+  if (!src) return "";
+  const path = src.replace(/^\/+/, "").replace(/^audios\//, `audios/${getLang()}/`);
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
 function renderLeafContent(node) {
   const tagsHtml = "";
   const isOpen = expandedPanels.has(node.id);
 
-  const panelSrc = node.audioSrc
-    ? `${import.meta.env.BASE_URL}${node.audioSrc.replace(/^\/+/, "")}`
-    : "";
+  const panelSrc = audioUrl(node.audioSrc);
 
   // Only resolve ambient when open — avoids creating WebMediaPlayers for closed panels.
   const rawAmbientSrc = (isOpen && ambientEnabled && !stEnabled) ? resolveAmbientSrc(node.id) : null;
-  const ambientSrc = rawAmbientSrc
-    ? `${import.meta.env.BASE_URL}${rawAmbientSrc.replace(/^\/+/, "")}`
-    : null;
+  const ambientSrc = audioUrl(rawAmbientSrc);
 
   const descriptionHtml = renderLeafDescription(node);
 
   let audioHtml;
   if (!panelSrc) {
-    audioHtml = '<p class="empty">Falta definir la ruta del audio.</p>';
+    audioHtml = `<p class="empty">${escapeHtml(t("player.missingAudio"))}</p>`;
   } else {
     // Only inject <audio> elements when open to stay within the browser's
     // WebMediaPlayer limit (crbug.com/1144736).
@@ -1602,9 +1829,9 @@ function renderLeafContent(node) {
 
     audioHtml = `
       <div class="custom-player" data-player-id="${escapeAttribute(node.id)}">
-        <button type="button" class="player-btn" data-player-play aria-label="Reproducir">&#9654;</button>
+        <button type="button" class="player-btn" data-player-play aria-label="${escapeAttribute(t("player.play"))}">&#9654;</button>
         <div class="player-track">
-          <input type="range" class="player-seekbar" data-player-seek min="0" max="1000" value="0" step="1" disabled>
+          <input type="range" class="player-seekbar" data-player-seek min="0" max="1000" value="0" step="1" aria-label="${escapeAttribute(t("player.seek"))}" disabled>
           <div class="player-time">
             <span data-player-current>0:00</span>
             <span data-player-total>-:--</span>
@@ -1634,17 +1861,36 @@ function renderLeafDescription(node) {
     return "";
   }
 
+  const id = escapeAttribute(node.id);
+
+  // Revelado: mantenemos el contenedor; el texto se muestra dentro y un botón
+  // superior permite volver a ocultarlo.
   if (isDescriptionRevealed) {
-    return `<p class="description leaf-description">${escapeHtml(node.description)}</p>`;
+    return `
+      <div class="spoiler spoiler--revealed">
+        <button
+          type="button"
+          class="spoiler-toggle-btn"
+          data-reveal-description="${id}"
+          aria-expanded="true"
+        >
+          <span class="spoiler-preview-label">${escapeHtml(t("spoiler.hideLabel"))}</span>
+          <span class="spoiler-caret" aria-hidden="true">&#9652;</span>
+        </button>
+        <p class="description leaf-description">${escapeHtml(node.description)}</p>
+      </div>
+    `;
   }
 
+  // Oculto: toda la caja es pulsable para revelar.
   return `
     <button
       type="button"
-      class="spoiler-preview"
-      data-reveal-description="${escapeAttribute(node.id)}"
+      class="spoiler spoiler-preview"
+      data-reveal-description="${id}"
       aria-expanded="false"
     >
+      <span class="spoiler-preview-label">${escapeHtml(t("spoiler.label"))}</span>
       <span class="spoiler-lines" aria-hidden="true">
         <span class="spoiler-line"></span>
         <span class="spoiler-line"></span>

@@ -1,0 +1,125 @@
+{
+  "app": {
+    "title": "The Elder Scrolls — Voice Over",
+    "metaDescription": "Textos narrados de The Elder Scrolls",
+    "skipLink": "Saltar al contenido",
+    "campaignTitle": "La Traición de la Segunda Era",
+    "mediaArtist": "BOTSE",
+    "mediaFallbackTitle": "BOTSE Audio"
+  },
+  "a11y": {
+    "openSidebar": "Abrir menú lateral",
+    "closeSidebar": "Cerrar menú lateral",
+    "sidebarNav": "Navegación y ajustes",
+    "screenWelcome": "Bienvenida",
+    "screenNarrations": "Narraciones"
+  },
+  "langSwitcher": {
+    "label": "Cambiar idioma",
+    "current": "Idioma actual: {name}",
+    "menuLabel": "Seleccionar idioma"
+  },
+  "sidebar": {
+    "home": "Inicio",
+    "provincia": "Provincia",
+    "provinciaHint": "Elige una sección",
+    "gremio": "Gremio",
+    "gremioHint": "Filtra el contenido",
+    "playback": "Reproducción",
+    "soundtrack": "Banda Sonora",
+    "autoplay": "Reproducción automática",
+    "ambient": "Audio ambiente",
+    "soundtrackToggle": "Activar banda sonora",
+    "allGuilds": "Todos"
+  },
+  "provincias": {
+    "cienaga_negra": "Ciénaga Negra",
+    "skyrim": "Skyrim",
+    "roca_alta": "Roca Alta",
+    "morrowind": "Morrowind",
+    "cyrodiil": "Cyrodiil"
+  },
+  "gremios": {
+    "circulo_campeones": "Círculo de Campeones",
+    "ladrones": "Gremio de ladrones",
+    "luchadores": "Gremio de luchadores",
+    "magos": "Gremio de magos",
+    "guardia_exterior": "Guardia exterior",
+    "hermandad_oscura": "Hermandad Oscura",
+    "intrepidos": "Intrépidos",
+    "ojos_reina": "Ojos de la Reina",
+    "orden_psijic": "Orden Psijic"
+  },
+  "content": {
+    "selectProvince": "Selecciona una provincia en el menú lateral para comenzar.",
+    "noMatches": "No hay paneles que coincidan con los filtros seleccionados."
+  },
+  "player": {
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "seek": "Barra de progreso de la narración",
+    "missingAudio": "Falta definir la ruta del audio."
+  },
+  "soundtrackPlayer": {
+    "prev": "Canción anterior",
+    "playPause": "Reproducir/Pausar",
+    "next": "Canción siguiente",
+    "seek": "Barra de progreso de la canción",
+    "volume": "Volumen de la banda sonora",
+    "downloading": "Descargando… {pct}%",
+    "noTracks": "Sin pistas",
+    "fallbackTitle": "Soundtrack",
+    "idle": "Música de ambiente",
+    "barLabel": "Reproductor de música de ambiente"
+  },
+  "spoiler": {
+    "label": "Pulsa para mostrar el texto de la narración",
+    "hideLabel": "Pulsa para ocultar el texto de la narración"
+  },
+  "welcome": {
+    "bannerAria": "Espacio reservado para la imagen de cabecera",
+    "bannerLabel": "ASSET HERE",
+    "bannerAlt": "Ilustración de cabecera de The Elder Scrolls: La traición de la segunda era",
+    "lead": "Aplicación de acompañamiento para el juego de mesa The Elder Scrolls: La traición de la segunda era.",
+    "intro": "Da voz a tus partidas: esta aplicación narra los textos de ciudades, misiones y encuentros de cada provincia de Tamriel, para que el grupo se sumerja en la historia sin necesidad de leer en voz alta. Elige una provincia en el menú lateral para empezar.",
+    "featuresTitle": "Características",
+    "features": [
+      {
+        "term": "Narración por voz",
+        "desc": "de ciudades, misiones y encuentros, organizada por provincia."
+      },
+      {
+        "term": "Filtros por provincia y gremio",
+        "desc": "para encontrar al instante el texto que necesitas."
+      },
+      {
+        "term": "Reproducción automática",
+        "desc": "(auto-play) del audio al abrir cada texto."
+      },
+      {
+        "term": "Velocidad de narración ajustable",
+        "desc": "(de 1x a 1,5x) para adaptarla al ritmo de la mesa."
+      },
+      {
+        "term": "Audio ambiente inmersivo",
+        "desc": "distinto según el escenario, que envuelve cada narración."
+      },
+      {
+        "term": "Banda sonora original",
+        "desc": "con reproductor integrado, control de volumen y mezcla automática con la narración."
+      },
+      {
+        "term": "Controles multimedia del sistema",
+        "desc": "controla la reproducción desde la pantalla de bloqueo o los auriculares."
+      },
+      {
+        "term": "Funciona sin conexión",
+        "desc": "instálala como aplicación (PWA) y reproduce todo el contenido aunque no tengas internet."
+      }
+    ],
+    "note": "Consejo: activa el audio ambiente o la banda sonora desde el menú lateral para dar atmósfera a toda la sesión.",
+    "footerCredits": "Aplicación desarrollada por OverMalo. The Elder Scrolls, junto con sus marcas, nombres y contenidos, es propiedad de sus respectivos titulares. Este es un proyecto de fans sin ánimo de lucro, sin ningún uso comercial ni profesional.",
+    "footerDisclaimer": "Esta aplicación es un complemento de la experiencia de juego: no sustituye al juego original ni pretende reemplazarlo.",
+    "footerContact": "Para dudas, consultas, sugerencias o reporte de errores, escribe a"
+  }
+}

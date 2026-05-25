@@ -1,11 +1,66 @@
 import "./styles.css";
-import { t, getLang, setLang, LANGUAGES, getContent } from "./i18n.js";
+import SOUNDTRACK from "./soundtrack.json";
 
-// El contenido (datos narrados + banda sonora) es específico de cada idioma y se
-// obtiene del paquete del idioma activo. Son `let` porque se recargan al cambiar
-// de idioma (ver reloadContent()).
-let appData = getContent().appData;
-let SOUNDTRACK = getContent().soundtrack;
+// ── Data (split across multiple files for maintainability) ──────────────────
+import _start from "./data/start.json";
+import _ciudadesBase from "./data/ciudades/_base.json";
+import _ciudadesCN from "./data/ciudades/cienaga_negra.json";
+import _ciudadesCY from "./data/ciudades/cyrodiil.json";
+import _ciudadesRA from "./data/ciudades/roca_alta.json";
+import _ciudadesMW from "./data/ciudades/morrowind.json";
+import _ciudadesSkyrim from "./data/ciudades/skyrim.json";
+import _misionesBase from "./data/misiones/_base.json";
+import _misionesCN from "./data/misiones/cienaga_negra.json";
+import _misionesSkyrim from "./data/misiones/skyrim.json";
+import _misionesRA from "./data/misiones/roca_alta.json";
+import _misionesMW from "./data/misiones/morrowind.json";
+import _misionesCY from "./data/misiones/cyrodiil.json";
+import _encuentrosG from "./data/encuentros_generales.json";
+import _encuentrosP from "./data/encuentros_provinciales.json";
+import _sesionFinalBase from "./data/sesion_final/_base.json";
+import _sesionFinalCN from "./data/sesion_final/cienaga_negra.json";
+import _sesionFinalRA from "./data/sesion_final/roca_alta.json";
+import _sesionFinalSkyrim from "./data/sesion_final/skyrim.json";
+import _sesionFinalMW from "./data/sesion_final/morrowind.json";
+import _sesionFinalCY from "./data/sesion_final/cyrodiil.json";
+import _ambientConfig from "./data/ambient.json";
+
+const appData = {
+  ..._start,
+  ciudades: {
+    ..._ciudadesBase,
+    options: [
+      ..._ciudadesCN,
+      ..._ciudadesCY,
+      ..._ciudadesRA,
+      ..._ciudadesMW,
+      ..._ciudadesSkyrim,
+    ],
+  },
+  misiones: {
+    ..._misionesBase,
+    options: [
+      ..._misionesCN,
+      ..._misionesSkyrim,
+      ..._misionesRA,
+      ..._misionesMW,
+      ..._misionesCY,
+    ],
+  },
+  ..._encuentrosG,
+  ..._encuentrosP,
+  sesion_final: {
+    ..._sesionFinalBase,
+    options: [
+      ..._sesionFinalCN,
+      ..._sesionFinalRA,
+      ..._sesionFinalSkyrim,
+      ..._sesionFinalMW,
+      ..._sesionFinalCY,
+    ],
+  },
+  ..._ambientConfig,
+};
 
 const screenEl = document.getElementById("screen");
 const sidebarEl = document.getElementById("sidebar");

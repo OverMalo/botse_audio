@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Caravana viajera",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Las luchas internas entre los reinos de Roca Alta ha causado daños colaterales a muchos. Te refugias con esta caravana viajera durante un momento, pero te mantienes alerta por si encuentras viajeros con malas intenciones.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/caravana_viajera.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Castillo de Alcaire",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "El castillo de Alcaire, una antigua fortaleza con una ciudad de sirvientes y dependencias anexas, es un importante puesto avanzado militar en la región de Refugio de la Tormenta de Roca Alta. Es una de las fortalezas clave de los Caballeros de la Llama, una orden dedicada a proteger toda esa zona.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/castillo_alcaire.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Camlorn",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Camlorn siempre ha disfrutado de una elevada posición en la historia y la cultura de Roca Alta, pero la ciudad acaba de salir de uno de sus peores momentos. Estaba invadida por el hombre lobo Faolchu, que aniquiló a casi toda la población, hasta que los supervivientes fueron liberados por la Guardia del León de Roca Alta. La ciudad todavía no se ha recuperado del todo de ese duro golpe.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/camlorn.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Crosswych",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Aunque está situada entre las regiones de Glenumbra, Refugio de la Tormenta y Cima Rasgada, Crosswych siempre se ha conformado con ser conocida como una ciudad sencilla y obrera. Ahora está experimentando una oleada de orgullo ciudadano por haber conseguido evitar que la banda de forajidos conocida como los Grajos Rojos la invadiera.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/crosswych.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Salto de la Daga",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "La ciudad de Salto de la Daga, homónima de la Alianza de Salto de la Daga, es una de las más poderosas de Roca Alta. Aunque su influencia política y militar es considerable, es conocida como una ciudad de comerciantes y marineros, y muchos se han maravillado de sus vistas de los mares más allá de Tamriel.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/salto_daga.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Abundancia",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Por estar constantemente bajo amenaza de invasión por parte de las tribus cuencanas del este, Abundancia es una ciudad orgullosa, pero también vigilante. La ciudad se sitúa en un importante punto estratégico entre Páramo del Martillo y Roca Alta, incluso más importante ahora que la Alianza de Salto de la Daga ha unido ambas provincias en una alianza militar.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/abundancia.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Arroyo del Páramo",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Arroyo del Páramo, un asentamiento pequeño pero respetable situado en el camino entre los principales centros comerciales de Timón Despojado y Punta Norte, no ha podido evitar los disturbios que han asolado Roca Alta. La ciudad ha estado lidiando con una incursión a manos de los famosos bandidos de la Mano Amarga, quienes operan desde un fuerte al norte de la ciudad.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/arroyo_paramo.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fortaleza Fharun",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Los orcos de Fortaleza Fharun se separan del resto de Roca Alta, incluyendo a sus hermanos orcos en la región de Wrothgar. Leales a las tradiciones, adoran a Malacath, defensora daédrica de los traicionados, el clan Fharun se sigue negando a unirse a la Alianza de Salto de la Daga. Alejados en el gélido noreste de Roca Alta, lo único que mantiene a los habitantes a salvo del frío es su orgullo.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/fortaleza_fharun.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fortaleza Morkul",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Aunque los orcos de Fortaleza Morkul preferirían mantenerse al margen, reconocen que ser ciudadanos de la gran Roca Alta requiere que tengan contacto pacífico con el mundo exterior. Exceptuando la localización lejana de la ciudad, tiene todos los rasgos de la Alianza de Salto de la Daga, y su puerto realiza comercio regular y lucrativo.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/fortaleza_morkul.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Punta Norte",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Como su nombre indica, Punta Norte es uno de los asentamientos más al norte de Roca Alta, e incluso de todo Tamriel. La ciudad portuaria hace buenos negocios, tanto legales como «extraoficiales». Sus residentes preferirían que el gobierno no controlara tanto sus negocios, especialmente después de que una conspiración política local transformara a muchos lugareños en unos vampiros salvajes conocidos como sanguinarios.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/punta_norte.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Orsinium",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Aunque recientemente ha pasado por una agitación política grave, la Orsinium reconstruida es una capital orca digna de admiración. La elevada arquitectura de la ciudad da testimonio del espíritu resolutivo e inquebrantable de su gente, y la celebración de la historia orca revela el optimismo que presentan ante el futuro.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/orsinium.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Timón Despojado",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Timón Despojado se sitúa en el centro de la región de Cima Rasgada, en Roca Alta. El rey que formó la ciudad envolvió a la Alianza de Salto de la Daga en una guerra civil, y los siguientes gobernantes han estado intentando solucionar los enfrentamientos. Estas luchas internas han provocado que muchos residentes se sientan divididos e inquietos. A pesar de esto, el largo historial de reinos que han surgido alrededor de la ciudad asegura que la región continúe prosperando.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/timon_despojado.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Quietud",
+    "description": "",
+    "provinciaTag": "roca_alta",
+    "leafDescription": "Quietud es la capital de la Alianza de Salto de la Daga, y una de las que más la apoya. La ciudad ha resistido invasiones con aplomo, aunque las poderosas luchas recientes dentro de la Alianza han hecho que algunos residentes vean a sus vecinos con más recelo. Aparte de esto, la ciudad sigue siendo un centro neurálgico cultural y económico, una embajadora ideal del modo de vida de la Alianza para todo Tamriel.",
+    "audio": {
+      "src": "audios/ciudades/roca_alta/quietud.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  }
+  
+]

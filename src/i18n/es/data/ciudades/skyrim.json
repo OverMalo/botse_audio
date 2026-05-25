@@ -1,0 +1,277 @@
+[
+  {
+    "label": "Caravana viajera",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Las tierras de Skyrim son uno de los entornos más hostiles de Tamriel. La caravana ofrece un breve respiro, pero no puede protegerte totalmente de los extraños efectos de estas tierras. Un mercader se acerca a ti contándote una historia siniestra, y te recomienda que le compres su equipamiento de supervivencia a un módico precio.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/caravana_viajera.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Puente del Dragón",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Puente del Dragón es una ciudad forestal llamada así por su puente homónimo, una estructura antigua con la forma de un espectacular reptil alado. Es un punto estratégico de camino a Soledad, así que es frecuentemente transitado por numerosos y fuertes soldados; pero no lo suficientemente fuertes como para hacer frente al contrabando que se realiza en las cuevas bajo el asentamiento.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/puente_dragon.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Pueblo Ocaso",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Pueblo Ocaso, una ciudad fronteriza subterránea liderada por el Consorcio Minero de Hoja Amarga, es uno de los pocos lugares en Límite Sombrío que no está invadida por fuerzas hostiles. La ciudad ha sobrevivido recientemente a una infiltración de vampiros que viven en los confines más oscuros de Skyrim.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/pueblo_ocaso.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Amol",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "El fuerte Amol ocupa una posición estratégica en la región de Skyrim llamada la Marca Oriental. En tiempos difíciles, ha sido usado por el rey escaldo Jorunn para reuniones del Pacto de Corazón de Ébano. Es por eso que, a su alrededor, la economía ha prosperado.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/fuerte_amol.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Morvunskar",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Aunque comúnmente se le conoce por su denominación oficial, el Fuerte Morvunskar es en realidad más un monumento conmemorativo que un puesto militar. Fue construido para albergar y proteger los restos de los guerreros nórdicos más poderosos y los de los miembros de la familia real de Skyrim. Desde que el hermano del rey Jorunn, Fildgor, asaltó las criptas, las defensas del fuerte están siendo fortalecidas.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/fuerte_morvunskar.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Fuerte Yelmo",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "El Fuerte Yelmo es administrado por el thane Unnvald Mano Férrea. Este asentamiento es considerado un baluarte ante las inclemencias de La Grieta, aunque no está claro si esa reputación la ha obtenido por méritos propios. Después de todo, el fuerte cuenta con una estatua conmemorativa de las hazañas del thane actual, probablemente encargada por él mismo.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/fuerte_yelmo.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Paraje de Ivar",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Esta pequeña ciudad de granjeros y pescadores es el punto de partida del peregrinaje religioso al monasterio de montaña conocido como Alto Hrothgar. Su condición como punto de exportación de alimentos le ha permitido tener acceso a una gran variedad de ellos. Los viajeros pueden degustarlos en su acogedora posada o en su taberna.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/paraje_ivar.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Reducto de Jorunn",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Un asentamiento que recibe el nombre del rey escaldo, monarca de Skyrim Oriental. Reducto de Jorunn es un importante puesto militar para el Pacto de Corazón de Ébano. Su población es lo suficientemente grande como para merecer una presencia permanente de varios gremios importantes, así como una variedad de mercaderes y vendedores de comida.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/reducto_jorunn.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Baldío de Karth",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "A pesar de que las tormentas segadoras (fenómenos meteorológicos de origen vampírico) han estado asolando Skyrim Occidental, el asentamiento cuencano de Baldío de Karth ha permanecido prácticamente intacto gracias a la protección del Clan del Ojo de Cuervo. Sus gentes tienen una vida sencilla, prefiriendo privarse de comerciar con los nórdicos que solían considerar este sitio como su hogar.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/baldio_karth.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Atalaya de Karth",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Fundada originalmente por los nórdicos de Skyrim occidental para evitar una incursión desde la Cuenca, la Atalaya de Karth fue prácticamente destruida por una tormenta segadora conjurada por el aquelarre de la Cuenca Glacial. Aunque aún se pueden encontrar supervivientes en los edificios más fortificados de la ciudad, lo más probable es que los transeúntes no vean más que los restos de las víctimas.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/atalaya_karth.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Templo de Kilkreath",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "El Templo de Kilkreath fue construido en honor de Meridia, el príncipe daédrico de la vida y la luz. Las recientes tormentas segadoras en la región han hecho que gran parte del templo esté sellado, aunque muchos acólitos y peregrinos permanecen cerca.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/templo_kilkreath.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Reducto del Valle Perdido",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Reducto del Valle Perdido es un lugar sagrado para muchos cuencanos, unas ruinas nórdicas en la que los cuencanos residen desde hace mucho. Se dice que en las profundidades que hay debajo yace el puente entre los vivos y los muertos. Para aquellos con preocupaciones más mundanas, la zona también es el hogar de un minotauro codicioso llamado Hranach.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/reducto_valle_perdido.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Markarth",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Markarth, que fue construida por los ya desaparecidos dwemer, es desde hace mucho la capital de la Cuenca. Aunque a los cuencanos no les agradan las ciudades, y a pesar de su sana desconfianza hacia los forasteros, Markarth es una de las conexiones principales entre esta región y el mundo exterior.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/markarth.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Guardia Brumosa",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Guardia Brumosa solía ser un conjunto de ruinas nórdicas, hasta que los Monjes de la Trinidad la convirtieron en un lugar de adoración en honor a los Tres Dioses Antiguos de Atmora. Aunque en Skyrim se ha ridiculizado mucho a estos monjes, los acólitos de Guardia Brumosa se han ganado el respeto de los lugareños al haber jugado un papel decisivo para frustrar un atentado contra la vida del Rey Jorunn.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/guardia_brumosa.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Mor Khazgur",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Rudimentario asentamiento orco en la frontera occidental de Skyrim cuya economía se basa casi exclusivamente en las actividades relacionadas con su mina, aunque en los últimos años ha ganado fama entre los amantes del deporte y las emociones fuertes gracias a la arena de combate recién construida, que es usada habitualmente por el Círculo de Campeones en sus frecuentes combates deportivos.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/mor_khazgur.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Morthal",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Esta resistente ciudad de Skyrim Occidental es un punto clave en el comercio de la región. Morthal ha resistido con firmeza las décadas de dificultades que han afligido los alrededores. Últimamente, el norte de la ciudad está siendo atacado por zombis, mientras que la creciente actividad de Límite Sombrío ha hecho que la zona oeste de la ciudad sea mucho más peligrosa.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/morthal.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Nimalten",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Nimalten es un pequeño y antiguo asentamiento al oeste de la Grieta. Modesta y sencilla, la ciudad tendría poco interés para los viajeros, de no ser por el gigantesco túmulo que alberga debajo. Ha crecido durante miles de años y alberga los cuerpos de varias familias rivales.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/nimalten.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Retiro del Rebelde",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Retiro del Rebelde es un bullicioso campamento que se encuentra cerca de la ladera de la Aguja de Karth. Actualmente está ocupado por un grupo disidente de cuencanos llamado los Guardianes Ingobernables, que creen que la ambición de Ard Caddach al gobernar a los cuencanos llevará a todo su pueblo a la ruina.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/retiro_rebelde.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Riften",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Como centro neurálgico de la economía en el corazón de la Grieta, Riften ha pasado por muchas dificultades, siendo la última un intento de invasión a manos de un gigante llamado Sinmur. Los habitantes de la ciudad han superado todas las pruebas con perseverancia, emprendiendo en negocios legales e ilegales. El gran sistema de alcantarillado de la ciudad ha sido bautizado extraoficialmente «la Ratonera» y es el hogar de muchos individuos sospechosos.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/riften.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Peñón de Shor",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Peñón de Shor es una de las ciudades mineras más trabajadoras de Skyrim. Actualmente, la ciudad se está recuperando de una reciente invasión del clan cuencano de los talladores de huesos, que cerró la mina para asaltar una tumba ocupada por miembros de los Quinientos Compañeros.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/pennon_shor.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "El Cormorán de Plata",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Aunque no es una ciudad propiamente dicha, ha surgido una especie de pequeño asentamiento en torno a El Cormorán de Plata, un barco mercante que se congeló durante una repentina tormenta de nieve en su último viaje. Los restos del naufragio y una hondonada cercana siguen ocupados por restos de la tripulación",
+    "audio": {
+      "src": "audios/ciudades/skyrim/corcomoran_plata.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Retiro del Escaldo",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Retiro del Escaldo es una isla en la que existe un enclave de bardos y en la que el rey Jorunn se refugió a estudiar en los años de su juventud. Hace poco, fue invadida por los Soñadores Supernos, pero los sectarios no tardaron en ser expulsados, lo que permitió que los bardos compusieran tranquilos de nuevo.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/retiro_escaldo.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Soledad",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Como bastión de Skyrim Occidental, Soledad tiene una rica historia y una próspera vida cultural e intelectual. No solo alberga instituciones académicas, como el Colegio de Bardos y la Asociación de Eruditos Metódicos, sino que también tiene importancia política. Su Palacio Azul alberga a la familia real de Skyrim Occidental, diezmada por un complot vampírico.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/soledad.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+  {
+    "label": "Ventalia",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "La ciudad más antigua y grandiosa de Skyrim, que sigue reconstruyéndose tras la segunda invasión akaviri de hace una década. Sin embargo, los habitantes de Ventalia se mantienen fuertes y orgullosos. La ciudad celebra actualmente el Konunleikar, que incluye varios concursos y proezas de fuerza en honor al décimo aniversario de la coronación del rey escaldo.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/ventalia.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  },
+   {
+    "label": "Wittestadr",
+    "description": "",
+    "provinciaTag": "skyrim",
+    "leafDescription": "Wittestadr es una pequeña ciudad de Skyrim conocida por sus cercanas aguas termales. Aquellos que deseen tentar a la suerte pueden visitar la madriguera de la ama de las ratas, lugar que tampoco queda lejos y en la que habita una vampira acompañada de varios skeevers feroces.",
+    "audio": {
+      "src": "audios/ciudades/skyrim/wittestadr.mp3",
+      "title": ""
+    },
+    "gremioTag": "all"
+  }
+]

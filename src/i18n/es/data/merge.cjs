@@ -14,6 +14,10 @@ const appData = {
     ...require(D("./ciudades/_base.json")),
     options: [
       ...require(D("./ciudades/cienaga_negra.json")),
+      ...require(D("./ciudades/cyrodiil.json")),
+      ...require(D("./ciudades/roca_alta.json")),
+      ...require(D("./ciudades/morrowind.json")),
+      ...require(D("./ciudades/skyrim.json")),
     ],
   },
   misiones: {

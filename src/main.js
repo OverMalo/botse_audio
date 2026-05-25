@@ -1,29 +1,30 @@
 import "./styles.css";
-import SOUNDTRACK from "./soundtrack.json";
+import { t, getLang, setLang, LANGUAGES, getContent } from "./i18n.js";
+import SOUNDTRACK from "./i18n/es/soundtrack.json";
 
 // ── Data (split across multiple files for maintainability) ──────────────────
-import _start from "./data/start.json";
-import _ciudadesBase from "./data/ciudades/_base.json";
-import _ciudadesCN from "./data/ciudades/cienaga_negra.json";
-import _ciudadesCY from "./data/ciudades/cyrodiil.json";
-import _ciudadesRA from "./data/ciudades/roca_alta.json";
-import _ciudadesMW from "./data/ciudades/morrowind.json";
-import _ciudadesSkyrim from "./data/ciudades/skyrim.json";
-import _misionesBase from "./data/misiones/_base.json";
-import _misionesCN from "./data/misiones/cienaga_negra.json";
-import _misionesSkyrim from "./data/misiones/skyrim.json";
-import _misionesRA from "./data/misiones/roca_alta.json";
-import _misionesMW from "./data/misiones/morrowind.json";
-import _misionesCY from "./data/misiones/cyrodiil.json";
-import _encuentrosG from "./data/encuentros_generales.json";
-import _encuentrosP from "./data/encuentros_provinciales.json";
-import _sesionFinalBase from "./data/sesion_final/_base.json";
-import _sesionFinalCN from "./data/sesion_final/cienaga_negra.json";
-import _sesionFinalRA from "./data/sesion_final/roca_alta.json";
-import _sesionFinalSkyrim from "./data/sesion_final/skyrim.json";
-import _sesionFinalMW from "./data/sesion_final/morrowind.json";
-import _sesionFinalCY from "./data/sesion_final/cyrodiil.json";
-import _ambientConfig from "./data/ambient.json";
+import _start from "./i18n/es/data/start.json";
+import _ciudadesBase from "./i18n/es/data/ciudades/_base.json";
+import _ciudadesCN from "./i18n/es/data/ciudades/cienaga_negra.json";
+import _ciudadesCY from "./i18n/es/data/ciudades/cyrodiil.json";
+import _ciudadesRA from "./i18n/es/data/ciudades/roca_alta.json";
+import _ciudadesMW from "./i18n/es/data/ciudades/morrowind.json";
+import _ciudadesSkyrim from "./i18n/es/data/ciudades/skyrim.json";
+import _misionesBase from "./i18n/es/data/misiones/_base.json";
+import _misionesCN from "./i18n/es/data/misiones/cienaga_negra.json";
+import _misionesSkyrim from "./i18n/es/data/misiones/skyrim.json";
+import _misionesRA from "./i18n/es/data/misiones/roca_alta.json";
+import _misionesMW from "./i18n/es/data/misiones/morrowind.json";
+import _misionesCY from "./i18n/es/data/misiones/cyrodiil.json";
+import _encuentrosG from "./i18n/es/data/encuentros_generales.json";
+import _encuentrosP from "./i18n/es/data/encuentros_provinciales.json";
+import _sesionFinalBase from "./i18n/es/data/sesion_final/_base.json";
+import _sesionFinalCN from "./i18n/es/data/sesion_final/cienaga_negra.json";
+import _sesionFinalRA from "./i18n/es/data/sesion_final/roca_alta.json";
+import _sesionFinalSkyrim from "./i18n/es/data/sesion_final/skyrim.json";
+import _sesionFinalMW from "./i18n/es/data/sesion_final/morrowind.json";
+import _sesionFinalCY from "./i18n/es/data/sesion_final/cyrodiil.json";
+import _ambientConfig from "./i18n/es/data/ambient.json";
 
 const appData = {
   ..._start,
@@ -189,6 +190,14 @@ sidebarToggleEl?.addEventListener("click", () => {
   if (willOpen) sidebarEl.querySelector(".sidebar-nav-item")?.focus();
 });
 document.getElementById("sidebar-overlay")?.addEventListener("click", () => setSidebarOpen(false));
+
+// Title click → go to landing
+document.querySelector(".title-wrap")?.addEventListener("click", () => {
+  view = "inicio";
+  stopActivePlayer();
+  saveState();
+  render();
+});
 
 // Close the mobile sidebar with Escape and return focus to the toggle
 document.addEventListener("keydown", (event) => {
@@ -755,9 +764,6 @@ document.addEventListener("keydown", (event) => {
 // de idioma. Los ids del árbol son estructurales (no dependen del texto), así que
 // los paneles abiertos siguen siendo válidos.
 function reloadContent() {
-  const c = getContent();
-  appData = c.appData;
-  SOUNDTRACK = c.soundtrack;
   contentTree = buildTreeFromStart();
   accordionIndex = buildAccordionIndex(contentTree);
   if (stCurrentTrack >= SOUNDTRACK.length) stCurrentTrack = 0;

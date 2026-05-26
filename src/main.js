@@ -240,6 +240,10 @@ const stCachedIds = new Set(JSON.parse(localStorage.getItem("stCachedIds") || "[
 
 /** @type {HTMLAudioElement | null} */
 let stAudio = null;
+/** @type {AudioContext | null} */
+let stAudioCtx = null;
+/** @type {GainNode | null} */
+let stGainNode = null;
 let stCurrentTrack = (typeof state.stCurrentTrack === "number" && state.stCurrentTrack >= 0 && state.stCurrentTrack < SOUNDTRACK.length) ? state.stCurrentTrack : 0;
 let stVolume = (typeof state.stVolume === "number" && state.stVolume >= 0 && state.stVolume <= 100) ? state.stVolume : 100;
 let stRestoreTime = (typeof state.stCurrentTime === "number" && state.stCurrentTime > 0) ? state.stCurrentTime : 0;
@@ -270,7 +274,15 @@ function setupSTPlayer() {
   if (!SOUNDTRACK.length) return;
   stAudio = new Audio();
   stAudio.preload = "metadata";
-  stAudio.volume = stVolume / 100;
+  try {
+    stAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    stGainNode = stAudioCtx.createGain();
+    stAudioCtx.createMediaElementSource(stAudio).connect(stGainNode);
+    stGainNode.connect(stAudioCtx.destination);
+    stGainNode.gain.value = stVolume / 100;
+  } catch (_) {
+    stAudio.volume = stVolume / 100;
+  }
   stAudio.addEventListener("ended", () => {
     stCurrentTrack = (stCurrentTrack + 1) % SOUNDTRACK.length;
     loadSTTrack(stCurrentTrack).then(() => {
@@ -412,10 +424,21 @@ async function downloadSTIfNeeded() {
   return stDownloadPromise;
 }
 
+function setSTGain(value) {
+  if (stGainNode) stGainNode.gain.value = value;
+  else if (stAudio) stAudio.volume = value;
+}
+
+function getSTGain() {
+  if (stGainNode) return stGainNode.gain.value;
+  if (stAudio) return stAudio.volume;
+  return stVolume / 100;
+}
+
 function duckST() {
   if (stEnabled && stAudio) {
     stIsDucked = true;
-    stAudio.volume = Math.min(stVolume, 20) / 100;
+    setSTGain(Math.min(stVolume, 20) / 100);
   }
 }
 
@@ -426,17 +449,17 @@ function duckSTFade(onDone) {
     return;
   }
   stIsDucked = true;
-  if (stAudio.volume <= targetVol) {
-    stAudio.volume = targetVol;
+  if (getSTGain() <= targetVol) {
+    setSTGain(targetVol);
     setTimeout(onDone, 300);
     return;
   }
-  const startVol = stAudio.volume;
+  const startVol = getSTGain();
   const startTime = performance.now();
   const FADE_MS = 500;
   function step() {
     const t = Math.min((performance.now() - startTime) / FADE_MS, 1);
-    stAudio.volume = startVol + (targetVol - startVol) * t;
+    setSTGain(startVol + (targetVol - startVol) * t);
     if (t < 1) {
       requestAnimationFrame(step);
     } else {
@@ -449,7 +472,7 @@ function duckSTFade(onDone) {
 function restoreST() {
   if (stEnabled && stAudio) {
     stIsDucked = false;
-    stAudio.volume = stVolume / 100;
+    setSTGain(stVolume / 100);
     if (!stAudio.paused) updateSTMediaSession(true);
   }
 }
@@ -458,21 +481,21 @@ function restoreSTFade() {
   stIsDucked = false;
   if (!stEnabled || !stAudio || stAudio.paused) return;
   const targetVol = stVolume / 100;
-  if (stAudio.volume >= targetVol) {
-    stAudio.volume = targetVol;
+  if (getSTGain() >= targetVol) {
+    setSTGain(targetVol);
     updateSTMediaSession(true);
     return;
   }
-  const startVol = stAudio.volume;
+  const startVol = getSTGain();
   const startTime = performance.now();
   const FADE_MS = 800;
   function step() {
     const t = Math.min((performance.now() - startTime) / FADE_MS, 1);
-    stAudio.volume = startVol + (targetVol - startVol) * t;
+    setSTGain(startVol + (targetVol - startVol) * t);
     if (t < 1) {
       requestAnimationFrame(step);
     } else {
-      stAudio.volume = targetVol;
+      setSTGain(targetVol);
       if (!stAudio.paused) updateSTMediaSession(true);
     }
   }
@@ -564,6 +587,7 @@ function engageMusic() {
   stEnabled = true;
   setupSTPlayer();
   loadSTTrack(stCurrentTrack).then(() => {
+    stAudioCtx?.resume();
     stAudio?.play().catch(() => {});
     updateSTMediaSession(true);
     updateSTUI();
@@ -579,6 +603,7 @@ function engageMusic() {
 function stPlayPause() {
   if (!stEnabled || !stAudio) { engageMusic(); return; }
   if (stAudio.paused) {
+    stAudioCtx?.resume();
     stAudio.play().catch(() => {});
     updateSTMediaSession(true);
   } else {
@@ -648,7 +673,7 @@ function bindMusicBarEvents() {
   musicBarEl.addEventListener("input", (event) => {
     if (event.target.id !== "st-volume") return;
     stVolume = parseInt(event.target.value, 10);
-    if (stAudio) stAudio.volume = (stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100;
+    setSTGain((stIsDucked ? Math.min(stVolume, 30) : stVolume) / 100);
     saveState();
   });
 }

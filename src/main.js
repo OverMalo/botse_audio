@@ -92,6 +92,36 @@ const WELCOME_BANNER_SRC = "images/tes_bse_banner_02.jpg";
 // Email de contacto que aparece en el pie de la landing.
 const CONTACT_EMAIL = "overmalo@gmail.com";
 
+// ── SVG Icons ────────────────────────────────────────────────────────────────
+// Inline SVGs en lugar de caracteres Unicode/emoji para renderizado idéntico
+// en todos los SO (iOS, Android, desktop). fill="currentColor" hereda el color
+// CSS del elemento padre; aria-hidden="true" en cada SVG (los botones ya tienen
+// aria-label propio).
+const ICONS = {
+  // Media controls
+  play:          `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="3,1 3,15 14,8"/></svg>`,
+  pause:         `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="4" height="14"/><rect x="10" y="1" width="4" height="14"/></svg>`,
+  prev:          `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="3" height="14"/><polygon points="13,1 13,15 4,8"/></svg>`,
+  next:          `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="3,1 3,15 12,8"/><rect x="12" y="1" width="3" height="14"/></svg>`,
+  musicNote:     `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 13V4h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5" cy="13" r="2.5"/><circle cx="13" cy="12" r="2.5"/></svg>`,
+  speaker:       `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="1,5 4.5,5 8,2 8,14 4.5,11 1,11"/><path d="M10 5.5a4.5 4.5 0 0 1 0 5M12 3.5a7 7 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  // UI controls
+  close:         `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/></svg>`,
+  caretDown:     `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="2,4 14,4 8,12"/></svg>`,
+  caretUp:       `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="2,12 14,12 8,4"/></svg>`,
+  globe:         `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><ellipse cx="8" cy="8" rx="3" ry="6.5"/><line x1="1.5" y1="8" x2="14.5" y2="8"/><line x1="2.5" y1="5" x2="13.5" y2="5"/><line x1="2.5" y1="11" x2="13.5" y2="11"/></svg>`,
+  // State indicators
+  diamondFilled: `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><polygon points="8,1 15,8 8,15 1,8"/></svg>`,
+  diamondEmpty:  `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="8,1 15,8 8,15 1,8"/></svg>`,
+  boxFilled:     `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="1"/></svg>`,
+  boxEmpty:      `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="1"/></svg>`,
+  dotFilled:     `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="8" cy="8" r="5"/></svg>`,
+  dotEmpty:      `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="8" r="5"/></svg>`,
+  minus:         `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="7" width="12" height="2"/></svg>`,
+  plus:          `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="2" y="7" width="12" height="2"/><rect x="7" y="2" width="2" height="12"/></svg>`,
+  chevronRight:  `<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,2 11,8 5,14"/></svg>`,
+};
+
 function loadState() {
   try {
     // One-time migration: move existing sessionStorage data to localStorage
@@ -459,7 +489,7 @@ function updateSTUI() {
       ? (SOUNDTRACK[stCurrentTrack]?.title ?? "")
       : t("soundtrackPlayer.idle");
   }
-  if (playBtn) playBtn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+  if (playBtn) playBtn.innerHTML = isPlaying ? ICONS.pause : ICONS.play;
   musicBarEl?.classList.toggle("music-bar--playing", isPlaying);
   if (engaged && !stAudio.paused) startSTPoll(); else stopSTPoll();
   tickSTProgress();
@@ -505,11 +535,11 @@ function renderMusicBar() {
   musicBarEl.className = `music-bar${isPlaying ? " music-bar--playing" : ""}`;
   musicBarEl.innerHTML = `
     <div class="mb-inner" role="group" aria-label="${escapeAttribute(t("soundtrackPlayer.barLabel"))}">
-      <span class="mb-icon" aria-hidden="true">&#9835;</span>
+      <span class="mb-icon" aria-hidden="true">${ICONS.musicNote}</span>
       <div class="mb-controls">
-        <button type="button" class="mb-btn" data-st-prev aria-label="${escapeAttribute(t("soundtrackPlayer.prev"))}">&#9198;</button>
-        <button type="button" class="mb-btn mb-btn--play" data-st-playpause aria-label="${escapeAttribute(t("soundtrackPlayer.playPause"))}">${isPlaying ? "&#9646;&#9646;" : "&#9654;"}</button>
-        <button type="button" class="mb-btn" data-st-next aria-label="${escapeAttribute(t("soundtrackPlayer.next"))}">&#9197;</button>
+        <button type="button" class="mb-btn" data-st-prev aria-label="${escapeAttribute(t("soundtrackPlayer.prev"))}">${ICONS.prev}</button>
+        <button type="button" class="mb-btn mb-btn--play" data-st-playpause aria-label="${escapeAttribute(t("soundtrackPlayer.playPause"))}">${isPlaying ? ICONS.pause : ICONS.play}</button>
+        <button type="button" class="mb-btn" data-st-next aria-label="${escapeAttribute(t("soundtrackPlayer.next"))}">${ICONS.next}</button>
       </div>
       <span class="mb-title" id="st-track-title">${escapeHtml(title)}</span>
       <div class="mb-progress">
@@ -518,7 +548,7 @@ function renderMusicBar() {
         <span class="mb-time" id="st-total-time">-:--</span>
       </div>
       <div class="mb-volume">
-        <span class="mb-vol-icon" aria-hidden="true">&#128266;</span>
+        <span class="mb-vol-icon" aria-hidden="true">${ICONS.speaker}</span>
         <input type="range" class="mb-volume-slider" id="st-volume" min="0" max="100" value="${stVolume}" step="1" aria-label="${escapeAttribute(t("soundtrackPlayer.volume"))}">
       </div>
       <div id="st-download-bar" class="mb-download" style="display:none" role="status" aria-live="polite">
@@ -689,16 +719,16 @@ function renderLangSwitcher() {
   const currentLangObj = LANGUAGES.find((l) => l.code === current) || LANGUAGES[0];
   const options = LANGUAGES.map((l) => {
     const isCurrent = l.code === current;
-    return `<button type="button" class="lang-option" role="menuitemradio" aria-checked="${isCurrent ? "true" : "false"}" data-lang-code="${escapeAttribute(l.code)}"><span class="lang-option-mark" aria-hidden="true">${isCurrent ? "◆" : "◇"}</span><span>${escapeHtml(l.name)} (${escapeHtml(l.label)})</span></button>`;
+    return `<button type="button" class="lang-option" role="menuitemradio" aria-checked="${isCurrent ? "true" : "false"}" data-lang-code="${escapeAttribute(l.code)}"><span class="lang-option-mark" aria-hidden="true">${isCurrent ? ICONS.diamondFilled : ICONS.diamondEmpty}</span><span>${escapeHtml(l.name)} (${escapeHtml(l.label)})</span></button>`;
   }).join("");
 
   const btnLabel = `${t("langSwitcher.label")}. ${t("langSwitcher.current", { name: currentLangObj.name })}`;
 
   langSwitcherEl.innerHTML = `
     <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="menu" aria-expanded="${langMenuOpen ? "true" : "false"}" aria-label="${escapeAttribute(btnLabel)}">
-      <span class="lang-globe" aria-hidden="true">&#127760;</span>
+      <span class="lang-globe" aria-hidden="true">${ICONS.globe}</span>
       <span class="lang-current">${escapeHtml(currentLangObj.label)}</span>
-      <span class="lang-caret" aria-hidden="true">&#9662;</span>
+      <span class="lang-caret" aria-hidden="true">${ICONS.caretDown}</span>
     </button>
     <div class="lang-menu" id="lang-menu" role="menu" aria-label="${escapeAttribute(t("langSwitcher.menuLabel"))}"${langMenuOpen ? "" : " hidden"}>
       ${options}
@@ -998,13 +1028,13 @@ function renderSidebar() {
   // Provincia = entrar en una sección → fila con chevron (›).
   const provinciaItems = FILTER_OPTIONS.provincias.map((id) => {
     const active = inNarr && selectedProvincia === id;
-    return `<button type="button" class="sidebar-nav-item sidebar-nav-item--section${active ? " sidebar-nav-item--active" : ""}" data-filter-type="provincia" data-filter-value="${escapeAttribute(id)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${active ? "◆" : "◇"}</span><span class="sidebar-nav-text">${escapeHtml(provinciaLabel(id))}</span><span class="sidebar-nav-chevron" aria-hidden="true">&rsaquo;</span></button>`;
+    return `<button type="button" class="sidebar-nav-item sidebar-nav-item--section${active ? " sidebar-nav-item--active" : ""}" data-filter-type="provincia" data-filter-value="${escapeAttribute(id)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${active ? ICONS.diamondFilled : ICONS.diamondEmpty}</span><span class="sidebar-nav-text">${escapeHtml(provinciaLabel(id))}</span><span class="sidebar-nav-chevron" aria-hidden="true">${ICONS.chevronRight}</span></button>`;
   }).join("");
 
   // Gremio = filtro/modificador del contenido → lista indentada con casillas (▣/▢).
   const gremioNoneActive = inNarr && !selectedGremio;
   const gremioBtn = (value, label, active) =>
-    `<button type="button" class="sidebar-nav-item sidebar-nav-item--filter${active ? " sidebar-nav-item--active" : ""}" data-filter-type="gremio" data-filter-value="${escapeAttribute(value)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot sidebar-nav-dot--check" aria-hidden="true">${active ? "▣" : "▢"}</span><span class="sidebar-nav-text">${escapeHtml(label)}</span></button>`;
+    `<button type="button" class="sidebar-nav-item sidebar-nav-item--filter${active ? " sidebar-nav-item--active" : ""}" data-filter-type="gremio" data-filter-value="${escapeAttribute(value)}" aria-pressed="${active ? "true" : "false"}"><span class="sidebar-nav-dot sidebar-nav-dot--check" aria-hidden="true">${active ? ICONS.boxFilled : ICONS.boxEmpty}</span><span class="sidebar-nav-text">${escapeHtml(label)}</span></button>`;
   const gremioItems = [
     gremioBtn("", t("sidebar.allGuilds"), gremioNoneActive),
     ...FILTER_OPTIONS.gremios.map((id) => gremioBtn(id, gremioLabel(id), inNarr && selectedGremio === id)),
@@ -1012,17 +1042,17 @@ function renderSidebar() {
 
   const speedChips = [1.00, 1.15, 1.25, 1.5].map((rate) => {
     const active = playbackRate === rate;
-    return `<button type="button" class="checkable-chip${active ? " checkable-chip--active" : ""}" data-config-rate="${rate}" aria-pressed="${active ? "true" : "false"}"><span class="checkable-chip-mark" aria-hidden="true">${active ? "●" : "○"}</span><span>${rate.toFixed(2)}x</span></button>`;
+    return `<button type="button" class="checkable-chip${active ? " checkable-chip--active" : ""}" data-config-rate="${rate}" aria-pressed="${active ? "true" : "false"}"><span class="checkable-chip-mark" aria-hidden="true">${active ? ICONS.dotFilled : ICONS.dotEmpty}</span><span>${rate.toFixed(2)}x</span></button>`;
   }).join("");
 
   const inicioActive = view === "inicio";
 
   return `
     <nav class="sidebar-nav" aria-label="${escapeAttribute(t("a11y.sidebarNav"))}">
-      <button type="button" class="sidebar-close" data-sidebar-close aria-label="${escapeAttribute(t("a11y.closeSidebar"))}">&#10005;</button>
+      <button type="button" class="sidebar-close" data-sidebar-close aria-label="${escapeAttribute(t("a11y.closeSidebar"))}">${ICONS.close}</button>
       <div class="sidebar-section">
         <div class="sidebar-nav-list">
-          <button type="button" class="sidebar-nav-item${inicioActive ? " sidebar-nav-item--active" : ""}" data-nav-view="inicio" aria-current="${inicioActive ? "page" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${inicioActive ? "◆" : "◇"}</span>${escapeHtml(t("sidebar.home"))}</button>
+          <button type="button" class="sidebar-nav-item${inicioActive ? " sidebar-nav-item--active" : ""}" data-nav-view="inicio" aria-current="${inicioActive ? "page" : "false"}"><span class="sidebar-nav-dot" aria-hidden="true">${inicioActive ? ICONS.diamondFilled : ICONS.diamondEmpty}</span>${escapeHtml(t("sidebar.home"))}</button>
         </div>
       </div>
       <div class="sidebar-divider"></div>
@@ -1064,7 +1094,7 @@ function renderCheckable(type, value, label, checked) {
       data-filter-value="${escapeAttribute(value)}"
       aria-pressed="${pressed}"
     >
-      <span class="checkable-chip-mark" aria-hidden="true">${checked ? "●" : "○"}</span>
+      <span class="checkable-chip-mark" aria-hidden="true">${checked ? ICONS.dotFilled : ICONS.dotEmpty}</span>
       <span>${escapeHtml(label)}</span>
     </button>
   `;
@@ -1098,7 +1128,7 @@ function bindConfigEvents() {
         const active = playbackRate === btnRate;
         btn.classList.toggle("checkable-chip--active", active);
         btn.setAttribute("aria-pressed", active ? "true" : "false");
-        btn.querySelector(".checkable-chip-mark").textContent = active ? "●" : "○";
+        btn.querySelector(".checkable-chip-mark").innerHTML = active ? ICONS.dotFilled : ICONS.dotEmpty;
       });
     });
   });
@@ -1324,7 +1354,7 @@ function updatePlayerUI(p, vt) {
 function setPlayerBtnState(playerEl, isPlaying) {
   const btn = playerEl.querySelector("[data-player-play]");
   if (!btn) return;
-  btn.innerHTML = isPlaying ? "&#9646;&#9646;" : "&#9654;";
+  btn.innerHTML = isPlaying ? ICONS.pause : ICONS.play;
   btn.classList.toggle("player-btn--playing", isPlaying);
   btn.setAttribute("aria-label", isPlaying ? t("player.pause") : t("player.play"));
 }
@@ -1734,7 +1764,7 @@ function buildAccordionIndex(roots) {
 
 function renderPanel(node, level) {
   const isOpen = expandedPanels.has(node.id);
-  const icon = isOpen ? "−" : "+";
+  const icon = isOpen ? ICONS.minus : ICONS.plus;
   const levelClass = `panel level-${Math.min(level, 3)}`;
   const childrenHtml = node.children.map((child) => renderPanel(child, level + 1)).join("");
 
@@ -1798,7 +1828,7 @@ function renderLeafContent(node) {
 
     audioHtml = `
       <div class="custom-player" data-player-id="${escapeAttribute(node.id)}">
-        <button type="button" class="player-btn" data-player-play aria-label="${escapeAttribute(t("player.play"))}">&#9654;</button>
+        <button type="button" class="player-btn" data-player-play aria-label="${escapeAttribute(t("player.play"))}">${ICONS.play}</button>
         <div class="player-track">
           <input type="range" class="player-seekbar" data-player-seek min="0" max="1000" value="0" step="1" aria-label="${escapeAttribute(t("player.seek"))}" disabled>
           <div class="player-time">
@@ -1844,7 +1874,7 @@ function renderLeafDescription(node) {
           aria-expanded="true"
         >
           <span class="spoiler-preview-label">${escapeHtml(t("spoiler.hideLabel"))}</span>
-          <span class="spoiler-caret" aria-hidden="true">&#9652;</span>
+          <span class="spoiler-caret" aria-hidden="true">${ICONS.caretUp}</span>
         </button>
         <p class="description leaf-description">${escapeHtml(node.description)}</p>
       </div>

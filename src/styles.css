@@ -1536,6 +1536,13 @@ audio {
   flex-shrink: 0;
 }
 
+/* SVGs inline: sin pointer-events para no interferir con el event delegation,
+   display block para evitar el gap de baseline de elementos inline. */
+button svg, [aria-hidden="true"] svg {
+  pointer-events: none;
+  display: block;
+}
+
 .mb-btn {
   width: 30px;
   height: 30px;

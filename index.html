@@ -36,26 +36,27 @@
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
     <div class="app">
-      <header class="topbar">
-        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menú lateral" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
-        <span class="topbar-emblem" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-            <path d="M24 3 L41 12 V28 C41 38 33 43 24 45 C15 43 7 38 7 28 V12 Z" />
-            <path d="M24 14 L30 24 L24 34 L18 24 Z" fill="currentColor" stroke="none" />
-          </svg>
-        </span>
-        <div class="title-wrap">
-          <h1>The Elder Scrolls — Voice Over</h1>
-        </div>
-        <div class="lang-switcher" id="lang-switcher"></div>
-        <button class="scanner-btn" id="scanner-btn" aria-label="Escáner de cartas">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="12" height="9" rx="1"/>
-            <path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/>
-            <circle cx="8" cy="8.5" r="2"/>
-          </svg>
-        </button>
-      </header>
+      <div class="app-top">
+        <header class="topbar">
+          <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menú lateral" aria-controls="sidebar" aria-expanded="false">&#9776;</button>
+          <span class="topbar-emblem" aria-hidden="true">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+              <path d="M24 3 L41 12 V28 C41 38 33 43 24 45 C15 43 7 38 7 28 V12 Z" />
+              <path d="M24 14 L30 24 L24 34 L18 24 Z" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <div class="title-wrap">
+            <h1>The Elder Scrolls — Voice Over</h1>
+          </div>
+          <div class="lang-switcher" id="lang-switcher"></div>
+          <button class="scanner-btn" id="scanner-btn" aria-label="Escáner de cartas">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="12" height="9" rx="1"/>
+              <path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/>
+              <circle cx="8" cy="8.5" r="2"/>
+            </svg>
+          </button>
+        </header>
 
       <!-- Scanner overlay -->
       <div class="scanner-overlay" id="scanner-overlay" hidden aria-modal="true" role="dialog" aria-label="Escáner de cartas">
@@ -86,7 +87,8 @@
         </div>
       </div>
 
-      <div class="music-bar" id="music-bar"></div>
+        <div class="music-bar" id="music-bar"></div>
+      </div>
 
       <div class="app-body">
         <aside class="sidebar" id="sidebar"></aside>

@@ -1,6 +1,11 @@
 # Audio files (too large for GitHub — serve from CDN or local only)
 public/audios/soundtrack/*.mp3
 
+# Secrets / environment
+.env
+.env.*
+keys
+
 # Logs
 logs
 *.log

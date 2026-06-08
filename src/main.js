@@ -1,6 +1,7 @@
 import "./styles.css";
 import { t, getLang, setLang, LANGUAGES, getContent } from "./i18n.js";
 import SOUNDTRACK from "./i18n/es/soundtrack.json";
+import CardScanner, { CROP } from "./card-scanner.js";
 
 // ── Data (split across multiple files for maintainability) ──────────────────
 import _start from "./i18n/es/data/start.json";
@@ -193,6 +194,24 @@ let activePlayer = null;
 
 let contentTree = buildTreeFromStart();
 let accordionIndex = buildAccordionIndex(contentTree);
+
+/** Map<cardLabel, nodeId> — sólo hojas con labels tipo XX-NN */
+const CARD_LABEL_RE = /^[A-Z]{2}-\d{2}$/;
+let cardLabelMap = buildCardLabelMap();
+
+function buildCardLabelMap() {
+  const map = new Map();
+  function walk(nodes) {
+    for (const node of nodes) {
+      if (node.type === "leaf" && CARD_LABEL_RE.test(node.title)) {
+        map.set(node.title, node.id);
+      }
+      if (node.children?.length) walk(node.children);
+    }
+  }
+  walk(contentTree);
+  return map;
+}
 
 let swRegistration = null;
 
@@ -862,6 +881,228 @@ renderLangSwitcher();
 renderMusicBar();
 bindMusicBarEvents();
 render();
+
+// ── Scanner de cartas ────────────────────────────────────────────────────────
+const ANALYZE_URL = import.meta.env.VITE_ANALYZE_URL ?? "http://localhost:3000/analyze";
+
+/**
+ * Envía el blob de imagen al servidor de análisis y devuelve el identificador
+ * de carta (e.g. "GE-01") o null si no se reconoció o hubo error.
+ * @param {Blob} blob
+ * @returns {Promise<string | null>}
+ */
+async function recognizeWithAPI(blob) {
+  try {
+    const form = new FormData();
+    form.append("image", blob, "card.jpg");
+    const res = await fetch(ANALYZE_URL, { method: "POST", body: form });
+    if (res.ok) {
+      const { identifier } = await res.json();
+      return identifier ?? null;
+    }
+    const { error } = await res.json().catch(() => ({}));
+    console.warn("[scanner] API error", res.status, error);
+    return null;
+  } catch (err) {
+    console.error("[scanner] fetch failed", err);
+    return null;
+  }
+}
+let scannerStream = null;
+let lastGuideRect = null;
+
+const scannerOverlayEl = document.getElementById("scanner-overlay");
+const scannerBtnEl = document.getElementById("scanner-btn");
+const scannerVideoEl = document.getElementById("scanner-video");
+const scannerGuideEl = document.getElementById("scanner-guide");
+const scannerStatusEl = document.getElementById("scanner-status");
+const scannerPreviewEl = document.getElementById("scanner-preview");
+
+function setScannerStatus(msg, modifier = "") {
+  if (!scannerStatusEl) return;
+  scannerStatusEl.textContent = msg;
+  scannerStatusEl.className = "scanner-status" + (modifier ? " scanner-status--" + modifier : "");
+}
+
+function drawScannerGuide(rect) {
+  if (!scannerGuideEl) return;
+  const ctx = scannerGuideEl.getContext("2d");
+  const W = scannerGuideEl.width;
+  const H = scannerGuideEl.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // Fondo oscuro fuera del encuadre
+  ctx.fillStyle = "rgba(0,0,0,0.50)";
+  ctx.fillRect(0, 0, W, H);
+  ctx.clearRect(rect.x, rect.y, rect.w, rect.h);
+
+  // Esquinas tipo visor — proporcionales al tamaño del rect
+  const arm = Math.round(Math.min(rect.w, rect.h) * 0.12);
+  const corners = [
+    [rect.x,           rect.y,            1,  1],
+    [rect.x + rect.w,  rect.y,           -1,  1],
+    [rect.x,           rect.y + rect.h,   1, -1],
+    [rect.x + rect.w,  rect.y + rect.h,  -1, -1],
+  ];
+  ctx.strokeStyle = "#d4a23c";
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
+  corners.forEach(([cx, cy, dx, dy]) => {
+    ctx.beginPath();
+    ctx.moveTo(cx + dx * arm, cy);
+    ctx.lineTo(cx, cy);
+    ctx.lineTo(cx, cy + dy * arm);
+    ctx.stroke();
+  });
+
+  // Texto de ayuda dentro del encuadre
+  ctx.fillStyle = "rgba(212,162,60,0.75)";
+  ctx.font = `${Math.max(12, Math.round(rect.h * 0.07))}px sans-serif`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "bottom";
+  ctx.fillText("Encuadra el ID de la carta", rect.x + rect.w / 2, rect.y + rect.h - 8);
+}
+
+function resizeGuide() {
+  if (!scannerGuideEl) return;
+  const cW = scannerGuideEl.offsetWidth || scannerVideoEl.clientWidth;
+  const cH = scannerGuideEl.offsetHeight || scannerVideoEl.clientHeight;
+  if (!cW || !cH) return;
+  scannerGuideEl.width = cW;
+  scannerGuideEl.height = cH;
+  const rect = {
+    x: Math.round(cW * CROP.x),
+    y: Math.round(cH * CROP.y),
+    w: Math.round(cW * CROP.w),
+    h: Math.round(cH * CROP.h),
+  };
+  lastGuideRect = rect;
+  drawScannerGuide(rect);
+}
+
+async function openScanner() {
+  if (!scannerOverlayEl) return;
+  scannerOverlayEl.hidden = false;
+  setScannerStatus("Iniciando cámara...");
+  try {
+    scannerStream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
+    });
+  } catch {
+    setScannerStatus("Sin acceso a la cámara", "error");
+    return;
+  }
+  scannerVideoEl.srcObject = scannerStream;
+  await scannerVideoEl.play().catch(() => {});
+
+  if (scannerVideoEl.videoWidth > 0) {
+    resizeGuide();
+  } else {
+    scannerVideoEl.addEventListener("loadedmetadata", resizeGuide, { once: true });
+  }
+
+  setScannerStatus("Encuadra el ID y pulsa Capturar");
+
+  const captureBtn = document.getElementById("scanner-capture");
+  if (captureBtn) {
+    captureBtn._handler = async () => {
+      captureBtn.disabled = true;
+      setScannerStatus("Capturando...");
+
+      const frame = await CardScanner.captureFrame(scannerVideoEl);
+      if (!frame) {
+        setScannerStatus("Error al capturar la imagen", "error");
+        captureBtn.disabled = false;
+        return;
+      }
+
+      // Mostrar preview del crop capturado
+      if (scannerPreviewEl) {
+        scannerPreviewEl.src = frame.dataUrl;
+        scannerPreviewEl.hidden = false;
+      }
+
+      setScannerStatus("Analizando...");
+
+      const cardId = await recognizeWithAPI(frame.blob);
+      if (cardId) {
+        handleCardDetected(cardId);
+      } else {
+        setScannerStatus("No se reconoció ninguna carta", "error");
+        captureBtn.disabled = false;
+      }
+    };
+    captureBtn.addEventListener("click", captureBtn._handler);
+  }
+}
+
+function closeScanner() {
+  if (!scannerOverlayEl) return;
+  const captureBtn = document.getElementById("scanner-capture");
+  if (captureBtn?._handler) {
+    captureBtn.removeEventListener("click", captureBtn._handler);
+    captureBtn._handler = null;
+    captureBtn.disabled = false;
+  }
+  if (scannerPreviewEl) scannerPreviewEl.hidden = true;
+  if (scannerStream) {
+    scannerStream.getTracks().forEach((t) => t.stop());
+    scannerStream = null;
+  }
+  if (scannerVideoEl) scannerVideoEl.srcObject = null;
+  scannerOverlayEl.hidden = true;
+}
+
+function handleCardDetected(cardId) {
+  const nodeId = cardLabelMap.get(cardId);
+  if (!nodeId) {
+    setScannerStatus(`Carta no encontrada en los datos: ${cardId}`, "error");
+    return;
+  }
+  closeScanner();
+  if (view !== "narraciones") { view = "narraciones"; }
+
+  // Si no hay provincia seleccionada, derivarla de la carta detectada
+  // para que render() muestre el árbol en lugar de la pantalla vacía.
+  if (!selectedProvincia) {
+    const detectedNode = findNodeById(contentTree, nodeId);
+    const nodeProvincia = detectedNode?.tags?.provincia;
+    if (nodeProvincia && nodeProvincia !== "all") {
+      selectedProvincia = nodeProvincia;
+    } else {
+      // Carta genérica ("all") sin provincia propia → usar la primera disponible.
+      selectedProvincia = FILTER_OPTIONS.provincias[0] ?? "";
+    }
+  }
+
+  saveState();
+
+  // Expandir toda la jerarquía de ancestros para que la hoja sea visible
+  const ancestors = [];
+  let parentId = accordionIndex.parentById.get(nodeId);
+  while (parentId && parentId !== accordionIndex.rootId) {
+    ancestors.unshift(parentId);
+    parentId = accordionIndex.parentById.get(parentId);
+  }
+  ancestors.forEach((id) => expandedPanels.add(id));
+
+  render();
+  if (!expandedPanels.has(nodeId)) { togglePanel(nodeId); }
+  // Doble rAF: el primero espera a que render() pinte el DOM,
+  // el segundo espera a que togglePanel() expanda el panel y lo repinte.
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const panel = document.getElementById(`${nodeId}-content`) ||
+                  document.getElementById(`${nodeId}-toggle`) ||
+                  document.querySelector(`[data-panel-toggle="${nodeId}"]`);
+    panel?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+}
+
+scannerBtnEl?.addEventListener("click", openScanner);
+document.getElementById("scanner-close")?.addEventListener("click", closeScanner);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && scannerOverlayEl && !scannerOverlayEl.hidden) closeScanner();
+});
 
 if (stEnabled) {
   setupSTPlayer();

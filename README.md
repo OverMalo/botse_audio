@@ -24,7 +24,6 @@ Es una aplicación web instalable (PWA): funciona en el navegador y también pue
 - 🧭 Filtros por provincia y por gremio.
 - ▶️ Reproducción automática (auto-play) al abrir cada texto.
 - ⏩ Velocidad de narración ajustable (de 1x a 1,5x).
-- 🌲 Audio ambiente inmersivo por escenario.
 - 🎵 Banda sonora original con reproductor integrado, siempre disponible en la barra superior.
 - 🔒 Controles multimedia del sistema (pantalla de bloqueo / auriculares).
 - 🌐 Multi-idioma (de momento, Español).

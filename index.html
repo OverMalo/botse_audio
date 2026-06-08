@@ -68,6 +68,11 @@
         <div class="scanner-viewport">
           <video id="scanner-video" autoplay playsinline muted></video>
           <canvas id="scanner-guide" aria-hidden="true"></canvas>
+          <div id="scanner-analyzing" class="scanner-analyzing" hidden aria-live="polite">
+            <img id="scanner-analyzing-img" class="scanner-analyzing-img" src="" alt="" aria-hidden="true">
+            <div class="scanner-analyzing-scanline" aria-hidden="true"></div>
+            <div class="scanner-analyzing-vignette" aria-hidden="true"></div>
+          </div>
         </div>
         <p class="scanner-status" id="scanner-status" role="status">Encuadra el ID y pulsa el botón</p>
         <div class="scanner-footer">

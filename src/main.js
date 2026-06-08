@@ -1016,11 +1016,16 @@ async function openScanner() {
         return;
       }
 
-      // Mostrar preview del crop capturado
-      if (scannerPreviewEl) {
-        scannerPreviewEl.src = frame.dataUrl;
-        scannerPreviewEl.hidden = false;
+      // Ocultar cámara y mostrar gráfico de análisis
+      scannerVideoEl.hidden = true;
+      if (scannerGuideEl) scannerGuideEl.hidden = true;
+      const analyzingEl = document.getElementById("scanner-analyzing");
+      const analyzingImgEl = document.getElementById("scanner-analyzing-img");
+      if (analyzingEl && analyzingImgEl) {
+        analyzingImgEl.src = frame.dataUrl;
+        analyzingEl.hidden = false;
       }
+      if (scannerPreviewEl) scannerPreviewEl.hidden = true;
 
       setScannerStatus("Analizando...");
 
@@ -1028,6 +1033,10 @@ async function openScanner() {
       if (cardId) {
         handleCardDetected(cardId);
       } else {
+        // Restaurar cámara
+        if (analyzingEl) analyzingEl.hidden = true;
+        scannerVideoEl.hidden = false;
+        if (scannerGuideEl) scannerGuideEl.hidden = false;
         setScannerStatus("No se reconoció ninguna carta", "error");
         captureBtn.disabled = false;
       }
@@ -1044,6 +1053,11 @@ function closeScanner() {
     captureBtn._handler = null;
     captureBtn.disabled = false;
   }
+  // Restaurar viewport al estado inicial por si se cierra durante el análisis
+  const analyzingEl = document.getElementById("scanner-analyzing");
+  if (analyzingEl) analyzingEl.hidden = true;
+  if (scannerVideoEl) scannerVideoEl.hidden = false;
+  if (scannerGuideEl) scannerGuideEl.hidden = false;
   if (scannerPreviewEl) scannerPreviewEl.hidden = true;
   if (scannerStream) {
     scannerStream.getTracks().forEach((t) => t.stop());

@@ -2288,6 +2288,47 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   pointer-events: none;
 }
 
+/* ── Result display overlay ───────────────────────────────────────────── */
+.scanner-result-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2;
+  font-size: 64px;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 8px;
+  animation: result-pulse 0.5s ease-out;
+  text-transform: uppercase;
+}
+.scanner-result-display[hidden] {
+  display: none;
+}
+@keyframes result-pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.scanner-result-display--ok {
+  color: #b5d38b;
+  text-shadow: 0 0 20px rgba(181, 211, 139, 0.8), 0 0 40px rgba(181, 211, 139, 0.4);
+}
+.scanner-result-display--error {
+  color: #e74c3c;
+  text-shadow: 0 0 20px rgba(231, 76, 60, 0.8), 0 0 40px rgba(231, 76, 60, 0.4);
+}
+
 /* ── Compact mobile header tuning ─────────────────────────────────────── */
 @media (max-width: 640px) {
   .scanner-btn {

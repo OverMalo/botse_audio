@@ -1074,6 +1074,7 @@ const scannerCaptureBtnEl = document.getElementById("scanner-capture");
 const scannerResultActionsEl = document.getElementById("scanner-result-actions");
 const scannerConfirmOkEl = document.getElementById("scanner-confirm-ok");
 const scannerRetryEl = document.getElementById("scanner-retry");
+const scannerResultDisplayEl = document.getElementById("scanner-result-display");
 
 function setScannerStatus(msg, modifier = "") {
   if (!scannerStatusEl) return;
@@ -1088,11 +1089,28 @@ function showScannerActionMode(mode = "capture") {
   if (scannerRetryEl) scannerRetryEl.hidden = !(mode === "confirm" || mode === "retry");
 }
 
+function showScannerResultDisplay(cardId, type) {
+  if (!scannerResultDisplayEl) return;
+  scannerResultDisplayEl.textContent = cardId.toUpperCase();
+  if (type === "ok") {
+    scannerResultDisplayEl.className = "scanner-result-display scanner-result-display--ok";
+    scannerResultDisplayEl.hidden = false;
+  } else if (type === "error") {
+    scannerResultDisplayEl.className = "scanner-result-display scanner-result-display--error";
+    scannerResultDisplayEl.hidden = false;
+  }
+}
+
+function hideScannerResultDisplay() {
+  if (scannerResultDisplayEl) scannerResultDisplayEl.hidden = true;
+}
+
 function resetScannerRecognition(message) {
   scannerPendingCardId = "";
   scannerPendingNodeId = "";
   const analyzingEl = document.getElementById("scanner-analyzing");
   if (analyzingEl) analyzingEl.hidden = true;
+  hideScannerResultDisplay();
   if (scannerVideoEl) scannerVideoEl.hidden = false;
   if (scannerGuideEl) scannerGuideEl.hidden = false;
   if (scannerPreviewEl) scannerPreviewEl.hidden = true;
@@ -1271,6 +1289,7 @@ async function openScanner() {
           // Mantener preview visible, ocultar video
           scannerVideoEl.hidden = true;
           if (scannerGuideEl) scannerGuideEl.hidden = true;
+          showScannerResultDisplay(detectedCardId, "error");
           showScannerActionMode("retry");
         } else {
           resetScannerRecognition(t("scanner.cardNotMatching", { card: detectedCardId }));
@@ -1286,6 +1305,7 @@ async function openScanner() {
         // Mantener preview visible, ocultar video y guía
         scannerVideoEl.hidden = true;
         if (scannerGuideEl) scannerGuideEl.hidden = true;
+        showScannerResultDisplay(detectedCardId, "ok");
         showScannerActionMode("confirm");
         return;
       }
@@ -1310,6 +1330,7 @@ function closeScanner() {
   // Restaurar viewport al estado inicial por si se cierra durante el análisis
   const analyzingEl = document.getElementById("scanner-analyzing");
   if (analyzingEl) analyzingEl.hidden = true;
+  hideScannerResultDisplay();
   if (scannerVideoEl) scannerVideoEl.hidden = false;
   if (scannerGuideEl) scannerGuideEl.hidden = false;
   if (scannerPreviewEl) scannerPreviewEl.hidden = true;

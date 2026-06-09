@@ -1268,6 +1268,9 @@ async function openScanner() {
         setScannerStatus(t("scanner.cardNotMatching", { card: detectedCardId }), "error");
         if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
         if (recognizerConfirmCard) {
+          // Mantener preview visible, ocultar video
+          scannerVideoEl.hidden = true;
+          if (scannerGuideEl) scannerGuideEl.hidden = true;
           showScannerActionMode("retry");
         } else {
           resetScannerRecognition(t("scanner.cardNotMatching", { card: detectedCardId }));
@@ -1280,6 +1283,9 @@ async function openScanner() {
         scannerPendingNodeId = activeNodeId;
         setScannerStatus(t("scanner.cardFoundConfirm", { card: detectedCardId }), "found");
         if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
+        // Mantener preview visible, ocultar video y guía
+        scannerVideoEl.hidden = true;
+        if (scannerGuideEl) scannerGuideEl.hidden = true;
         showScannerActionMode("confirm");
         return;
       }

@@ -140,6 +140,7 @@ function loadState() {
     selectedGremio: "",
     revealedDescriptions: [],
     autoPlay: true,
+    recognizerConfirmCard: false,
     playbackRate: 1,
     stEnabled: false,
     provinciaCollapsed: false,
@@ -159,6 +160,7 @@ function saveState() {
       expandedPanels: [...expandedPanels],
       revealedDescriptions: [...revealedDescriptions],
       autoPlay,
+      recognizerConfirmCard,
       playbackRate,
       stEnabled,
       provinciaCollapsed,
@@ -178,6 +180,7 @@ let selectedGremio = typeof state.selectedGremio === "string" ? state.selectedGr
 let expandedPanels = new Set(Array.isArray(state.expandedPanels) ? state.expandedPanels : []);
 let revealedDescriptions = new Set(Array.isArray(state.revealedDescriptions) ? state.revealedDescriptions : []);
 let autoPlay = typeof state.autoPlay === "boolean" ? state.autoPlay : true;
+let recognizerConfirmCard = typeof state.recognizerConfirmCard === "boolean" ? state.recognizerConfirmCard : false;
 let playbackRate = [1, 1.15, 1.25, 1.5].includes(state.playbackRate) ? state.playbackRate : 1;
 let stEnabled = typeof (state.stEnabled ?? state.ytEnabled) === "boolean" ? (state.stEnabled ?? state.ytEnabled) : false;
 
@@ -198,13 +201,146 @@ let accordionIndex = buildAccordionIndex(contentTree);
 /** Map<cardLabel, nodeId> — sólo hojas con labels tipo XX-NN */
 const CARD_LABEL_RE = /^[A-Z]{2}-\d{2}$/;
 let cardLabelMap = buildCardLabelMap();
+let cardSearchQuery = "";
+let preSearchExpandedPanels = null;
+
+function normalizeCardSearchInput(value) {
+  return (value ?? "").toString().trim().replace(/\s+/g, " ");
+}
+
+function stripDiacritics(value) {
+  return (value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function normalizeSearchText(value) {
+  return stripDiacritics(value)
+    .toLowerCase()
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function toLooseSearchKey(value) {
+  return normalizeSearchText(value).replace(/[^a-z0-9]+/g, "");
+}
+
+function beginCardSearchSession() {
+  if (preSearchExpandedPanels) return;
+  preSearchExpandedPanels = new Set(expandedPanels);
+}
+
+function endCardSearchSession() {
+  if (!preSearchExpandedPanels) return;
+  expandedPanels = new Set(preSearchExpandedPanels);
+  preSearchExpandedPanels = null;
+}
+
+function applyCardSearchQuery(nextValue) {
+  const nextQuery = normalizeCardSearchInput(nextValue);
+  if (nextQuery === cardSearchQuery) return false;
+
+  const hadQuery = Boolean(cardSearchQuery);
+  const hasQuery = Boolean(nextQuery);
+
+  if (!hadQuery && hasQuery) beginCardSearchSession();
+  if (hadQuery && !hasQuery) {
+    endCardSearchSession();
+    saveState();
+  }
+
+  cardSearchQuery = nextQuery;
+  return true;
+}
+
+function resetCardSearch() {
+  applyCardSearchQuery("");
+  const cardSearchInput = document.getElementById("card-search-input");
+  if (cardSearchInput) cardSearchInput.value = "";
+}
+
+function syncTopbarSearchAvailability() {
+  const enabled = Boolean(selectedProvincia);
+  const topbarProvinceHint = document.getElementById("topbar-province-hint");
+  if (topbarProvinceHint) {
+    topbarProvinceHint.hidden = enabled;
+  }
+
+  const cardSearchWrap = document.querySelector(".card-search");
+  if (cardSearchWrap) cardSearchWrap.hidden = !enabled;
+
+  const cardSearchInput = document.getElementById("card-search-input");
+  if (cardSearchInput) {
+    cardSearchInput.disabled = !enabled;
+    cardSearchInput.setAttribute("aria-disabled", enabled ? "false" : "true");
+    cardSearchInput.setAttribute("title", enabled ? "" : t("search.disabledHint"));
+    if (!enabled) cardSearchInput.value = "";
+  }
+
+  const scannerBtn = document.getElementById("scanner-btn");
+  if (scannerBtn) {
+    scannerBtn.hidden = !enabled;
+    scannerBtn.disabled = !enabled;
+    scannerBtn.setAttribute("aria-disabled", enabled ? "false" : "true");
+    scannerBtn.setAttribute("title", enabled ? "" : t("scanner.disabledHint"));
+  }
+}
+
+function goToInicio() {
+  view = "inicio";
+  selectedProvincia = "";
+  selectedGremio = "";
+  resetCardSearch();
+  stopActivePlayer();
+  closeScanner();
+  saveState();
+  render();
+}
+
+function getNodeCardLabel(node) {
+  const rawLabel = typeof node?.title === "string" ? node.title.trim().toUpperCase() : "";
+  return CARD_LABEL_RE.test(rawLabel) ? rawLabel : "";
+}
+
+function nodeMatchesSearch(node, queryRaw) {
+  if (!queryRaw) return true;
+
+  const textQuery = normalizeSearchText(queryRaw);
+  const looseQuery = toLooseSearchKey(queryRaw);
+  const textHaystack = normalizeSearchText([
+    node?.title,
+    node?.summary,
+    node?.contentTitle,
+  ].filter(Boolean).join(" "));
+
+  if (textQuery && textHaystack.includes(textQuery)) {
+    return true;
+  }
+
+  if (!looseQuery) {
+    return false;
+  }
+
+  const labelLoose = toLooseSearchKey(getNodeCardLabel(node));
+  if (labelLoose && labelLoose.includes(looseQuery)) {
+    return true;
+  }
+
+  const looseHaystack = toLooseSearchKey([
+    node?.title,
+    node?.summary,
+    node?.contentTitle,
+  ].filter(Boolean).join(" "));
+
+  return looseHaystack.includes(looseQuery);
+}
 
 function buildCardLabelMap() {
   const map = new Map();
   function walk(nodes) {
     for (const node of nodes) {
-      if (node.type === "leaf" && CARD_LABEL_RE.test(node.title)) {
-        map.set(node.title, node.id);
+      if (node.type === "leaf") {
+        const label = getNodeCardLabel(node);
+        if (label) map.set(label, node.id);
       }
       if (node.children?.length) walk(node.children);
     }
@@ -234,14 +370,6 @@ sidebarToggleEl?.addEventListener("click", () => {
   if (willOpen) sidebarEl.querySelector(".sidebar-nav-item")?.focus();
 });
 document.getElementById("sidebar-overlay")?.addEventListener("click", () => setSidebarOpen(false));
-
-// Title click → go to landing
-document.querySelector(".title-wrap")?.addEventListener("click", () => {
-  view = "inicio";
-  stopActivePlayer();
-  saveState();
-  render();
-});
 
 // Close the mobile sidebar with Escape and return focus to the toggle
 document.addEventListener("keydown", (event) => {
@@ -834,6 +962,7 @@ document.addEventListener("keydown", (event) => {
 function reloadContent() {
   contentTree = buildTreeFromStart();
   accordionIndex = buildAccordionIndex(contentTree);
+  cardLabelMap = buildCardLabelMap();
   if (stCurrentTrack >= SOUNDTRACK.length) stCurrentTrack = 0;
 }
 
@@ -867,13 +996,39 @@ function applyStaticI18n() {
   document.querySelector('meta[name="description"]')?.setAttribute("content", t("app.metaDescription"));
   const skip = document.querySelector(".skip-link");
   if (skip) skip.textContent = t("app.skipLink");
-  const h1 = document.querySelector(".title-wrap h1");
-  if (h1) h1.textContent = t("app.title");
+  const topbarProvinceHint = document.getElementById("topbar-province-hint");
+  if (topbarProvinceHint) topbarProvinceHint.textContent = t("topbar.selectProvinceHint");
   sidebarToggleEl?.setAttribute(
     "aria-label",
     sidebarEl.classList.contains("sidebar--open") ? t("a11y.closeSidebar") : t("a11y.openSidebar")
   );
+  const cardSearchInput = document.getElementById("card-search-input");
+  if (cardSearchInput) {
+    cardSearchInput.placeholder = t("search.placeholder");
+    cardSearchInput.setAttribute("aria-label", t("search.ariaLabel"));
+  }
+  const scannerBtn = document.getElementById("scanner-btn");
+  if (scannerBtn) {
+    scannerBtn.setAttribute("aria-label", t("scanner.ariaLabel"));
+  }
+  applyStaticI18nScanner();
   applyManifest();
+}
+
+function applyStaticI18nScanner() {
+  const okLabel = document.getElementById("scanner-action-ok-label");
+  if (okLabel) okLabel.textContent = t("scanner.actionOk");
+  const cancelLabel = document.getElementById("scanner-action-cancel-label");
+  if (cancelLabel) cancelLabel.textContent = t("scanner.actionCancel");
+  const retryLabel = document.getElementById("scanner-action-retry-label");
+  if (retryLabel) retryLabel.textContent = t("scanner.actionRetry");
+  
+  const okBtn = document.getElementById("scanner-confirm-ok");
+  if (okBtn) okBtn.setAttribute("aria-label", t("scanner.actionOk"));
+  const cancelBtn = document.getElementById("scanner-confirm-cancel");
+  if (cancelBtn) cancelBtn.setAttribute("aria-label", t("scanner.actionCancel"));
+  const retryBtn = document.getElementById("scanner-retry");
+  if (retryBtn) retryBtn.setAttribute("aria-label", t("scanner.actionRetry"));
 }
 
 applyStaticI18n();
@@ -910,6 +1065,8 @@ async function recognizeWithAPI(blob) {
 }
 let scannerStream = null;
 let lastGuideRect = null;
+let scannerPendingCardId = "";
+let scannerPendingNodeId = "";
 
 const scannerOverlayEl = document.getElementById("scanner-overlay");
 const scannerBtnEl = document.getElementById("scanner-btn");
@@ -917,11 +1074,66 @@ const scannerVideoEl = document.getElementById("scanner-video");
 const scannerGuideEl = document.getElementById("scanner-guide");
 const scannerStatusEl = document.getElementById("scanner-status");
 const scannerPreviewEl = document.getElementById("scanner-preview");
+const scannerCaptureBtnEl = document.getElementById("scanner-capture");
+const scannerResultActionsEl = document.getElementById("scanner-result-actions");
+const scannerConfirmOkEl = document.getElementById("scanner-confirm-ok");
+const scannerConfirmCancelEl = document.getElementById("scanner-confirm-cancel");
+const scannerRetryEl = document.getElementById("scanner-retry");
 
 function setScannerStatus(msg, modifier = "") {
   if (!scannerStatusEl) return;
   scannerStatusEl.textContent = msg;
   scannerStatusEl.className = "scanner-status" + (modifier ? " scanner-status--" + modifier : "");
+}
+
+function showScannerActionMode(mode = "capture") {
+  if (scannerCaptureBtnEl) scannerCaptureBtnEl.hidden = mode !== "capture";
+  if (scannerResultActionsEl) scannerResultActionsEl.hidden = mode === "capture";
+  if (scannerConfirmOkEl) scannerConfirmOkEl.hidden = mode !== "confirm";
+  if (scannerConfirmCancelEl) scannerConfirmCancelEl.hidden = mode !== "confirm";
+  if (scannerRetryEl) scannerRetryEl.hidden = mode !== "retry";
+}
+
+function resetScannerRecognition(message) {
+  scannerPendingCardId = "";
+  scannerPendingNodeId = "";
+  const analyzingEl = document.getElementById("scanner-analyzing");
+  if (analyzingEl) analyzingEl.hidden = true;
+  if (scannerVideoEl) scannerVideoEl.hidden = false;
+  if (scannerGuideEl) scannerGuideEl.hidden = false;
+  if (scannerPreviewEl) scannerPreviewEl.hidden = true;
+  if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = false;
+  showScannerActionMode("capture");
+  if (message !== undefined) setScannerStatus(message);
+}
+
+function normalizeDetectedCardId(cardId) {
+  return (cardId ?? "").toString().trim().toUpperCase();
+}
+
+function collectActiveLeafNodeIds() {
+  const activeIds = new Set();
+  const filteredRoots = contentTree.map(filterTree).filter(Boolean);
+
+  function walk(nodes) {
+    for (const node of nodes) {
+      if (node.type === "leaf") {
+        activeIds.add(node.id);
+      }
+      if (node.children?.length) walk(node.children);
+    }
+  }
+
+  walk(filteredRoots);
+  return activeIds;
+}
+
+function getActiveNodeIdForDetectedCard(cardId) {
+  const detectedId = normalizeDetectedCardId(cardId);
+  const nodeId = cardLabelMap.get(detectedId);
+  if (!nodeId) return null;
+  const activeIds = collectActiveLeafNodeIds();
+  return activeIds.has(nodeId) ? nodeId : null;
 }
 
 function drawScannerGuide(rect) {
@@ -983,15 +1195,20 @@ function resizeGuide() {
 async function openScanner() {
   if (!scannerOverlayEl) return;
   scannerOverlayEl.hidden = false;
-  setScannerStatus("Iniciando cámara...");
+  scannerPendingCardId = "";
+  scannerPendingNodeId = "";
+  showScannerActionMode("capture");
+  setScannerStatus(t("scanner.init"));
+
   try {
     scannerStream = await navigator.mediaDevices.getUserMedia({
       video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
     });
   } catch {
-    setScannerStatus("Sin acceso a la cámara", "error");
+    setScannerStatus(t("scanner.noCameraAccess"), "error");
     return;
   }
+
   scannerVideoEl.srcObject = scannerStream;
   await scannerVideoEl.play().catch(() => {});
 
@@ -1001,19 +1218,24 @@ async function openScanner() {
     scannerVideoEl.addEventListener("loadedmetadata", resizeGuide, { once: true });
   }
 
-  setScannerStatus("Encuadra el ID y pulsa Capturar");
+  resetScannerRecognition();
 
-  const captureBtn = document.getElementById("scanner-capture");
-  if (captureBtn) {
-    captureBtn._handler = async () => {
-      captureBtn.disabled = true;
-      setScannerStatus("Capturando...");
+  if (scannerCaptureBtnEl) {
+    scannerCaptureBtnEl._handler = async () => {
+      scannerCaptureBtnEl.disabled = true;
+      showScannerActionMode("capture");
+      setScannerStatus(t("scanner.capturing"));
 
       const frame = await CardScanner.captureFrame(scannerVideoEl);
       if (!frame) {
-        setScannerStatus("Error al capturar la imagen", "error");
-        captureBtn.disabled = false;
+        setScannerStatus(t("scanner.captureError"), "error");
+        scannerCaptureBtnEl.disabled = false;
         return;
+      }
+
+      if (scannerPreviewEl) {
+        scannerPreviewEl.src = frame.dataUrl;
+        scannerPreviewEl.hidden = false;
       }
 
       // Ocultar cámara y mostrar gráfico de análisis
@@ -1025,34 +1247,61 @@ async function openScanner() {
         analyzingImgEl.src = frame.dataUrl;
         analyzingEl.hidden = false;
       }
-      if (scannerPreviewEl) scannerPreviewEl.hidden = true;
 
-      setScannerStatus("Analizando...");
+      setScannerStatus(t("scanner.analyzing"));
 
-      const cardId = await recognizeWithAPI(frame.blob);
-      if (cardId) {
-        handleCardDetected(cardId);
-      } else {
-        // Restaurar cámara
+      const rawCardId = await recognizeWithAPI(frame.blob);
+      const detectedCardId = normalizeDetectedCardId(rawCardId);
+
+      if (!detectedCardId) {
         if (analyzingEl) analyzingEl.hidden = true;
         scannerVideoEl.hidden = false;
         if (scannerGuideEl) scannerGuideEl.hidden = false;
-        setScannerStatus("No se reconoció ninguna carta", "error");
-        captureBtn.disabled = false;
+        setScannerStatus(t("scanner.noCardDetected"), "error");
+        scannerCaptureBtnEl.disabled = false;
+        return;
       }
+
+      if (analyzingEl) analyzingEl.hidden = true;
+      scannerVideoEl.hidden = false;
+      if (scannerGuideEl) scannerGuideEl.hidden = false;
+
+      const activeNodeId = getActiveNodeIdForDetectedCard(detectedCardId);
+      if (!activeNodeId) {
+        scannerPendingCardId = "";
+        scannerPendingNodeId = "";
+        setScannerStatus(t("scanner.cardNotMatching", { card: detectedCardId }), "error");
+        if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
+        showScannerActionMode("retry");
+        return;
+      }
+
+      if (recognizerConfirmCard) {
+        scannerPendingCardId = detectedCardId;
+        scannerPendingNodeId = activeNodeId;
+        setScannerStatus(t("scanner.cardFoundConfirm", { card: detectedCardId }), "found");
+        if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
+        showScannerActionMode("confirm");
+        return;
+      }
+
+      handleCardDetected(detectedCardId, activeNodeId);
     };
-    captureBtn.addEventListener("click", captureBtn._handler);
+    scannerCaptureBtnEl.addEventListener("click", scannerCaptureBtnEl._handler);
   }
 }
 
 function closeScanner() {
   if (!scannerOverlayEl) return;
-  const captureBtn = document.getElementById("scanner-capture");
-  if (captureBtn?._handler) {
-    captureBtn.removeEventListener("click", captureBtn._handler);
-    captureBtn._handler = null;
-    captureBtn.disabled = false;
+  if (scannerCaptureBtnEl?._handler) {
+    scannerCaptureBtnEl.removeEventListener("click", scannerCaptureBtnEl._handler);
+    scannerCaptureBtnEl._handler = null;
+    scannerCaptureBtnEl.disabled = false;
   }
+  scannerPendingCardId = "";
+  scannerPendingNodeId = "";
+  showScannerActionMode("capture");
+
   // Restaurar viewport al estado inicial por si se cierra durante el análisis
   const analyzingEl = document.getElementById("scanner-analyzing");
   if (analyzingEl) analyzingEl.hidden = true;
@@ -1067,10 +1316,11 @@ function closeScanner() {
   scannerOverlayEl.hidden = true;
 }
 
-function handleCardDetected(cardId) {
-  const nodeId = cardLabelMap.get(cardId);
+function handleCardDetected(cardId, resolvedNodeId = null) {
+  const normalizedCardId = normalizeDetectedCardId(cardId);
+  const nodeId = resolvedNodeId || cardLabelMap.get(normalizedCardId);
   if (!nodeId) {
-    setScannerStatus(`Carta no encontrada en los datos: ${cardId}`, "error");
+    setScannerStatus(t("scanner.cardNotFound", { card: normalizedCardId || cardId }), "error");
     return;
   }
   closeScanner();
@@ -1114,6 +1364,16 @@ function handleCardDetected(cardId) {
 
 scannerBtnEl?.addEventListener("click", openScanner);
 document.getElementById("scanner-close")?.addEventListener("click", closeScanner);
+scannerConfirmOkEl?.addEventListener("click", () => {
+  if (!scannerPendingNodeId) return;
+  handleCardDetected(scannerPendingCardId, scannerPendingNodeId);
+});
+scannerConfirmCancelEl?.addEventListener("click", () => {
+  resetScannerRecognition(t("scanner.canceledMsg"));
+});
+scannerRetryEl?.addEventListener("click", () => {
+  resetScannerRecognition(t("scanner.retryMsg"));
+});
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && scannerOverlayEl && !scannerOverlayEl.hidden) closeScanner();
 });
@@ -1219,6 +1479,7 @@ function registerServiceWorker() {
 }
 
 function render() {
+  syncTopbarSearchAvailability();
   sidebarEl.innerHTML = renderSidebar();
 
   if (view === "inicio") {
@@ -1238,6 +1499,12 @@ function render() {
     const filteredRoots = contentTree
       .map(filterTree)
       .filter(Boolean);
+
+    // Con busqueda activa, mantener abiertos los paneles raiz visibles
+    // para exponer candidatos sin clics extra.
+    if (cardSearchQuery && filteredRoots.length) {
+      filteredRoots.forEach((node) => expandedPanels.add(node.id));
+    }
 
     bodyHtml = filteredRoots.length
       ? filteredRoots.map((node) => renderPanel(node, 0)).join("")
@@ -1358,6 +1625,16 @@ function renderSidebar() {
           <div class="sidebar-speed">${speedChips}</div>
         </div>
       </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-heading">${escapeHtml(t("sidebar.recognizer"))}</h3>
+        <div class="sidebar-controls">
+          <label class="sidebar-ctrl-label">
+            <input type="checkbox" id="recognizer-confirm-card-checkbox" class="autoplay-checkbox"${recognizerConfirmCard ? " checked" : ""}>
+            <span>${escapeHtml(t("sidebar.confirmRecognizedCard"))}</span>
+          </label>
+        </div>
+      </div>
     </nav>
   `;
 }
@@ -1385,6 +1662,14 @@ function bindConfigEvents() {
   if (checkbox) {
     checkbox.addEventListener("change", () => {
       autoPlay = checkbox.checked;
+      saveState();
+    });
+  }
+
+  const recognizerConfirmCheckbox = document.getElementById("recognizer-confirm-card-checkbox");
+  if (recognizerConfirmCheckbox) {
+    recognizerConfirmCheckbox.addEventListener("change", () => {
+      recognizerConfirmCard = recognizerConfirmCheckbox.checked;
       saveState();
     });
   }
@@ -1440,7 +1725,11 @@ function bindFilterEvents() {
   // "Inicio" navigation → welcome view
   document.querySelectorAll("[data-nav-view]").forEach((button) => {
     button.addEventListener("click", () => {
-      view = button.dataset.navView === "inicio" ? "inicio" : "narraciones";
+      if (button.dataset.navView === "inicio") {
+        goToInicio();
+        return;
+      }
+      view = "narraciones";
       stopActivePlayer();
       saveState();
       render();
@@ -1471,6 +1760,29 @@ function bindFilterEvents() {
       render();
     });
   });
+
+  const cardSearchInput = document.getElementById("card-search-input");
+  if (cardSearchInput && cardSearchInput.dataset.bound !== "true") {
+    cardSearchInput.dataset.bound = "true";
+
+    cardSearchInput.addEventListener("input", () => {
+      const changed = applyCardSearchQuery(cardSearchInput.value);
+      if (!changed) return;
+      if (view === "narraciones") render();
+    });
+
+    cardSearchInput.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (!cardSearchInput.value && !cardSearchQuery) return;
+      cardSearchInput.value = "";
+      applyCardSearchQuery("");
+      if (view === "narraciones") render();
+    });
+  }
+
+  if (cardSearchInput && cardSearchInput.value !== cardSearchQuery) {
+    cardSearchInput.value = cardSearchQuery;
+  }
 }
 
 function bindPanelEvents() {
@@ -2268,7 +2580,11 @@ function matchesFilters(node) {
     node.tags.gremio === "all" ||
     node.tags.gremio === selectedGremio;
 
-  return provinciaMatch && gremioMatch;
+  const searchMatch =
+    !cardSearchQuery ||
+    nodeMatchesSearch(node, cardSearchQuery);
+
+  return provinciaMatch && gremioMatch && searchMatch;
 }
 
 function buildTreeFromStart() {

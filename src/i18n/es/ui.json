@@ -1,11 +1,14 @@
 {
   "app": {
-    "title": "The Elder Scrolls — Voice Over",
+    "title": "BOTSE",
     "metaDescription": "Textos narrados de The Elder Scrolls",
     "skipLink": "Saltar al contenido",
     "campaignTitle": "La Traición de la Segunda Era",
     "mediaArtist": "BOTSE",
     "mediaFallbackTitle": "BOTSE Audio"
+  },
+  "topbar": {
+    "selectProvinceHint": "Selecciona una provincia"
   },
   "a11y": {
     "openSidebar": "Abrir menú lateral",
@@ -26,8 +29,10 @@
     "gremio": "Gremio",
     "gremioHint": "Filtra el contenido",
     "playback": "Reproducción",
+    "recognizer": "Reconocedor",
     "soundtrack": "Banda Sonora",
     "autoplay": "Reproducción automática",
+    "confirmRecognizedCard": "Confirmar carta",
     "ambient": "Audio ambiente",
     "soundtrackToggle": "Activar banda sonora",
     "allGuilds": "Todos"
@@ -53,6 +58,30 @@
   "content": {
     "selectProvince": "Selecciona una provincia en el menú lateral para comenzar.",
     "noMatches": "No hay paneles que coincidan con los filtros seleccionados."
+  },
+  "search": {
+    "placeholder": "Buscar carta",
+    "ariaLabel": "Buscar carta",
+    "disabledHint": "Selecciona una provincia para activar la búsqueda"
+  },
+  "scanner": {
+    "ariaLabel": "Escáner de cartas",
+    "disabledHint": "Selecciona una provincia para activar el escáner",
+    "init": "Iniciando cámara...",
+    "noCameraAccess": "Sin acceso a la cámara",
+    "capturing": "Capturando...",
+    "captureError": "Error al capturar la imagen",
+    "analyzing": "Analizando...",
+    "noCardDetected": "No se reconoció ninguna carta",
+    "cardFound": "Carta reconocida: {card}",
+    "cardNotMatching": "Carta reconocida: {card}. No coincide con los filtros activos.",
+    "cardFoundConfirm": "Carta reconocida: {card}. Confirma para abrirla.",
+    "cardNotFound": "Carta no encontrada en los datos: {card}",
+    "actionOk": "OK",
+    "actionCancel": "Cancelar",
+    "actionRetry": "Retry",
+    "canceledMsg": "Reconocimiento cancelado. Vuelve a capturar.",
+    "retryMsg": "Reintenta: encuadra el ID y pulsa Capturar"
   },
   "player": {
     "play": "Reproducir",

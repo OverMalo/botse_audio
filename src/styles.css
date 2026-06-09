@@ -2149,6 +2149,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   cursor: default;
   transform: none;
 }
+.scanner-capture-btn[hidden] {
+  display: none !important;
+}
 
 /* Barra inferior del overlay que contiene el disparador */
 .scanner-footer {
@@ -2295,7 +2298,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
+  background: #000;
   z-index: 2;
   font-size: 64px;
   font-weight: 700;
@@ -2303,6 +2306,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   letter-spacing: 8px;
   animation: result-pulse 0.5s ease-out;
   text-transform: uppercase;
+  white-space: pre;
+  text-align: center;
+  line-height: 1.2;
 }
 .scanner-result-display[hidden] {
   display: none;

@@ -1074,7 +1074,6 @@ const scannerCaptureBtnEl = document.getElementById("scanner-capture");
 const scannerResultActionsEl = document.getElementById("scanner-result-actions");
 const scannerConfirmOkEl = document.getElementById("scanner-confirm-ok");
 const scannerRetryEl = document.getElementById("scanner-retry");
-const scannerResultDisplayEl = document.getElementById("scanner-result-display");
 
 function setScannerStatus(msg, modifier = "") {
   if (!scannerStatusEl) return;
@@ -1089,28 +1088,14 @@ function showScannerActionMode(mode = "capture") {
   if (scannerRetryEl) scannerRetryEl.hidden = !(mode === "confirm" || mode === "retry");
 }
 
-function showScannerResultDisplay(cardId, type) {
-  if (!scannerResultDisplayEl) return;
-  scannerResultDisplayEl.textContent = cardId.toUpperCase();
-  if (type === "ok") {
-    scannerResultDisplayEl.className = "scanner-result-display scanner-result-display--ok";
-    scannerResultDisplayEl.hidden = false;
-  } else if (type === "error") {
-    scannerResultDisplayEl.className = "scanner-result-display scanner-result-display--error";
-    scannerResultDisplayEl.hidden = false;
-  }
-}
-
-function hideScannerResultDisplay() {
-  if (scannerResultDisplayEl) scannerResultDisplayEl.hidden = true;
-}
-
 function resetScannerRecognition(message) {
   scannerPendingCardId = "";
   scannerPendingNodeId = "";
   const analyzingEl = document.getElementById("scanner-analyzing");
-  if (analyzingEl) analyzingEl.hidden = true;
-  hideScannerResultDisplay();
+  if (analyzingEl) {
+    analyzingEl.hidden = true;
+    analyzingEl.classList.remove("scanner-analyzing--frozen");
+  }
   if (scannerVideoEl) scannerVideoEl.hidden = false;
   if (scannerGuideEl) scannerGuideEl.hidden = false;
   if (scannerPreviewEl) scannerPreviewEl.hidden = true;
@@ -1242,7 +1227,6 @@ async function openScanner() {
     scannerCaptureBtnEl._handler = async () => {
       scannerCaptureBtnEl.disabled = true;
       scannerCaptureBtnEl.hidden = true;
-      hideScannerResultDisplay();
       setScannerStatus(t("scanner.capturing"));
 
       const frame = await CardScanner.captureFrame(scannerVideoEl);
@@ -1272,9 +1256,10 @@ async function openScanner() {
       const rawCardId = await recognizeWithAPI(frame.blob);
       const detectedCardId = normalizeDetectedCardId(rawCardId);
 
+      // Freeze analyzing overlay — keep captured image visible, stop scanline
+      if (analyzingEl) analyzingEl.classList.add("scanner-analyzing--frozen");
+
       if (!detectedCardId) {
-        if (analyzingEl) analyzingEl.hidden = true;
-        showScannerResultDisplay(t("scanner.noCardDisplay"), "error");
         setScannerStatus(t("scanner.noCardDetected"), "error");
         if (recognizerConfirmCard) {
           showScannerActionMode("retry");
@@ -1284,23 +1269,14 @@ async function openScanner() {
         return;
       }
 
-      if (analyzingEl) analyzingEl.hidden = true;
-
       const activeNodeId = getActiveNodeIdForDetectedCard(detectedCardId);
       if (!activeNodeId) {
         scannerPendingCardId = "";
         scannerPendingNodeId = "";
         setScannerStatus(t("scanner.cardNotMatching", { card: detectedCardId }), "error");
-        if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
         if (recognizerConfirmCard) {
-          // Ocultar todo excepto el overlay de resultado
-          scannerVideoEl.hidden = true;
-          if (scannerGuideEl) scannerGuideEl.hidden = true;
-          if (scannerPreviewEl) scannerPreviewEl.hidden = true;
-          showScannerResultDisplay(detectedCardId, "error");
           showScannerActionMode("retry");
         } else {
-          showScannerResultDisplay(detectedCardId, "error");
           setTimeout(() => resetScannerRecognition(), 2000);
         }
         return;
@@ -1310,12 +1286,6 @@ async function openScanner() {
         scannerPendingCardId = detectedCardId;
         scannerPendingNodeId = activeNodeId;
         setScannerStatus(t("scanner.cardFoundConfirm", { card: detectedCardId }), "found");
-        if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
-        // Ocultar todo excepto el overlay de resultado
-        scannerVideoEl.hidden = true;
-        if (scannerGuideEl) scannerGuideEl.hidden = true;
-        if (scannerPreviewEl) scannerPreviewEl.hidden = true;
-        showScannerResultDisplay(detectedCardId, "ok");
         showScannerActionMode("confirm");
         return;
       }
@@ -1339,8 +1309,10 @@ function closeScanner() {
 
   // Restaurar viewport al estado inicial por si se cierra durante el análisis
   const analyzingEl = document.getElementById("scanner-analyzing");
-  if (analyzingEl) analyzingEl.hidden = true;
-  hideScannerResultDisplay();
+  if (analyzingEl) {
+    analyzingEl.hidden = true;
+    analyzingEl.classList.remove("scanner-analyzing--frozen");
+  }
   if (scannerVideoEl) scannerVideoEl.hidden = false;
   if (scannerGuideEl) scannerGuideEl.hidden = false;
   if (scannerPreviewEl) scannerPreviewEl.hidden = true;

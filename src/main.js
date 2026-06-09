@@ -1325,6 +1325,13 @@ function closeScanner() {
 }
 
 function handleCardDetected(cardId, resolvedNodeId = null) {
+  // Unlock audio autoplay on this user gesture before any async chain starts.
+  // Android Chrome and iOS Safari both require play() to be called synchronously
+  // within a user gesture. The async chain (loadedmetadata, setTimeout) breaks
+  // that context. Playing a silent data-URI audio here unlocks audio for the session.
+  const _audioUnlock = new Audio("data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA");
+  _audioUnlock.play().catch(() => {});
+
   const normalizedCardId = normalizeDetectedCardId(cardId);
   const nodeId = resolvedNodeId || cardLabelMap.get(normalizedCardId);
   if (!nodeId) {

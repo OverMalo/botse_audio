@@ -74,6 +74,7 @@
     "captureError": "Error al capturar la imagen",
     "analyzing": "Analizando...",
     "noCardDetected": "No se reconoció ninguna carta",
+    "noCardDisplay": "SIN\nCOINCIDENCIA",
 
     "cardFound": "Carta reconocida: {card}",
     "cardNotMatching": "Carta reconocida: {card}. No coincide con los filtros activos.",

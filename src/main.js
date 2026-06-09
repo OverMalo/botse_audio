@@ -1274,7 +1274,7 @@ async function openScanner() {
 
       if (!detectedCardId) {
         if (analyzingEl) analyzingEl.hidden = true;
-        showScannerResultDisplay("SIN\nCOINCIDENCIA", "error");
+        showScannerResultDisplay(t("scanner.noCardDisplay"), "error");
         setScannerStatus(t("scanner.noCardDetected"), "error");
         if (recognizerConfirmCard) {
           showScannerActionMode("retry");

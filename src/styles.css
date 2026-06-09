@@ -180,8 +180,24 @@ body::after {
 }
 
 .topbar-brand {
-  display: none;
+  display: flex;
+  align-items: center;
   margin: 0;
+}
+
+.beta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: #1a56db;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.6;
 }
 
 /* Glowing gold rule beneath the header */

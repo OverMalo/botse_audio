@@ -159,7 +159,7 @@ body::after {
 
 .topbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
   padding: 16px 26px;
@@ -170,6 +170,18 @@ body::after {
   background-size: auto, 160px 160px;
   background-blend-mode: normal, overlay;
   border-bottom: 1px solid var(--border-strong);
+}
+
+.topbar-main-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.topbar-brand {
+  display: none;
+  margin: 0;
 }
 
 /* Glowing gold rule beneath the header */
@@ -185,8 +197,7 @@ body::after {
 }
 
 .topbar-emblem {
-  position: absolute;
-  left: 26px;
+  position: static;
   flex-shrink: 0;
   width: 34px;
   height: 34px;
@@ -203,9 +214,7 @@ body::after {
 
 .topbar-province-hint {
   margin: 0;
-  position: absolute;
-  left: 116px;
-  flex: none;
+  flex: 0 1 320px;
   min-width: 0;
   color: var(--muted);
   font-family: 'Cinzel', serif;
@@ -223,10 +232,20 @@ body::after {
   display: none;
 }
 
+.topbar-search-row {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  max-width: 440px;
+  min-width: 200px;
+}
+
 .card-search {
   position: relative;
-  flex: 1 1 250px;
-  max-width: 360px;
+  flex: 1 1 auto;
+  max-width: none;
   min-width: 170px;
 }
 
@@ -286,10 +305,8 @@ body::after {
 
 /* ── Language switcher ───────────────────────────────────── */
 .lang-switcher {
-  position: absolute;
-  right: 26px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: 0;
+  position: relative;
   flex-shrink: 0;
 }
 
@@ -1846,26 +1863,69 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 @media (max-width: 640px) {
   .topbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "left brand lang"
+      "search search search";
     align-items: center;
-    flex-direction: row;
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
     padding: 14px 16px;
   }
 
+  .topbar-main-left {
+    grid-area: left;
+    gap: 8px;
+  }
+
   .topbar-emblem {
-    display: none;
+    display: grid;
+    width: 28px;
+    height: 28px;
+  }
+
+  .topbar-brand {
+    grid-area: brand;
+    display: block;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .topbar-province-hint {
-    flex: 1 1 auto;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
+    display: none;
+  }
+
+  .lang-switcher {
+    grid-area: lang;
+    justify-self: end;
+    margin-left: 0;
+    position: static;
+    transform: none;
+  }
+
+  .topbar-search-row {
+    grid-area: search;
+    margin-left: 0;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
   }
 
   .card-search {
     min-width: 0;
-    flex: 1 1 130px;
+    flex: 1 1 auto;
     max-width: none;
+  }
+
+  .scanner-btn {
+    width: 34px;
+    height: 34px;
   }
 
   .card-search-input {
@@ -2221,4 +2281,100 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, 0.65) 100%);
   pointer-events: none;
+}
+
+/* ── Compact mobile header tuning ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .scanner-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 390px) {
+  .topbar {
+    column-gap: 8px;
+    row-gap: 8px;
+    padding: 12px 12px;
+  }
+
+  .topbar-main-left {
+    gap: 6px;
+  }
+
+  .sidebar-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+  }
+
+  .topbar-emblem {
+    width: 24px;
+    height: 24px;
+  }
+
+  .topbar-brand {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-btn {
+    height: 34px;
+    padding: 0 9px;
+    gap: 5px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  .topbar-search-row {
+    gap: 8px;
+  }
+
+  .card-search-input {
+    height: 32px;
+    font-size: 0.74rem;
+    padding: 0 10px 0 30px;
+  }
+
+  .card-search-icon {
+    left: 9px;
+  }
+
+  .scanner-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    padding: 10px 10px;
+  }
+
+  .topbar-brand {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .lang-btn {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 0.75rem;
+  }
+
+  .lang-globe,
+  .lang-caret {
+    font-size: 0.7rem;
+  }
+
+  .card-search-input {
+    height: 30px;
+    font-size: 0.7rem;
+  }
+
+  .scanner-btn {
+    width: 30px;
+    height: 30px;
+  }
 }

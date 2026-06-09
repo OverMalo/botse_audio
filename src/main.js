@@ -1018,15 +1018,11 @@ function applyStaticI18n() {
 function applyStaticI18nScanner() {
   const okLabel = document.getElementById("scanner-action-ok-label");
   if (okLabel) okLabel.textContent = t("scanner.actionOk");
-  const cancelLabel = document.getElementById("scanner-action-cancel-label");
-  if (cancelLabel) cancelLabel.textContent = t("scanner.actionCancel");
   const retryLabel = document.getElementById("scanner-action-retry-label");
   if (retryLabel) retryLabel.textContent = t("scanner.actionRetry");
   
   const okBtn = document.getElementById("scanner-confirm-ok");
   if (okBtn) okBtn.setAttribute("aria-label", t("scanner.actionOk"));
-  const cancelBtn = document.getElementById("scanner-confirm-cancel");
-  if (cancelBtn) cancelBtn.setAttribute("aria-label", t("scanner.actionCancel"));
   const retryBtn = document.getElementById("scanner-retry");
   if (retryBtn) retryBtn.setAttribute("aria-label", t("scanner.actionRetry"));
 }
@@ -1077,7 +1073,6 @@ const scannerPreviewEl = document.getElementById("scanner-preview");
 const scannerCaptureBtnEl = document.getElementById("scanner-capture");
 const scannerResultActionsEl = document.getElementById("scanner-result-actions");
 const scannerConfirmOkEl = document.getElementById("scanner-confirm-ok");
-const scannerConfirmCancelEl = document.getElementById("scanner-confirm-cancel");
 const scannerRetryEl = document.getElementById("scanner-retry");
 
 function setScannerStatus(msg, modifier = "") {
@@ -1088,10 +1083,9 @@ function setScannerStatus(msg, modifier = "") {
 
 function showScannerActionMode(mode = "capture") {
   if (scannerCaptureBtnEl) scannerCaptureBtnEl.hidden = mode !== "capture";
-  if (scannerResultActionsEl) scannerResultActionsEl.hidden = mode === "capture";
+  if (scannerResultActionsEl) scannerResultActionsEl.hidden = !(mode === "confirm" || mode === "retry");
   if (scannerConfirmOkEl) scannerConfirmOkEl.hidden = mode !== "confirm";
-  if (scannerConfirmCancelEl) scannerConfirmCancelEl.hidden = mode !== "confirm";
-  if (scannerRetryEl) scannerRetryEl.hidden = mode !== "retry";
+  if (scannerRetryEl) scannerRetryEl.hidden = !(mode === "confirm" || mode === "retry");
 }
 
 function resetScannerRecognition(message) {
@@ -1198,6 +1192,7 @@ async function openScanner() {
   scannerPendingCardId = "";
   scannerPendingNodeId = "";
   showScannerActionMode("capture");
+  if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
   setScannerStatus(t("scanner.init"));
 
   try {
@@ -1218,7 +1213,7 @@ async function openScanner() {
     scannerVideoEl.addEventListener("loadedmetadata", resizeGuide, { once: true });
   }
 
-  resetScannerRecognition();
+  resetScannerRecognition(t("scanner.ready"));
 
   if (scannerCaptureBtnEl) {
     scannerCaptureBtnEl._handler = async () => {
@@ -1272,7 +1267,11 @@ async function openScanner() {
         scannerPendingNodeId = "";
         setScannerStatus(t("scanner.cardNotMatching", { card: detectedCardId }), "error");
         if (scannerCaptureBtnEl) scannerCaptureBtnEl.disabled = true;
-        showScannerActionMode("retry");
+        if (recognizerConfirmCard) {
+          showScannerActionMode("retry");
+        } else {
+          resetScannerRecognition(t("scanner.cardNotMatching", { card: detectedCardId }));
+        }
         return;
       }
 
@@ -1368,11 +1367,9 @@ scannerConfirmOkEl?.addEventListener("click", () => {
   if (!scannerPendingNodeId) return;
   handleCardDetected(scannerPendingCardId, scannerPendingNodeId);
 });
-scannerConfirmCancelEl?.addEventListener("click", () => {
-  resetScannerRecognition(t("scanner.canceledMsg"));
-});
 scannerRetryEl?.addEventListener("click", () => {
-  resetScannerRecognition(t("scanner.retryMsg"));
+  const hadPendingCard = Boolean(scannerPendingNodeId);
+  resetScannerRecognition(hadPendingCard ? t("scanner.canceledMsg") : t("scanner.retryMsg"));
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && scannerOverlayEl && !scannerOverlayEl.hidden) closeScanner();

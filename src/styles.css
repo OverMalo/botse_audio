@@ -2186,6 +2186,11 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   gap: 10px;
 }
 
+.scanner-result-actions[hidden],
+.scanner-action-btn[hidden] {
+  display: none !important;
+}
+
 .scanner-action-btn {
   display: inline-flex;
   align-items: center;

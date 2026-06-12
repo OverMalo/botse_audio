@@ -37,6 +37,25 @@ self.addEventListener("message", (event) => {
   }
 });
 
+function withSecurityHeaders(response) {
+  if (!response) return response;
+  const headers = new Headers(response.headers);
+  headers.set("x-content-type-options", "nosniff");
+  headers.delete("expires");
+  const ct = headers.get("content-type");
+  if (ct && ct.startsWith("text/javascript")) {
+    headers.set("content-type", ct.replace("text/javascript", "application/javascript"));
+  }
+  if (!headers.get("cache-control")) {
+    headers.set("cache-control", "no-cache");
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 async function networkFirst(request, fallbackToCache = true) {
   const runtimeCache = await caches.open(RUNTIME_CACHE);
 
@@ -94,18 +113,18 @@ self.addEventListener("fetch", (event) => {
     url.pathname.endsWith(".json");
 
   if (isNavigationRequest || isDynamicAsset) {
-    event.respondWith(networkFirst(event.request));
+    event.respondWith(networkFirst(event.request).then(withSecurityHeaders));
     return;
   }
 
   if (isAudioRequest) {
-    event.respondWith(cacheFirst(event.request));
+    event.respondWith(cacheFirst(event.request).then(withSecurityHeaders));
     return;
   }
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+      if (cachedResponse) return withSecurityHeaders(cachedResponse);
 
       return fetch(event.request)
         .then((networkResponse) => {
@@ -115,7 +134,7 @@ self.addEventListener("fetch", (event) => {
             cache.put(event.request, responseClone);
           });
 
-          return networkResponse;
+          return withSecurityHeaders(networkResponse);
         })
         .catch(() => {
           if (event.request.mode === "navigate") {

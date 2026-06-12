@@ -1060,6 +1060,7 @@ let scannerPendingNodeId = "";
 const scannerOverlayEl = document.getElementById("scanner-overlay");
 const scannerBtnEl = document.getElementById("scanner-btn");
 const scannerVideoEl = document.getElementById("scanner-video");
+if (scannerVideoEl) scannerVideoEl.setAttribute("playsinline", "");
 const scannerGuideEl = document.getElementById("scanner-guide");
 const scannerStatusEl = document.getElementById("scanner-status");
 const scannerPreviewEl = document.getElementById("scanner-preview");
@@ -1770,6 +1771,7 @@ function bindFilterEvents() {
   const cardSearchInput = document.getElementById("card-search-input");
   if (cardSearchInput && cardSearchInput.dataset.bound !== "true") {
     cardSearchInput.dataset.bound = "true";
+    cardSearchInput.setAttribute("autocapitalize", "characters");
 
     cardSearchInput.addEventListener("input", () => {
       const changed = applyCardSearchQuery(cardSearchInput.value);

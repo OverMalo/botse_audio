@@ -1,6 +1,6 @@
 const CACHE_VERSION = "v10";
-const STATIC_CACHE = `ahlcg-static-${CACHE_VERSION}`;
-const RUNTIME_CACHE = `ahlcg-runtime-${CACHE_VERSION}`;
+const STATIC_CACHE = `botse-static-${CACHE_VERSION}`;
+const RUNTIME_CACHE = `botse-runtime-${CACHE_VERSION}`;
 const SOUNDTRACK_CACHE = "botse-soundtrack-v2";
 const BASE = "/botse_audio";
 
@@ -23,7 +23,7 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((key) => key !== STATIC_CACHE && key !== RUNTIME_CACHE && key !== SOUNDTRACK_CACHE)
+          .filter((key) => key.startsWith("botse-") && key !== STATIC_CACHE && key !== RUNTIME_CACHE && key !== SOUNDTRACK_CACHE)
           .map((key) => caches.delete(key))
       )
     )

@@ -23,7 +23,7 @@ const LOCALES = {
 };
 
 const DEFAULT_LANG = "es";
-const STORAGE_KEY = "lang";
+const STORAGE_KEY = "botse_audio:lang";
 
 function isSupported(code) {
   return Boolean(code && LOCALES[code]);

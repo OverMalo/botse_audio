@@ -125,14 +125,7 @@ const ICONS = {
 
 function loadState() {
   try {
-    // One-time migration: move existing sessionStorage data to localStorage
-    const legacy = sessionStorage.getItem("navState");
-    if (legacy && !localStorage.getItem("navState")) {
-      localStorage.setItem("navState", legacy);
-    }
-    if (legacy) sessionStorage.removeItem("navState");
-
-    const saved = localStorage.getItem("navState");
+    const saved = localStorage.getItem("botse_audio:navState");
     if (saved) return JSON.parse(saved);
   } catch {}
   return {
@@ -152,7 +145,7 @@ function loadState() {
 
 function saveState() {
   localStorage.setItem(
-    "navState",
+    "botse_audio:navState",
     JSON.stringify({
       view,
       selectedProvincia,
@@ -383,7 +376,7 @@ document.addEventListener("keydown", (event) => {
 
 const ST_CACHE_NAME = "botse-soundtrack-v2";
 // IDs de pistas ya descargadas (persistido en localStorage para evitar cache.open en cada arranque)
-const stCachedIds = new Set(JSON.parse(localStorage.getItem("stCachedIds") || "[]"));
+const stCachedIds = new Set(JSON.parse(localStorage.getItem("botse_audio:stCachedIds") || "[]"));
 
 /** @type {HTMLAudioElement | null} */
 let stAudio = null;
@@ -503,7 +496,7 @@ async function downloadSTIfNeeded() {
     if (firstCached) return; // caché real intacta
     // Caché fue borrada externamente → limpiar localStorage y re-descargar todo
     stCachedIds.clear();
-    localStorage.removeItem("stCachedIds");
+    localStorage.removeItem("botse_audio:stCachedIds");
   }
 
   const toDownload = [];
@@ -550,7 +543,7 @@ async function downloadSTIfNeeded() {
 
       // Marcar como descargado en localStorage
       stCachedIds.add(SOUNDTRACK[trackIndex].id);
-      localStorage.setItem("stCachedIds", JSON.stringify([...stCachedIds]));
+      localStorage.setItem("botse_audio:stCachedIds", JSON.stringify([...stCachedIds]));
 
       // Si era la pista en reproducción, recargarla desde caché sin interrumpir
       if (trackIndex === stCurrentTrack && stAudio) {
